@@ -1,0 +1,8 @@
+/.vs
+App.config
+*.dll
+*.pdb
+*.cache
+*.json
+bin/
+obj/
