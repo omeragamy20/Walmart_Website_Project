@@ -3,5 +3,6 @@
 *.pdb
 *.cache
 *.json
+!appsettings.json
 bin/
 obj/
