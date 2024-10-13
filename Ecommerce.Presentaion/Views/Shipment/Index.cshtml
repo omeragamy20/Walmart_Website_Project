@@ -1,0 +1,33 @@
+﻿ @model IEnumerable<Ecommerce.DTOs.Shipment.GetAllDto>
+
+<h1>Shipments</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Shipment Date</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shipment in Model)
+        {
+            <tr>
+                <td>@shipment.ShipmentDate</td>
+                <td>@shipment.Address</td>
+                <td>@shipment.City</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@shipment.ShipmentId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@shipment.ShipmentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

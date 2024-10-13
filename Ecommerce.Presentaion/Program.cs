@@ -1,4 +1,4 @@
-using Ecommerce.Application.Mappper;
+//using Ecommerce.Application.Mapper;
 using Ecommerce.Context;
 using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;

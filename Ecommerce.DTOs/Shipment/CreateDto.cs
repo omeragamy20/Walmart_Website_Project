@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using NetSohag.Models;
 
-namespace Ecommerce.Models
+namespace Ecommerce.DTOs.Shipment
 {
-    public class Shipment : BaseEntity<int>
+  public  class CreateDto
     {
-        [Key]
-        public int ShipmentId { get; set; }
+       
 
+        
         public DateTime ShipmentDate { get; set; }
 
         [Required, MaxLength(150)]
@@ -28,13 +26,9 @@ namespace Ecommerce.Models
         [MaxLength(10)]
         public string ZipCode { get; set; }
 
-        [ForeignKey("Customer")]
         public string? CustomerId { get; set; }
-        public Customer? Customer { get; set; }
 
-        public ICollection<Order>? Orders { get; set; }
-
+      //  public List<OrderDto>? Orders { get; set; } // Assuming you also have an OrderDto
     }
-
-
 }
+

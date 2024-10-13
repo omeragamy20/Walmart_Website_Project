@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Ecommerce.DTOs.Shipment;
-//using Ecommerce.DTOs.Shipment.Ecommerce.DTOs;
 using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
@@ -8,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//namespace Ecommerce.Application.Mapper
-
-  public class AutoMapperProfile : Profile
+namespace Ecommerce.Application.Mappper
 {
+    //public  class AutoMapperProfile:Profile
+    //{
+    //    CreateMap<CreateDto, Shipment>().ReverseMap();
+    //    CreateMap<GetAllDto, Shipment>().ReverseMap();
+    //}
+
+    public class AutoMapperProfile : Profile
+    {
     public AutoMapperProfile()
     {
         CreateMap<CreateDto, Shipment>().ReverseMap();
         CreateMap<GetAllDto, Shipment>().ReverseMap();
     }
-    //public AutoMapperProfile()
-    //{
-    //    CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
-    //    CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
-    //}
 }
-
+}

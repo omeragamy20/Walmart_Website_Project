@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using NetSohag.Models;
+//using NetSohag.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
