@@ -5,17 +5,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
-namespace Ecommerce.Models
+namespace Ecommerce.DTOs.OrderDTOs
 {
-    public class Order : BaseEntity<int>
+    public class CreateOrUpdateOrderDTOs
     {
-        //[Key]
-        //public int OrderId { get; set; }
-
+        public int Id { get; set; }
         public DateTime OrderDate { get; set; }
 
-        [Column(TypeName = "money")]
+        [Range(50,double.MaxValue)]
         public decimal TotalPrice { get; set; }
         //???
 
@@ -23,20 +22,12 @@ namespace Ecommerce.Models
         public int Status { get; set; } = 0;
 
 
-        [ForeignKey("Customer")]
         public string? CustomerId { get; set; }
-        public Customer? Customer { get; set; }
 
-        [ForeignKey("Payment")]
         public int? PaymentId { get; set; }
-        public Payment? Payment { get; set; }
 
-        [ForeignKey("Shipment")]
         public int? ShipmentId { get; set; }
-        public Shipment? Shipment { get; set; }
 
-        public ICollection<OrderItem>? OrderItems { get; set; }
+        public ICollection<int>? OrderItemsID { get; set; }
     }
-
-
 }
