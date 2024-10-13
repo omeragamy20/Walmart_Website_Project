@@ -141,19 +141,24 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-heading">Pages</li>
-
-
-
+            <li class="nav-heading">Pages</li>
+            
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+                <a class="nav-link collapsed" asp-controller="Product" asp-action="GetALlProduct">
 
                     <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
                     <span>Products</span>
         </a>
       </li>
       <!-- End Products Page Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" asp-controller="Facility" asp-action="GetALl">
 
+                <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
+                    <span>Facilities</span>
+            </a>
+        </li>
+             <!-- End Facilities Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-contact.html">
                     <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>

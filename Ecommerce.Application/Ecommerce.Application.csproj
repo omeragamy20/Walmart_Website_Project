@@ -7,11 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <ProjectReference Include="..\Ecommerce.DTOs\Ecommerce.DTOs.csproj" />
+    <ProjectReference Include="..\Ecommerce.Models\Ecommerce.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DTOS">
+      <HintPath>..\..\DTOS\obj\Debug\net8.0\ref\DTOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

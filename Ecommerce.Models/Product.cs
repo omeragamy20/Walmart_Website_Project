@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
-using NetSohag.Models;
+
 
 namespace Ecommerce.Models
 {
@@ -28,9 +28,9 @@ namespace Ecommerce.Models
        
         public int Stock { get; set; }
 
-        [ForeignKey("SubCategory")]
-        public int? SubCategoryId { get; set; }
-        public SubCategory? SubCategory { get; set; }
+        //[ForeignKey("SubCategory")]
+        //public int? SubCategoryId { get; set; }
+        //public SubCategory? SubCategory { get; set; }
 
         public ICollection<Facility>? Facilities { get; set; } = new List<Facility>();
         public ICollection<Rate>? Rates { get; set; }
