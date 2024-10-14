@@ -1,4 +1,7 @@
+using Ecommerce.Application.Contracts.Categories;
+using Ecommerce.Infrastructure.Categories;
 using Ecommerce.Application.Mappper;
+using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.Context;
 using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;
@@ -11,7 +14,14 @@ namespace Ecommerce.Presentaion
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            //margn pranch
+
+            builder.Services.AddScoped<ICategoryService, CategoryServices>();
+            builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
+            builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
+            builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<EcommerceContext>(options =>
@@ -23,7 +33,8 @@ namespace Ecommerce.Presentaion
                 .AddEntityFrameworkStores<EcommerceContext>();
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+            //Auto Fac==> add scope for classess 
+            //Categories
 
 
             var app = builder.Build();
