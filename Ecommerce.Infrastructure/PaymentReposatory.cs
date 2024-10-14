@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Infrastructure
 {
-    public class PaymentRepository : GenericRepository<Payment, int>, IPaymentRepoistory
+    public class PaymentRepository : GenricReposatiry<Payment, int>, IPaymentRepoistory
     {
         public PaymentRepository(EcommerceContext context) : base(context)
         {

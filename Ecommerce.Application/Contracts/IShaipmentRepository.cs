@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Application.Contracts
 {
-    public interface IShipmentRepo : IGenericReposatiry<Shipment, int>
+    public interface IShaipmentRepository : IGenericReposatiry<Shipment, int>
     {
         IQueryable<Shipment> SearchOption(string keyword); 
     }

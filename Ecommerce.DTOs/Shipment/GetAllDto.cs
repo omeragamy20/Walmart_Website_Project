@@ -10,7 +10,7 @@ namespace Ecommerce.DTOs.Shipment
     {
 
        
-            public int ShipmentId { get; set; }
+            public int Id { get; set; }
             public DateTime ShipmentDate { get; set; }
             public string Address { get; set; }
             public string City { get; set; }

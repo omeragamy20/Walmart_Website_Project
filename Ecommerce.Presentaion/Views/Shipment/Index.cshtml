@@ -3,7 +3,7 @@
 <h1>Shipments</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-controller="Shipment" asp-action="Create">Create New</a>
 </p>
 
 <table class="table">
@@ -23,8 +23,8 @@
                 <td>@shipment.Address</td>
                 <td>@shipment.City</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@shipment.ShipmentId">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@shipment.ShipmentId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@shipment.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@shipment.Id">Delete</a>
                 </td>
             </tr>
         }

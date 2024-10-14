@@ -11,8 +11,7 @@ namespace Ecommerce.Models
 {
     public class Shipment : BaseEntity<int>
     {
-        [Key]
-        public int ShipmentId { get; set; }
+     
 
         public DateTime ShipmentDate { get; set; }
 

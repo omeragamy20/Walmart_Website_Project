@@ -1,5 +1,8 @@
-//using Ecommerce.Application.Mapper;
+﻿//using Ecommerce.Application.Mapper;
+using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Services;
 using Ecommerce.Context;
+using Ecommerce.Infrastructure;
 using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +25,10 @@ namespace Ecommerce.Presentaion
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<EcommerceContext>();
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddScoped<IShaipmentRepository, ShaipmentRepository>();
+            builder.Services.AddScoped<IShipmentService, ShipmentService>();
+            //builder.Services.AddScoped<IShaipmentRepository, ShaipmentRepository>();
+            //builder.Services.AddScoped<IShipmentService, ShipmentService>();
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 
@@ -42,6 +48,9 @@ namespace Ecommerce.Presentaion
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            
+
 
             app.UseRouting();
 

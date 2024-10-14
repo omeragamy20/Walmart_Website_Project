@@ -6,6 +6,9 @@ using Ecommerce.Application.Services;
 
 namespace Ecommerce.Web.Controllers
 {
+
+
+   
     public class ShipmentController : Controller
     {
         private readonly IShipmentService _shipmentService;
@@ -29,14 +32,14 @@ namespace Ecommerce.Web.Controllers
         }
 
         // POST: Shipment/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
+        [HttpPost] 
+       [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Create(CreateDto shipmentDto)
         {
             if (ModelState.IsValid)
             {
                 await _shipmentService.CreateShipmentAsync(shipmentDto);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(shipmentDto);
         }
@@ -52,7 +55,7 @@ namespace Ecommerce.Web.Controllers
             return View(shipment);
         }
 
-        // POST: Shipment/Edit/5
+        // POST: Shipment/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(CreateDto CreateDto)
@@ -65,7 +68,7 @@ namespace Ecommerce.Web.Controllers
             return View(CreateDto);
         }
 
-        // GET: Shipment/Delete/5
+        // GET: Shipment/Delete
         public async Task<IActionResult> Delete(int id)
         {
             var shipment = await _shipmentService.GetShipmentByIdAsync(id);
@@ -76,7 +79,7 @@ namespace Ecommerce.Web.Controllers
             return View(shipment);
         }
 
-        // POST: Shipment/Delete/5
+        // POST: Shipment/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

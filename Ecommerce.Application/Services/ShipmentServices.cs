@@ -12,10 +12,10 @@ namespace Ecommerce.Application.Services
 {
     public class ShipmentService : IShipmentService
     {
-        private readonly IGenericReposatiry<Shipment, int> _shipmentRepository;
+        private readonly IShaipmentRepository _shipmentRepository;
         private readonly IMapper _mapper;
 
-        public ShipmentService(IGenericReposatiry<Shipment, int> shipmentRepository, IMapper mapper)
+        public ShipmentService(IShaipmentRepository shipmentRepository, IMapper mapper)
         {
             _shipmentRepository = shipmentRepository;
             _mapper = mapper;
