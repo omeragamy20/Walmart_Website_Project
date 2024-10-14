@@ -8,20 +8,20 @@ namespace Ecommerce.DTOs.shared
 {
     public class ResultView<T>
     {
-        public bool Success { get; set; }
-        public T? Data { get; set; }
-        public string? ErrorMessage { get; set; }
+        public bool IsSuccess { get; set; }
+        public T? Entity { get; set; }
+        public string? Message { get; set; }
 
-        public ResultView(T data)
-        {
-            Success = true;
-            Data = data;
-        }
+        //public ResultView(T data)
+        //{
+        //    Success = true;
+        //    Data = data;
+        //}
 
-        public ResultView(string errorMessage)
-        {
-            Success = false;
-            ErrorMessage = errorMessage;
-        }
+        //public ResultView(string errorMessage)
+        //{
+        //    Success = false;
+        //    ErrorMessage = errorMessage;
+        //}
     }
 }

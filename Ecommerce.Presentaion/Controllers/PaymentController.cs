@@ -83,7 +83,7 @@ namespace Ecommerce.Web.Controllers
         public async Task<IActionResult> DeleteConfirmed(int  id)
         {
             var payment = await _paymentService.GetOneAsync(id);
-            await _paymentService.DeletePaymentAsync(payment.Data); // Assumed method to delete payment by ID
+            await _paymentService.DeletePaymentAsync(payment.Entity); // Assumed method to delete payment by ID
             return RedirectToAction(nameof(Index));
         }
     }

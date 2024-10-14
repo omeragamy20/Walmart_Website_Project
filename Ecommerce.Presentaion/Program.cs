@@ -5,7 +5,6 @@ using Ecommerce.Application.Contracts;
 using Ecommerce.Application.Mappper;
 using Ecommerce.Application.Services;
 using Ecommerce.Context;
-using Ecommerce.Presentaion.Data;
 using Ecommerce.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
