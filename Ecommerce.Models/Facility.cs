@@ -19,6 +19,11 @@ namespace Ecommerce.Models
         public string Name_ar { get; set; }
         
       public ICollection<ProductFacility>? ProductFacilities { get; set; }
+
+        public ICollection<subCatFacility>? subCatFacility { get; set; }
+
+
+
         //[ForeignKey("product")]
         //public int? ProductId { get; set; } 
 

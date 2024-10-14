@@ -29,6 +29,7 @@ namespace Ecommerce.Context
         public DbSet<Rate> Rates { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<subCatFacility> subCatFacility { get; set; }
 
         //public DbSet<Status> Statuses { get; set; }
 

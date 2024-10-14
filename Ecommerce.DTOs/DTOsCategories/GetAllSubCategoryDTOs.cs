@@ -14,5 +14,7 @@ namespace Ecommerce.DTOs.DTOsCategories
         public string? Name_ar { get; set; }
         public string? CategryName_en { get; set; }
         public string? CategryName_ar { get; set; }
+        public int? CategoryId { get; set; }
+
     }
 }

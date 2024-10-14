@@ -11,8 +11,6 @@ namespace Ecommerce.Models
 {
     public class SubCategory : BaseEntity<int>
     {
-        //[Key]
-        //public int SubcategoryId { get; set; }
 
         [Required, MaxLength(100)]
         public string Name_en { get; set; }
@@ -25,6 +23,8 @@ namespace Ecommerce.Models
         public Category? Category { get; set; }
 
         public ICollection<ProductSubCategory>? productSubCategory { get; set; }
+        public ICollection<subCatFacility>? subCatFacility { get; set; }
+      
     }
 
 

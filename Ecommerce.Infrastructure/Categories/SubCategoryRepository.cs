@@ -25,7 +25,8 @@ namespace Ecommerce.Infrastructure.Categories
                 Name_ar = sc.Name_ar,
                 Name_en = sc.Name_en,
                 CategryName_ar = sc.Category!.Name_ar,
-                CategryName_en = sc.Category!.Name_en
+                CategryName_en = sc.Category!.Name_en,
+                CategoryId=sc.CategoryId
             });
             return Task.FromResult(allsebcategory);
         }

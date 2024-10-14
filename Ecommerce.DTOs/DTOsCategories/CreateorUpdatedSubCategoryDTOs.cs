@@ -14,7 +14,7 @@ namespace Ecommerce.DTOs.DTOsCategories
         [Required, MaxLength(100)]
         public string Name_en { get; set; }
         [Required, MaxLength(100)]
-        public string Name_ar { get; set; }
-        public int CategryId { get; set; }
+        public string? Name_ar { get; set; }
+        public int CategoryId { get; set; }
     }
 }
