@@ -1,11 +1,15 @@
 using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Infrastructure.Categories;
-using Ecommerce.Application.Mappper;
 using Ecommerce.Application.Services.ServicesCategories;
+using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Mappper;
+using Ecommerce.Application.Services;
 using Ecommerce.Context;
-using Ecommerce.Presentaion.Data;
+using Ecommerce.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
+
 
 namespace Ecommerce.Presentaion
 {
@@ -19,7 +23,6 @@ namespace Ecommerce.Presentaion
             builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
             builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
             builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
-            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 
             // Add services to the container.
@@ -32,9 +35,11 @@ namespace Ecommerce.Presentaion
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<EcommerceContext>();
             builder.Services.AddControllersWithViews();
-
-            //Auto Fac==> add scope for classess 
-            //Categories
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
+            builder.Services.AddScoped<IFacillityService, FacilityService>();
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 
             var app = builder.Build();

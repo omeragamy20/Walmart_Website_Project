@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-//using NetSohag.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -82,10 +81,6 @@ namespace Ecommerce.Context
             }
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
-
-
-
-
 
     }
    

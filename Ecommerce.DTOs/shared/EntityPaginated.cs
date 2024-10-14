@@ -9,6 +9,7 @@ namespace Ecommerce.DTOs.shared
     public class EntityPaginated<T>
     {
         public List<T> Data { get; set; }
+        public int count { get; set; }
         public int Count { get; set; }
     }
 }

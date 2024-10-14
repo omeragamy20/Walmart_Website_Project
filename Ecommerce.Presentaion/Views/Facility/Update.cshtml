@@ -1,0 +1,27 @@
+﻿@model FacilityDTO
+
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All">
+    </div>
+    <div class="form-group" hidden>
+        <label asp-for="Id"></label>
+        <input class="form-control" asp-for="Id">
+    </div>
+    <div>
+        <label asp-for="Name_en"></label>
+        <input asp-for="Name_en" class="form-control" />
+        <span asp-validation-for="Name_en" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Name_ar"></label>
+        <input asp-for="Name_ar" class="form-control" />
+        <span asp-validation-for="Name_ar" style="color:red"></span>
+    </div>
+    <button class="btn btn-outline-success" type="submit"> Create </button>
+</form>
+@section Scripts
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}

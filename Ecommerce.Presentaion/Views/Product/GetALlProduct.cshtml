@@ -1,0 +1,35 @@
+﻿@model List<GetAllproductDTO>
+
+
+<a class="btn btn-outline-primary" asp-action="Create">Create One</a>
+<br />
+</br>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Title_en</th>
+            <th scope="col">Title_ar</th>
+            <th scope="col">Description_en</th>
+            <th scope="col">Description_ar</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model){
+        <tr>
+            <th scope="row">@p.Title_en</th>
+            <td>@p.Title_ar</td>
+            <td>@p.Description_en</td>
+            <td>@p.Description_ar</td>
+            <td>@p.Price</td>
+            <td>@p.Stock</td>
+            <td>
+                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
+                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

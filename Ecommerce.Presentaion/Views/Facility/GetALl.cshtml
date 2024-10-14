@@ -1,0 +1,28 @@
+﻿@model List<FacilityDTO>
+
+
+<a class="btn btn-outline-primary" asp-action="Create">Create One</a>
+<br />
+</br>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name_en</th>
+            <th scope="col">Name_ar</th>          
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <th scope="row">@p.Name_en</th>
+                <td>@p.Name_ar</td>             
+                <td>
+                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
+                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

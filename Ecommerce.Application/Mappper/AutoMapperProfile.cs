@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Ecommerce.DTOs.DTOsCategories;
+using Ecommerce.DTOs.Facility;
+using Ecommerce.DTOs.Product;
 using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,11 @@ namespace Ecommerce.Application.Mappper
             CreateMap<GetAllCategoryDTOs,Category>().ReverseMap();
             CreateMap<CreateorUpdatedSubCategoryDTOs,SubCategory>().ReverseMap();
             CreateMap<GetAllSubCategoryDTOs, SubCategory>().ReverseMap();
+            CreateMap<CreateAndUpdateProductDTO, Product>().ReverseMap();
+            CreateMap<GetAllproductDTO, Product>().ReverseMap();
+            CreateMap<GetAllproductEnDTO, Product>().ReverseMap();
+            CreateMap<GetAllProductArDTO, Product>().ReverseMap();
+            CreateMap<FacilityDTO, Facility>().ReverseMap();
         }
     }
 }
