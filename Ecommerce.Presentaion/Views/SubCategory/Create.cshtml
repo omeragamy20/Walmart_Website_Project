@@ -1,0 +1,56 @@
+﻿@model Ecommerce.DTOs.DTOsCategories.CreateorUpdatedSubCategoryDTOs
+
+@{
+    ViewData["Title"] = "Create";
+    SelectList catogories = new SelectList(ViewBag.Categories, "Id", "Name_en");
+    // SelectList items = new SelectList(ViewBag.Authores, "Id", "FirstName");
+
+}
+
+<h1>New SubCategory</h1>
+
+@* <h4>New SubCategory</h4> *@
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display:none">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name_en" class="control-label"></label>
+                <input asp-for="Name_en" class="form-control" />
+                <span asp-validation-for="Name_en" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Name_ar" class="control-label"></label>
+                <input asp-for="Name_ar" class="form-control" />
+                <span asp-validation-for="Name_ar" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="CategoryId">Category</label>
+                <select asp-for="CategoryId" asp-items="catogories"></select>
+                <span asp-validation-for="CategoryId" style="color:red"></span>
+             </div>
+            <br />
+            <div style="display:flex">
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+                &nbsp;&nbsp;
+            <div>
+                <a asp-action="AllSubCategories" class="btn btn-info">Back to List</a>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
