@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Ecommerce.DTOs.Payment.Read_DTO>
+
+<h1>Payments</h1>
+
+<p>
+    <a asp-action="Create">Create New Payment</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Payment Date</th>
+            <th>Payment Method (EN)</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td>@payment.PaymentDate</td>
+                <td>@payment.PaymentMethod_en</td>
+                <td>@payment.Amount</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@payment.PaymentId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@payment.PaymentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

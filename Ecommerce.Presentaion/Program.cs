@@ -1,10 +1,11 @@
-using Ecommerce.Application.Contracts.Categories;
+﻿using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Infrastructure.Categories;
 using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.Application.Contracts;
 using Ecommerce.Application.Mappper;
 using Ecommerce.Application.Services;
 using Ecommerce.Context;
+using Ecommerce.Presentaion.Data;
 using Ecommerce.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -58,6 +59,9 @@ namespace Ecommerce.Presentaion
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            
+
 
             app.UseRouting();
 

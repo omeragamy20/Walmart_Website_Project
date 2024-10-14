@@ -2,6 +2,7 @@
 using Ecommerce.DTOs.DTOsCategories;
 using Ecommerce.DTOs.Facility;
 using Ecommerce.DTOs.Product;
+using Ecommerce.DTOs.Shipment;
 using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Application.Mappper
+namespace Ecommerce.Application.Mapper
 {
     public class AutoMapperProfile : Profile
     {
@@ -24,6 +25,11 @@ namespace Ecommerce.Application.Mappper
             CreateMap<GetAllproductEnDTO, Product>().ReverseMap();
             CreateMap<GetAllProductArDTO, Product>().ReverseMap();
             CreateMap<FacilityDTO, Facility>().ReverseMap();
+            CreateMap<CreateDto, Shipment>().ReverseMap();
+            CreateMap<GetAllDto, Shipment>().ReverseMap();
+            //CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
+            //CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
         }
     }
 }
+
