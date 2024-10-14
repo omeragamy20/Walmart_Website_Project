@@ -73,7 +73,7 @@ namespace Ecommerce.Application.Services
         }
         public async Task<List<GetAllproductEnDTO>> GetAllEnAsync()
         {
-            var data = (await productRebository.GetAllAsync()).Include(f => f.Facilities).Include(i => i.Images); ;
+            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images); ;
 
             var products = mapper.Map<List<GetAllproductEnDTO>>(data);
             return products;
@@ -92,7 +92,7 @@ namespace Ecommerce.Application.Services
             EntityPaginated<GetAllProductArDTO> GetAllResult = new()
             {
                 Data = data,
-                count = c
+                Count = c
             };
             return GetAllResult;
         }
@@ -108,7 +108,7 @@ namespace Ecommerce.Application.Services
         {
            
                 var data = (await productRebository.GetAllAsync())
-                    .Include(f => f.Facilities)
+                    .Include(f => f.ProductFacilities)
                     .Include(i => i.Images)
                     .Where(p => p.Title_en == ProductName || p.Title_ar == ProductName);
 
@@ -122,7 +122,7 @@ namespace Ecommerce.Application.Services
             try
             {
                 var oldone = (await productRebository.GetAllAsync())
-                 .Include(f => f.Facilities)
+                 .Include(f => f.ProductFacilities)
                  .Include(i => i.Images)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
@@ -153,7 +153,7 @@ namespace Ecommerce.Application.Services
         public async Task<List<GetAllProductArDTO>> GetAllArAsync()
         {
 
-            var data = (await productRebository.GetAllAsync()).Include(f => f.Facilities).Include(i => i.Images); ;
+            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images); ;
 
             var products = mapper.Map<List<GetAllProductArDTO>>(data);
             return products;
@@ -172,7 +172,7 @@ namespace Ecommerce.Application.Services
             EntityPaginated<GetAllproductEnDTO> GetAllResult = new()
             {
                 Data = data,
-                count = c
+                Count = c
             };
             return GetAllResult;
         }
@@ -223,7 +223,7 @@ namespace Ecommerce.Application.Services
 
         public async Task<List<GetAllproductDTO>> GetAllAsync()
         {
-            var data = (await productRebository.GetAllAsync()).Include(f => f.Facilities).Include(i => i.Images); ;
+            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images); ;
 
             var products = mapper.Map<List<GetAllproductDTO>>(data);
             return products;

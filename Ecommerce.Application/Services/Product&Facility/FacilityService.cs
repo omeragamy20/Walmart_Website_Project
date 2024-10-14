@@ -78,7 +78,7 @@ namespace Ecommerce.Application.Services
         {
             
                 var data = (await facilityRepository.GetAllAsync())
-                    .Include(p => p.product);
+                    .Include(p => p.ProductFacilities);
                 
                     var facilities = mapper.Map<List<FacilityDTO>>(data);
                     
@@ -102,7 +102,7 @@ namespace Ecommerce.Application.Services
             try
             {
                 var oldone = (await facilityRepository.GetAllAsync())
-                 .Include(p=>p.product)
+                 .Include(p=>p.ProductFacilities)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
                 var updated = await facilityRepository.UpdateAsync(oldone);

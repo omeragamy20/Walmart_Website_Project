@@ -99,7 +99,7 @@ namespace Ecommerce.Application.Services.ServicesCategories
             return returnedcategory;
         }
 
-        //return Pagenation of Category based on page number and count in every page
+        //return Pagenation of Category based on page number and Count in every page
         public async Task<EntityPaginated<GetAllCategoryDTOs>> GetAllCategoriesPaginatedAsync(int pagenumber, int count)
         {
             var paginatedcategory = (await categoryReposatiry.GetAllAsync()).Skip((pagenumber - 1) * count).Take(count)
