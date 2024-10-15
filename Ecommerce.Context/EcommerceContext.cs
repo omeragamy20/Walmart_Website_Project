@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-//using NetSohag.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -29,6 +28,7 @@ namespace Ecommerce.Context
         public DbSet<Rate> Rates { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<subCatFacility> subCatFacility { get; set; }
 
         //public DbSet<Status> Statuses { get; set; }
 
@@ -81,10 +81,6 @@ namespace Ecommerce.Context
             }
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
-
-
-
-
 
     }
    

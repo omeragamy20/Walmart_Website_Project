@@ -1,11 +1,19 @@
 using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Contracts.Categories;
+using Ecommerce.Infrastructure.Categories;
+using Ecommerce.Application.Services.ServicesCategories;
+using Ecommerce.Application.Contracts;
 using Ecommerce.Application.Mappper;
 using Ecommerce.Application.ServicesO;
+using Ecommerce.Application.Services;
 using Ecommerce.Context;
+using Ecommerce.Infrastructure;
 using Ecommerce.Infrastructure;
 using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
+
 
 namespace Ecommerce.Presentaion
 {
@@ -14,6 +22,12 @@ namespace Ecommerce.Presentaion
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddScoped<ICategoryService, CategoryServices>();
+            builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
+            builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
+            builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -25,7 +39,10 @@ namespace Ecommerce.Presentaion
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<EcommerceContext>();
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
+            builder.Services.AddScoped<IFacillityService, FacilityService>();
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
             builder.Services.AddScoped<IOrderService, OrderService>();
@@ -50,12 +67,16 @@ namespace Ecommerce.Presentaion
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            
+
+
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 

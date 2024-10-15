@@ -1,0 +1,41 @@
+﻿@using Ecommerce.DTOs.DTOsCategories
+@* @model GetAllCategoryDTOs *@
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>Categories</h1>
+@* <button class="btn btn-primary"> <a href="Category/CreateCategory"> New Category</a> </button> *@
+<a class="btn btn-primary" href="CreateCategory">New Category</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name_En</th>
+            <th scope="col">Name_Ar</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+        }
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <th scope="row">@(++i)</th>
+                <td>@(cat.Name_en)</td>
+                <td>@(cat.Name_ar)</td>
+                <td>
+                    <a class="btn btn-primary btn-s" asp-action="Updatedcategory" asp-route-id="@(cat.Id)"> Updated</a>
+                    &nbsp;&nbsp;
+                    <a asp-action="DeleteCategory" asp-route-id="@(cat.Id)" class="btn btn-danger btn-s">
+                        <span class="glyphicon glyphicon-remove-circle"></span> X
+                    </a>
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>

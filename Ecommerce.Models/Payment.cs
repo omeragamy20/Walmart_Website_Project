@@ -10,8 +10,8 @@ namespace Ecommerce.Models
 {
     public class Payment : BaseEntity<int>
     {
-        //[Key]
-        //public int PaymentId { get; set; }
+        [Key]
+        public int PaymentId { get; set; }
 
         public DateTime PaymentDate { get; set; }
 

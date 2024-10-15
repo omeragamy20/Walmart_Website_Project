@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.DTOs.shared
 {
-    public class ResultView <T> 
+    public class ResultView<T>
     {
-        public T Entity {  get; set; } 
         public bool IsSuccess { get; set; }
-        public string Message { get; set; }
+        public T? Entity { get; set; }
+        public string? Message { get; set; }
+
+        //public ResultView(T data)
+        //{
+        //    Success = true;
+        //    Data = data;
+        //}
+
+        //public ResultView(string errorMessage)
+        //{
+        //    Success = false;
+        //    ErrorMessage = errorMessage;
+        //}
     }
 }

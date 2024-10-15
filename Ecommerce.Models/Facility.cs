@@ -16,11 +16,12 @@ namespace Ecommerce.Models
         
         [Required,MaxLength(100)]
         public string Name_ar { get; set; }
-        
-      
-        [ForeignKey("product")]
-        public int? ProductId { get; set; } 
 
-        public Product? product { get; set; }
+
+        public ICollection<ProductFacility>? ProductFacilities { get; set; }
+        //[ForeignKey("product")]
+        //public int? ProductId { get; set; } 
+
+        //public Product? product { get; set; }
     }
 }

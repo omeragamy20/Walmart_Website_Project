@@ -1,0 +1,31 @@
+﻿@model Ecommerce.DTOs.Payment.Create_DTO
+
+<h1>Edit Payment</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="PaymentId" />
+    <div class="form-group">
+        <label asp-for="PaymentDate"></label>
+        <input asp-for="PaymentDate" class="form-control" />
+        <span asp-validation-for="PaymentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PaymentMethod_en"></label>
+        <input asp-for="PaymentMethod_en" class="form-control" />
+        <span asp-validation-for="PaymentMethod_en" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PaymentMethod_ar"></label>
+        <input asp-for="PaymentMethod_ar" class="form-control" />
+        <span asp-validation-for="PaymentMethod_ar" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
