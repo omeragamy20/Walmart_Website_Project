@@ -1,5 +1,4 @@
-﻿using NetSohag.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,11 +16,6 @@ namespace Ecommerce.Models
         
         [Required,MaxLength(100)]
         public string Name_ar { get; set; }
-        
-      
-        [ForeignKey("product")]
-        public int? ProductId { get; set; } 
-
-        public Product? product { get; set; }
+     
     }
 }

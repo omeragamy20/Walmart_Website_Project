@@ -4,6 +4,7 @@ using Ecommerce.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Context.Migrations
 {
     [DbContext(typeof(EcommerceContext))]
-    partial class EcommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20241012130802_insert InitialData")]
+    partial class insertInitialData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,9 +92,6 @@ namespace Ecommerce.Context.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -148,17 +148,16 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "8db48399-4571-4ca1-9fcc-f3128eda5c48",
+                            ConcurrencyStamp = "4de2d7d0-2adc-4aaf-9646-986e04b27d43",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
-                            FirstName = "admin",
-                            LastName = "admin",
+                            FirstName = "ahmed",
+                            LastName = "bahgat",
                             LockoutEnabled = false,
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB2rUhQxoPJEcEjGIC2isW4N3MYytPV2oeLJHWcBiX+Udhzu7yX/WH+kVZbc28SmFw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFddiojeqMeTCGC47UtYRZgrPNvJKREzEmim3a94V3ZYQPfHH/ReOSXL8RGxnfWu5g==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a42d36c0-0f6d-41fb-92f1-30500acfd879",
+                            SecurityStamp = "a9cccddc-7a78-4fa4-a5b7-ac84eb7b1318",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -788,10 +787,12 @@ namespace Ecommerce.Context.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -835,10 +836,12 @@ namespace Ecommerce.Context.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");

@@ -1,5 +1,6 @@
 using Ecommerce.Application.Mappper;
 using Ecommerce.Context;
+using Ecommerce.Models;
 using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,10 +19,21 @@ namespace Ecommerce.Presentaion
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<EcommerceContext>();
+            //builder.Services.AddDefaultIdentity<Customer>(options => options.SignIn.RequireConfirmedAccount = false)
+            //    .AddRoles<IdentityRole>()
+            //    .AddEntityFrameworkStores<EcommerceContext>();
+            //builder.Services.AddControllersWithViews();
+
+            builder.Services.AddIdentity<Customer, IdentityRole>
+                (options => {
+                    options.SignIn.RequireConfirmedAccount = false;
+              
+                }
+
+                )
+                .AddEntityFrameworkStores<EcommerceContext>() ;
             builder.Services.AddControllersWithViews();
+            builder.Services.AddRazorPages();
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
@@ -45,11 +57,12 @@ namespace Ecommerce.Presentaion
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}/{lang=en_En}");
+                pattern: "{controller=Account}/{action=Login}/{id?}");
             app.MapRazorPages();
 
             app.Run();

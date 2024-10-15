@@ -1,5 +1,4 @@
-﻿using NetSohag.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,9 +20,6 @@ namespace Ecommerce.Models
         [ForeignKey("product")]
         public int ProductID { get; set; }
         public Product product { get; set; }
-        
-        [ForeignKey("facility")]
-        public int FacilityId { get; set; }
-        public Facility facility { get; set; }
+        public ICollection<Facility>?  facilities { get; set; }
     }
 }
