@@ -18,6 +18,13 @@ namespace Ecommerce.DTOs.OrderItemDTOs
         [Range(50, double.MaxValue)]
         public decimal Price { get; set; }
 
+        public decimal TotalPrice { get; set; }
+
+        //public void TotalPricee()
+        //{
+        //    var x = Price * Quantity;
+        //}
+
     }
 
 }

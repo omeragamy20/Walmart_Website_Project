@@ -1,5 +1,8 @@
+using Ecommerce.Application.Contracts;
 using Ecommerce.Application.Mappper;
+using Ecommerce.Application.ServicesO;
 using Ecommerce.Context;
+using Ecommerce.Infrastructure;
 using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +28,10 @@ namespace Ecommerce.Presentaion
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
+            builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+            builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
 
             var app = builder.Build();
 
@@ -49,7 +56,7 @@ namespace Ecommerce.Presentaion
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}/{lang=en_En}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
             app.Run();

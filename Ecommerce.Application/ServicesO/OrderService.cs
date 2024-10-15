@@ -112,6 +112,16 @@ namespace Ecommerce.Application.ServicesO
 
 
 
+
+        public async Task<Order> GetOneOrderAsync(int Id)
+        {
+            var one = await OrderRepo.GetOneAsync(Id);
+                      return one;
+
+        }
+
+
+
         public async Task<ResultView<CreateOrUpdateOrderDTOs>> UpdateAsync(CreateOrUpdateOrderDTOs entity)
         {
 

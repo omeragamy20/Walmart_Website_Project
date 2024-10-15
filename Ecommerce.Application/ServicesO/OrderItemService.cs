@@ -15,9 +15,9 @@ namespace Ecommerce.Application.ServicesO
     public class OrderItemService : IOrderItemService
     {
         private readonly IOrderItemsReposatiry OrderitemRepo;
-        private readonly Mapper Maper;
+        private readonly IMapper Maper;
 
-        public OrderItemService(IOrderItemsReposatiry _OrderitemRepo , Mapper _Maper)
+        public OrderItemService(IOrderItemsReposatiry _OrderitemRepo , IMapper _Maper)
         {
             OrderitemRepo = _OrderitemRepo;
             Maper = _Maper;

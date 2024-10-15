@@ -1,4 +1,5 @@
-﻿using Ecommerce.Context;
+﻿using Ecommerce.Application.Contracts;
+using Ecommerce.Context;
 using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Infrastructure
 {
-    public class OrderReposatiry : GenricReposatiry<Order, int>
+    public class OrderReposatiry : GenricReposatiry<Order, int>,IOrderReposatiry
     {
         public OrderReposatiry(EcommerceContext Context) : base (Context)
         {

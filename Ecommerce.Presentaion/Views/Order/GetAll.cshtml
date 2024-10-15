@@ -1,7 +1,59 @@
-﻿
+﻿@using Ecommerce.DTOs.OrderDTOs
+@model List<GetAllOrderDTOs>
 @{
     ViewData["Title"] = "GetAll";
 }
 
 <h1>GetAll</h1>
 
+<link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+
+<table class="table table-light table-hover">
+    <thead>
+        <tr class="table-info">
+            <th scope="col">Order</th>
+            <th scope="col">Order-Date</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Status</th>
+            <th scope="col">Accept</th>
+            <th scope="col">Cancel</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+        
+        @foreach(var item in Model)
+        {
+
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.OrderDate</td>
+            <td>Ahmed</td>
+            @if(item.Status == 0){
+
+            <td>Pendding</td>
+                    <td><a class="btn btn-outline-info" href="/Approve/@item.Id" role="button">Approve</a></td>
+                    <td> <a class="btn  btn-outline-danger" href="/Cancel/@item.Id" role="button">Cancelled</a></td>
+                }else if (item.Status == 1){
+            <td>Approve</td>
+                    <td><button type="button" class="btn btn-outline-primary" disabled>Disable</button></td>
+                    <td> <a class="btn btn-danger" href="/Cancel/@item.Id" role="button">Cancelled</a></td>
+            }else {
+            <td>Cancelled</td>
+
+                    <td><button type="button" class="btn btn-outline-primary" disabled>Disable</button></td>
+                    <td><button type="button" class="btn btn-outline-danger" disabled>Disable</button></td>
+            }
+           
+               
+        </tr>
+        
+            
+        }
+     
+    </tbody>
+</table>

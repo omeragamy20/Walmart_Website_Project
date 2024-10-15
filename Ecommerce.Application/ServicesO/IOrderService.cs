@@ -1,5 +1,6 @@
 ﻿using Ecommerce.DTOs.OrderDTOs;
 using Ecommerce.DTOs.shared;
+using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Ecommerce.Application.ServicesO
         public Task<ResultView<CreateOrUpdateOrderDTOs>> UpdateAsync(CreateOrUpdateOrderDTOs entity);
         public Task<ResultView<GetAllOrderDTOs>> GetOneAsync(int Id);
 
-
+        public  Task<Order> GetOneOrderAsync(int Id);
         public Task<List<GetAllOrderDTOs>> GetAllAsync();
 
         public Task<GetAllOrderDTOs> DeleteAsync(int Id);
