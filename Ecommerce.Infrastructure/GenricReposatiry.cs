@@ -45,10 +45,10 @@ namespace Ecommerce.Infrastructure
             return Task.FromResult(dbset.Select(p => p));
         }
 
-        //public Task<IQueryable<TEntity>> GetAllWithDeleteAsync()
-        //{
-        //    return Task.FromResult(dbset.Select(p => p));
-        //}
+        public Task<IQueryable<TEntity>> GetAllWithDeleteAsync()
+        {
+            return Task.FromResult(dbset.Select(p => p));
+        }
 
         public ValueTask<TEntity> GetOneAsync(TId Id)
         {

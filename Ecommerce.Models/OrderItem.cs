@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Ecommerce.Models
 {
     public class OrderItem : BaseEntity<int>

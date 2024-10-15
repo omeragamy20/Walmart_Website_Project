@@ -15,10 +15,4 @@
     <ProjectReference Include="..\Ecommerce.Models\Ecommerce.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="DTOS">
-      <HintPath>..\..\DTOS\obj\Debug\net8.0\ref\DTOS.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

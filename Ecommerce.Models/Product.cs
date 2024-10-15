@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-
 namespace Ecommerce.Models
 {
     public class Product : BaseEntity<int>
@@ -32,7 +31,7 @@ namespace Ecommerce.Models
         //public int? SubCategoryId { get; set; }
         //public SubCategory? SubCategory { get; set; }
 
-        public ICollection<Facility>? Facilities { get; set; } = new List<Facility>();
+        public ICollection<ProductFacility>? ProductFacilities { get; set; } = new List<ProductFacility>();
         public ICollection<Rate>? Rates { get; set; }
         
         public ICollection<Images>? Images { get; set; }

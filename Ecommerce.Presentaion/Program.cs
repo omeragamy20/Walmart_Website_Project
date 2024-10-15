@@ -1,3 +1,6 @@
+﻿using Ecommerce.Application.Contracts.Categories;
+using Ecommerce.Infrastructure.Categories;
+using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.Application.Contracts;
 using Ecommerce.Application.Mappper;
 using Ecommerce.Application.Services;
@@ -15,6 +18,12 @@ namespace Ecommerce.Presentaion
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddScoped<ICategoryService, CategoryServices>();
+            builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
+            builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
+            builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -49,6 +58,9 @@ namespace Ecommerce.Presentaion
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            
+
 
             app.UseRouting();
 

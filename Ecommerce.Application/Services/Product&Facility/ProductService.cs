@@ -15,12 +15,12 @@ namespace Ecommerce.Application.Services
 {
     public class ProductService : IProductService
     {
-        public readonly ISubCategoryRepository subCategoryRepository;
+        
         private readonly IProductRepository productRebository;
         private readonly IMapper mapper;
-        public ProductService(ISubCategoryRepository _subCategoryRepository,IProductRepository _productRepository, IMapper _mapper)
+        public ProductService(IProductRepository _productRepository, IMapper _mapper)
         {
-            subCategoryRepository = _subCategoryRepository;
+            
             productRebository = _productRepository;
             mapper = _mapper;
         }
@@ -42,19 +42,7 @@ namespace Ecommerce.Application.Services
                 }
                 else
                 {
-                    var product = mapper.Map<Product>(entity);
-                    foreach (var categoryId in entity.SubCategoryIds)
-                    {
-                        var category = await subCategoryRepository.GetOneAsync(categoryId);
-                        if (category != null)
-                        {
-                            product.productSubCategory.Add(new ProductSubCategory
-                            {
-                                Product = product,
-                                SubCategory = category
-                            });                
-                        }
-                    }
+                    var product = mapper.Map<Product>(entity);                   
                     var success = (await productRebository.CreateAsync(product));
                     await productRebository.SaveChanges();
                     var returnProduct = mapper.Map<CreateAndUpdateProductDTO>(success);
@@ -79,13 +67,6 @@ namespace Ecommerce.Application.Services
                 return result;
             }
         }
-        public async Task<List<GetAllSubCategoryDTOs>> GetAllSubCategoriesAsync()
-        {
-            var AllsubCategories = (await subCategoryRepository.GetAllSubcategoryAsync()).ToList();
-            var returnedsubcategory = mapper.Map<List<GetAllSubCategoryDTOs>>(AllsubCategories);
-            return returnedsubcategory;
-        }
-
         public async Task DeleteAsync(int id)
         {
             var oldone = (await productRebository.GetOneAsync(id));
@@ -95,7 +76,6 @@ namespace Ecommerce.Application.Services
         public async Task<List<GetAllproductEnDTO>> GetAllEnAsync()
         {
             var data = (await productRebository.GetAllAsync())
-                .Include(f => f.Facilities)
                 .Include(i => i.Images)
                 .Include(s => s.productSubCategory); 
 
@@ -116,7 +96,7 @@ namespace Ecommerce.Application.Services
             EntityPaginated<GetAllProductArDTO> GetAllResult = new()
             {
                 Data = data,
-                count = c
+                Count = c
             };
             return GetAllResult;
         }
@@ -132,7 +112,7 @@ namespace Ecommerce.Application.Services
         {
            
                 var data = (await productRebository.GetAllAsync())
-                    .Include(f => f.Facilities)
+                    .Include(f => f.ProductFacilities)
                     .Include(i => i.Images)
                     .Include(s => s.productSubCategory)
                     .Where(p => p.Title_en == ProductName || p.Title_ar == ProductName);
@@ -147,7 +127,7 @@ namespace Ecommerce.Application.Services
             try
             {
                 var oldone = (await productRebository.GetAllAsync())
-                 .Include(f => f.Facilities)
+                 .Include(f => f.ProductFacilities)
                  .Include(i => i.Images)
                  .Include(s=>s.productSubCategory)
                  .FirstOrDefault(p => p.Id == entity.Id);
@@ -179,7 +159,7 @@ namespace Ecommerce.Application.Services
         public async Task<List<GetAllProductArDTO>> GetAllArAsync()
         {
 
-            var data = (await productRebository.GetAllAsync()).Include(f => f.Facilities).Include(i => i.Images); ;
+            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images); ;
 
             var products = mapper.Map<List<GetAllProductArDTO>>(data);
             return products;
@@ -198,7 +178,7 @@ namespace Ecommerce.Application.Services
             EntityPaginated<GetAllproductEnDTO> GetAllResult = new()
             {
                 Data = data,
-                count = c
+                Count = c
             };
             return GetAllResult;
         }
@@ -249,7 +229,7 @@ namespace Ecommerce.Application.Services
 
         public async Task<List<GetAllproductDTO>> GetAllAsync()
         {
-            var data = (await productRebository.GetAllAsync()).Include(f => f.Facilities).Include(i => i.Images); ;
+            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images); ;
 
             var products = mapper.Map<List<GetAllproductDTO>>(data);
             return products;
