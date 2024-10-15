@@ -15,15 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Context", "..\Eco
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Application", "..\Ecommerce.Application\Ecommerce.Application.csproj", "{E8B8A813-64EB-4958-A433-F2F6ECBA0F50}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E05EA5A8-0E93-475B-8688-94859ADCF36A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95E331B0-9E6A-4F71-B7A9-E6FFDB36C3F2}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\Presentaions\Controllers\BookController.cs = ..\..\Presentaions\Controllers\BookController.cs
-		..\..\Application\Services\BookServices.cs = ..\..\Application\Services\BookServices.cs
-		..\..\Presentaions\Views\Book\Create.cshtml = ..\..\Presentaions\Views\Book\Create.cshtml
-		..\..\Presentaions\Views\Book\getAll.cshtml = ..\..\Presentaions\Views\Book\getAll.cshtml
-		..\..\Application\Services\IBookServices.cs = ..\..\Application\Services\IBookServices.cs
-		..\..\Presentaions\Views\Book\Update.cshtml = ..\..\Presentaions\Views\Book\Update.cshtml
-		..\..\DTOS\Shared\ViewResult.cs = ..\..\DTOS\Shared\ViewResult.cs
+		..\..\Day3_ASP\Controllers\BookController.cs = ..\..\Day3_ASP\Controllers\BookController.cs
+		..\..\Day3_ASP\Views\Book\createupdate.cshtml = ..\..\Day3_ASP\Views\Book\createupdate.cshtml
 	EndProjectSection
 EndProject
 Global

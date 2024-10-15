@@ -7,7 +7,7 @@ namespace Ecommerce.Presentaion.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService productService;
-
+        
         public ProductController(IProductService _productService)
         {
             productService = _productService;
@@ -24,7 +24,9 @@ namespace Ecommerce.Presentaion.Controllers
         }
         public IActionResult Create()
         {
+
             CreateAndUpdateProductDTO productDTO = new CreateAndUpdateProductDTO();
+            ViewBag.SubCategory = productService.GetAllSubCategoriesAsync();
             return View(productDTO);
         }
         [HttpPost]

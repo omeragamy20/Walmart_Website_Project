@@ -22,5 +22,6 @@ namespace Ecommerce.Application.Services
          Task<CreateAndUpdateProductDTO> GetById(int id);
          Task DeleteAsync(int id);
          Task<ResultView<List<GetAllproductDTO>>> GetPrdBySubCat(int id);
+        public Task<List<GetAllSubCategoryDTOs>> GetAllSubCategoriesAsync();
     }
 }

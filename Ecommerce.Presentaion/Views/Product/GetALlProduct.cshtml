@@ -1,6 +1,4 @@
 ﻿@model List<GetAllproductDTO>
-
-
 <a class="btn btn-outline-primary" asp-action="Create">Create One</a>
 <br />
 </br>
@@ -13,6 +11,7 @@
             <th scope="col">Description_ar</th>
             <th scope="col">Price</th>
             <th scope="col">Stock</th>
+            <th scope="col">SubCategory</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -25,6 +24,7 @@
             <td>@p.Description_ar</td>
             <td>@p.Price</td>
             <td>@p.Stock</td>
+            <td>@p.productSubCategory.Select(c=>c.SubCategory.Name)</td>
             <td>
                     <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
                     <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>

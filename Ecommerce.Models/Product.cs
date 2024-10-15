@@ -27,14 +27,14 @@ namespace Ecommerce.Models
 
        
         public int Stock { get; set; }
-
+        public ICollection<ProductSubCategory>? productSubCategory { get; set; }
         //[ForeignKey("SubCategory")]
         //public int? SubCategoryId { get; set; }
         //public SubCategory? SubCategory { get; set; }
 
         public ICollection<Facility>? Facilities { get; set; } = new List<Facility>();
         public ICollection<Rate>? Rates { get; set; }
-        public ICollection<ProductSubCategory>? productSubCategory { get; set; }
+        
         public ICollection<Images>? Images { get; set; }
         public ICollection<OrderItem>? OrderItems { get; set; }
         public ICollection<Favorite>? Favorites { get; set; }

@@ -21,8 +21,9 @@ namespace Ecommerce.Models
         public int? CategoryId { get; set; }
 
         public Category? Category { get; set; }
-
         public ICollection<ProductSubCategory>? productSubCategory { get; set; }
+        public ICollection<subCatFacility>? FacilitySubCategory { get; set; }
+        
     }
 
 
