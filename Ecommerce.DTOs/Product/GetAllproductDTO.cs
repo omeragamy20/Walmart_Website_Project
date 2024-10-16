@@ -16,14 +16,8 @@ namespace Ecommerce.DTOs.Product
         public string Description_en { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
-        public ICollection<ProductSubCategory>? productSubCategory { get; set; }
-    }
-    public class GetAllSubCategoryDTOs
-    {
-        public int? Id { get; set; }
-        public string? Name_en { get; set; }
-        public string? Name_ar { get; set; }
-        public string? CategryName_en { get; set; }
-        public string? CategryName_ar { get; set; }
+        public List<int>? SubCategoryIds { get; set; }
+        public List<string>? SubCategoryNames { get; set; } = new List<string>();
+        public List<string> ImageUrls { get; set; } = new List<string>();
     }
 }

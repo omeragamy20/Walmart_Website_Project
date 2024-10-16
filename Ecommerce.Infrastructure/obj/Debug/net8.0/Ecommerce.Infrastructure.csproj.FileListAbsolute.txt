@@ -1,4 +1,5 @@
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.deps.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.runtimeconfig.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.dll
@@ -19,4 +20,5 @@ C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\refint\Ecommerce.Infrastructure.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.genruntimeconfig.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\ref\Ecommerce.Infrastructure.dll

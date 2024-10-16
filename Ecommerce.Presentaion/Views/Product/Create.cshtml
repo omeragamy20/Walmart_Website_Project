@@ -1,9 +1,9 @@
 ﻿@model CreateAndUpdateProductDTO
 
 @{
-   var items = ViewBag.SubCategory != null 
-        ? new SelectList(ViewBag.SubCategory, "Id", "Name") 
-        : new SelectList(Enumerable.Empty<object>(), "Id", "Name");
+   var items = ViewBag.subcategories != null 
+        ? new SelectList(ViewBag.subcategories, "Id", "Name_en") 
+        : new SelectList(Enumerable.Empty<object>(), "Id", "Name_en");
     }
 <h4>Create New Product</h4>
 <form method="post" enctype="multipart/form-data">
@@ -39,10 +39,16 @@
         <input asp-for="Stock" class="form-control" />
         <span asp-validation-for="Stock" style="color:red"></span>
     </div>
-    <div>
-        <label asp-for="SelectedSubCategoryId"></label>
-        <select asp-for="SelectedSubCategoryId" class="form-control" asp-items="items"></select>
+    <div class="form-group">
+        <label>Upload Images</label>
+        <input asp-for="Images" type="file"  multiple accept="image/*" class="form-control" />
+        <span asp-validation-for="Images" class="text-danger"></span>
     </div>
+    <div>
+        <label asp-for="SubCategoryIds"></label>
+        <select asp-for="SubCategoryIds" class="form-control" asp-items="items"></select>
+    </div>
+    
     <button class="btn btn-outline-success" type="submit"> Create </button>
 </form>
 @section Scripts

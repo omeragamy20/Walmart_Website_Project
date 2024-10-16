@@ -11,8 +11,4 @@ namespace Ecommerce.Application.Contracts
     {
         public Task<List<Product>> GetPrdBySubCat(int id);
     }
-    public interface ISubCategoryRepository : IGenericReposatiry<SubCategory, int>
-    {
-        public Task<IQueryable<SubCategory>> GetAllSubcategoryAsync();
-    }
 }

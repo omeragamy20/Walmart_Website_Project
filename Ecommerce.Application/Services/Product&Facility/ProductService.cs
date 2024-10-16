@@ -42,7 +42,16 @@ namespace Ecommerce.Application.Services
                 }
                 else
                 {
-                    var product = mapper.Map<Product>(entity);                   
+                    var product = mapper.Map<Product>(entity);
+                    var image = new Images()
+                    {
+                        ProductId = product.Id
+                    };
+                   
+                    product.productSubCategory = entity.SubCategoryIds?.Select(id => new ProductSubCategory
+                    {
+                        SubcategoryId = id
+                    }).ToList();
                     var success = (await productRebository.CreateAsync(product));
                     await productRebository.SaveChanges();
                     var returnProduct = mapper.Map<CreateAndUpdateProductDTO>(success);
@@ -115,6 +124,7 @@ namespace Ecommerce.Application.Services
                     .Include(f => f.ProductFacilities)
                     .Include(i => i.Images)
                     .Include(s => s.productSubCategory)
+                    
                     .Where(p => p.Title_en == ProductName || p.Title_ar == ProductName);
 
                    var product = mapper.Map<List<GetAllproductDTO>>(data);
@@ -228,10 +238,12 @@ namespace Ecommerce.Application.Services
         }
 
         public async Task<List<GetAllproductDTO>> GetAllAsync()
-        {
-            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images); ;
-
+       {
+            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images)
+                .Include(ps => ps.productSubCategory).ThenInclude(s => s.SubCategory).ToList();
+               
             var products = mapper.Map<List<GetAllproductDTO>>(data);
+           
             return products;
         }
     }

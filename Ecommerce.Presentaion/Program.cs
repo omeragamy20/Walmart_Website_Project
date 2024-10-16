@@ -8,6 +8,9 @@ using Ecommerce.Context;
 using Ecommerce.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Ecommerce.Application.Contracts.product_Facillity;
+using Ecommerce.Application.Services.Product_Facility;
+using Ecommerce.Infrastructure.Product_Faciity;
 
 
 
@@ -39,6 +42,8 @@ namespace Ecommerce.Presentaion
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
             builder.Services.AddScoped<IFacillityService, FacilityService>();
+            builder.Services.AddScoped<IImageRepository, ImageRepository>();
+            builder.Services.AddScoped<IImageService, ImageService>();
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 

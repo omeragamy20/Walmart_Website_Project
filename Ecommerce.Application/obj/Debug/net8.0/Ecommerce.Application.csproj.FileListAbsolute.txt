@@ -1,7 +1,6 @@
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.deps.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\DTOS.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.DTOs.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Models.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.DTOs.pdb

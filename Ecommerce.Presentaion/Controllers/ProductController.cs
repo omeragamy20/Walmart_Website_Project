@@ -1,4 +1,6 @@
 ﻿using Ecommerce.Application.Services;
+using Ecommerce.Application.Services.Product_Facility;
+using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.DTOs.Product;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,10 +9,13 @@ namespace Ecommerce.Presentaion.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService productService;
-        
-        public ProductController(IProductService _productService)
+        private readonly ISubCategoryServices subCategoryService;
+        private readonly IImageService imageService;
+        public ProductController(ISubCategoryServices _subCategoryService,IProductService _productService, IImageService _imageService)
         {
             productService = _productService;
+            subCategoryService = _subCategoryService;
+            imageService = _imageService;
         }
       
         public IActionResult Index()
@@ -20,23 +25,27 @@ namespace Ecommerce.Presentaion.Controllers
         public async Task<IActionResult> GetALlProduct()
         {
             var products = await productService.GetAllAsync();
+           
             return View(products);
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-
+            var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
             CreateAndUpdateProductDTO productDTO = new CreateAndUpdateProductDTO();
-            ViewBag.SubCategory = productService.GetAllSubCategoriesAsync();
+            ViewBag.subcategories=subcategories;
             return View(productDTO);
         }
         [HttpPost]
-        public async Task<IActionResult> Create(CreateAndUpdateProductDTO productDTO)
+        public async Task<IActionResult> Create(CreateAndUpdateProductDTO productDTO, List<IFormFile> images)
         {
             if (ModelState.IsValid)
             {
+
                 var res=await productService.CreateAsync(productDTO);
+               
                 if (res.IsSuccess)
                 {
+                    await imageService.UploadImagesAsync(images, productDTO.Id);
                     return RedirectToAction("GetALlProduct");
                 }
                 return RedirectToAction("GetALlProduct");
@@ -49,6 +58,8 @@ namespace Ecommerce.Presentaion.Controllers
         public async Task<IActionResult> Update(int id)
         {
             var product = (await productService.GetById(id));
+            var subcategories = (await subCategoryService.GetAllSubCategoriesAsync());
+            ViewBag.subcategories = subcategories;
             return View(product);
         }
 
@@ -64,10 +75,10 @@ namespace Ecommerce.Presentaion.Controllers
                 }
                 return RedirectToAction("GetALlProduct");
             }
-            else
-            {
-                return View(productDTO);
-            }
+            var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
+            ViewBag.subcategories = subcategories;
+            return View(productDTO);
+            
         }
         public async Task<IActionResult> Delete(int id)
         {

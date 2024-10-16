@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Ecommerce.DTOs.Product
 {
@@ -24,7 +25,12 @@ namespace Ecommerce.DTOs.Product
         [Range(10,50)]
         public decimal Price { get; set; }
         public int Stock { get; set; }
-        public List<int> SubCategoryIds { get; set; }
+        //public IFormFile? ImageFile { get; set; }
+        //public ICollection<Images>? Images { get; set; }
+        public List<int>? SubCategoryIds { get; set; }
+        public List<string> ImagesUrl { get; set; }
+        public List<IFormFile>? Images { get; set; } = new List<IFormFile>();
+        public ICollection<ProductSubCategory>? productSubCategory { get; set; }
 
     }
 }

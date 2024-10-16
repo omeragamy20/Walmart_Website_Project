@@ -18,13 +18,6 @@ namespace Ecommerce.Infrastructure
         {
             Context = _Context;
         }
-        public async Task<Product> GetOneAsync(int Id)
-        {
-            return await Context.Products
-                  .Include(s => s.productSubCategory)
-                  .ThenInclude(s => s.SubCategory)
-                  .FirstOrDefault(p => p.Id == Id);
-        }
         public async Task<List<Product>> GetPrdBySubCat(int id)
         {
            return await Context.ProductSubCategories.Where(p=>p.Id == id).
