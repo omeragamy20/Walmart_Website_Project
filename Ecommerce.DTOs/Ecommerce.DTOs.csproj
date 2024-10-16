@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ecommerce.Models\Ecommerce.Models.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
   </ItemGroup>
 
 </Project>

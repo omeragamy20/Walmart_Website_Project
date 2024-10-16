@@ -21,6 +21,7 @@ namespace Ecommerce.Models
 
         [Required, MaxLength(250)]
         public string Address { get; set; }
+        public string? Image { get; set; }
 
         public ICollection<Order>? Orders { get; set; }
         public ICollection<Shipment>? Shipments { get; set; }

@@ -4,6 +4,7 @@ using Ecommerce.DTOs.DTOsFavoritandRate;
 using Ecommerce.DTOs.Facility;
 using Ecommerce.DTOs.Product;
 using Ecommerce.DTOs.Shipment;
+using Ecommerce.DTOs.CustomerDto;
 using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,10 @@ namespace Ecommerce.Application.Mapper
             CreateMap<GetAllRateDTO,Rate>().ReverseMap();
             //CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
             //CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
+            CreateMap< CreateAdminDto , Customer>().ReverseMap();
+            CreateMap< GetAllUsersDto , Customer>().ReverseMap();
+             CreateMap<GetAdminDto , Customer>().ReverseMap();
+             CreateMap<UpdataAdminDto , Customer>().ReverseMap();
         }
     }
 }

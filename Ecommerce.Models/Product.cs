@@ -23,8 +23,6 @@ namespace Ecommerce.Models
 
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
-
-       
         public int Stock { get; set; }
 
         //[ForeignKey("SubCategory")]
