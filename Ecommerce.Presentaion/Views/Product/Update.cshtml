@@ -1,5 +1,9 @@
 ﻿@model CreateAndUpdateProductDTO
-
+@{
+    var items = ViewBag.subcategories != null
+         ? new SelectList(ViewBag.subcategories, "Id", "Name_en")
+         : new SelectList(Enumerable.Empty<object>(), "Id", "Name_en");
+}
 
 <form method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All">
@@ -39,6 +43,10 @@
         <label asp-for="Stock"></label>
         <input asp-for="Stock" class="form-control" />
         <span asp-validation-for="Stock" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="SubCategoryIds"></label>
+        <select asp-for="SubCategoryIds" class="form-control" asp-items="items"></select>
     </div>
     <button class="btn btn-outline-success" type="submit"> Update </button>
 </form>

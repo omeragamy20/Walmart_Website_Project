@@ -10,6 +10,9 @@ using Ecommerce.Models;
 using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Ecommerce.Application.Contracts.product_Facillity;
+using Ecommerce.Application.Services.Product_Facility;
+using Ecommerce.Infrastructure.Product_Faciity;
 
 
 
@@ -51,6 +54,14 @@ namespace Ecommerce.Presentaion
                 )
                 .AddEntityFrameworkStores<EcommerceContext>() ;
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
+            builder.Services.AddScoped<IFacillityService, FacilityService>();
+            builder.Services.AddScoped<IImageRepository, ImageRepository>();
+            builder.Services.AddScoped<IImageService, ImageService>();
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
             builder.Services.AddRazorPages();
 
             var app = builder.Build();

@@ -12,8 +12,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Context.Migrations
 {
     [DbContext(typeof(EcommerceContext))]
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.Designer.cs
     [Migration("20241016164603_the first of first migration")]
     partial class thefirstoffirstmigration
+========
+    [Migration("20241015140447_create")]
+    partial class create
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1138,6 +1143,14 @@ namespace Ecommerce.Context.Migrations
                     b.Navigation("Shipments");
                 });
 
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.Designer.cs
+========
+            modelBuilder.Entity("Ecommerce.Models.Facility", b =>
+                {
+                    b.Navigation("ProductFacilities");
+                });
+
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.Designer.cs
             modelBuilder.Entity("Ecommerce.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");

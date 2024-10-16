@@ -14,7 +14,8 @@ namespace Ecommerce.Infrastructure.Categories
     public class SubCategoryRepository:GenricReposatiry<SubCategory,int>,ISubCategoryRepository
     {
         private readonly EcommerceContext _Context;
-        public SubCategoryRepository(EcommerceContext context):base(context) {
+        public SubCategoryRepository(EcommerceContext context):base(context)
+        {
             _Context = context;
         }
         public Task<IQueryable<GetAllSubCategoryDTOs>> GetAllSubcategoryAsync()

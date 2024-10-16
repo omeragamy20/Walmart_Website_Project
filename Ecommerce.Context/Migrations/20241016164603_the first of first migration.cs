@@ -8,7 +8,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ecommerce.Context.Migrations
 {
     /// <inheritdoc />
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.cs
     public partial class thefirstoffirstmigration : Migration
+========
+    public partial class create : Migration
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -366,6 +370,10 @@ namespace Ecommerce.Context.Migrations
                     Value_en = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Value_ar = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ProductID = table.Column<int>(type: "int", nullable: false),
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.cs
+========
+                    FacilityId = table.Column<int>(type: "int", nullable: false),
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.cs
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedBy = table.Column<int>(type: "int", nullable: true),
@@ -376,6 +384,15 @@ namespace Ecommerce.Context.Migrations
                 {
                     table.PrimaryKey("PK_ProductFacilities", x => x.Id);
                     table.ForeignKey(
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.cs
+========
+                        name: "FK_ProductFacilities_Facilities_FacilityId",
+                        column: x => x.FacilityId,
+                        principalTable: "Facilities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.cs
                         name: "FK_ProductFacilities_Products_ProductID",
                         column: x => x.ProductID,
                         principalTable: "Products",
@@ -512,6 +529,7 @@ namespace Ecommerce.Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.cs
                 name: "FacilityProductFacility",
                 columns: table => new
                 {
@@ -536,6 +554,8 @@ namespace Ecommerce.Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
+========
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.cs
                 name: "OrderItems",
                 columns: table => new
                 {
@@ -566,6 +586,7 @@ namespace Ecommerce.Context.Migrations
                         principalColumn: "Id");
                 });
 
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.cs
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
@@ -585,6 +606,8 @@ namespace Ecommerce.Context.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[] { "1", "1" });
 
+========
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.cs
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -625,11 +648,14 @@ namespace Ecommerce.Context.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.cs
                 name: "IX_FacilityProductFacility_facilitiesId",
                 table: "FacilityProductFacility",
                 column: "facilitiesId");
 
             migrationBuilder.CreateIndex(
+========
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.cs
                 name: "IX_Favorites_CustomerId",
                 table: "Favorites",
                 column: "CustomerId");
@@ -769,15 +795,21 @@ namespace Ecommerce.Context.Migrations
                 name: "TheOrders");
 
             migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "Facilities");
 
             migrationBuilder.DropTable(
                 name: "SubCategories");
 
             migrationBuilder.DropTable(
+<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241016164603_the first of first migration.cs
                 name: "Products");
 
             migrationBuilder.DropTable(
+========
+>>>>>>>> mona:Ecommerce.Context/Migrations/20241015140447_create.cs
                 name: "Payments");
 
             migrationBuilder.DropTable(

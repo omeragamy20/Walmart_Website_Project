@@ -1,6 +1,4 @@
 ﻿@model List<GetAllproductDTO>
-
-
 <a class="btn btn-outline-primary" asp-action="Create">Create One</a>
 <br />
 </br>
@@ -13,21 +11,47 @@
             <th scope="col">Description_ar</th>
             <th scope="col">Price</th>
             <th scope="col">Stock</th>
+            <th scope="col">SubCategory</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         @foreach(var p in Model){
         <tr>
-            <th scope="row">@p.Title_en</th>
+            <td scope="row">@p.Title_en</td>
             <td>@p.Title_ar</td>
             <td>@p.Description_en</td>
             <td>@p.Description_ar</td>
             <td>@p.Price</td>
             <td>@p.Stock</td>
+                <td>
+                    @foreach (var imageUrl in @p.ImageUrls)
+                    {
+                        <img src="@imageUrl" alt="Product Image" width="50" height="50" />
+                    }
+                </td>
+               @*  <td>
+                    @if (@p.SubCategoryNames != null && @p.SubCategoryNames.Count > 0)
+                    {
+                        <ul>
+                            @foreach (var name in @p.SubCategoryNames)
+                            {
+                                <li>@name</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <span>No Subcategories</span>
+                    }
+                </td> *@
+                <td>
+                    @foreach (var s in @p.SubCategoryNames)
+                @s</td> 
+                @*  <td>@string.Join(", ", p.SubCategoryNames)</td> *@
             <td>
-                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
-                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
+                <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
+                <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
             </td>
         </tr>
         }
