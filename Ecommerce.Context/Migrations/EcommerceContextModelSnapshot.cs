@@ -148,17 +148,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "8db48399-4571-4ca1-9fcc-f3128eda5c48",
+                            ConcurrencyStamp = "38a2873a-05f1-4a2c-bed9-8ef89169754b",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB2rUhQxoPJEcEjGIC2isW4N3MYytPV2oeLJHWcBiX+Udhzu7yX/WH+kVZbc28SmFw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGEN+sS0+IcSM3QNO0zFV4O7r41cykAJ9e+2c3BLj4/CvDtKfSbhGoEun0QEARoEjQ==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a42d36c0-0f6d-41fb-92f1-30500acfd879",
+                            SecurityStamp = "5fc597ca-0981-47c3-81fd-4b74d1c6493c",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -191,9 +191,6 @@ namespace Ecommerce.Context.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("ProductFacilityId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("Updated")
                         .HasColumnType("datetime2");
 
@@ -201,8 +198,6 @@ namespace Ecommerce.Context.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductFacilityId");
 
                     b.ToTable("Facilities");
                 });
@@ -742,6 +737,21 @@ namespace Ecommerce.Context.Migrations
                     b.ToTable("subCatFacility");
                 });
 
+            modelBuilder.Entity("FacilityProductFacility", b =>
+                {
+                    b.Property<int>("ProductFacilitiesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("facilitiesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductFacilitiesId", "facilitiesId");
+
+                    b.HasIndex("facilitiesId");
+
+                    b.ToTable("FacilityProductFacility");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -894,13 +904,6 @@ namespace Ecommerce.Context.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Ecommerce.Models.Facility", b =>
-                {
-                    b.HasOne("Ecommerce.Models.ProductFacility", null)
-                        .WithMany("facilities")
-                        .HasForeignKey("ProductFacilityId");
-                });
-
             modelBuilder.Entity("Ecommerce.Models.Favorite", b =>
                 {
                     b.HasOne("Ecommerce.Models.Customer", "Customer")
@@ -972,12 +975,6 @@ namespace Ecommerce.Context.Migrations
 
             modelBuilder.Entity("Ecommerce.Models.ProductFacility", b =>
                 {
-                    b.HasOne("Ecommerce.Models.Facility", "facility")
-                        .WithMany("ProductFacilities")
-                        .HasForeignKey("FacilityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Ecommerce.Models.Product", "product")
                         .WithMany("ProductFacilities")
                         .HasForeignKey("ProductID")
@@ -1054,6 +1051,21 @@ namespace Ecommerce.Context.Migrations
                     b.Navigation("subCategory");
                 });
 
+            modelBuilder.Entity("FacilityProductFacility", b =>
+                {
+                    b.HasOne("Ecommerce.Models.ProductFacility", null)
+                        .WithMany()
+                        .HasForeignKey("ProductFacilitiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ecommerce.Models.Facility", null)
+                        .WithMany()
+                        .HasForeignKey("facilitiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1123,11 +1135,6 @@ namespace Ecommerce.Context.Migrations
                     b.Navigation("Shipments");
                 });
 
-            modelBuilder.Entity("Ecommerce.Models.Facility", b =>
-                {
-                    b.Navigation("ProductFacilities");
-                });
-
             modelBuilder.Entity("Ecommerce.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
@@ -1151,11 +1158,6 @@ namespace Ecommerce.Context.Migrations
                     b.Navigation("Rates");
 
                     b.Navigation("productSubCategory");
-                });
-
-            modelBuilder.Entity("Ecommerce.Models.ProductFacility", b =>
-                {
-                    b.Navigation("facilities");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Shipment", b =>

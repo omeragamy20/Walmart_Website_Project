@@ -61,6 +61,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
                 var admin = mapper.Map<Customer>(AdminDto);
                 admin.Image = $"images/profile/{uniqueFileName}";
                 var res = await userManger.CreateAsync(admin ,AdminDto.Password);
+                          await userManger.AddToRoleAsync(admin, "admin");
                 var role = await roleManager.FindByNameAsync("admin"); 
                 if(role.Name == "admin" && res.Succeeded) 
                 { 
@@ -79,7 +80,8 @@ namespace Ecommerce.Presentaion.Controllers.Identity
            
             return View(AdminDto);
         }
-
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
@@ -87,6 +89,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(CustomerLoginDto customer)
         {
             try
@@ -107,7 +110,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
 
                 }
                 ModelState.AddModelError("", "Invalid Login");
-                return View(customer);
+                return RedirectToAction("Login");
 
             }
             catch (Exception ex) 

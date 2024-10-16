@@ -3,14 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Ecommerce.Context.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241015130533_first migration after first merge.cs
-    public partial class firstmigrationafterfirstmerge : Migration
-========
-    public partial class initialCreate : Migration
->>>>>>>> bahgat:Ecommerce.Context/Migrations/20241012125724_initial Create.cs
+    public partial class thefirstoffirstmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,6 +35,7 @@ namespace Ecommerce.Context.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -77,7 +76,6 @@ namespace Ecommerce.Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241015130533_first migration after first merge.cs
                 name: "Facilities",
                 columns: table => new
                 {
@@ -97,8 +95,6 @@ namespace Ecommerce.Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-========
->>>>>>>> bahgat:Ecommerce.Context/Migrations/20241012125724_initial Create.cs
                 name: "Products",
                 columns: table => new
                 {
@@ -167,8 +163,8 @@ namespace Ecommerce.Context.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -212,8 +208,8 @@ namespace Ecommerce.Context.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -370,10 +366,6 @@ namespace Ecommerce.Context.Migrations
                     Value_en = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Value_ar = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ProductID = table.Column<int>(type: "int", nullable: false),
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241015130533_first migration after first merge.cs
-                    FacilityId = table.Column<int>(type: "int", nullable: false),
-========
->>>>>>>> bahgat:Ecommerce.Context/Migrations/20241012125724_initial Create.cs
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedBy = table.Column<int>(type: "int", nullable: true),
@@ -384,15 +376,6 @@ namespace Ecommerce.Context.Migrations
                 {
                     table.PrimaryKey("PK_ProductFacilities", x => x.Id);
                     table.ForeignKey(
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241015130533_first migration after first merge.cs
-                        name: "FK_ProductFacilities_Facilities_FacilityId",
-                        column: x => x.FacilityId,
-                        principalTable: "Facilities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-========
->>>>>>>> bahgat:Ecommerce.Context/Migrations/20241012125724_initial Create.cs
                         name: "FK_ProductFacilities_Products_ProductID",
                         column: x => x.ProductID,
                         principalTable: "Products",
@@ -456,7 +439,6 @@ namespace Ecommerce.Context.Migrations
                         column: x => x.CustomerId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241015130533_first migration after first merge.cs
                     table.ForeignKey(
                         name: "FK_TheOrders_Payments_PaymentId",
                         column: x => x.PaymentId,
@@ -527,71 +509,30 @@ namespace Ecommerce.Context.Migrations
                         principalTable: "SubCategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-========
-                    table.ForeignKey(
-                        name: "FK_TheOrders_Payments_PaymentId",
-                        column: x => x.PaymentId,
-                        principalTable: "Payments",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_TheOrders_Shipments_ShipmentId",
-                        column: x => x.ShipmentId,
-                        principalTable: "Shipments",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductSubCategories",
+                name: "FacilityProductFacility",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SubcategoryId = table.Column<int>(type: "int", nullable: true),
-                    ProductId = table.Column<int>(type: "int", nullable: true),
-                    CreatedBy = table.Column<int>(type: "int", nullable: true),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedBy = table.Column<int>(type: "int", nullable: true),
-                    Updated = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                    ProductFacilitiesId = table.Column<int>(type: "int", nullable: false),
+                    facilitiesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductSubCategories", x => x.Id);
+                    table.PrimaryKey("PK_FacilityProductFacility", x => new { x.ProductFacilitiesId, x.facilitiesId });
                     table.ForeignKey(
-                        name: "FK_ProductSubCategories_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id");
+                        name: "FK_FacilityProductFacility_Facilities_facilitiesId",
+                        column: x => x.facilitiesId,
+                        principalTable: "Facilities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductSubCategories_SubCategories_SubcategoryId",
-                        column: x => x.SubcategoryId,
-                        principalTable: "SubCategories",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Facilities",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name_en = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Name_ar = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    ProductFacilityId = table.Column<int>(type: "int", nullable: true),
-                    CreatedBy = table.Column<int>(type: "int", nullable: true),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedBy = table.Column<int>(type: "int", nullable: true),
-                    Updated = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Facilities", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Facilities_ProductFacilities_ProductFacilityId",
-                        column: x => x.ProductFacilityId,
+                        name: "FK_FacilityProductFacility_ProductFacilities_ProductFacilitiesId",
+                        column: x => x.ProductFacilitiesId,
                         principalTable: "ProductFacilities",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -623,39 +564,26 @@ namespace Ecommerce.Context.Migrations
                         column: x => x.OrderId,
                         principalTable: "TheOrders",
                         principalColumn: "Id");
->>>>>>>> bahgat:Ecommerce.Context/Migrations/20241012125724_initial Create.cs
                 });
 
-            migrationBuilder.CreateTable(
-                name: "OrderItems",
-                columns: table => new
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "money", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: true),
-                    OrderId = table.Column<int>(type: "int", nullable: true),
-                    CreatedBy = table.Column<int>(type: "int", nullable: true),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedBy = table.Column<int>(type: "int", nullable: true),
-                    Updated = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderItems", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_OrderItems_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_OrderItems_TheOrders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "TheOrders",
-                        principalColumn: "Id");
+                    { "1", null, "admin", null },
+                    { "2", null, "user", null }
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Image", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "1", 0, "sohag", "38a2873a-05f1-4a2c-bed9-8ef89169754b", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEGEN+sS0+IcSM3QNO0zFV4O7r41cykAJ9e+2c3BLj4/CvDtKfSbhGoEun0QEARoEjQ==", "01111690167", false, "5fc597ca-0981-47c3-81fd-4b74d1c6493c", false, "admin" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "1", "1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -697,14 +625,11 @@ namespace Ecommerce.Context.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241015130533_first migration after first merge.cs
-========
-                name: "IX_Facilities_ProductFacilityId",
-                table: "Facilities",
-                column: "ProductFacilityId");
+                name: "IX_FacilityProductFacility_facilitiesId",
+                table: "FacilityProductFacility",
+                column: "facilitiesId");
 
             migrationBuilder.CreateIndex(
->>>>>>>> bahgat:Ecommerce.Context/Migrations/20241012125724_initial Create.cs
                 name: "IX_Favorites_CustomerId",
                 table: "Favorites",
                 column: "CustomerId");
@@ -814,7 +739,7 @@ namespace Ecommerce.Context.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Facilities");
+                name: "FacilityProductFacility");
 
             migrationBuilder.DropTable(
                 name: "Favorites");
@@ -844,20 +769,13 @@ namespace Ecommerce.Context.Migrations
                 name: "TheOrders");
 
             migrationBuilder.DropTable(
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241015130533_first migration after first merge.cs
-                name: "Products");
-
-            migrationBuilder.DropTable(
                 name: "Facilities");
-========
+
+            migrationBuilder.DropTable(
                 name: "SubCategories");
 
             migrationBuilder.DropTable(
                 name: "Products");
->>>>>>>> bahgat:Ecommerce.Context/Migrations/20241012125724_initial Create.cs
-
-            migrationBuilder.DropTable(
-                name: "SubCategories");
 
             migrationBuilder.DropTable(
                 name: "Payments");
