@@ -36,7 +36,6 @@ namespace Ecommerce.Context
         public EcommerceContext() { }
         public EcommerceContext(DbContextOptions<EcommerceContext> options) : base(options)
         { }
-
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {
             var entities = ChangeTracker.Entries<BaseEntity<int>>();

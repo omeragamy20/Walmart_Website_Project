@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Ecommerce.DTOs.DTOsCategories;
+using Ecommerce.DTOs.DTOsFavoritandRate;
 using Ecommerce.DTOs.Facility;
 using Ecommerce.DTOs.Product;
 using Ecommerce.DTOs.Shipment;
@@ -27,6 +28,10 @@ namespace Ecommerce.Application.Mapper
             CreateMap<FacilityDTO, Facility>().ReverseMap();
             CreateMap<CreateDto, Shipment>().ReverseMap();
             CreateMap<GetAllDto, Shipment>().ReverseMap();
+            CreateMap<CreateorUpdateFavoritDTO,Favorite>().ReverseMap();
+            CreateMap<GetAllFavoritDTO,Favorite>().ReverseMap();
+            CreateMap<CreateorUpdateRateDTO, Rate>().ReverseMap();
+            CreateMap<GetAllRateDTO,Rate>().ReverseMap();
             //CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
             //CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
         }

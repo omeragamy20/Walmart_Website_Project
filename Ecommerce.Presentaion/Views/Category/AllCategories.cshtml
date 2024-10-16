@@ -28,14 +28,26 @@
                 <td>@(cat.Name_en)</td>
                 <td>@(cat.Name_ar)</td>
                 <td>
-                    <a class="btn btn-primary btn-s" asp-action="Updatedcategory" asp-route-id="@(cat.Id)"> Updated</a>
-                    &nbsp;&nbsp;
-                    <a asp-action="DeleteCategory" asp-route-id="@(cat.Id)" class="btn btn-danger btn-s">
-                        <span class="glyphicon glyphicon-remove-circle"></span> X
-                    </a>
+                    <div style="display:flex">
+                        <a class="btn btn-primary btn-s" asp-action="Updatedcategory" asp-route-id="@(cat.Id)"> Updated</a>
+                        &nbsp;&nbsp;
+                        @* <a asp-action="DeleteCategory" asp-route-id="@(cat.Id)" class="btn btn-danger btn-s">
+                            <span class="glyphicon glyphicon-remove-circle"></span> X
+                        </a> *@
+                        <form asp-action="DeleteCategory" asp-controller="Category" asp-route-id="@cat.Id" method="post" onsubmit="return confirmDelete();">
+                            <button type="submit" class="btn btn-danger">X</button>
+                        </form>
+                    </div>
                 </td>
                
             </tr>
         }
     </tbody>
 </table>
+
+
+<script type="text/javascript">
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this item?');
+    }
+</script>
