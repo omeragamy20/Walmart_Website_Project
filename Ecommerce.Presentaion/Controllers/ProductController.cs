@@ -45,15 +45,15 @@ namespace Ecommerce.Presentaion.Controllers
                
                 if (res.IsSuccess)
                 {
-                    await imageService.UploadImagesAsync(images, productDTO.Id);
+                   // await imageService.UploadImagesAsync(images, productDTO.Id);
                     return RedirectToAction("GetALlProduct");
                 }
                 return RedirectToAction("GetALlProduct");
             }
-            else
-            {
-                return View(productDTO);
-            }
+            var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
+            ViewBag.subcategories = subcategories;
+            return View(productDTO);
+            
         }
         public async Task<IActionResult> Update(int id)
         {

@@ -43,10 +43,7 @@ namespace Ecommerce.Application.Services
                 else
                 {
                     var product = mapper.Map<Product>(entity);
-                    var image = new Images()
-                    {
-                        ProductId = product.Id
-                    };
+                    
                    
                     product.productSubCategory = entity.SubCategoryIds?.Select(id => new ProductSubCategory
                     {
@@ -142,6 +139,10 @@ namespace Ecommerce.Application.Services
                  .Include(s=>s.productSubCategory)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
+                oldone.productSubCategory = entity.SubCategoryIds.Select(id => new ProductSubCategory
+                {
+                    SubcategoryId = id
+                }).ToList();
                 var updated = await productRebository.UpdateAsync(oldone);
                 await productRebository.SaveChanges();
                 var success = mapper.Map<CreateAndUpdateProductDTO>(updated);
