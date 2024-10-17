@@ -45,7 +45,7 @@ namespace Ecommerce.Presentaion.Controllers
                
                 if (res.IsSuccess)
                 {
-                    await imageService.UploadImagesAsync(images, productDTO.Id);
+                    var imgs = await imageService.UploadImagesAsync(productDTO.ImagesFromFile, res.Entity.Id);
                     return RedirectToAction("GetALlProduct");
                 }
                 return RedirectToAction("GetALlProduct");
