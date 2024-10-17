@@ -139,6 +139,7 @@ namespace Ecommerce.Application.Services
                  .Include(s=>s.productSubCategory)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
+                oldone.productSubCategory.Clear();
                 oldone.productSubCategory = entity.SubCategoryIds.Select(id => new ProductSubCategory
                 {
                     SubcategoryId = id
