@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Ecommerce.DTOs.OrderDTOs;
+using Ecommerce.DTOs.OrderItemDTOs;
+using Ecommerce.Models;
 using Ecommerce.DTOs.DTOsCategories;
 using Ecommerce.DTOs.DTOsFavoritandRate;
 using Ecommerce.DTOs.Facility;
@@ -18,8 +21,15 @@ namespace Ecommerce.Application.Mapper
     {
         public AutoMapperProfile()
         {
+            //Order & OrderItem
+            CreateMap<CreateOrUpdateOrderDTOs, Order>().ReverseMap();   
+            CreateMap<GetAllOrderDTOs, Order>().ReverseMap();   
+            CreateMap<CreateOrUpdateOrderItemDTOs, OrderItem>().ReverseMap();   
+            CreateMap<GetAllOrderItemDTOs, OrderItem>().ReverseMap();   
+           
             //categoryand subcategory
             CreateMap<CreateorUpdatedCategoryDTOs,Category>().ReverseMap();
+             CreateMap<CreateorUpdatedCategoryDTOs,Category>().ReverseMap();
             CreateMap<GetAllCategoryDTOs,Category>().ReverseMap();
             CreateMap<CreateorUpdatedSubCategoryDTOs,SubCategory>().ReverseMap();
             CreateMap<GetAllSubCategoryDTOs, SubCategory>().ReverseMap();
@@ -54,6 +64,8 @@ namespace Ecommerce.Application.Mapper
             //CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
             //CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
         }
+
     }
 }
+
 
