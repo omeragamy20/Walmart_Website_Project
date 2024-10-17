@@ -55,9 +55,9 @@ namespace Ecommerce.Application.Mapper
             // Customer
             CreateMap< CreateAdminDto , Customer>().ReverseMap();
             CreateMap< GetAllUsersDto , Customer>().ReverseMap();
-             CreateMap<GetAdminDto , Customer>().ReverseMap();
-             CreateMap<UpdataAdminDto , Customer>().ReverseMap();
-
+            CreateMap<GetAdminDto , Customer>().ReverseMap();
+            CreateMap<UpdataAdminDto , Customer>().ReverseMap();
+            // mady work
             CreateMap<CreateDto, Shipment>().ReverseMap();
             CreateMap<GetAllDto, Shipment>().ReverseMap();
             //CreateMap<GetAllproductDTO, Product>().ReverseMap();
