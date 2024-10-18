@@ -47,9 +47,9 @@ namespace Ecommerce.Application.Mapper
             CreateMap<GetAllProductArDTO, Product>().ReverseMap();
             CreateMap<FacilityDTO, Facility>().ReverseMap();
             CreateMap<Images, ImageDTO>().ReverseMap();
-                 //CreateMap<GetAllproductDTO, Product>().ReverseMap();
-            MapFrom(src => src.productSubCategory.Select(ps => ps.SubCategory.Name_en).ToList()))
-            .ForMember(dest => dest.SubCategoryNamesAr, opt => opt.MapFrom(src => src.productSubCategory.Select(sf => sf.SubCategory.Name_ar).ToList())).ReverseMap();
+            //     //CreateMap<GetAllproductDTO, Product>().ReverseMap();
+            //MapFrom(src => src.productSubCategory.Select(ps => ps.SubCategory.Name_en).ToList()))
+            //.ForMember(dest => dest.SubCategoryNamesAr, opt => opt.MapFrom(src => src.productSubCategory.Select(sf => sf.SubCategory.Name_ar).ToList())).ReverseMap();
             CreateMap<Facility, FacilityDTO>().ForMember(dest=>dest.SubCategoryIds,opt=>opt.MapFrom(src=>src.subCatFacility
             .Select(sf=>sf.SubCategoryID).ToList()))
             .ForMember(dest=>dest.SubCategoryNames,opt=>opt.MapFrom(src=>src.subCatFacility.Select(sf=>sf.subCategory.Name_en)
