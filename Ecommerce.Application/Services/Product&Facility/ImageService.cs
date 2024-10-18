@@ -43,7 +43,7 @@ namespace Ecommerce.Application.Services.Product_Facility
                     if (file.Length > 0)
                     {
                         var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", uniqueFileName);
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/product", uniqueFileName);
 
                         using (var stream = new FileStream(filePath, FileMode.Create))
                         {
@@ -52,11 +52,12 @@ namespace Ecommerce.Application.Services.Product_Facility
 
                         var imageEntity = new Images
                         {
-                            Image = $"/images/{uniqueFileName}", 
+                            Image = $"/images/product/{uniqueFileName}", 
                             ProductId = productId
                         };
 
                         await imageRebository.CreateAsync(imageEntity);
+                        await imageRebository.SaveChanges();
                         uploadedImages.Add(imageEntity);
                     }
                 }

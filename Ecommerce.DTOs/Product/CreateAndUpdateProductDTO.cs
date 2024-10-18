@@ -27,9 +27,10 @@ namespace Ecommerce.DTOs.Product
         public int Stock { get; set; }
         //public IFormFile? ImageFile { get; set; }
         //public ICollection<Images>? Images { get; set; }
+        public List<string>? Facilities { get; set; } = new List<string>();
         public List<int>? SubCategoryIds { get; set; }
-        //public List<string> ImagesUrl { get; set; }
-        //public List<IFormFile>? Images { get; set; } = new List<IFormFile>();
+        public List<string>? ImagesUrl { get; set; }
+        public List<IFormFile>? ImagesFromFile { get; set; } = new List<IFormFile>();
         public ICollection<ProductSubCategory>? productSubCategory { get; set; }
 
     }

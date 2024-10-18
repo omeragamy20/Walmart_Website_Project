@@ -43,8 +43,11 @@ namespace Ecommerce.Application.Services
                 else
                 {
                     var product = mapper.Map<Product>(entity);
-                    
-                   
+
+                    product.ProductFacilities = entity.Facilities.Select(facility => new ProductFacility
+                    {
+                        Value_en=facility
+                    }).ToList();
                     product.productSubCategory = entity.SubCategoryIds?.Select(id => new ProductSubCategory
                     {
                         SubcategoryId = id
@@ -118,10 +121,13 @@ namespace Ecommerce.Application.Services
         {
            
                 var data = (await productRebository.GetAllAsync())
-                    .Include(f => f.ProductFacilities)
+                    .Include(pf => pf.ProductFacilities)
+                    //.ThenInclude(f=>f.facilities)
                     .Include(i => i.Images)
-                    .Include(s => s.productSubCategory)
-                    
+                    .Include(ps => ps.productSubCategory)
+                    .ThenInclude(s=>s.SubCategory).
+                    ThenInclude(sf=>sf.subCatFacility)
+                    .ThenInclude(f=>f.facility)
                     .Where(p => p.Title_en == ProductName || p.Title_ar == ProductName);
 
                    var product = mapper.Map<List<GetAllproductDTO>>(data);
@@ -139,6 +145,7 @@ namespace Ecommerce.Application.Services
                  .Include(s=>s.productSubCategory)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
+                oldone.productSubCategory.Clear();
                 oldone.productSubCategory = entity.SubCategoryIds.Select(id => new ProductSubCategory
                 {
                     SubcategoryId = id
@@ -240,8 +247,9 @@ namespace Ecommerce.Application.Services
 
         public async Task<List<GetAllproductDTO>> GetAllAsync()
        {
-            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images)
-                .Include(ps => ps.productSubCategory).ThenInclude(s => s.SubCategory).ToList();
+            var data = (await productRebository.GetAllAsync()).Include(i => i.Images)
+                .Include(ps => ps.productSubCategory).ThenInclude(s => s.SubCategory)
+                .ThenInclude(sf=>sf.subCatFacility).ThenInclude(f=>f.facility).ToList();
                
             var products = mapper.Map<List<GetAllproductDTO>>(data);
            

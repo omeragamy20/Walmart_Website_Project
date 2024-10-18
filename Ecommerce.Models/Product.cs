@@ -23,15 +23,13 @@ namespace Ecommerce.Models
 
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
-
-       
         public int Stock { get; set; }
         public ICollection<ProductSubCategory>? productSubCategory { get; set; }
         //[ForeignKey("SubCategory")]
         //public int? SubCategoryId { get; set; }
         //public SubCategory? SubCategory { get; set; }
 
-        public ICollection<ProductFacility>? ProductFacilities { get; set; } = new List<ProductFacility>();
+        public ICollection<ProductFacility>? ProductFacilities { get; set; } // = new List<ProductFacility>();
         public ICollection<Rate>? Rates { get; set; }
         
         public ICollection<Images>? Images { get; set; }

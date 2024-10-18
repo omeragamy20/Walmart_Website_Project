@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Ecommerce.Context.Migrations
 {
     /// <inheritdoc />
-    public partial class create : Migration
+    public partial class lastMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,6 +35,7 @@ namespace Ecommerce.Context.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -160,8 +163,8 @@ namespace Ecommerce.Context.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -205,8 +208,8 @@ namespace Ecommerce.Context.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -363,7 +366,6 @@ namespace Ecommerce.Context.Migrations
                     Value_en = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Value_ar = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ProductID = table.Column<int>(type: "int", nullable: false),
-                    FacilityId = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedBy = table.Column<int>(type: "int", nullable: true),
@@ -373,12 +375,6 @@ namespace Ecommerce.Context.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductFacilities", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductFacilities_Facilities_FacilityId",
-                        column: x => x.FacilityId,
-                        principalTable: "Facilities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ProductFacilities_Products_ProductID",
                         column: x => x.ProductID,
@@ -516,6 +512,30 @@ namespace Ecommerce.Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "FacilityProductFacility",
+                columns: table => new
+                {
+                    ProductFacilitiesId = table.Column<int>(type: "int", nullable: false),
+                    facilitiesId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FacilityProductFacility", x => new { x.ProductFacilitiesId, x.facilitiesId });
+                    table.ForeignKey(
+                        name: "FK_FacilityProductFacility_Facilities_facilitiesId",
+                        column: x => x.facilitiesId,
+                        principalTable: "Facilities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_FacilityProductFacility_ProductFacilities_ProductFacilitiesId",
+                        column: x => x.ProductFacilitiesId,
+                        principalTable: "ProductFacilities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OrderItems",
                 columns: table => new
                 {
@@ -545,6 +565,25 @@ namespace Ecommerce.Context.Migrations
                         principalTable: "TheOrders",
                         principalColumn: "Id");
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "1", null, "admin", null },
+                    { "2", null, "user", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Image", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "1", 0, "sohag", "8de8310c-6a99-42a6-a193-78d9e0c5beed", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEOouF+9k1rOWLB9d/PCkHsrbsE0/l92k7TlVmnRsMUZU/OgcbfoWG16iGMrBdkHF9A==", "01111690167", false, "353d122b-6444-402c-a62c-d87f0be58192", false, "admin" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "1", "1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -586,6 +625,11 @@ namespace Ecommerce.Context.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FacilityProductFacility_facilitiesId",
+                table: "FacilityProductFacility",
+                column: "facilitiesId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Favorites_CustomerId",
                 table: "Favorites",
                 column: "CustomerId");
@@ -614,11 +658,6 @@ namespace Ecommerce.Context.Migrations
                 name: "IX_Payments_CustomerId",
                 table: "Payments",
                 column: "CustomerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductFacilities_FacilityId",
-                table: "ProductFacilities",
-                column: "FacilityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductFacilities_ProductID",
@@ -700,6 +739,9 @@ namespace Ecommerce.Context.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "FacilityProductFacility");
+
+            migrationBuilder.DropTable(
                 name: "Favorites");
 
             migrationBuilder.DropTable(
@@ -707,9 +749,6 @@ namespace Ecommerce.Context.Migrations
 
             migrationBuilder.DropTable(
                 name: "OrderItems");
-
-            migrationBuilder.DropTable(
-                name: "ProductFacilities");
 
             migrationBuilder.DropTable(
                 name: "ProductSubCategories");
@@ -724,16 +763,19 @@ namespace Ecommerce.Context.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "TheOrders");
+                name: "ProductFacilities");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "TheOrders");
 
             migrationBuilder.DropTable(
                 name: "Facilities");
 
             migrationBuilder.DropTable(
                 name: "SubCategories");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Payments");

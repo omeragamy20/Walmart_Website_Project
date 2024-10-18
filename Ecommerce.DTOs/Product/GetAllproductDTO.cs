@@ -18,7 +18,8 @@ namespace Ecommerce.DTOs.Product
         public int Stock { get; set; }
         public List<int>? SubCategoryIds { get; set; }
         public List<string>? SubCategoryNames { get; set; } = new List<string>();
+        public List<string>? Facilities { get; set; } = new List<string>();
         public List<string>? SubCategoryNamesAr { get; set; } = new List<string>();
-        // public List<string> ImageUrls { get; set; } = new List<string>();
+        public List<string> ImageUrls { get; set; } = new List<string>();
     }
 }

@@ -16,3 +16,21 @@ C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\ref
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.pdb
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.genruntimeconfig.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\ref\Ecommerce.Context.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.deps.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.runtimeconfig.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.AssemblyReference.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.GeneratedMSBuildEditorConfig.editorconfig
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfoInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfo.cs
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.CoreCompileInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.sourcelink.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.CopyComplete
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\refint\Ecommerce.Context.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.genruntimeconfig.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\ref\Ecommerce.Context.dll

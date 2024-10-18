@@ -1,16 +1,15 @@
-﻿using Ecommerce.Application.Contracts;
+﻿using Ecommerce.Application.Contracts.product_Facillity;
 using Ecommerce.Context;
 using Ecommerce.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ecommerce.Application.Contracts.product_Facillity;
+
 namespace Ecommerce.Infrastructure.Product_Faciity
 {
-    public class ImageRepository:GenricReposatiry<Images, int>, IImageRepository
+    public class ImageRepository : GenricReposatiry<Images, int>, IImageRepository
     {
         private readonly EcommerceContext Context;
 

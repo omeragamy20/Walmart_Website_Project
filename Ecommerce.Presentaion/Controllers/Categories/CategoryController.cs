@@ -65,7 +65,7 @@ namespace Ecommerce.Presentaion.Controllers.Categories
                 return View(category);
             }
         }
-
+        [HttpPost]
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var result = (await categoryService.DeleteCategoryAsync(id));

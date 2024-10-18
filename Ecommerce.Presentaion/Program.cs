@@ -1,11 +1,15 @@
-﻿using Ecommerce.Application.Contracts.Categories;
+using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Infrastructure.Categories;
 using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.Application.Contracts;
 using Ecommerce.Application.Mappper;
+using Ecommerce.Application.ServicesO;
 using Ecommerce.Application.Services;
 using Ecommerce.Context;
 using Ecommerce.Infrastructure;
+using Ecommerce.Models;
+using Ecommerce.Presentaion.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Ecommerce.Application.Contracts.product_Facillity;
@@ -26,7 +30,11 @@ namespace Ecommerce.Presentaion
             builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
             builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
             builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
-
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
+            builder.Services.AddScoped<IFacillityService, FacilityService>();
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -34,9 +42,19 @@ namespace Ecommerce.Presentaion
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<EcommerceContext>();
+            //builder.Services.AddDefaultIdentity<Customer>(options => options.SignIn.RequireConfirmedAccount = false)
+            //    .AddRoles<IdentityRole>()
+            //    .AddEntityFrameworkStores<EcommerceContext>();
+            //builder.Services.AddControllersWithViews();
+
+            builder.Services.AddIdentity<Customer, IdentityRole>
+                (options => {
+                    options.SignIn.RequireConfirmedAccount = false;
+              
+                }
+
+                )
+                .AddEntityFrameworkStores<EcommerceContext>() ;
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProductService, ProductService>();
@@ -44,9 +62,14 @@ namespace Ecommerce.Presentaion
             builder.Services.AddScoped<IFacillityService, FacilityService>();
             builder.Services.AddScoped<IImageRepository, ImageRepository>();
             builder.Services.AddScoped<IImageService, ImageService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
+            builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+            builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 
+            builder.Services.AddRazorPages();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -69,11 +92,13 @@ namespace Ecommerce.Presentaion
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+        //pattern: "{controller=Home}/{action=Index}/{id?}");
+        pattern: "{controller=Account}/{action=Login}/{id?}");
             app.MapRazorPages();
 
             app.Run();
