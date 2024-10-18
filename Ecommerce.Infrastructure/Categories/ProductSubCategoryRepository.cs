@@ -1,4 +1,5 @@
-﻿using Ecommerce.Application.Contracts.Categories;
+﻿using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Context;
 using Ecommerce.Models;
 using System;
