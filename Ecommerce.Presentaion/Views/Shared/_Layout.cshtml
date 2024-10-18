@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <title>Walmart Dashboard</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -71,21 +71,21 @@
  <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="~/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <img src="~/images/walmart-logo.png" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">@User.Identity.Name</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6>@User.Identity.Name</h6>
+              <span>Admin</span>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="/Account/Profile">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -95,9 +95,9 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <a class="dropdown-item d-flex align-items-center" href="/Account/ResetPassword">
                 <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
+                <span>Reset Password</span>
               </a>
             </li>
             <li>
@@ -115,7 +115,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="/Account/SignOut">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -178,7 +178,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="/user/Index">
                     <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
           <span>Users</span>
         </a>
@@ -192,31 +192,31 @@
       <!-- End Contact Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+                <a class="nav-link collapsed" href="/Account/Profile">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
             </a>
         </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+                <a class="nav-link collapsed" href="/Account/AddAdmin">
           <i class="bi bi-card-list"></i>
-          <span>Register</span>
+          <span>Add Admin</span>
         </a>
       </li><!-- End Register Page Nav -->
 
-      <li class="nav-item">
+     @*  <li class="nav-item">
                 <a class="nav-link collapsed" href="/Account/Login">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
-      </li><!-- End Login Page Nav -->
+      </li><!-- End Login Page Nav --> *@
     </ul>
 
   </aside>
   <!-- End Sidebar-->
 
-  <main id="main" class="main">
+  <main id="main" class="main container">
 
     @RenderBody()
 

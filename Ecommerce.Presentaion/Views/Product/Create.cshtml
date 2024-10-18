@@ -1,4 +1,10 @@
 ﻿@model CreateAndUpdateProductDTO
+
+@{
+   var items = ViewBag.subcategories != null 
+        ? new SelectList(ViewBag.subcategories, "Id", "Name_en") 
+        : new SelectList(Enumerable.Empty<object>(), "Id", "Name_en");
+    }
 <h4>Create New Product</h4>
 <form method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All">
@@ -33,11 +39,20 @@
         <input asp-for="Stock" class="form-control" />
         <span asp-validation-for="Stock" style="color:red"></span>
     </div>
+    <div class="form-group">
+        <label>Upload Images</label>
+        <input asp-for="ImagesFromFile" type="file"  multiple accept="image/*" class="form-control" />
+        <span asp-validation-for="ImagesFromFile" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="SubCategoryIds"></label>
+        <select asp-for="SubCategoryIds" class="form-control" asp-items="items"></select>
+    </div>
+    
     <button class="btn btn-outline-success" type="submit"> Create </button>
 </form>
 @section Scripts
 {
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <partial name="_ValidationScriptsPartial" />
-
 }

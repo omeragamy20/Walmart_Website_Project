@@ -1,0 +1,32 @@
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.deps.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.AssemblyReference.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfoInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfo.cs
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.CoreCompileInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.sourcelink.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerc.D3152FB8.Up2Date
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.deps.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.AssemblyReference.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfoInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfo.cs
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.CoreCompileInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.sourcelink.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.CopyComplete
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll

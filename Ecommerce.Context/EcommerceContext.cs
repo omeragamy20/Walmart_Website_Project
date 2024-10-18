@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,8 +14,6 @@ namespace Ecommerce.Context
 {
     public class EcommerceContext:IdentityDbContext<Customer>
     {
-        UserManager<Customer> _userManager;
-        // the models sets
         public DbSet<Category> Categories { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Facility> Facilities { get; set; }
@@ -30,12 +29,49 @@ namespace Ecommerce.Context
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<subCatFacility> subCatFacility { get; set; }
 
-        //public DbSet<Status> Statuses { get; set; }
-
-
         public EcommerceContext() { }
         public EcommerceContext(DbContextOptions<EcommerceContext> options) : base(options)
-        { }
+        {
+            
+        
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            var hasher = new PasswordHasher<Customer>();
+
+            // Create the admin user
+            var adminUser = new Customer
+            {
+                Id = "1",
+                UserName = "admin",
+                NormalizedUserName="ADMIN",
+                Address = "sohag",
+                FirstName = "admin",
+                LastName = "admin",
+                PhoneNumber = "01111690167",
+                Email = "ahmedbahgat@gmail.com"
+            };
+
+            // Hash the password
+            adminUser.PasswordHash = hasher.HashPassword(adminUser, "admin");
+
+
+            builder.Entity<Customer>().HasData(adminUser);
+
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole() { Id = "1", Name = "admin" },
+                new IdentityRole() { Id = "2", Name = "user" }
+                );
+
+            builder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>()
+                {
+                    UserId = adminUser.Id,
+                    RoleId = "1"
+                }
+                );
+        }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {

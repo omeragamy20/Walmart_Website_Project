@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecommerce.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,8 @@ namespace Ecommerce.DTOs.Product
         public string Description_en { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+        public List<int>? SubCategoryIds { get; set; }
+        public List<string>? SubCategoryNames { get; set; } = new List<string>();
+        public List<string> ImageUrls { get; set; } = new List<string>();
     }
 }

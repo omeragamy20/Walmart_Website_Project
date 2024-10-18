@@ -8,4 +8,5 @@
 !serviceDependencies.local.json
 !appsettings.Development.json
 bin/
-obj/
+obj/.vs/
+.vs/
