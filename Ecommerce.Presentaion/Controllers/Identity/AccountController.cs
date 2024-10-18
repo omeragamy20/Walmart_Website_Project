@@ -45,6 +45,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
+        [AllowAnonymous]
         public async Task<IActionResult> AddAdmin(CreateAdminDto AdminDto)
         {
             if (ModelState.IsValid)
