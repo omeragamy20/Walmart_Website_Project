@@ -30,6 +30,8 @@ namespace Ecommerce.DTOs.Product
         public List<int>? SubCategoryIds { get; set; }
         public List<string>? ImagesUrl { get; set; }
         public List<IFormFile>? ImagesFromFile { get; set; } = new List<IFormFile>();
+        //public List<string> ImagesUrl { get; set; }
+        //public List<IFormFile>? Images { get; set; } = new List<IFormFile>();
         public ICollection<ProductSubCategory>? productSubCategory { get; set; }
 
     }

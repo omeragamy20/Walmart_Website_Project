@@ -1,5 +1,9 @@
 ﻿@model FacilityDTO
-
+@{
+    var items = ViewBag.subcategories != null
+         ? new SelectList(ViewBag.subcategories, "Id", "Name_en")
+         : new SelectList(Enumerable.Empty<object>(), "Id", "Name_en");
+}
 
 <form method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All">
@@ -17,6 +21,10 @@
         <label asp-for="Name_ar"></label>
         <input asp-for="Name_ar" class="form-control" />
         <span asp-validation-for="Name_ar" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="SubCategoryIds"></label>
+        <select asp-for="SubCategoryIds" class="form-control" asp-items="items"></select>
     </div>
     <button class="btn btn-outline-success" type="submit"> Create </button>
 </form>

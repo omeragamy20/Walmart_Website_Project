@@ -50,10 +50,10 @@ namespace Ecommerce.Presentaion.Controllers
                 }
                 return RedirectToAction("GetALlProduct");
             }
-            else
-            {
-                return View(productDTO);
-            }
+            var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
+            ViewBag.subcategories = subcategories;
+            return View(productDTO);
+            
         }
         public async Task<IActionResult> Update(int id)
         {

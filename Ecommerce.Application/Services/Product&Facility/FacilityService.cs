@@ -43,6 +43,10 @@ namespace Ecommerce.Application.Services
                 {
 
                     var newfacility = mapper.Map<Facility>(entity);
+                    newfacility.subCatFacility = entity.SubCategoryIds.Select(id => new subCatFacility
+                    {
+                        SubCategoryID = id
+                    }).ToList();
                     var success=(await facilityRepository.CreateAsync(newfacility));
                     await facilityRepository.SaveChanges();
                     var returned = mapper.Map<FacilityDTO>(success);
@@ -76,9 +80,9 @@ namespace Ecommerce.Application.Services
 
         public async Task<List<FacilityDTO>> GetAllAsync()
         {
-            
-                var data = (await facilityRepository.GetAllAsync())
-                    .Include(p => p.ProductFacilities);
+
+            var data = (await facilityRepository.GetAllAsync())
+                .Include(sf => sf.subCatFacility).ThenInclude(s => s.subCategory).ToList();
                 
                     var facilities = mapper.Map<List<FacilityDTO>>(data);
                     
@@ -103,8 +107,14 @@ namespace Ecommerce.Application.Services
             {
                 var oldone = (await facilityRepository.GetAllAsync())
                  .Include(p=>p.ProductFacilities)
+                  .Include(p => p.subCatFacility)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
+                oldone.subCatFacility.Clear();
+                oldone.subCatFacility = entity.SubCategoryIds.Select(id => new subCatFacility
+                {
+                    SubCategoryID = id
+                }).ToList();
                 var updated = await facilityRepository.UpdateAsync(oldone);
                 await facilityRepository.SaveChanges();
                 var success = mapper.Map<FacilityDTO>(updated);
