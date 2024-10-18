@@ -38,20 +38,25 @@ namespace Ecommerce.Application.Mapper
             CreateMap<Product,CreateAndUpdateProductDTO>().ReverseMap();
             //  .ForMember(dest => dest.Images, opt => opt.MapFrom(src => src.Images.Select(img => img.Image).ToList()))
             CreateMap<Product, GetAllproductDTO>()
-            .ForMember(dest => dest.SubCategoryIds, opt => opt.MapFrom(src => src.productSubCategory.Select(ps => ps.SubcategoryId ?? 0).ToList()))
+            .ForMember(dest => dest.SubCategoryIds, opt => opt.MapFrom(src => src.productSubCategory
+            .Select(ps => ps.SubcategoryId ?? 0).ToList()))
             .ForMember(dest => dest.SubCategoryNames, opt => opt.
-            MapFrom(src => src.productSubCategory.Select(ps => ps.SubCategory.Name_en).ToList())).ForMember(dest => dest.ImageUrls, opt => opt.MapFrom(src => src.Images.Select(img => img.Image).ToList())).ReverseMap();
+             MapFrom(src => src.productSubCategory.Select(ps => ps.SubCategory.Name_en).ToList()))
+            .ForMember(dest => dest.SubCategoryNamesAr, opt => opt.MapFrom(src => src.productSubCategory.Select(sf => sf.SubCategory.Name_ar).ToList()))
+            .ForMember(dest => dest.Facilities, opt => opt.MapFrom(src => src.productSubCategory
+            .Select(ps => ps.SubCategory.subCatFacility.Select(f => f.facility.Name_en).ToList())))
+            .ForMember(dest => dest.ImageUrls, opt => opt.MapFrom(src => src.Images.Select(img => img.Image).ToList()))
+            .ReverseMap();
             CreateMap<GetAllproductEnDTO, Product>().ReverseMap();
             CreateMap<GetAllProductArDTO, Product>().ReverseMap();
-            CreateMap<FacilityDTO, Facility>().ReverseMap();
-            CreateMap<CreateDto, Shipment>().ReverseMap();
+            CreateMap<Facility, FacilityDTO>()
+            .ForMember(dest => dest.SubCategoryIds, opt => opt.MapFrom(src => src.subCatFacility
+            .Select(sf => sf.SubCategoryID).ToList()))
+            .ForMember(dest => dest.SubCategoryNames, opt => opt.MapFrom(src => src.subCatFacility.Select(sf => sf.subCategory.Name_en)
+            .ToList())).ForMember(dest => dest.SubCategoryNamesAr, opt => opt.MapFrom(src => src.subCatFacility.Select(sf => sf.subCategory.Name_ar).ToList())).ReverseMap(); CreateMap<CreateDto, Shipment>().ReverseMap();
             CreateMap<GetAllDto, Shipment>().ReverseMap();
             CreateMap<Images, ImageDTO>().ReverseMap();
-            CreateMap<Product, GetAllproductDTO>()
-            .ForMember(dest => dest.SubCategoryIds, opt => opt.MapFrom(src => src.productSubCategory.Select(ps => ps.SubcategoryId ?? 0).ToList()))
-            .ForMember(dest => dest.SubCategoryNames, opt => opt.
-            MapFrom(src => src.productSubCategory.Select(ps => ps.SubCategory.Name_en).ToList())).ForMember(dest => dest.ImageUrls, opt => opt.MapFrom(src => src.Images.Select(img => img.Image).ToList())).ReverseMap();
-            //CreateMap<GetAllproductDTO, Product>().ReverseMap();
+            
             //CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
             //CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
         }

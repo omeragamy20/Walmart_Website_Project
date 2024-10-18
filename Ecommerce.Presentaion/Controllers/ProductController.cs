@@ -80,6 +80,11 @@ namespace Ecommerce.Presentaion.Controllers
             return View(productDTO);
             
         }
+        public async Task<IActionResult> SearchProduct(string ProductName)
+        {
+            var product = await productService.SearchByNameAsync(ProductName);
+            return View(product);
+        }
         public async Task<IActionResult> Delete(int id)
         {
             await productService.DeleteAsync(id);
