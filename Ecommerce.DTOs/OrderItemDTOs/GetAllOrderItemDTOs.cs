@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecommerce.DTOs.Product;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,12 +21,13 @@ namespace Ecommerce.DTOs.OrderItemDTOs
 
         public decimal TotalPrice { get; set; }
 
-        //public void TotalPricee()
-        //{
-        //    var x = Price * Quantity;
-        //}
+
+        public GetAllProductArDTO Product
+        {
+            get; set;
+        }
+        public decimal TotalPricee => Product.Price * Quantity;
 
     }
-
 }
 

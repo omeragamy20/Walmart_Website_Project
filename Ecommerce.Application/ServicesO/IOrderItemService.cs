@@ -1,5 +1,4 @@
-﻿using Ecommerce.DTOs.OrderDTOs;
-using Ecommerce.DTOs.OrderItemDTOs;
+﻿using Ecommerce.DTOs.OrderItemDTOs;
 using Ecommerce.DTOs.shared;
 using System;
 using System.Collections.Generic;
@@ -20,6 +19,7 @@ namespace Ecommerce.Application.ServicesO
         public Task<List<GetAllOrderItemDTOs>> GetAllAsync();
 
         public Task<GetAllOrderItemDTOs> DeleteAsync(int Id);
+        public Task<List<GetAllOrderItemDTOs>> GetAllItemsAsync(int Id);
         //public Task<List<GetAllOrderItemDTOs>> SearchByName(string Search);
     }
 }

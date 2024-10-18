@@ -1,0 +1,56 @@
+﻿@using Ecommerce.DTOs.OrderItemDTOs
+@model List<GetAllOrderItemDTOs>
+
+
+@{
+    ViewData["Title"] = "GetAllItems";
+}
+
+<h1>GetAllItems</h1>
+<a class="btn btn-outline-info mb-2" href="/Order/GetAll" role="button">&#9664; Back</a>
+<a class="btn btn-outline-info mb-2" href="/OrderItems/CreateItems" role="button">Create New Item</a>
+<br />
+
+<link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+
+<table class="table table-light table-hover">
+    <thead>
+        <tr class="table-info">
+            <th scope="col">Product-Item</th>
+            <th scope="col">OrderItem</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total_Price</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+      
+        
+        @foreach(var item in Model)
+        {
+
+            <tr>
+
+           <td>
+            ID: @item.Product.Id <br />
+            Name: @item.Product.Title_ar <br />
+            Desc: @item.Product.Description_ar <br />
+            Price: $@item.Product.Price <br />
+        </td>
+            <td>@item.Id</td>
+            <td>$@item.Product.Price</td>
+            <td>@item.Quantity</td>
+            <td>@item.TotalPricee</td>
+            
+        </tr>
+        
+            
+        }
+     
+    </tbody>
+</table

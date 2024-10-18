@@ -21,9 +21,22 @@ namespace Ecommerce.Application.Mapper
         {
             CreateMap<CreateOrUpdateOrderDTOs, Order>().ReverseMap();   
             CreateMap<GetAllOrderDTOs, Order>().ReverseMap();   
-            CreateMap<CreateOrUpdateOrderItemDTOs, OrderItem>().ReverseMap();   
-            CreateMap<GetAllOrderItemDTOs, OrderItem>().ReverseMap();   
-             CreateMap<CreateorUpdatedCategoryDTOs,Category>().ReverseMap();
+            CreateMap<CreateOrUpdateOrderItemDTOs, OrderItem>().ReverseMap();
+            CreateMap<GetAllOrderItemDTOs, OrderItem>().ReverseMap();
+            //   CreateMap<GetAllProductArDTO, OrderItem>()
+            //   .ForMember(dest => dest.Product, opt => opt.MapFrom(src => new Product
+            //   {
+            //    Id = src.Id,
+            //    Price = src.Price,
+            //// Map other properties as needed
+            //   }));
+
+            //   CreateMap<OrderItem, GetAllProductArDTO>()
+            //  .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Product.Id))
+            //  .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Product.Price));
+
+
+            CreateMap<CreateorUpdatedCategoryDTOs,Category>().ReverseMap();
             CreateMap<GetAllCategoryDTOs,Category>().ReverseMap();
             CreateMap<CreateorUpdatedSubCategoryDTOs,SubCategory>().ReverseMap();
             CreateMap<GetAllSubCategoryDTOs, SubCategory>().ReverseMap();
