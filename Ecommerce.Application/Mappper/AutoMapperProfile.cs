@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Ecommerce.DTOs.DTOsCategories;
 using Ecommerce.DTOs.Facility;
+using Ecommerce.DTOs.Payment;
 using Ecommerce.DTOs.Product;
 using Ecommerce.DTOs.Shipment;
 using Ecommerce.Models;
@@ -16,9 +17,9 @@ namespace Ecommerce.Application.Mapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<CreateorUpdatedCategoryDTOs,Category>().ReverseMap();
-            CreateMap<GetAllCategoryDTOs,Category>().ReverseMap();
-            CreateMap<CreateorUpdatedSubCategoryDTOs,SubCategory>().ReverseMap();
+            CreateMap<CreateorUpdatedCategoryDTOs, Category>().ReverseMap();
+            CreateMap<GetAllCategoryDTOs, Category>().ReverseMap();
+            CreateMap<CreateorUpdatedSubCategoryDTOs, SubCategory>().ReverseMap();
             CreateMap<GetAllSubCategoryDTOs, SubCategory>().ReverseMap();
             CreateMap<CreateAndUpdateProductDTO, Product>().ReverseMap();
             CreateMap<GetAllproductDTO, Product>().ReverseMap();
@@ -27,6 +28,16 @@ namespace Ecommerce.Application.Mapper
             CreateMap<FacilityDTO, Facility>().ReverseMap();
             CreateMap<CreateDto, Shipment>().ReverseMap();
             CreateMap<GetAllDto, Shipment>().ReverseMap();
+            CreateMap<CreateDto, Shipment>().ReverseMap();
+            CreateMap<UpdateDTO, Shipment>().ReverseMap();
+
+            CreateMap<CreateDtos, Payment>().ReverseMap();
+            CreateMap<GetAllDtos, Payment>().ReverseMap();
+            // CreateMap<GetAllDto, UpdateDTO>().ReverseMap();
+
+
+            CreateMap<CreateDtos, Payment>().ReverseMap();
+            CreateMap<UpdateDTOs, Payment>().ReverseMap();
             //CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
             //CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
         }

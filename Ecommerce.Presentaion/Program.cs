@@ -2,12 +2,13 @@
 using Ecommerce.Infrastructure.Categories;
 using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.Application.Contracts;
-using Ecommerce.Application.Mappper;
+using Ecommerce.Application.Mapper;
 using Ecommerce.Application.Services;
 using Ecommerce.Context;
 using Ecommerce.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Ecommerce.Application.Service;
 
 
 
@@ -21,9 +22,21 @@ namespace Ecommerce.Presentaion
 
             builder.Services.AddScoped<ICategoryService, CategoryServices>();
             builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
-            builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
+            builder.Services.AddScoped<ICategoryReposatiry, CategoryRepository>();
             builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
+            builder.Services.AddScoped<IFacillityService, FacilityService>();
 
+            builder.Services.AddScoped<IShipmentService, ShipmentServices>();
+            builder.Services.AddScoped<IShaipmentRepository, ShipmentRepository>();
+
+
+            builder.Services.AddScoped<IPaymentService, Paymentservice>();
+            builder.Services.AddScoped<IPaymentRepoistory, PaymentRepository>();
+
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -35,11 +48,7 @@ namespace Ecommerce.Presentaion
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<EcommerceContext>();
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IProductService, ProductService>();
-            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
-            builder.Services.AddScoped<IFacillityService, FacilityService>();
-            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
 
 
             var app = builder.Build();
@@ -59,7 +68,7 @@ namespace Ecommerce.Presentaion
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            
+
 
 
             app.UseRouting();
@@ -68,7 +77,7 @@ namespace Ecommerce.Presentaion
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
             app.Run();
