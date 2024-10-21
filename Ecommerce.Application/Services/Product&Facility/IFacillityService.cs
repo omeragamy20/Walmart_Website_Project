@@ -12,10 +12,10 @@ namespace Ecommerce.Application.Services
 {
     public interface IFacillityService
     {
-        Task<ResultView<FacilityDTO>> CreateAsync(FacilityDTO entity);
-        Task<ResultView<FacilityDTO>> UpdateAsync(FacilityDTO entity);
+        Task<ResultView<CreatorUpdateFacilityDTO>> CreateAsync(CreatorUpdateFacilityDTO entity);
+        Task<ResultView<CreatorUpdateFacilityDTO>> UpdateAsync(CreatorUpdateFacilityDTO entity);
         Task DeleteAsync(int id);
         Task<List<FacilityDTO>> GetAllAsync();
-        Task<FacilityDTO> GetByIdAsync(int id);
+        Task<CreatorUpdateFacilityDTO> GetByIdAsync(int id);
     }
 }

@@ -17,159 +17,167 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Ecommerce.Presentaion
 build_property.RootNamespace = Ecommerce.Presentaion
-build_property.ProjectDir = C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\
+build_property.ProjectDir = D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion
+build_property.MSBuildProjectDirectory = D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Account/AddAdmin.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Account/AddAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Account/Login.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Account/Profile.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Account/ResetPassword.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Account/Update.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Account/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Category/AllCategories.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Category/AllCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWxsQ2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Category/CreateCategory.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Category/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Category/Updatedcategory.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Category/Updatedcategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlZGNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Facility/Create.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Facility/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdHlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Facility/GetALl.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Facility/GetALl.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdHlcR2V0QUxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Facility/Update.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Facility/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdHlcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Home/Index.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Home/Privacy.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Order/GetAll.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Order/GetAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcR2V0QWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Payment/Create.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Payment/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Payment/Delete.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Payment/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Payment/Edit.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Payment/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Payment/Index.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Payment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Product/Create.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Product/GetALlProduct.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Product/CreatePrdFacility.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGVQcmRGYWNpbGl0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Product/GetALlProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxHZXRBTGxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Product/SearchProduct.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Product/SearchProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTZWFyY2hQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Product/Update.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Product/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Role/Add.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Product/UpdateProductFacilty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxVcGRhdGVQcm9kdWN0RmFjaWx0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Role/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shared/Error.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shared/_LoginPartial.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shipment/Create.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shipment/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shipment/Delete.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shipment/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shipment/Edit.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shipment/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shipment/Index.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shipment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/SubCategory/AllSubCategories.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/SubCategory/AllSubCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2F0ZWdvcnlcQWxsU3ViQ2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/SubCategory/Create.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/SubCategory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/SubCategory/UpdatedSubcategory.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/SubCategory/UpdatedSubcategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2F0ZWdvcnlcVXBkYXRlZFN1YmNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/User/Index.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/_ViewImports.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/_ViewStart.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/monaa/source/repos/Final_Project/Ecommerce.Presentaion/Views/Shared/_Layout.cshtml]
+[D:/Iti rond 2024/Final Project/myrepo/Ecommerce.Presentaion/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gnsa8o9s4u

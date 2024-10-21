@@ -1,4 +1,4 @@
-﻿@model FacilityDTO
+﻿@model CreatorUpdateFacilityDTO
 <h4>Create New Facility</h4>
 @{
     var items = ViewBag.subcategories != null
@@ -19,8 +19,10 @@
         <span asp-validation-for="Name_ar" style="color:red"></span>
     </div> 
      <div>
-        <label asp-for="SubCategoryIds"></label>
-        <select asp-for="SubCategoryIds" class="form-control" asp-items="items"></select>
+        <label asp-for="subcategoriesId"></label>
+        <select asp-for="subcategoriesId" class="form-control" asp-items="items"></select>
+        <span asp-validation-for="subcategoriesId" style="color:red"></span>
+
     </div>
   
     <button class="btn btn-outline-success" type="submit"> Create </button>

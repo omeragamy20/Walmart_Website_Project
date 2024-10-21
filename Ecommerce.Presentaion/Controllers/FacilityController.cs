@@ -27,11 +27,11 @@ namespace Ecommerce.Presentaion.Controllers
         {
             var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
             ViewBag.subcategories = subcategories;
-            FacilityDTO facilityDTO = new FacilityDTO();
-            return View(facilityDTO);
+            //FacilityDTO facilityDTO = new FacilityDTO();
+            return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(FacilityDTO facilityDTO)
+        public async Task<IActionResult> Create(CreatorUpdateFacilityDTO facilityDTO)
         {
             if (ModelState.IsValid)
             {
@@ -40,13 +40,19 @@ namespace Ecommerce.Presentaion.Controllers
                 {
                     return RedirectToAction("GetALl");
                 }
-                return RedirectToAction("GetALl");
+                else
+                {
+                    var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
+                    ViewBag.subcategories = subcategories;
+                    return View();
+                }
+                //return RedirectToAction("GetALl");
             }
             else
             {
                 var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
                 ViewBag.subcategories = subcategories;
-                return View(facilityDTO);
+                return View();
             }
         }
         public async Task<IActionResult> Update(int id)
@@ -58,7 +64,7 @@ namespace Ecommerce.Presentaion.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(FacilityDTO facilityDTO)
+        public async Task<IActionResult> Update(CreatorUpdateFacilityDTO facilityDTO)
         {
             if (ModelState.IsValid)
             {

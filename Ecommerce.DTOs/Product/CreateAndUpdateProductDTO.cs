@@ -22,7 +22,7 @@ namespace Ecommerce.DTOs.Product
         public string Description_en { get; set; }
         [MinLength(10)]
         public string Description_ar { get; set; }
-        [Range(10,50)]
+        [Range(100,1000000)]
         public decimal Price { get; set; }
         public int Stock { get; set; }
         //public IFormFile? ImageFile { get; set; }

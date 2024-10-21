@@ -36,6 +36,45 @@ namespace Ecommerce.Application.Services.Product_Facility
         {
             var uploadedImages = new List<Images>();
 
+            var exist =(await imageRebository.GetAllAsync()).Any(x => x.ProductId == productId);
+            if (exist)
+            {
+                var oldimg= (await imageRebository.GetAllAsync()).Where(x => x.ProductId == productId).ToList();
+                foreach (var item in oldimg)
+                {
+                    await imageRebository.DeleteAsync(item);
+                }
+                //if (files != null && files.Count > 0)
+                //{
+                //    int i = -1;
+                //    foreach (var file in files)
+                //    {
+                //        i++;
+                //        if (file.Length > 0)
+                //        {
+                //            var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                //            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/product", uniqueFileName);
+
+                //            using (var stream = new FileStream(filePath, FileMode.Create))
+                //            {
+                //                await file.CopyToAsync(stream);
+                //            }
+
+                //            //oldimg[i] = new Images
+                //            //{
+                //            //    Image = $"/images/product/{uniqueFileName}",
+                //            //    ProductId = productId
+                //            //};
+                //            oldimg[i].Image = $"/images/product/{uniqueFileName}";
+                //            oldimg[i].ProductId= productId;
+
+                //            await imageRebository.UpdateAsync(oldimg[i]);
+                //            await imageRebository.SaveChanges();
+                //            uploadedImages.Add(oldimg[i]);
+                //        }
+                //    }
+                //}
+            }
             if (files != null && files.Count > 0)
             {
                 foreach (var file in files)
@@ -52,7 +91,7 @@ namespace Ecommerce.Application.Services.Product_Facility
 
                         var imageEntity = new Images
                         {
-                            Image = $"/images/product/{uniqueFileName}", 
+                            Image = $"/images/product/{uniqueFileName}",
                             ProductId = productId
                         };
 
