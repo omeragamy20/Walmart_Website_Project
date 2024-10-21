@@ -148,17 +148,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "cbfa1f0a-46ac-4e79-bdd8-624b5d3ab07f",
+                            ConcurrencyStamp = "22f9aff1-005d-4e1f-9289-441ddf61d48b",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEG/z0liSSBcoj0UeeqVQJy8gpW4tqIA6YiiaJ/r8XF+qh9eoQODBBmrGh5ZTvZg4Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEH61oxUsAWIPq4aNQNTITtjHTgdcxMmQH1hLF5v2Sh0U6AkF2pGq2+eQpPcD87a0jA==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8217550e-2e83-4ecc-abdb-cac8c3623888",
+                            SecurityStamp = "d4af1f87-bede-432e-9d7e-4372e9322fad",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -375,11 +375,11 @@ namespace Ecommerce.Context.Migrations
 
             modelBuilder.Entity("Ecommerce.Models.Payment", b =>
                 {
-                    b.Property<int>("PaymentId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<decimal?>("Amount")
                         .HasColumnType("money");
@@ -392,9 +392,6 @@ namespace Ecommerce.Context.Migrations
 
                     b.Property<string>("CustomerId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
 
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
@@ -418,7 +415,7 @@ namespace Ecommerce.Context.Migrations
                     b.Property<int?>("UpdatedBy")
                         .HasColumnType("int");
 
-                    b.HasKey("PaymentId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
@@ -1038,7 +1035,7 @@ namespace Ecommerce.Context.Migrations
                         .IsRequired();
 
                     b.HasOne("Ecommerce.Models.Facility", "facility")
-                        .WithMany()
+                        .WithMany("subCatFacility")
                         .HasForeignKey("facilityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1120,6 +1117,8 @@ namespace Ecommerce.Context.Migrations
             modelBuilder.Entity("Ecommerce.Models.Facility", b =>
                 {
                     b.Navigation("ProductFacilities");
+
+                    b.Navigation("subCatFacility");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Order", b =>

@@ -8,11 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ecommerce.Context.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241021051758_after update product work.cs
-    public partial class afterupdateproductwork : Migration
-========
-    public partial class updatedatabase : Migration
->>>>>>>> mady:Ecommerce.Context/Migrations/20241018173038_updatedatabase.cs
+    public partial class migrationaftermergemady : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -231,14 +227,13 @@ namespace Ecommerce.Context.Migrations
                 name: "Payments",
                 columns: table => new
                 {
-                    PaymentId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     PaymentMethod_en = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     PaymentMethod_ar = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Amount = table.Column<decimal>(type: "money", nullable: true),
                     CustomerId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Id = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedBy = table.Column<int>(type: "int", nullable: true),
@@ -247,7 +242,7 @@ namespace Ecommerce.Context.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Payments", x => x.PaymentId);
+                    table.PrimaryKey("PK_Payments", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Payments_AspNetUsers_CustomerId",
                         column: x => x.CustomerId,
@@ -370,11 +365,7 @@ namespace Ecommerce.Context.Migrations
                     Value_en = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Value_ar = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ProductID = table.Column<int>(type: "int", nullable: false),
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241021051758_after update product work.cs
                     facilityID = table.Column<int>(type: "int", nullable: true),
-========
-                    FacilityId = table.Column<int>(type: "int", nullable: false),
->>>>>>>> mady:Ecommerce.Context/Migrations/20241018173038_updatedatabase.cs
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedBy = table.Column<int>(type: "int", nullable: true),
@@ -385,18 +376,10 @@ namespace Ecommerce.Context.Migrations
                 {
                     table.PrimaryKey("PK_ProductFacilities", x => x.Id);
                     table.ForeignKey(
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241021051758_after update product work.cs
                         name: "FK_ProductFacilities_Facilities_facilityID",
                         column: x => x.facilityID,
                         principalTable: "Facilities",
                         principalColumn: "Id");
-========
-                        name: "FK_ProductFacilities_Facilities_FacilityId",
-                        column: x => x.FacilityId,
-                        principalTable: "Facilities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
->>>>>>>> mady:Ecommerce.Context/Migrations/20241018173038_updatedatabase.cs
                     table.ForeignKey(
                         name: "FK_ProductFacilities_Products_ProductID",
                         column: x => x.ProductID,
@@ -465,11 +448,7 @@ namespace Ecommerce.Context.Migrations
                         name: "FK_TheOrders_Payments_PaymentId",
                         column: x => x.PaymentId,
                         principalTable: "Payments",
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241021051758_after update product work.cs
-                        principalColumn: "PaymentId");
-========
                         principalColumn: "Id");
->>>>>>>> mady:Ecommerce.Context/Migrations/20241018173038_updatedatabase.cs
                     table.ForeignKey(
                         name: "FK_TheOrders_Shipments_ShipmentId",
                         column: x => x.ShipmentId,
@@ -568,7 +547,6 @@ namespace Ecommerce.Context.Migrations
                         principalColumn: "Id");
                 });
 
-<<<<<<<< HEAD:Ecommerce.Context/Migrations/20241021051758_after update product work.cs
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
@@ -581,15 +559,13 @@ namespace Ecommerce.Context.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Image", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "sohag", "cbfa1f0a-46ac-4e79-bdd8-624b5d3ab07f", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEEG/z0liSSBcoj0UeeqVQJy8gpW4tqIA6YiiaJ/r8XF+qh9eoQODBBmrGh5ZTvZg4Q==", "01111690167", false, "8217550e-2e83-4ecc-abdb-cac8c3623888", false, "admin" });
+                values: new object[] { "1", 0, "sohag", "22f9aff1-005d-4e1f-9289-441ddf61d48b", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEH61oxUsAWIPq4aNQNTITtjHTgdcxMmQH1hLF5v2Sh0U6AkF2pGq2+eQpPcD87a0jA==", "01111690167", false, "d4af1f87-bede-432e-9d7e-4372e9322fad", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[] { "1", "1" });
 
-========
->>>>>>>> mady:Ecommerce.Context/Migrations/20241018173038_updatedatabase.cs
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
