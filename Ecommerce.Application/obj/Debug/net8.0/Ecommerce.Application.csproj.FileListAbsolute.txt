@@ -34,3 +34,21 @@ D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\obj\Debug\net8.0\Eco
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\obj\Debug\net8.0\refint\Ecommerce.Application.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.pdb
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\obj\Debug\net8.0\ref\Ecommerce.Application.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.deps.json
+D:\iti\DashB--FinalProject--\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.DTOs.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.csproj.AssemblyReference.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.AssemblyInfoInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.AssemblyInfo.cs
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.csproj.CoreCompileInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.sourcelink.json
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerc.C5F54E74.Up2Date
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\refint\Ecommerce.Application.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Application\obj\Debug\net8.0\ref\Ecommerce.Application.dll

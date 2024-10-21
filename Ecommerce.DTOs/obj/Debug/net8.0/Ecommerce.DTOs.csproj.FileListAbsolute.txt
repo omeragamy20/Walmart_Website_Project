@@ -30,3 +30,19 @@ D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.deps.json
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.dll
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.AssemblyReference.cache
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfoInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfo.cs
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.CoreCompileInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.sourcelink.json
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerc.D3152FB8.Up2Date
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll

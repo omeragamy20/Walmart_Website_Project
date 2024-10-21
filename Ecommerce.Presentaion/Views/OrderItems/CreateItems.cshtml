@@ -20,8 +20,13 @@
     </div>
 
     <div class="mb-3">
+        <label for="Price" asp-for="Price" class="form-label">Price</label>
+        <input type="number" asp-for="Price" class="form-control" id="Quantity" aria-describedby="Price">
+    </div>
+
+    <div class="mb-3">
     <label for="ProductId" class="form-label">Select Product</label>
-        <select class="form-select asp-for=" ProductId" form-select-lg mb-3" aria-label="Large select example">
+        <select class="form-select form-select-lg mb-3" asp-for=" ProductId" aria-label="Large select example">
         @* <option selected>Open this select menu</option> *@
         @foreach (var item in ViewBag.prod)
         {
@@ -33,7 +38,7 @@
     </select>
     </div>
 
-    <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+    <select class="form-select form-select-lg mb-3"  asp-for="OrderId" aria-label="Large select example">
         <option selected>Select Order Num</option>
         @foreach (var item in ViewBag.or)
         {

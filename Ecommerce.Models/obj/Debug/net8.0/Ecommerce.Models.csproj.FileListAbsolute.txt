@@ -24,3 +24,16 @@ D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerc
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.deps.json
+D:\iti\DashB--FinalProject--\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.AssemblyReference.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll

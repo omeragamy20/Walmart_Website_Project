@@ -22,11 +22,13 @@ namespace Ecommerce.DTOs.OrderItemDTOs
         public decimal TotalPrice { get; set; }
 
 
-        public GetAllProductArDTO Product
-        {
-            get; set;
-        }
-        public decimal TotalPricee => Product.Price * Quantity;
+        public string PrdName { get; set; }
+        public string PrdDesc { get; set; }
+        public decimal PrdPrice { get; set; }
+        public List<string> PrdImages{ get; set; }
+        public string PrdImage { get; set; }
+
+        public decimal TotalPricee => PrdPrice * Quantity;
 
     }
 }

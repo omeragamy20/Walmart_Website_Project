@@ -30,11 +30,19 @@ namespace Ecommerce.Presentaion
             builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
             builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
             builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
             builder.Services.AddScoped<IFacillityService, FacilityService>();
+            builder.Services.AddScoped<IImageRepository, ImageRepository>();
+            builder.Services.AddScoped<IImageService, ImageService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
+            builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+            builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -56,18 +64,7 @@ namespace Ecommerce.Presentaion
                 )
                 .AddEntityFrameworkStores<EcommerceContext>() ;
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IProductService, ProductService>();
-            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
-            builder.Services.AddScoped<IFacillityService, FacilityService>();
-            builder.Services.AddScoped<IImageRepository, ImageRepository>();
-            builder.Services.AddScoped<IImageService, ImageService>();
-            builder.Services.AddScoped<IOrderService, OrderService>();
-            builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
-            builder.Services.AddScoped<IOrderItemService, OrderItemService>();
-            builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
-            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
-
+       
 
             builder.Services.AddRazorPages();
             var app = builder.Build();

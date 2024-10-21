@@ -43,14 +43,12 @@ namespace Ecommerce.Presentaion.Controllers
         public async Task< IActionResult> CreateItems()
         {
 
-            if (ModelState.IsValid)
-            {
              var  products = (await _Product.GetAllArAsync());
             ViewBag.prod = products;
             var order = await _Order.GetAllAsync();
             ViewBag.or = order;
 
-            }
+            
             return View("CreateItems"); 
 
         }
@@ -59,8 +57,14 @@ namespace Ecommerce.Presentaion.Controllers
         public async Task<IActionResult> CreateItems(CreateOrUpdateOrderItemDTOs orderdto)
         {
 
-          var x = _OrderServ.CreateAsync(orderdto);
+        if (ModelState.IsValid)
+        {
+
+            var x = _OrderServ.CreateAsync(orderdto);
+            }
             return RedirectToAction("GetAllItems");
+
+
         }
 
 
