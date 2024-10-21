@@ -1,8 +1,7 @@
-﻿@model Ecommerce.DTOs.Shipment.GetAllDto
-
+﻿@model Ecommerce.DTOs.Shipment.UpdateDTO
 <h1>Edit Shipment</h1>
 
-<form asp-action="Edit">
+<form asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
     <div class="form-group">
         <label asp-for="ShipmentDate"></label>

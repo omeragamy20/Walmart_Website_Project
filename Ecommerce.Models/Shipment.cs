@@ -10,7 +10,7 @@ namespace Ecommerce.Models
 {
     public class Shipment : BaseEntity<int>
     {
-     
+
 
         public DateTime ShipmentDate { get; set; }
 
@@ -22,7 +22,7 @@ namespace Ecommerce.Models
 
         [MaxLength(50)]
         public string Country { get; set; }
-
+        //[Key]
         [MaxLength(10)]
         public string ZipCode { get; set; }
 

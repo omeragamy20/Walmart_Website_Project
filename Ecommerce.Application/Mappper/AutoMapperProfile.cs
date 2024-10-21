@@ -5,6 +5,7 @@ using Ecommerce.Models;
 using Ecommerce.DTOs.DTOsCategories;
 using Ecommerce.DTOs.DTOsFavoritandRate;
 using Ecommerce.DTOs.Facility;
+using Ecommerce.DTOs.Payment;
 using Ecommerce.DTOs.Product;
 using Ecommerce.DTOs.Shipment;
 using Ecommerce.DTOs.CustomerDto;
@@ -32,9 +33,6 @@ namespace Ecommerce.Application.Mapper
             CreateMap<GetAllCategoryDTOs,Category>().ReverseMap();
             CreateMap<CreateorUpdatedSubCategoryDTOs,SubCategory>().ReverseMap();
             CreateMap<GetAllSubCategoryDTOs, SubCategory>().ReverseMap();
-            // product & Facilityies $ imggs
-            CreateMap<Product,CreateAndUpdateProductDTO>().ReverseMap();
-            CreateMap<Images, ImageDTO>().ReverseMap();
             
             // product & Facility & Image
             CreateMap<Product,CreateAndUpdateProductDTO>().ReverseMap();
@@ -95,6 +93,16 @@ namespace Ecommerce.Application.Mapper
             //CreateMap<GetAllDto, Shipment>().ReverseMap();
             //CreateMap<Images, ImageDTO>().ReverseMap();
 
+            CreateMap<CreateDto, Shipment>().ReverseMap();
+            CreateMap<UpdateDTO, Shipment>().ReverseMap();
+
+            CreateMap<CreateDtos, Payment>().ReverseMap();
+            CreateMap<GetAllDtos, Payment>().ReverseMap();
+            // CreateMap<GetAllDto, UpdateDTO>().ReverseMap();
+
+
+            CreateMap<CreateDtos, Payment>().ReverseMap();
+            CreateMap<UpdateDTOs, Payment>().ReverseMap();
             //CreateMap<CreatePaymentDTO, Payment>().ReverseMap();
             //CreateMap<GetAllPaymentDTO, Payment>().ReverseMap();
             // CreateMap<CreateDto, Shipment>().ReverseMap();

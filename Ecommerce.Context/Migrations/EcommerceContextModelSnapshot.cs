@@ -381,7 +381,7 @@ namespace Ecommerce.Context.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
 
-                    b.Property<decimal>("Amount")
+                    b.Property<decimal?>("Amount")
                         .HasColumnType("money");
 
                     b.Property<DateTime?>("Created")
@@ -399,10 +399,11 @@ namespace Ecommerce.Context.Migrations
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("PaymentDate")
+                    b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PaymentMethod_ar")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -1037,7 +1038,7 @@ namespace Ecommerce.Context.Migrations
                         .IsRequired();
 
                     b.HasOne("Ecommerce.Models.Facility", "facility")
-                        .WithMany("subCatFacility")
+                        .WithMany()
                         .HasForeignKey("facilityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1119,8 +1120,6 @@ namespace Ecommerce.Context.Migrations
             modelBuilder.Entity("Ecommerce.Models.Facility", b =>
                 {
                     b.Navigation("ProductFacilities");
-
-                    b.Navigation("subCatFacility");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Order", b =>
