@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Context.Migrations
 {
     [DbContext(typeof(EcommerceContext))]
-    [Migration("20241021201331_margn migration the last merge")]
-    partial class margnmigrationthelastmerge
+    [Migration("20241021235434_migrathion aftr add orderitem_work")]
+    partial class migrathionaftraddorderitem_work
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,17 +151,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "0d6afe28-4923-4782-bb6a-1db4e5a08979",
+                            ConcurrencyStamp = "29440efd-6c75-4ce9-9101-3275afa92255",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN+ZFkWaRqN8cBFviz09TPf1Vz6B1cChP2mPY8vFaqidkWzexLEJ4qucTKY6WG8Sbg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL2VyCNorrPUi+r6E+zGwiq1GUecR53st/QtwkL9j+rsA/hAad+b3u7SETlRVkeKGA==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6fdd4c10-ed81-4e1d-ab77-9da39c9b98da",
+                            SecurityStamp = "3ab18d94-5ce6-4884-9173-119357fb90f9",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

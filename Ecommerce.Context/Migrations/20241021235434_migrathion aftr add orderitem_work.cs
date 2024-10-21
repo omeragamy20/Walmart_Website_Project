@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ecommerce.Context.Migrations
 {
     /// <inheritdoc />
-    public partial class migrationaftermergemady : Migration
+    public partial class migrathionaftraddorderitem_work : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -559,7 +559,7 @@ namespace Ecommerce.Context.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Image", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "sohag", "22f9aff1-005d-4e1f-9289-441ddf61d48b", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEH61oxUsAWIPq4aNQNTITtjHTgdcxMmQH1hLF5v2Sh0U6AkF2pGq2+eQpPcD87a0jA==", "01111690167", false, "d4af1f87-bede-432e-9d7e-4372e9322fad", false, "admin" });
+                values: new object[] { "1", 0, "sohag", "29440efd-6c75-4ce9-9101-3275afa92255", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEL2VyCNorrPUi+r6E+zGwiq1GUecR53st/QtwkL9j+rsA/hAad+b3u7SETlRVkeKGA==", "01111690167", false, "3ab18d94-5ce6-4884-9173-119357fb90f9", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

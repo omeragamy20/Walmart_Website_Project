@@ -341,9 +341,7 @@ D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Mic
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
