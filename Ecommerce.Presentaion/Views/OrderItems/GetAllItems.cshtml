@@ -21,8 +21,7 @@
     <thead>
         <tr class="table-info">
             <th scope="col">Product-Item</th>
-            <th scope="col">OrderItem</th>
-            <th scope="col">Price</th>
+            <th scope="col">OrderItem-ID</th>
             <th scope="col">Quantity</th>
             <th scope="col">Total_Price</th>
         
@@ -37,15 +36,15 @@
             <tr>
 
            <td>
-            ID: @item.Product.Id <br />
-            Name: @item.Product.Title_ar <br />
-            Desc: @item.Product.Description_ar <br />
-            Price: $@item.Product.Price <br />
+            <img style="width:150px ; height:150px " src=" @item.PrdImage" alt="Alternate Text" />  <br />
+            Name: @item.PrdName <br />
+            Desc: @item.PrdDesc<br />
+            Price: $@item.PrdPrice <br />
+            
         </td>
-            <td>@item.Id</td>
-            <td>$@item.Product.Price</td>
-            <td>@item.Quantity</td>
-            <td>@item.TotalPricee</td>
+            <td>ID : @item.Id</td>
+            <td><bold>Quantity</bold>: @item.Quantity</td>
+            <td>$@item.TotalPricee</td>
             
         </tr>
         

@@ -30,7 +30,7 @@ namespace Ecommerce.Context
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<subCatFacility> subCatFacility { get; set; }
 
-        public EcommerceContext() { }
+        //public EcommerceContext() { }
         public EcommerceContext(DbContextOptions<EcommerceContext> options) : base(options)
         {
             

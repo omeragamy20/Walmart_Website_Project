@@ -34,3 +34,21 @@ D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\refint\
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.pdb
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.genruntimeconfig.cache
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Context\obj\Debug\net8.0\ref\Ecommerce.Context.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.deps.json
+D:\iti\DashB--FinalProject--\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.runtimeconfig.json
+D:\iti\DashB--FinalProject--\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.AssemblyReference.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfoInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfo.cs
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.CoreCompileInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.sourcelink.json
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerc.5C623463.Up2Date
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\refint\Ecommerce.Context.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.genruntimeconfig.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\ref\Ecommerce.Context.dll

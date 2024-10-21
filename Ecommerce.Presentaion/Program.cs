@@ -66,6 +66,8 @@ namespace Ecommerce.Presentaion
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
+
+
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<EcommerceContext>(options =>
@@ -83,7 +85,7 @@ namespace Ecommerce.Presentaion
                 }
                 )
                 .AddEntityFrameworkStores<EcommerceContext>() ;
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews();       
             builder.Services.AddRazorPages();
             var app = builder.Build();
 

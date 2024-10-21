@@ -18,7 +18,7 @@ namespace Ecommerce.Application.ServicesO
         private readonly IOrderItemsReposatiry OrderitemRepo;
         private readonly IMapper Maper;
 
-        public OrderItemService(IOrderItemsReposatiry _OrderitemRepo , IMapper _Maper)
+        public OrderItemService(IOrderItemsReposatiry _OrderitemRepo, IMapper _Maper)
         {
             OrderitemRepo = _OrderitemRepo;
             Maper = _Maper;
@@ -84,7 +84,7 @@ namespace Ecommerce.Application.ServicesO
 
         public async Task<List<GetAllOrderItemDTOs>> GetAllAsync()
         {
-            var all = (await OrderitemRepo.GetAllAsync()).Include(o=>o.Product).ToList();
+            var all = (await OrderitemRepo.GetAllAsync()).Include(o => o.Product).ToList();
 
             return Maper.Map<List<GetAllOrderItemDTOs>>(all);
         }
@@ -175,9 +175,37 @@ namespace Ecommerce.Application.ServicesO
 
         public async Task<List<GetAllOrderItemDTOs>> GetAllItemsAsync(int Id)
         {
-            var all = (await OrderitemRepo.GetAllAsync()).Where(p=>p.OrderId == Id).Include(o => o.Product).ToList();
+            var all = (await OrderitemRepo.GetAllAsync()).Where(p => p.OrderId == Id).Include(o => o.Product).ThenInclude(p=>p.Images).ToList();
 
-            return Maper.Map<List<GetAllOrderItemDTOs>>(all);
+            List<GetAllOrderItemDTOs> result = new();
+
+
+
+            foreach (OrderItem item in all)
+            {
+                GetAllOrderItemDTOs newone = new GetAllOrderItemDTOs()
+                {
+                    Id = item.Id,
+                    PrdDesc = item.Product.Description_en,
+                    PrdImage = item.Product.Images.FirstOrDefault().Image,
+                    PrdName = item.Product.Title_en,
+                    PrdPrice = item.Product.Price,
+                    Quantity = item.Quantity,
+                    PrdImages = item.Product.Images.Select(p=>p.Image).ToList(),
+
+
+
+
+                };
+
+
+                result.Add(newone);
+
+
+
+            }
+
+            return result;
         }
 
 
