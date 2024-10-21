@@ -2,7 +2,7 @@
 <a class="btn btn-outline-primary" asp-action="Create">Create One</a>
 <br />
 </br>
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover table-bordered align-middle table-xl">
     <thead>
         <tr>
             <th scope="col">Title_en</th>
@@ -13,7 +13,8 @@
             <th scope="col">Stock</th>
             <th scope="col">SubCategory_En</th>
             <th scope="col">SubCategory_Ar</th>
-            <th scope="col">Facilities</th>
+            <th scope="col">Facilities_En</th>
+            <th scope="col">Facilities_Ar</th>
             <th scope="col">Image</th>
             <th scope="col">Action</th>
         </tr>
@@ -43,7 +44,14 @@
                         </li>
                     }
             </td>
-                <td>@foreach (var f in @p.Facilities)
+            <td>@foreach (var f in @p.Facilities)
+                    {
+                        <li style="list-style-type:none">
+                            @f
+                        </li>
+                    }
+            </td>
+            <td>@foreach (var f in @p.Facilities_Ar)
                     {
                         <li style="list-style-type:none">
                             @f

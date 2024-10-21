@@ -283,7 +283,8 @@ namespace Ecommerce.Application.Services
                     ImageUrls = p.Images.Select(i => i.Image).ToList(),
                     //Facilities = p.ProductFacilities.
                     //Select(pp=>pp.facilities.Where(f=>f.subCatFacility.Where(s=>s.SubCategoryID == p.productSubCategory.FirstOrDefault(s=>s.SubcategoryId))
-                    Facilities = p.ProductFacilities.Select(f=>f.facility.Name_en).ToList()
+                    Facilities = p.ProductFacilities.Select(f=>f.Value_en).ToList(),
+                    Facilities_Ar = p.ProductFacilities.Select(f=>f.Value_ar).ToList()
                 }).ToList();
 
            // var products = mapper.Map<List<GetAllproductDTO>>(data);
