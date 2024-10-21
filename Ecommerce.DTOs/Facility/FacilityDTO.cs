@@ -8,7 +8,7 @@ namespace Ecommerce.DTOs.Facility
 {
     public class FacilityDTO
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [ MinLength(3)]
         public string Name_en { get; set; }

@@ -22,16 +22,15 @@ namespace Ecommerce.DTOs.Product
         public string Description_en { get; set; }
         [MinLength(10)]
         public string Description_ar { get; set; }
-        [Range(10,50)]
+        [Range(100,1000000)]
         public decimal Price { get; set; }
         public int Stock { get; set; }
         //public IFormFile? ImageFile { get; set; }
         //public ICollection<Images>? Images { get; set; }
+        public List<string>? Facilities { get; set; } = new List<string>();
         public List<int>? SubCategoryIds { get; set; }
         public List<string>? ImagesUrl { get; set; }
         public List<IFormFile>? ImagesFromFile { get; set; } = new List<IFormFile>();
-        //public List<string> ImagesUrl { get; set; }
-        //public List<IFormFile>? Images { get; set; } = new List<IFormFile>();
         public ICollection<ProductSubCategory>? productSubCategory { get; set; }
 
     }

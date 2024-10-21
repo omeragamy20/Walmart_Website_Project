@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ecommerce.Context.Migrations
 {
     /// <inheritdoc />
-    public partial class lastMigration : Migration
+    public partial class afterupdateproductwork : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -366,6 +366,7 @@ namespace Ecommerce.Context.Migrations
                     Value_en = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Value_ar = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ProductID = table.Column<int>(type: "int", nullable: false),
+                    facilityID = table.Column<int>(type: "int", nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedBy = table.Column<int>(type: "int", nullable: true),
@@ -375,6 +376,11 @@ namespace Ecommerce.Context.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductFacilities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductFacilities_Facilities_facilityID",
+                        column: x => x.facilityID,
+                        principalTable: "Facilities",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_ProductFacilities_Products_ProductID",
                         column: x => x.ProductID,
@@ -512,30 +518,6 @@ namespace Ecommerce.Context.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FacilityProductFacility",
-                columns: table => new
-                {
-                    ProductFacilitiesId = table.Column<int>(type: "int", nullable: false),
-                    facilitiesId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FacilityProductFacility", x => new { x.ProductFacilitiesId, x.facilitiesId });
-                    table.ForeignKey(
-                        name: "FK_FacilityProductFacility_Facilities_facilitiesId",
-                        column: x => x.facilitiesId,
-                        principalTable: "Facilities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_FacilityProductFacility_ProductFacilities_ProductFacilitiesId",
-                        column: x => x.ProductFacilitiesId,
-                        principalTable: "ProductFacilities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "OrderItems",
                 columns: table => new
                 {
@@ -578,7 +560,7 @@ namespace Ecommerce.Context.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Image", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "sohag", "8de8310c-6a99-42a6-a193-78d9e0c5beed", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEOouF+9k1rOWLB9d/PCkHsrbsE0/l92k7TlVmnRsMUZU/OgcbfoWG16iGMrBdkHF9A==", "01111690167", false, "353d122b-6444-402c-a62c-d87f0be58192", false, "admin" });
+                values: new object[] { "1", 0, "sohag", "cbfa1f0a-46ac-4e79-bdd8-624b5d3ab07f", "ahmedbahgat@gmail.com", false, "admin", null, "admin", false, null, null, "ADMIN", "AQAAAAIAAYagAAAAEEG/z0liSSBcoj0UeeqVQJy8gpW4tqIA6YiiaJ/r8XF+qh9eoQODBBmrGh5ZTvZg4Q==", "01111690167", false, "8217550e-2e83-4ecc-abdb-cac8c3623888", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -625,11 +607,6 @@ namespace Ecommerce.Context.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FacilityProductFacility_facilitiesId",
-                table: "FacilityProductFacility",
-                column: "facilitiesId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Favorites_CustomerId",
                 table: "Favorites",
                 column: "CustomerId");
@@ -658,6 +635,11 @@ namespace Ecommerce.Context.Migrations
                 name: "IX_Payments_CustomerId",
                 table: "Payments",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductFacilities_facilityID",
+                table: "ProductFacilities",
+                column: "facilityID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductFacilities_ProductID",
@@ -739,9 +721,6 @@ namespace Ecommerce.Context.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "FacilityProductFacility");
-
-            migrationBuilder.DropTable(
                 name: "Favorites");
 
             migrationBuilder.DropTable(
@@ -749,6 +728,9 @@ namespace Ecommerce.Context.Migrations
 
             migrationBuilder.DropTable(
                 name: "OrderItems");
+
+            migrationBuilder.DropTable(
+                name: "ProductFacilities");
 
             migrationBuilder.DropTable(
                 name: "ProductSubCategories");
@@ -763,19 +745,16 @@ namespace Ecommerce.Context.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "ProductFacilities");
+                name: "TheOrders");
 
             migrationBuilder.DropTable(
-                name: "TheOrders");
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Facilities");
 
             migrationBuilder.DropTable(
                 name: "SubCategories");
-
-            migrationBuilder.DropTable(
-                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Payments");

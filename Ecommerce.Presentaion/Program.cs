@@ -3,6 +3,7 @@ using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Infrastructure.Categories;
 using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Contracts.product_Facillity;
 using Ecommerce.Application.Mappper;
 using Ecommerce.Application.ServicesO;
 using Ecommerce.Application.Services;
@@ -27,13 +28,34 @@ namespace Ecommerce.Presentaion
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddScoped<ICategoryService, CategoryServices>();
-            builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
             builder.Services.AddScoped<ICategoryReposatiry,CategoryRepository>();
+
+            builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
             builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IProductService, ProductService>();
+
+            builder.Services.AddScoped<IProductSubCategoryRepository, ProductSubCategoryRepository>();
+            builder.Services.AddScoped<IProductFacilityRepository, ProductFacilityRepository>();
+            builder.Services.AddScoped<IProductFacilityServices, ProductFacilityServices>();
+
             builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
             builder.Services.AddScoped<IFacillityService, FacilityService>();
+
+            builder.Services.AddScoped<ISubCatFacilityRepository, SubCatFacilityRepository>();
+            builder.Services.AddScoped<ISubCatFacilityService, SubCatFacilityService>();
+
+
+            builder.Services.AddScoped<IImageRepository, ImageRepository>();
+            builder.Services.AddScoped<IImageService, ImageService>();
+
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
+
+            builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+            builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
+
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
             // Add services to the container.
@@ -56,17 +78,8 @@ namespace Ecommerce.Presentaion
                 )
                 .AddEntityFrameworkStores<EcommerceContext>() ;
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IProductService, ProductService>();
-            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
-            builder.Services.AddScoped<IFacillityService, FacilityService>();
-            builder.Services.AddScoped<IImageRepository, ImageRepository>();
-            builder.Services.AddScoped<IImageService, ImageService>();
-            builder.Services.AddScoped<IOrderService, OrderService>();
-            builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
-            builder.Services.AddScoped<IOrderItemService, OrderItemService>();
-            builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
-            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+            //builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 
             builder.Services.AddRazorPages();

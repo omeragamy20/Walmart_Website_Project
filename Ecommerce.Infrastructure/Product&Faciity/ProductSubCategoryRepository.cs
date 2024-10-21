@@ -1,5 +1,4 @@
-﻿using Ecommerce.Application.Contracts;
-using Ecommerce.Application.Contracts.Categories;
+﻿using Ecommerce.Application.Contracts.product_Facillity;
 using Ecommerce.Context;
 using Ecommerce.Models;
 using System;
@@ -8,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Infrastructure.Categories
+namespace Ecommerce.Infrastructure.Product_Faciity
 {
-    public class ProductSubCategoryRepository:GenricReposatiry<ProductSubCategory,int>, IProductSubCategoryRepository
+    public class ProductSubCategoryRepository:GenricReposatiry<ProductSubCategory,int>,IProductSubCategoryRepository
     {
         public ProductSubCategoryRepository(EcommerceContext context):base(context)
         {
             
         }
-
     }
 }

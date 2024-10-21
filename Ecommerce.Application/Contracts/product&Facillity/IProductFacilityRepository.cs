@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Application.Contracts.product_Facillity
 {
-    public interface IImageRepository : IGenericReposatiry<Images, int>
+    public interface IProductFacilityRepository :IGenericReposatiry<ProductFacility,int>
     {
     }
 }

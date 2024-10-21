@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Contracts.product_Facillity;
 using Ecommerce.DTOs.Product;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
@@ -17,12 +18,14 @@ namespace Ecommerce.Application.Services
     {
         
         private readonly IProductRepository productRebository;
+        private readonly IProductSubCategoryRepository prdctsubCatRepository;
         private readonly IMapper mapper;
-        public ProductService(IProductRepository _productRepository, IMapper _mapper)
+        public ProductService(IProductRepository _productRepository, IMapper _mapper, IProductSubCategoryRepository _prdctsubCatRepository)
         {
             
             productRebository = _productRepository;
             mapper = _mapper;
+            prdctsubCatRepository= _prdctsubCatRepository;
         }
         public async Task<ResultView<CreateAndUpdateProductDTO>> CreateAsync(CreateAndUpdateProductDTO entity)
         {
@@ -43,14 +46,27 @@ namespace Ecommerce.Application.Services
                 else
                 {
                     var product = mapper.Map<Product>(entity);
-                    
-                   
-                    product.productSubCategory = entity.SubCategoryIds?.Select(id => new ProductSubCategory
-                    {
-                        SubcategoryId = id
-                    }).ToList();
+
+                    //product.ProductFacilities = entity.Facilities.Select(facility => new ProductFacility
+                    //{
+                    //    Value_en=facility
+                    //}).ToList();
+                    //product.productSubCategory = entity.SubCategoryIds?.Select(id => new ProductSubCategory
+                    //{
+                    //    SubcategoryId = id
+                    //}).ToList();
                     var success = (await productRebository.CreateAsync(product));
                     await productRebository.SaveChanges();
+                    for(int i = 0; i < entity.SubCategoryIds?.Count; i++)
+                    {
+                        ProductSubCategory PS=new ProductSubCategory()
+                        {
+                            ProductId=success.Id,
+                            SubcategoryId = entity.SubCategoryIds[i],
+                        };
+                        await prdctsubCatRepository.CreateAsync(PS);
+                        await prdctsubCatRepository.SaveChanges();
+                    }
                     var returnProduct = mapper.Map<CreateAndUpdateProductDTO>(success);
                     var msg = "Created Successfully";
                     result = new ResultView<CreateAndUpdateProductDTO>()
@@ -118,10 +134,13 @@ namespace Ecommerce.Application.Services
         {
            
                 var data = (await productRebository.GetAllAsync())
-                    .Include(f => f.ProductFacilities)
+                    .Include(pf => pf.ProductFacilities)
+                    //.ThenInclude(f=>f.facilities)
                     .Include(i => i.Images)
-                    .Include(s => s.productSubCategory)
-                    
+                    .Include(ps => ps.productSubCategory)
+                    .ThenInclude(s=>s.SubCategory).
+                    ThenInclude(sf=>sf.subCatFacility)
+                    .ThenInclude(f=>f.facility)
                     .Where(p => p.Title_en == ProductName || p.Title_ar == ProductName);
 
                    var product = mapper.Map<List<GetAllproductDTO>>(data);
@@ -139,6 +158,7 @@ namespace Ecommerce.Application.Services
                  .Include(s=>s.productSubCategory)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
+                oldone.productSubCategory.Clear();
                 oldone.productSubCategory = entity.SubCategoryIds.Select(id => new ProductSubCategory
                 {
                     SubcategoryId = id
@@ -240,12 +260,35 @@ namespace Ecommerce.Application.Services
 
         public async Task<List<GetAllproductDTO>> GetAllAsync()
        {
-            var data = (await productRebository.GetAllAsync()).Include(f => f.ProductFacilities).Include(i => i.Images)
-                .Include(ps => ps.productSubCategory).ThenInclude(s => s.SubCategory).ToList();
-               
-            var products = mapper.Map<List<GetAllproductDTO>>(data);
+            //var data = (await productRebository.GetAllAsync()).Include(i => i.Images)
+            //    .Include(ps => ps.productSubCategory).ThenInclude(s => s.SubCategory)
+            //    .ThenInclude(sf=>sf.subCatFacility).ThenInclude(f=>f.facility).ToList();
+
+         //   var data = (await productRebository.GetAllAsync()).Include(i => i.Images)
+         //.Include(ps => ps.productSubCategory).ThenInclude(s => s.SubCategory)
+         //.ThenInclude(sf => sf.subCatFacility).ThenInclude(f => f.facility).ToList();
+
+            var data = (await productRebository.GetAllAsync())
+                .Select(p => new GetAllproductDTO
+                {
+                    Id = p.Id,
+                    Description_ar = p.Description_ar,
+                    Description_en = p.Description_en,
+                    Price = p.Price,
+                    Stock = p.Stock,
+                    Title_ar = p.Title_ar,
+                    Title_en = p.Title_en,
+                    SubCategoryNames = p.productSubCategory.Select(p => p.SubCategory.Name_en).ToList(),
+                    SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
+                    ImageUrls = p.Images.Select(i => i.Image).ToList(),
+                    //Facilities = p.ProductFacilities.
+                    //Select(pp=>pp.facilities.Where(f=>f.subCatFacility.Where(s=>s.SubCategoryID == p.productSubCategory.FirstOrDefault(s=>s.SubcategoryId))
+                    Facilities = p.ProductFacilities.Select(f=>f.facility.Name_en).ToList()
+                }).ToList();
+
+           // var products = mapper.Map<List<GetAllproductDTO>>(data);
            
-            return products;
+            return data;
         }
     }
 }

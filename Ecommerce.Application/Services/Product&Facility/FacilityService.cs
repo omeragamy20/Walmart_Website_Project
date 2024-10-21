@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Contracts.product_Facillity;
 using Ecommerce.DTOs.Facility;
 using Ecommerce.DTOs.Product;
 using Ecommerce.DTOs.shared;
@@ -17,15 +18,17 @@ namespace Ecommerce.Application.Services
     public class FacilityService : IFacillityService
     {
         private readonly IFacilityRepository facilityRepository;
+        private readonly ISubCatFacilityRepository subcatfacilityRepository;
         private readonly IMapper mapper;
-        public FacilityService(IFacilityRepository _facilityRepository,IMapper _mapper) 
+        public FacilityService(IFacilityRepository _facilityRepository,IMapper _mapper, ISubCatFacilityRepository _subcatfacilityRepository) 
         {
             facilityRepository = _facilityRepository;
             mapper = _mapper;
+            subcatfacilityRepository = _subcatfacilityRepository;
         }
-        public async Task<ResultView<FacilityDTO>> CreateAsync(FacilityDTO entity)
+        public async Task<ResultView<CreatorUpdateFacilityDTO>> CreateAsync(CreatorUpdateFacilityDTO entity)
         {
-            ResultView<FacilityDTO> result = new ResultView<FacilityDTO>();
+            ResultView<CreatorUpdateFacilityDTO> result = new ResultView<CreatorUpdateFacilityDTO>();
             try
             {
                 var facility = (await facilityRepository.GetAllAsync()).Any(f => f.Name_en == entity.Name_en || f.Name_ar == entity.Name_ar);
@@ -43,13 +46,22 @@ namespace Ecommerce.Application.Services
                 {
 
                     var newfacility = mapper.Map<Facility>(entity);
-                    newfacility.subCatFacility = entity.SubCategoryIds.Select(id => new subCatFacility
-                    {
-                        SubCategoryID = id
-                    }).ToList();
                     var success=(await facilityRepository.CreateAsync(newfacility));
                     await facilityRepository.SaveChanges();
-                    var returned = mapper.Map<FacilityDTO>(success);
+                    //newfacility.subCatFacility = entity.subcategoriesId.Select(id => new subCatFacility
+                    //{
+                    //    SubCategoryID = id
+                    //}).ToList();
+                    for(int i = 0; i < entity.subcategoriesId.Count; i++)
+                    {
+                        subCatFacility SCF=new subCatFacility() {
+                            facilityId=success.Id,
+                            SubCategoryID= entity.subcategoriesId[i]
+                        };
+                        await subcatfacilityRepository.CreateAsync(SCF);
+                        await subcatfacilityRepository.SaveChanges();
+                    }
+                    var returned = mapper.Map<CreatorUpdateFacilityDTO>(success);
                     result = new()
                     {
                         Entity = returned,
@@ -81,43 +93,59 @@ namespace Ecommerce.Application.Services
         public async Task<List<FacilityDTO>> GetAllAsync()
         {
 
-            var data = (await facilityRepository.GetAllAsync())
-                .Include(sf => sf.subCatFacility).ThenInclude(s => s.subCategory).ToList();
-                
-                    var facilities = mapper.Map<List<FacilityDTO>>(data);
+            var data = (await facilityRepository.GetAllAsync()).ToList();
+                //.Include(sf => sf.subCatFacility).ThenInclude(s => s.subCategory).ToList();
+            var facilities = mapper.Map<List<FacilityDTO>>(data);
                     
-                    return facilities;   
+            return facilities;   
         }
 
-        public async Task<FacilityDTO> GetByIdAsync(int id)
+        public async Task<CreatorUpdateFacilityDTO> GetByIdAsync(int id)
         {
              var data = await facilityRepository.GetOneAsync(id);
                
-                var returned=mapper.Map<FacilityDTO>(data);
+                var returned=mapper.Map<CreatorUpdateFacilityDTO>(data);
                   
                 return returned;            
         }
 
        
 
-        public async Task<ResultView<FacilityDTO>> UpdateAsync(FacilityDTO entity)
+        public async Task<ResultView<CreatorUpdateFacilityDTO>> UpdateAsync(CreatorUpdateFacilityDTO entity)
         {
-            ResultView<FacilityDTO> result = new ResultView<FacilityDTO>();
+            ResultView<CreatorUpdateFacilityDTO> result = new ResultView<CreatorUpdateFacilityDTO>();
             try
             {
-                var oldone = (await facilityRepository.GetAllAsync())
-                 .Include(p=>p.ProductFacilities)
-                  .Include(p => p.subCatFacility)
-                 .FirstOrDefault(p => p.Id == entity.Id);
-                mapper.Map(entity, oldone);
-                oldone.subCatFacility.Clear();
-                oldone.subCatFacility = entity.SubCategoryIds.Select(id => new subCatFacility
+                //var oldone = (await facilityRepository.GetAllAsync())
+                // .Include(p=>p.ProductFacilities)
+                //  .Include(p => p.subCatFacility)
+                // .FirstOrDefault(p => p.Id == entity.Id);
+                //mapper.Map(entity, oldone);
+                //oldone.subCatFacility.Clear();
+                //oldone.subCatFacility = entity.SubCategoryIds.Select(id => new subCatFacility
+                //{
+                //    SubCategoryID = id
+                //}).ToList();
+                List<subCatFacility> SCF=new List<subCatFacility>();
+                SCF=(await subcatfacilityRepository.GetAllAsync()).Where(sf=>sf.facilityId==entity.Id).ToList();
+                foreach (var facility in SCF)
                 {
-                    SubCategoryID = id
-                }).ToList();
-                var updated = await facilityRepository.UpdateAsync(oldone);
+                    await subcatfacilityRepository.DeleteAsync((subCatFacility) facility);
+                }
+                var updatedentity=mapper.Map<Facility>(entity);
+                var newupdated = await facilityRepository.UpdateAsync(updatedentity);
                 await facilityRepository.SaveChanges();
-                var success = mapper.Map<FacilityDTO>(updated);
+                for (int i = 0; i < entity.subcategoriesId.Count; i++)
+                {
+                    subCatFacility sf = new subCatFacility()
+                    {
+                        facilityId = newupdated.Id,
+                        SubCategoryID = entity.subcategoriesId[i]
+                    };
+                    await subcatfacilityRepository.CreateAsync(sf);
+                    await subcatfacilityRepository.SaveChanges();
+                }
+                var success = mapper.Map<CreatorUpdateFacilityDTO>(newupdated);
                 var msg = "Updated Successfully";
                 result = new()
                 {

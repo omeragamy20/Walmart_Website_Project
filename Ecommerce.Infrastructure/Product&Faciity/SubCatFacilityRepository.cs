@@ -9,13 +9,11 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Infrastructure.Product_Faciity
 {
-    public class ImageRepository : GenricReposatiry<Images, int>, IImageRepository
+    public class SubCatFacilityRepository:GenricReposatiry<subCatFacility,int>,ISubCatFacilityRepository
     {
-        private readonly EcommerceContext Context;
-
-        public ImageRepository(EcommerceContext _Context) : base(_Context)
+        public SubCatFacilityRepository(EcommerceContext context):base(context)
         {
-            Context = _Context;
+            
         }
     }
 }
