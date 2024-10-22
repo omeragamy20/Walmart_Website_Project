@@ -65,8 +65,11 @@
                 }
             </td>
            <td>
-                <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
-                <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
+                <div style="display:flex">
+                        <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
+                        &nbsp;&nbsp;
+                        <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
+                </div>
             </td>
         </tr>
         }

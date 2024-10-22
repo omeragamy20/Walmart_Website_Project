@@ -31,7 +31,7 @@ namespace Ecommerce.Application.Mapper
             CreateMap<CreateOrUpdateOrderDTOs, Order>().ReverseMap();   
             CreateMap<GetAllOrderDTOs, Order>().ReverseMap();   
             CreateMap<CreateOrUpdateOrderItemDTOs, OrderItem>().ReverseMap();   
-            CreateMap<GetAllOrderItemDTOs, OrderItem>().ReverseMap();   
+            CreateMap<GetAllOrderItemDTOs, OrderItem>().ReverseMap();
             //   CreateMap<GetAllProductArDTO, OrderItem>()
             //   .ForMember(dest => dest.Product, opt => opt.MapFrom(src => new Product
             //   {
@@ -45,9 +45,9 @@ namespace Ecommerce.Application.Mapper
             //  .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Product.Price));
 
 
-            
-            // product & Facility & Image
-            //CreateMap<Product,CreateAndUpdateProductDTO>().ReverseMap();
+
+            //product & Facility & Image
+            CreateMap<Product, CreateAndUpdateProductDTO>().ReverseMap();
             ////  .ForMember(dest => dest.Images, opt => opt.MapFrom(src => src.Images.Select(img => img.Image).ToList()))
             //CreateMap<Product, GetAllproductDTO>()
             //.ForMember(dest => dest.SubCategoryIds, opt => opt.MapFrom(src => src.productSubCategory
