@@ -53,18 +53,18 @@ namespace Ecommerce.Presentaion.Controllers
 
         }
 
+       
+
         [HttpPost]
         public async Task<IActionResult> CreateItems(CreateOrUpdateOrderItemDTOs orderdto)
         {
-
-        if (ModelState.IsValid)
-        {
-
-            var x = _OrderServ.CreateAsync(orderdto);
+            if (ModelState.IsValid)
+            {
+                var x = await _OrderServ.CreateAsync(orderdto);
+                //return RedirectToAction($"GetAllItems/{orderdto.OrderId}", "OrderItems");
+                //return View($"OrderItems/GetAllItems/{orderdto.OrderId}");
             }
-            return RedirectToAction("GetAllItems");
-
-
+            return RedirectToAction("GetAll", "Order");
         }
 
 

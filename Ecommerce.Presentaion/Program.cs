@@ -40,6 +40,7 @@ namespace Ecommerce.Presentaion
             builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
             builder.Services.AddScoped<IOrderItemService, OrderItemService>();
             builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
+
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 
