@@ -1,30 +1,35 @@
-﻿@model IEnumerable<Ecommerce.DTOs.Payment.Read_DTO>
-
-<h1>Payments</h1>
+﻿@*   @model IEnumerable<Ecommerce.DTOs.Shipment.GetAllDto> *@
+      @using Ecommerce.DTOs.Payment
+      @model List<GetAllDtos>
+<h1>payment</h1>
 
 <p>
-    <a asp-action="Create">Create New Payment</a>
+    <a asp-controller="Payment" asp-action="Create">Create New</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Payment Date</th>
-            <th>Payment Method (EN)</th>
+            <th>PaymentDate</th>
             <th>Amount</th>
-            <th>Actions</th>
+            <th>PaymentMethod_en</th>
+            <th>PaymentMethod_ar</th>
+            
         </tr>
     </thead>
     <tbody>
-        @foreach (var payment in Model)
+        @foreach (var Payment in Model)
         {
             <tr>
-                <td>@payment.PaymentDate</td>
-                <td>@payment.PaymentMethod_en</td>
-                <td>@payment.Amount</td>
+                <td>@Payment.PaymentDate</td>
+                <td>@Payment.Amount</td>
+                <td>@Payment.PaymentMethod_en</td>
+                <td>@Payment.PaymentMethod_ar</td>
+                <td>@Payment.PaymentId</td>
+               
                 <td>
-                    <a asp-action="Edit" asp-route-id="@payment.PaymentId">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@payment.PaymentId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@Payment.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@Payment.Id">Delete</a>
                 </td>
             </tr>
         }

@@ -148,17 +148,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "3c0a5102-3e4a-45ff-a186-de8f12cbda53",
+                            ConcurrencyStamp = "29440efd-6c75-4ce9-9101-3275afa92255",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDOFj9No13ABZ3i+RrGtYxMAy5AG3y78dgnkK6y4ErnPBEjfEPEMEv8DL+Da9lOXUw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL2VyCNorrPUi+r6E+zGwiq1GUecR53st/QtwkL9j+rsA/hAad+b3u7SETlRVkeKGA==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "790ea1da-8f51-42bc-8d13-8ca6a830a5ac",
+                            SecurityStamp = "3ab18d94-5ce6-4884-9173-119357fb90f9",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -375,13 +375,13 @@ namespace Ecommerce.Context.Migrations
 
             modelBuilder.Entity("Ecommerce.Models.Payment", b =>
                 {
-                    b.Property<int>("PaymentId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Amount")
+                    b.Property<decimal?>("Amount")
                         .HasColumnType("money");
 
                     b.Property<DateTime?>("Created")
@@ -393,16 +393,14 @@ namespace Ecommerce.Context.Migrations
                     b.Property<string>("CustomerId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("PaymentDate")
+                    b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PaymentMethod_ar")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -417,7 +415,7 @@ namespace Ecommerce.Context.Migrations
                     b.Property<int?>("UpdatedBy")
                         .HasColumnType("int");
 
-                    b.HasKey("PaymentId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
@@ -514,9 +512,14 @@ namespace Ecommerce.Context.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int?>("facilityID")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductID");
+
+                    b.HasIndex("facilityID");
 
                     b.ToTable("ProductFacilities");
                 });
@@ -735,21 +738,6 @@ namespace Ecommerce.Context.Migrations
                     b.HasIndex("facilityId");
 
                     b.ToTable("subCatFacility");
-                });
-
-            modelBuilder.Entity("FacilityProductFacility", b =>
-                {
-                    b.Property<int>("ProductFacilitiesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("facilitiesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductFacilitiesId", "facilitiesId");
-
-                    b.HasIndex("facilitiesId");
-
-                    b.ToTable("FacilityProductFacility");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -981,6 +969,12 @@ namespace Ecommerce.Context.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Ecommerce.Models.Facility", "facility")
+                        .WithMany("ProductFacilities")
+                        .HasForeignKey("facilityID");
+
+                    b.Navigation("facility");
+
                     b.Navigation("product");
                 });
 
@@ -1041,7 +1035,7 @@ namespace Ecommerce.Context.Migrations
                         .IsRequired();
 
                     b.HasOne("Ecommerce.Models.Facility", "facility")
-                        .WithMany()
+                        .WithMany("subCatFacility")
                         .HasForeignKey("facilityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1049,21 +1043,6 @@ namespace Ecommerce.Context.Migrations
                     b.Navigation("facility");
 
                     b.Navigation("subCategory");
-                });
-
-            modelBuilder.Entity("FacilityProductFacility", b =>
-                {
-                    b.HasOne("Ecommerce.Models.ProductFacility", null)
-                        .WithMany()
-                        .HasForeignKey("ProductFacilitiesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Ecommerce.Models.Facility", null)
-                        .WithMany()
-                        .HasForeignKey("facilitiesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1133,6 +1112,13 @@ namespace Ecommerce.Context.Migrations
                     b.Navigation("Rates");
 
                     b.Navigation("Shipments");
+                });
+
+            modelBuilder.Entity("Ecommerce.Models.Facility", b =>
+                {
+                    b.Navigation("ProductFacilities");
+
+                    b.Navigation("subCatFacility");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Order", b =>

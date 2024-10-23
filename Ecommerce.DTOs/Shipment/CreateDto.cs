@@ -11,8 +11,7 @@ namespace Ecommerce.DTOs.Shipment
     {
        
 
-        
-        public DateTime ShipmentDate { get; set; }
+         public DateTime ShipmentDate { get; set; }
 
         [Required, MaxLength(150)]
         public string Address { get; set; }
@@ -22,9 +21,10 @@ namespace Ecommerce.DTOs.Shipment
 
         [MaxLength(50)]
         public string Country { get; set; }
-
+        [Key]
         [MaxLength(10)]
         public string ZipCode { get; set; }
+
 
         public string? CustomerId { get; set; }
 

@@ -10,8 +10,8 @@ namespace Ecommerce.Application.Services.Product_Facility
 {
     public interface IImageService
     {
-        Task<List<Images>> UploadImagesAsync(List<IFormFile> files, int productId);
-        Task<Images> GetImageByIdAsync(int id);
         Task DeleteImageAsync(int id);
+        Task<Images> GetImageByIdAsync(int id);
+        Task<List<Images>> UploadImagesAsync(List<IFormFile> files, int productId);
     }
 }

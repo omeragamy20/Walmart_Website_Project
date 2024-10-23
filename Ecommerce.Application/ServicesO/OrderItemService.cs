@@ -31,7 +31,7 @@ namespace Ecommerce.Application.ServicesO
             {
 
 
-                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.Id == entity.Id);
+                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.ProductId == entity.ProductId);
 
                 if (Exist)
                 {
@@ -175,7 +175,7 @@ namespace Ecommerce.Application.ServicesO
 
         public async Task<List<GetAllOrderItemDTOs>> GetAllItemsAsync(int Id)
         {
-            var all = (await OrderitemRepo.GetAllAsync()).Where(p => p.OrderId == Id).Include(o => o.Product).ThenInclude(p=>p.Images).ToList();
+            var all = (await OrderitemRepo.GetAllAsync()).Where(p => p.OrderId == Id).Include(o => o.Product).ThenInclude(i=>i.Images).ToList();
 
             List<GetAllOrderItemDTOs> result = new();
 
@@ -192,10 +192,6 @@ namespace Ecommerce.Application.ServicesO
                     PrdPrice = item.Product.Price,
                     Quantity = item.Quantity,
                     PrdImages = item.Product.Images.Select(p=>p.Image).ToList(),
-
-
-
-
                 };
 
 

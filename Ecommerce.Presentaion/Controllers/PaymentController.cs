@@ -3,15 +3,14 @@ using Ecommerce.Application.Contracts;
 using Ecommerce.DTOs.Payment;
 using System.Threading.Tasks;
 using Ecommerce.Application.Services;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Ecommerce.Web.Controllers
 {
     public class PaymentController : Controller
     {
-        private readonly IPaymentService _paymentService;
+        private readonly Application.Services.IPaymentService _paymentService;
 
-        public PaymentController(IPaymentService paymentService)
+        public PaymentController(Application.Services.IPaymentService paymentService)
         {
             _paymentService = paymentService;
         }
@@ -19,7 +18,11 @@ namespace Ecommerce.Web.Controllers
         // GET: Payment
         public async Task<IActionResult> Index()
         {
-            var payments = await _paymentService.GetAllPaymentsAsync();
+            var payments = (await _paymentService.GetAllPaymentsAsync());
+            if (payments == null)
+            {
+                return Ok("No payments available");
+            }
             return View(payments);
         }
 
@@ -31,61 +34,51 @@ namespace Ecommerce.Web.Controllers
 
         // POST: Payment/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Create_DTO paymentDto)
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(CreateDtos paymentDtos)
         {
             if (ModelState.IsValid)
             {
-                await _paymentService.AddPaymentAsync(paymentDto);
-                return RedirectToAction(nameof(Index));
+                await _paymentService.CreatePaymentAsync(paymentDtos);
+                return RedirectToAction("Index");
             }
-            return View(paymentDto);
+            return View(paymentDtos);
         }
 
         // GET: Payment/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
-            var payment = await _paymentService.GetOneAsync(id); // Assumed method to get payment by ID
-            if (payment == null)
-            {
-                return NotFound();
-            }
-            return View(payment);
+            var data = await _paymentService.GetPaymentByIdAsync(id);
+            return View(data);
         }
 
-        // POST: Payment/Edit/5
+        // POST: Payment/Edit
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Create_DTO paymentDto)
+        public async Task<IActionResult> Edit(UpdateDTOs paymentDto)
         {
-            if (ModelState.IsValid)
+            if (paymentDto == null)
             {
-                await _paymentService.UpdatePaymentAsync(paymentDto);
-                return RedirectToAction(nameof(Index));
+                return BadRequest();
             }
-            return View(paymentDto);
+
+            var updatedPayment = await _paymentService.UpdatePaymentAsync(paymentDto);
+
+            if (updatedPayment != null)
+            {
+                return RedirectToAction("Index", "Payment");
+            }
+            return NotFound();
         }
 
         // GET: Payment/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            var payment = await _paymentService.GetOneAsync(id); // Assumed method to get payment by ID
-            if (payment == null)
+            var payment = await _paymentService.DeletepaymentAsync(id);
+            if (payment)
             {
-                return NotFound();
+                return RedirectToAction("Index");
             }
-            return View(payment);
-        }
-
-        // POST: Payment/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int  id)
-        {
-            var payment = await _paymentService.GetOneAsync(id);
-            await _paymentService.DeletePaymentAsync(payment.Entity); // Assumed method to delete payment by ID
-            return RedirectToAction(nameof(Index));
+            return NotFound();
         }
     }
 }
-

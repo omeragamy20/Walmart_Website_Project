@@ -20,6 +20,9 @@ namespace Ecommerce.Models
         [ForeignKey("product")]
         public int ProductID { get; set; }
         public Product product { get; set; }
-        public ICollection<Facility>?  facilities { get; set; }
+
+        [ForeignKey("facility")]
+        public int?  facilityID { get; set; }
+        public Facility?  facility { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace Ecommerce.Infrastructure
         public async Task<TEntity> CreateAsync(TEntity Entity)
         {
             var x = (await dbset.AddAsync(Entity)).Entity;
-            Debug.WriteLine(x);
+            Debug.WriteLine(x.Id);
             return x ;
         }
 
