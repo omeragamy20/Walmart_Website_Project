@@ -21,6 +21,7 @@
             <th scope="col">Status</th>
             <th scope="col">Accept</th>
             <th scope="col">Cancel</th>
+            <th scope="col">Items</th>
         </tr>
     </thead>
     <tbody>
@@ -35,7 +36,7 @@
             <td>Ahmed</td>
             @if(item.Status == 0){
 
-            <td>Pendding</td>
+            <td>Pendding..</td>
                     <td><a class="btn btn-outline-info" href="/Approve/@item.Id" role="button">Approve</a></td>
                     <td> <a class="btn  btn-outline-danger" href="/Cancel/@item.Id" role="button">Cancelled</a></td>
                 }else if (item.Status == 1){
@@ -48,6 +49,9 @@
                     <td><button type="button" class="btn btn-outline-primary" disabled>Disable</button></td>
                     <td><button type="button" class="btn btn-outline-danger" disabled>Disable</button></td>
             }
+
+                <td><a class="btn btn-outline-info" href="/OrderItems/GetAllItems/@item.Id" role="button">View</a></td>
+                
            
                
         </tr>

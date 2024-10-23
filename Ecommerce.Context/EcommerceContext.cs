@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Context
 {
-    public class EcommerceContext:IdentityDbContext<Customer>
+    public class EcommerceContext : IdentityDbContext<Customer>
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
@@ -26,10 +26,11 @@ namespace Ecommerce.Context
         public DbSet<ProductFacility> ProductFacilities { get; set; }
         public DbSet<Rate> Rates { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
+
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<subCatFacility> subCatFacility { get; set; }
 
-        public EcommerceContext() { }
+        //public EcommerceContext() { }
         public EcommerceContext(DbContextOptions<EcommerceContext> options) : base(options)
         {
             
@@ -83,7 +84,7 @@ namespace Ecommerce.Context
                 (entity.State == EntityState.Added)
                 {
                     entity.Entity.Created = DateTime.UtcNow;
-                    entity.Entity.CreatedBy =1;
+                    entity.Entity.CreatedBy = 1;
                 }
                 if
                 (entity.State == EntityState.Modified)
@@ -107,7 +108,7 @@ namespace Ecommerce.Context
                 (entity.State == EntityState.Added)
                 {
                     entity.Entity.Created = DateTime.UtcNow;
-                    entity.Entity.CreatedBy =1;
+                    entity.Entity.CreatedBy = 1;
                 }
                 if (entity.State == EntityState.Modified)
                 {
@@ -119,5 +120,5 @@ namespace Ecommerce.Context
         }
 
     }
-   
+
 }

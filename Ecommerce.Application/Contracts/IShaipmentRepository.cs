@@ -1,4 +1,5 @@
-﻿using Ecommerce.Models;
+﻿using AutoMapper;
+using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace Ecommerce.Application.Contracts
 {
     public interface IShaipmentRepository : IGenericReposatiry<Shipment, int>
     {
-        IQueryable<Shipment> SearchOption(string keyword); 
+
+     
+       public  Task<Shipment> GetOneByZipCodeAsync(string zipCode);
+
+      public IQueryable<Shipment> SearchOption(string keyword); 
     }
+    
 }

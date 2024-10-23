@@ -10,18 +10,18 @@ namespace Ecommerce.Models
 {
     public class Payment : BaseEntity<int>
     {
-        [Key]
-        public int PaymentId { get; set; }
+        //[Key]
+        //public int PaymentId { get; set; }
 
-        public DateTime PaymentDate { get; set; }
+        public DateTime? PaymentDate { get; set; }
 
         [Required, MaxLength(100)]
-        public string PaymentMethod_en { get; set; }
-        [ MaxLength(100)]
+        public string? PaymentMethod_en { get; set; }
+        [Required, MaxLength(100)]
         public string? PaymentMethod_ar { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
         [ForeignKey("Customer")]
         public string? CustomerId { get; set; }

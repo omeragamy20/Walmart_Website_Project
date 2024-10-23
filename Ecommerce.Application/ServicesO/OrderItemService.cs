@@ -4,6 +4,7 @@ using Ecommerce.DTOs.OrderDTOs;
 using Ecommerce.DTOs.OrderItemDTOs;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Ecommerce.Application.ServicesO
         private readonly IOrderItemsReposatiry OrderitemRepo;
         private readonly IMapper Maper;
 
-        public OrderItemService(IOrderItemsReposatiry _OrderitemRepo , IMapper _Maper)
+        public OrderItemService(IOrderItemsReposatiry _OrderitemRepo, IMapper _Maper)
         {
             OrderitemRepo = _OrderitemRepo;
             Maper = _Maper;
@@ -30,7 +31,7 @@ namespace Ecommerce.Application.ServicesO
             {
 
 
-                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.Id == entity.Id);
+                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.ProductId == entity.ProductId);
 
                 if (Exist)
                 {
@@ -83,14 +84,14 @@ namespace Ecommerce.Application.ServicesO
 
         public async Task<List<GetAllOrderItemDTOs>> GetAllAsync()
         {
-            var all = (await OrderitemRepo.GetAllAsync()).ToList();
+            var all = (await OrderitemRepo.GetAllAsync()).Include(o => o.Product).ToList();
 
             return Maper.Map<List<GetAllOrderItemDTOs>>(all);
         }
 
         public async Task<ResultView<GetAllOrderItemDTOs>> GetOneAsync(int Id)
         {
-            var one = await OrderitemRepo.GetOneAsync(Id);
+            var one = (await OrderitemRepo.GetOneAsync(Id));
 
             var onemapping = Maper.Map<GetAllOrderItemDTOs>(one);
             ResultView<GetAllOrderItemDTOs> res = new()
@@ -162,6 +163,59 @@ namespace Ecommerce.Application.ServicesO
                 return result;
 
             }
+
+
+
+
         }
+
+
+
+
+
+        public async Task<List<GetAllOrderItemDTOs>> GetAllItemsAsync(int Id)
+        {
+            var all = (await OrderitemRepo.GetAllAsync()).Where(p => p.OrderId == Id).Include(o => o.Product).ThenInclude(i=>i.Images).ToList();
+
+            List<GetAllOrderItemDTOs> result = new();
+
+
+
+            foreach (OrderItem item in all)
+            {
+                GetAllOrderItemDTOs newone = new GetAllOrderItemDTOs()
+                {
+                    Id = item.Id,
+                    PrdDesc = item.Product.Description_en,
+                    PrdImage = item.Product.Images.FirstOrDefault().Image,
+                    PrdName = item.Product.Title_en,
+                    PrdPrice = item.Product.Price,
+                    Quantity = item.Quantity,
+                    PrdImages = item.Product.Images.Select(p=>p.Image).ToList(),
+                };
+
+
+                result.Add(newone);
+
+
+
+            }
+
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

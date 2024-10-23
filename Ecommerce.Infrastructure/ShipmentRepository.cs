@@ -1,4 +1,5 @@
-﻿using Ecommerce.Application.Contracts;
+﻿using AutoMapper;
+using Ecommerce.Application.Contracts;
 using Ecommerce.Context;
 using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
@@ -13,18 +14,28 @@ using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace Ecommerce.Infrastructure
 {
-    public class ShaipmentRepository : GenricReposatiry<Shipment, int>, IShaipmentRepository
+    public class ShipmentRepository : GenricReposatiry<Shipment, int>, IShaipmentRepository
     {
-      
-        public ShaipmentRepository(EcommerceContext ecommerce):base(ecommerce)
+        private readonly EcommerceContext _ecommerce;
+
+        public ShipmentRepository(EcommerceContext ecommerce) : base(ecommerce)
         {
-                
+            _ecommerce = ecommerce;
         }
 
         public IQueryable<Shipment> SearchOption(string keyword)
         {
             throw new NotImplementedException();
         }
-    }
 
+
+        public async Task<Shipment> GetOneByZipCodeAsync(string zipCode)
+        {
+            return await _ecommerce.Shipments
+                .FirstOrDefaultAsync(s => s.ZipCode == zipCode);
+        }
+
+
+    }
 }
+
