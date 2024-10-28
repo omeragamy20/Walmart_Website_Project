@@ -968,12 +968,14 @@ namespace Ecommerce.Context.Migrations
                         new
                         {
                             Id = "1",
-                            Name = "admin"
+                            Name = "admin",
+                            NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            Name = "user"
+                            Name = "user",
+                            NormalizedName = "USER"
                         });
                 });
 

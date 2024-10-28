@@ -86,6 +86,7 @@ namespace Ecommerce.Application.Mapper
 
             // Customer
             CreateMap< CreateAdminDto , Customer>().ReverseMap();
+            CreateMap< CreateCustomerDto , Customer>().ReverseMap();
             CreateMap< GetAllUsersDto , Customer>().ReverseMap();
             CreateMap<GetAdminDto , Customer>().ReverseMap();
             CreateMap<UpdataAdminDto , Customer>().ReverseMap();

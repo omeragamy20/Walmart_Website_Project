@@ -61,8 +61,8 @@ namespace Ecommerce.Context
             builder.Entity<Customer>().HasData(adminUser);
 
             builder.Entity<IdentityRole>().HasData(
-                new IdentityRole() { Id = "1", Name = "admin" },
-                new IdentityRole() { Id = "2", Name = "user" }
+                new IdentityRole() { Id = "1", Name = "admin" ,NormalizedName="ADMIN"},
+                new IdentityRole() { Id = "2", Name = "user", NormalizedName = "USER" }
                 );
 
             builder.Entity<IdentityUserRole<string>>().HasData(

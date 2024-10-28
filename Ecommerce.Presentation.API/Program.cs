@@ -81,20 +81,23 @@ namespace Ecommerce.Presentation.API
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
-            builder.Services.AddDbContext<EcommerceContext>(op =>
-            {
-                op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-            });
+            builder.Services.AddIdentity<Customer, IdentityRole>()
+              .AddEntityFrameworkStores<EcommerceContext>()
+              .AddRoles<IdentityRole>();
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            builder.Services.AddDbContext<EcommerceContext>(options =>
+                options.UseSqlServer(connectionString));
 
-            builder.Services.AddCors(options =>
+
+            builder.Services.AddCors(op =>
             {
-                options.AddPolicy("AllowAll",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin()
-                               .AllowAnyMethod()
-                               .AllowAnyHeader();
-                    });
+                op.AddPolicy("Default", policy =>
+                {
+
+                    policy.AllowAnyHeader()
+                           .AllowAnyOrigin()
+                           .AllowAnyMethod();
+                });
             });
 
             builder.Services.AddControllers();
@@ -111,10 +114,9 @@ namespace Ecommerce.Presentation.API
                 app.UseSwaggerUI();
             }
 
+            app.UseCors("Default");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCors("AllowAll");
-
             app.UseAuthorization();
 
 

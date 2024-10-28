@@ -10,7 +10,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ecommerce.Presentaion.Controllers.Identity
 {
-    [Authorize(Roles = "admin")]
+
     public class AccountController : Controller
     {
         private readonly IWebHostEnvironment webHostEnvironment;
@@ -61,7 +61,8 @@ namespace Ecommerce.Presentaion.Controllers.Identity
                 var admin = mapper.Map<Customer>(AdminDto);
                 admin.Image = $"images/profile/{uniqueFileName}";
                 var res = await userManger.CreateAsync(admin ,AdminDto.Password);
-                          await userManger.AddToRoleAsync(admin, "admin");
+               await userManger.AddToRoleAsync(admin, "admin");
+
                 var role = await roleManager.FindByNameAsync("admin"); 
                 if(role.Name == "admin" && res.Succeeded) 
                 { 
@@ -81,14 +82,14 @@ namespace Ecommerce.Presentaion.Controllers.Identity
             return View(AdminDto);
         }
         [HttpGet]
+
         [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
-
-        [HttpPost]
         [AllowAnonymous]
+        [HttpPost]
         public async Task<IActionResult> Login(CustomerLoginDto customer)
         {
             try
