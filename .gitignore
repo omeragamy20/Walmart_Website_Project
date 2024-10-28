@@ -1,8 +1,13 @@
 /.vs
+**/Migrations/
 *.dll
 *.pdb
 *.cache
 *.json
-!appsettings.json
+!launchSettings.json
+!serviceDependencies.json
+!serviceDependencies.local.json
+!appsettings.Development.json
 bin/
-obj/
+obj/.vs/
+.vs/

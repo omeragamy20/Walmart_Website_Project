@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-//using NetSohag.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Context
 {
-    public class EcommerceContext:IdentityDbContext<Customer>
+    public class EcommerceContext : IdentityDbContext<Customer>
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
@@ -27,9 +26,11 @@ namespace Ecommerce.Context
         public DbSet<ProductFacility> ProductFacilities { get; set; }
         public DbSet<Rate> Rates { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
-        public DbSet<SubCategory> SubCategories { get; set; }
 
-        public EcommerceContext() { }
+        public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<subCatFacility> subCatFacility { get; set; }
+
+        //public EcommerceContext() { }
         public EcommerceContext(DbContextOptions<EcommerceContext> options) : base(options)
         {
             
@@ -60,8 +61,8 @@ namespace Ecommerce.Context
             builder.Entity<Customer>().HasData(adminUser);
 
             builder.Entity<IdentityRole>().HasData(
-                new IdentityRole() { Id = "1", Name = "admin" },
-                new IdentityRole() { Id = "2", Name = "user" }
+                new IdentityRole() { Id = "1", Name = "admin" ,NormalizedName="ADMIN"},
+                new IdentityRole() { Id = "2", Name = "user", NormalizedName = "USER" }
                 );
 
             builder.Entity<IdentityUserRole<string>>().HasData(
@@ -83,7 +84,7 @@ namespace Ecommerce.Context
                 (entity.State == EntityState.Added)
                 {
                     entity.Entity.Created = DateTime.UtcNow;
-                    entity.Entity.CreatedBy =1;
+                    entity.Entity.CreatedBy = 1;
                 }
                 if
                 (entity.State == EntityState.Modified)
@@ -107,7 +108,7 @@ namespace Ecommerce.Context
                 (entity.State == EntityState.Added)
                 {
                     entity.Entity.Created = DateTime.UtcNow;
-                    entity.Entity.CreatedBy =1;
+                    entity.Entity.CreatedBy = 1;
                 }
                 if (entity.State == EntityState.Modified)
                 {
@@ -118,10 +119,6 @@ namespace Ecommerce.Context
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
-
-
-
-
     }
-   
+
 }

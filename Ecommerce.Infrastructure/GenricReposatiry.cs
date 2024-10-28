@@ -4,6 +4,7 @@ using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,9 @@ namespace Ecommerce.Infrastructure
 
         public async Task<TEntity> CreateAsync(TEntity Entity)
         {
-            return (await dbset.AddAsync(Entity)).Entity;
+            var x = (await dbset.AddAsync(Entity)).Entity;
+            Debug.WriteLine(x.Id);
+            return x ;
         }
 
         public Task<TEntity> UpdateAsync(TEntity Entity)
@@ -45,10 +48,10 @@ namespace Ecommerce.Infrastructure
             return Task.FromResult(dbset.Select(p => p));
         }
 
-        //public Task<IQueryable<TEntity>> GetAllWithDeleteAsync()
-        //{
-        //    return Task.FromResult(dbset.Select(p => p));
-        //}
+        public Task<IQueryable<TEntity>> GetAllWithDeleteAsync()
+        {
+            return Task.FromResult(dbset.Select(p => p));
+        }
 
         public ValueTask<TEntity> GetOneAsync(TId Id)
         {

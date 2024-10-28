@@ -1,0 +1,18 @@
+﻿@using Ecommerce.DTOs.DTOsCategories
+@model CreateorUpdatedCategoryDTOs
+@{
+    ViewData["Title"] = "Updatedcategory";
+}
+
+<h1>UpdatedCategory</h1>
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Name_ar" class="form-label" asp-value="Name_ar">الاسم</label>
+        <input type="text" asp-for="Name_ar" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Name_en" class="form-label" asp-value="Name_en">Name</label>
+        <input type="text" asp-for="Name_en" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Updated</button>
+</form>

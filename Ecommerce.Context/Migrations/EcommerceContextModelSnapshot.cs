@@ -17,7 +17,7 @@ namespace Ecommerce.Context.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -148,17 +148,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "8db48399-4571-4ca1-9fcc-f3128eda5c48",
+                            ConcurrencyStamp = "613633fb-93f0-4c51-a654-67ac5da6ecfd",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB2rUhQxoPJEcEjGIC2isW4N3MYytPV2oeLJHWcBiX+Udhzu7yX/WH+kVZbc28SmFw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMK3QbSmLOoQGT827ugc86asbzJ3GHXRN0+yWlLrHIgYnB+oNc0dtPhzxifCYwGLBw==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a42d36c0-0f6d-41fb-92f1-30500acfd879",
+                            SecurityStamp = "427d8ea8-bf46-4a7e-8d6c-651fc20f0f2e",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -191,9 +191,6 @@ namespace Ecommerce.Context.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("ProductFacilityId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("Updated")
                         .HasColumnType("datetime2");
 
@@ -201,8 +198,6 @@ namespace Ecommerce.Context.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductFacilityId");
 
                     b.ToTable("Facilities");
                 });
@@ -386,7 +381,7 @@ namespace Ecommerce.Context.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Amount")
+                    b.Property<decimal?>("Amount")
                         .HasColumnType("money");
 
                     b.Property<DateTime?>("Created")
@@ -401,10 +396,11 @@ namespace Ecommerce.Context.Migrations
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("PaymentDate")
+                    b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PaymentMethod_ar")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -516,9 +512,14 @@ namespace Ecommerce.Context.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int?>("facilityID")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductID");
+
+                    b.HasIndex("facilityID");
 
                     b.ToTable("ProductFacilities");
                 });
@@ -678,7 +679,12 @@ namespace Ecommerce.Context.Migrations
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Name_ar")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Name_en")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -694,6 +700,44 @@ namespace Ecommerce.Context.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("SubCategories");
+                });
+
+            modelBuilder.Entity("Ecommerce.Models.subCatFacility", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("SubCategoryID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Updated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("facilityId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubCategoryID");
+
+                    b.HasIndex("facilityId");
+
+                    b.ToTable("subCatFacility");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -726,12 +770,14 @@ namespace Ecommerce.Context.Migrations
                         new
                         {
                             Id = "1",
-                            Name = "admin"
+                            Name = "admin",
+                            NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            Name = "user"
+                            Name = "user",
+                            NormalizedName = "USER"
                         });
                 });
 
@@ -848,13 +894,6 @@ namespace Ecommerce.Context.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Ecommerce.Models.Facility", b =>
-                {
-                    b.HasOne("Ecommerce.Models.ProductFacility", null)
-                        .WithMany("facilities")
-                        .HasForeignKey("ProductFacilityId");
-                });
-
             modelBuilder.Entity("Ecommerce.Models.Favorite", b =>
                 {
                     b.HasOne("Ecommerce.Models.Customer", "Customer")
@@ -927,10 +966,16 @@ namespace Ecommerce.Context.Migrations
             modelBuilder.Entity("Ecommerce.Models.ProductFacility", b =>
                 {
                     b.HasOne("Ecommerce.Models.Product", "product")
-                        .WithMany()
+                        .WithMany("ProductFacilities")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Ecommerce.Models.Facility", "facility")
+                        .WithMany("ProductFacilities")
+                        .HasForeignKey("facilityID");
+
+                    b.Navigation("facility");
 
                     b.Navigation("product");
                 });
@@ -981,6 +1026,25 @@ namespace Ecommerce.Context.Migrations
                         .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Ecommerce.Models.subCatFacility", b =>
+                {
+                    b.HasOne("Ecommerce.Models.SubCategory", "subCategory")
+                        .WithMany("subCatFacility")
+                        .HasForeignKey("SubCategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ecommerce.Models.Facility", "facility")
+                        .WithMany("subCatFacility")
+                        .HasForeignKey("facilityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("facility");
+
+                    b.Navigation("subCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1052,6 +1116,13 @@ namespace Ecommerce.Context.Migrations
                     b.Navigation("Shipments");
                 });
 
+            modelBuilder.Entity("Ecommerce.Models.Facility", b =>
+                {
+                    b.Navigation("ProductFacilities");
+
+                    b.Navigation("subCatFacility");
+                });
+
             modelBuilder.Entity("Ecommerce.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
@@ -1070,14 +1141,11 @@ namespace Ecommerce.Context.Migrations
 
                     b.Navigation("OrderItems");
 
+                    b.Navigation("ProductFacilities");
+
                     b.Navigation("Rates");
 
                     b.Navigation("productSubCategory");
-                });
-
-            modelBuilder.Entity("Ecommerce.Models.ProductFacility", b =>
-                {
-                    b.Navigation("facilities");
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Shipment", b =>
@@ -1088,6 +1156,8 @@ namespace Ecommerce.Context.Migrations
             modelBuilder.Entity("Ecommerce.Models.SubCategory", b =>
                 {
                     b.Navigation("productSubCategory");
+
+                    b.Navigation("subCatFacility");
                 });
 #pragma warning restore 612, 618
         }

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <title>Walmart Dashboard</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,14 +46,14 @@
     <div class="d-flex align-items-center justify-content-between">
             <a href="/Home/Index" class="logo d-flex align-items-center">
                 <img src="~/images/walmart-logo.png" alt="">
-        <span class="d-none d-lg-block">Walmart</span>
+                <span class="d-lg-blodck" style="font-family:cursive">Walmart</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+      <form class="search-form d-flex align-items-center" method="POST" asp-controller="Product" asp-action="SearchProduct">
+                <input type="text" name="ProductName" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -141,27 +141,38 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-heading">Pages</li>
-
-
-
+            <li class="nav-heading">Pages</li>
+            
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+                <a class="nav-link collapsed" asp-controller="Product" asp-action="GetALlProduct">
 
                     <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
                     <span>Products</span>
         </a>
       </li>
       <!-- End Products Page Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" asp-controller="Facility" asp-action="GetALl">
 
+                <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
+                    <span>Facilities</span>
+            </a>
+        </li>
+             <!-- End Facilities Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+                <a class="nav-link collapsed" href="/Category/AllCategories">
                     <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
           <span>Categories</span>
         </a>
       </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/SubCategory/AllSubCategories">
+                    <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
+                    <span>SubCategories</span>
+                </a>
+            </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="/Order/GetAll">
                     <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
           <span>Orders</span>
         </a>
@@ -173,15 +184,23 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+                <a class="nav-link collapsed" asp-controller="Shipment" asp-action="Index">
                     <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
           <span>Shipment</span>
         </a>
       </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-controller="Payment" asp-action="Index">
+                    <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
+                    <span>Payment</span>
+                </a>
+            </li>
+
+
       <!-- End Contact Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="users-profile.html">
+                <a class="nav-link collapsed" href="/Account/Profile">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
             </a>
@@ -190,22 +209,22 @@
       <li class="nav-item">
                 <a class="nav-link collapsed" href="/Account/AddAdmin">
           <i class="bi bi-card-list"></i>
-          <span>Register</span>
+          <span>Add Admin</span>
         </a>
       </li><!-- End Register Page Nav -->
 
-      <li class="nav-item">
+     @*  <li class="nav-item">
                 <a class="nav-link collapsed" href="/Account/Login">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
-      </li><!-- End Login Page Nav -->
+      </li><!-- End Login Page Nav --> *@
     </ul>
 
   </aside>
   <!-- End Sidebar-->
 
-  <main id="main" class="main">
+  <main id="main" class="main container">
 
     @RenderBody()
 
@@ -236,7 +255,6 @@
   <script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="~/assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
   <script src="~/assets/js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

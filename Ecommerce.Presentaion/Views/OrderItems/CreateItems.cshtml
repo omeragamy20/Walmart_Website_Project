@@ -1,0 +1,53 @@
+﻿@using Ecommerce.DTOs.OrderItemDTOs
+@model CreateOrUpdateOrderItemDTOs
+
+@{
+    ViewData["Title"] = "CreateItems";
+}
+
+<h1>CreateItems</h1>
+<link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+
+<form method="post">
+    <div class="mb-3">
+        <label for="Quantity" asp-for="Quantity" class="form-label">Quantity</label>
+        <input type="number" asp-for="Quantity" class="form-control" id="Quantity" aria-describedby="Quantity">
+        <div id="Title" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="Price" asp-for="Price" class="form-label">Price</label>
+        <input type="number" asp-for="Price" class="form-control" id="Quantity" aria-describedby="Price">
+    </div>
+
+    <div class="mb-3">
+    <label for="ProductId" class="form-label">Select Product</label>
+        <select class="form-select form-select-lg mb-3" asp-for=" ProductId" aria-label="Large select example">
+        @* <option selected>Open this select menu</option> *@
+        @foreach (var item in ViewBag.prod)
+        {
+            <option  value="@item.Id">@item.Title_ar</option>
+            
+
+        }
+      
+    </select>
+    </div>
+
+    <select class="form-select form-select-lg mb-3"  asp-for="OrderId" aria-label="Large select example">
+        <option selected>Select Order Num</option>
+        @foreach (var item in ViewBag.or)
+        {
+            <option value="@item.Id">@item.Id</option>
+
+
+        }
+
+    </select>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

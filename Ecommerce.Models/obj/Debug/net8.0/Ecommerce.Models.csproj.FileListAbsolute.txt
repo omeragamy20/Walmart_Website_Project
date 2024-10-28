@@ -1,0 +1,52 @@
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.deps.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.AssemblyReference.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.deps.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.AssemblyReference.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.deps.json
+D:\iti\DashB--FinalProject--\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.AssemblyReference.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.deps.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.AssemblyReference.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll

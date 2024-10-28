@@ -1,0 +1,86 @@
+﻿@using Ecommerce.DTOs.Facility
+@model PrdFacilitySubCategory
+
+
+@{
+    ViewData["Title"] = "CreatePrdFacility";
+   
+     
+}
+
+<h1>Add Produtc Facility</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePrdFacility">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+
+            <div class="form-group" style="display:none">
+                <label asp-for="ProductId" class="control-label"></label>
+                <input asp-for="ProductId" class="form-control" />
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+@* 
+            <div class="form-group" style="display:none">
+                <label asp-for="SubcatsIDS" class="control-label"></label>
+                <input asp-for="SubcatsIDS" class="form-control" />
+                <span asp-validation-for="SubcatsIDS" class="text-danger"></span>
+            </div>   *@  
+
+         @*    <div class="form-group" >
+                <label asp-for="FacilityDTO" class="control-label"></label>
+                <input asp-for="FacilityDTO" class="form-control" />
+                <span asp-validation-for="FacilityDTO" class="text-danger"></span>
+            </div>
+ *@
+
+
+            @foreach (var m in Model.FacilityDTO)
+            {
+               @*  <div class="form-group">
+                    <label asp-for="@(m.Name_en)" class="control-label"></label>
+                    <input asp-for="@(m.Name_en)" class="form-control" style="display:none" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@m.Name_ar" class="control-label"></label>
+                    <input asp-for="@m.Name_ar" class="form-control" style="display:none" />
+                </div> *@
+                
+                <div style="display:flex">
+                    <div>
+                        <label>@m.Name_en</label>
+                        <div class="form-group">
+                            <input asp-for="@Model.Values_En" class="form-control" />
+                        </div>
+                    </div>
+                    &nbsp;&nbsp;
+                    <div>
+                        <label>@m.Name_ar</label>
+                        <div class="form-group">
+                            <input asp-for="@Model.Values_Ar" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="display:none">
+                    <label asp-for="@Model.FacilityIds" class="control-label"></label>
+                    <input asp-for="@Model.FacilityIds" value="@m.Id" class="form-control" style="display:none" />
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@* <div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

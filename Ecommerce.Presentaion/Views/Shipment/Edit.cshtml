@@ -1,0 +1,34 @@
+﻿@model Ecommerce.DTOs.Shipment.UpdateDTO
+<h1>Edit Shipment</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="ShipmentDate"></label>
+        <input asp-for="ShipmentDate" class="form-control" />
+        <span asp-validation-for="ShipmentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country"></label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ZipCode"></label>
+        <input asp-for="ZipCode" class="form-control" />
+        <span asp-validation-for="ZipCode" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
