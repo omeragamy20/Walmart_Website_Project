@@ -22,14 +22,54 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Abstractions;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.Resource;
-
+using System.Globalization;
 namespace Ecommerce.Presentation.API
 {
     public class Program
     {
         public static void Main(string[] args)
-        {
+        { 
+
             var builder = WebApplication.CreateBuilder(args);
+          
+            builder.Services.AddScoped<ICategoryService, CategoryServices>();
+            builder.Services.AddScoped<ICategoryReposatiry, CategoryRepository>();
+
+            builder.Services.AddScoped<ISubCategoryServices, SubCategoryServices>();
+            builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+
+            builder.Services.AddScoped<IProductSubCategoryRepository, ProductSubCategoryRepository>();
+            builder.Services.AddScoped<IProductFacilityRepository, ProductFacilityRepository>();
+            builder.Services.AddScoped<IProductFacilityServices, ProductFacilityServices>();
+
+            builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
+            builder.Services.AddScoped<IFacillityService, FacilityService>();
+
+            builder.Services.AddScoped<ISubCatFacilityRepository, SubCatFacilityRepository>();
+            builder.Services.AddScoped<ISubCatFacilityService, SubCatFacilityService>();
+
+
+            builder.Services.AddScoped<IImageRepository, ImageRepository>();
+            builder.Services.AddScoped<IImageService, ImageService>();
+
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IOrderReposatiry, OrderReposatiry>();
+
+            builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+            builder.Services.AddScoped<IOrderItemsReposatiry, OrderItemsReposatiry>();
+            builder.Services.AddScoped<IShipmentService, ShipmentServices>();
+            builder.Services.AddScoped<IShaipmentRepository, ShipmentRepository>();
+
+
+            builder.Services.AddScoped<IPaymentService, Paymentservice>();
+            builder.Services.AddScoped<IPaymentRepoistory, PaymentRepository>();
+
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+
 
             builder.Services.AddScoped<ICategoryService, CategoryServices>();
             builder.Services.AddScoped<ICategoryReposatiry, CategoryRepository>();
@@ -78,7 +118,18 @@ namespace Ecommerce.Presentation.API
                }).AddEntityFrameworkStores<EcommerceContext>();
 
             // Add services to the container.
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            builder.Services.AddDbContext<EcommerceContext>(options =>
+                options.UseSqlServer(connectionString));
+            builder.Services.AddIdentity<Customer, IdentityRole>
+                (options => {
+                    options.SignIn.RequireConfirmedAccount = false;
+                }
+                )
+                .AddEntityFrameworkStores<EcommerceContext>();
+
+            // Add services to the container.
+           builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
             builder.Services.AddIdentity<Customer, IdentityRole>()
@@ -105,8 +156,18 @@ namespace Ecommerce.Presentation.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+            builder.Services.AddCors(op =>
+            {
+                op.AddPolicy("Default", policy =>
+                {
 
+                    policy.AllowAnyHeader()
+                           .AllowAnyOrigin()
+                           .AllowAnyMethod();
+                });
+            });
+            var app = builder.Build();
+           
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

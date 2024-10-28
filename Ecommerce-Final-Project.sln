@@ -15,7 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Models", "Ecommer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Presentaion", "Ecommerce.Presentaion\Ecommerce.Presentaion.csproj", "{D76796B9-EB6C-4E93-A269-F798FA91F7EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Presentation.API", "Ecommerce.Presentation.API\Ecommerce.Presentation.API.csproj", "{0A024EC6-B1F9-4BA4-BEBB-430C1092F487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Presentation.API", "Ecommerce.Presentation.API\Ecommerce.Presentation.API.csproj", "{0A024EC6-B1F9-4BA4-BEBB-430C1092F487}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6CC39B24-9158-48D3-85E9-FB4F3CB4E5C7}"
+	ProjectSection(SolutionItems) = preProject
+		..\presentationApi\Controllers\BookController.cs = ..\presentationApi\Controllers\BookController.cs
+		..\..\..\Downloads\WebApi\Program.cs = ..\..\..\Downloads\WebApi\Program.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
