@@ -66,5 +66,23 @@ namespace Ecommerce.Application.Services.Product_Facility
             }
             return result;
         }
+
+        public async Task<PrdFacilitySubCategory> GetFacilitesByPrdIdAsync(int prdID)
+        {
+           var r =  (await productfacilityRepository.GetAllAsync()).Where(p=>p.ProductID ==prdID)
+                .ToList();
+
+            PrdFacilitySubCategory res = new PrdFacilitySubCategory();
+            res.ProductId = prdID;
+            foreach (var ritem in r)
+            {
+             //   res.FacilityIds.Add(ritem.facilityID ?? 0);
+                res.Values_Ar.Add(ritem.Value_ar);
+                res.Values_En.Add(ritem.Value_en);
+
+            }
+
+            return res ?? new();
+        }
     }
 }

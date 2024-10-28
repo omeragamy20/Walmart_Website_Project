@@ -71,7 +71,11 @@ namespace Ecommerce.Presentaion
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<EcommerceContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseSqlServer(connectionString, sqlOptions =>
+                {
+                    // Optional: Set command timeout (e.g., 3 minutes)
+                    sqlOptions.CommandTimeout(180);
+                }));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             //builder.Services.AddDefaultIdentity<Customer>(options => options.SignIn.RequireConfirmedAccount = false)

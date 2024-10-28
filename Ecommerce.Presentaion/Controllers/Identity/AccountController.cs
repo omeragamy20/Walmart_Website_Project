@@ -43,7 +43,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> AddAdmin(CreateAdminDto AdminDto)
         {
@@ -88,7 +88,6 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [AllowAnonymous]
         public async Task<IActionResult> Login(CustomerLoginDto customer)
         {

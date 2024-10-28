@@ -13,5 +13,7 @@ namespace Ecommerce.DTOs.Product
         public string Description_en { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+        public string? ImageUrls { get; set; }
+
     }
 }

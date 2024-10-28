@@ -79,6 +79,7 @@ namespace Ecommerce.Application.Mapper
 
             // favorit & Rate
             CreateMap<CreateorUpdateFavoritDTO,Favorite>().ReverseMap();
+            CreateMap<CreateFavoriteDTOs, Favorite>().ReverseMap();
             CreateMap<GetAllFavoritDTO,Favorite>().ReverseMap();
             CreateMap<CreateorUpdateRateDTO, Rate>().ReverseMap();
             CreateMap<GetAllRateDTO,Rate>().ReverseMap();

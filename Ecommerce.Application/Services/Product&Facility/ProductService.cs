@@ -129,7 +129,12 @@ namespace Ecommerce.Application.Services
                var products = mapper.Map<CreateAndUpdateProductDTO>(data);
             return products;      
         }
-
+        public async Task<List<int?>?> GetSubcatbyPrdId(int id)
+        {
+            var res= (await prdctsubCatRepository.GetAllAsync())
+                .Where(p=>p.ProductId==id).Select(psc => psc.SubcategoryId).ToList();
+            return res;
+        }
         public async Task<List<GetAllproductDTO>> SearchByNameAsync(string ProductName)
         {
            
@@ -290,6 +295,22 @@ namespace Ecommerce.Application.Services
            // var products = mapper.Map<List<GetAllproductDTO>>(data);
            
             return data;
+        }
+        
+        public async Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid,int PageNumber, int Count)
+        {
+            var result=(await prdctsubCatRepository.GetAllAsync()).Where(sc=>sc.SubcategoryId==Subcatid).Skip(Count * (PageNumber - 1)).Take(Count)
+                .Select(p=> new GetAllproductEnDTO
+            {
+                Id=p.Product.Id,
+                Title_en=p.Product.Title_en,
+                Description_en=p.Product.Description_en,
+                Price = p.Product.Price,
+                Stock=p.Product.Stock,
+                ImageUrls=p.Product.Images.FirstOrDefault().Image
+                
+            }).ToList();
+            return result;
         }
     }
 }
