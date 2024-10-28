@@ -23,6 +23,7 @@ namespace Ecommerce.Infrastructure
             Context = _Context;
             dbset = Context.Set<TEntity>();
 
+
         }
 
         public async Task<TEntity> CreateAsync(TEntity Entity)

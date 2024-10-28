@@ -105,46 +105,76 @@ namespace Ecommerce.Application.Services
             return products;
         }
 
-        public async Task<EntityPaginated<GetAllProductArDTO>> GetAllPaginationArAsync(int PageNumber, int Count)
+        public async Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int PageNumber, int Count)
         {
             var data = (await productRebository.GetAllAsync()).Skip(Count * (PageNumber - 1)).Take(Count)
-                .Select(p => new GetAllProductArDTO
+                .Select(p => new GetAllproductDTO
                 {
                     Id = p.Id,
-                    Title_ar = p.Title_ar
+                    Description_ar = p.Description_ar,
+                    Description_en = p.Description_en,
+                    Price = p.Price,
+                    Stock = p.Stock,
+                    Title_ar = p.Title_ar,
+                    Title_en = p.Title_en,
+                    SubCategoryNames = p.productSubCategory.Select(p => p.SubCategory.Name_en).ToList(),
+                    SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
+                    ImageUrls = p.Images.Select(i => i.Image).ToList(),
+                    Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
+                    Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList()
+
                 }).ToList();
             var c = (await productRebository.GetAllAsync()).Count();
 
-            EntityPaginated<GetAllProductArDTO> GetAllResult = new()
+            EntityPaginated<GetAllproductDTO> GetAllResult = new()
             {
                 Data = data,
                 Count = c
             };
             return GetAllResult;
+
         }
 
         public async Task<CreateAndUpdateProductDTO> GetById(int id)
-        {
-               var data = (await productRebository.GetOneAsync(id));
-               var products = mapper.Map<CreateAndUpdateProductDTO>(data);
-            return products;      
+        { 
+
+            var data = (await productRebository.GetOneAsync(id));
+            var pro = new CreateAndUpdateProductDTO
+            {
+                Id = data.Id,
+                Description_ar = data.Description_ar,
+                Description_en = data.Description_en,
+                Price = data.Price,
+                Stock = data.Stock,
+                Title_ar = data.Title_ar,
+                Title_en = data.Title_en,
+                ImagesUrl = data.Images?.Select(i => i.Image).ToList(),
+                Facilities = data.ProductFacilities?.Select(f => f.Value_en).ToList(),
+                Facilities_Ar = data.ProductFacilities?.Select(f => f.Value_ar).ToList()
+            };
+
+            return pro;   
         }
 
         public async Task<List<GetAllproductDTO>> SearchByNameAsync(string ProductName)
         {
-           
-                var data = (await productRebository.GetAllAsync())
-                    .Include(pf => pf.ProductFacilities)
-                    //.ThenInclude(f=>f.facilities)
-                    .Include(i => i.Images)
-                    .Include(ps => ps.productSubCategory)
-                    .ThenInclude(s=>s.SubCategory).
-                    ThenInclude(sf=>sf.subCatFacility)
-                    .ThenInclude(f=>f.facility)
-                    .Where(p => p.Title_en == ProductName || p.Title_ar == ProductName);
+            var data = (await productRebository.GetAllAsync())
+                 .Select(p => new GetAllproductDTO
+                 {
+                     Id = p.Id,
+                     Description_ar = p.Description_ar,
+                     Description_en = p.Description_en,
+                     Price = p.Price,
+                     Stock = p.Stock,
+                     Title_ar = p.Title_ar,
+                     Title_en = p.Title_en,
+                     ImageUrls = p.Images.Select(i => i.Image).ToList(),
+                     Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
+                     Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList()
+                 }).Where(p => p.Title_en == ProductName || p.Title_ar == ProductName).ToList();
 
-                   var product = mapper.Map<List<GetAllproductDTO>>(data);
-            return product;
+                  
+            return data;
         }
 
         public async Task<ResultView<CreateAndUpdateProductDTO>> UpdateAsync(CreateAndUpdateProductDTO entity)
@@ -155,7 +185,7 @@ namespace Ecommerce.Application.Services
                 var oldone = (await productRebository.GetAllAsync())
                  .Include(f => f.ProductFacilities)
                  .Include(i => i.Images)
-                 .Include(s=>s.productSubCategory)
+                 .Include(s => s.productSubCategory)
                  .FirstOrDefault(p => p.Id == entity.Id);
                 mapper.Map(entity, oldone);
                 oldone.productSubCategory.Clear();
@@ -163,6 +193,7 @@ namespace Ecommerce.Application.Services
                 {
                     SubcategoryId = id
                 }).ToList();
+               
                 var updated = await productRebository.UpdateAsync(oldone);
                 await productRebository.SaveChanges();
                 var success = mapper.Map<CreateAndUpdateProductDTO>(updated);
@@ -281,8 +312,8 @@ namespace Ecommerce.Application.Services
                     SubCategoryNames = p.productSubCategory.Select(p => p.SubCategory.Name_en).ToList(),
                     SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
                     ImageUrls = p.Images.Select(i => i.Image).ToList(),
-                    //Facilities = p.ProductFacilities.
-                    //Select(pp=>pp.facilities.Where(f=>f.subCatFacility.Where(s=>s.SubCategoryID == p.productSubCategory.FirstOrDefault(s=>s.SubcategoryId))
+                    //Facilities=p.productSubCategory.Select(s=>s.SubCategory.subCatFacility.Select(f=>f.facility.Name_en)).ToList(),
+
                     Facilities = p.ProductFacilities.Select(f=>f.Value_en).ToList(),
                     Facilities_Ar = p.ProductFacilities.Select(f=>f.Value_ar).ToList()
                 }).ToList();

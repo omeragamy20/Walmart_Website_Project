@@ -93,11 +93,18 @@ namespace Ecommerce.Application.Services
         public async Task<List<FacilityDTO>> GetAllAsync()
         {
 
-            var data = (await facilityRepository.GetAllAsync()).ToList();
-                //.Include(sf => sf.subCatFacility).ThenInclude(s => s.subCategory).ToList();
-            var facilities = mapper.Map<List<FacilityDTO>>(data);
+            var data = (await facilityRepository.GetAllAsync())
+                .Select(f=>new FacilityDTO
+                {
+                    Name_en=f.Name_en,
+                    Name_ar=f.Name_ar,
+                    SubCategoryNames=f.subCatFacility.Select(s=>s.subCategory.Name_en).ToList(),
+                    SubCategoryNamesAr= f.subCatFacility.Select(s => s.subCategory.Name_ar).ToList()
+                }).ToList();
+                
+            //var facilities = mapper.Map<List<FacilityDTO>>(data);
                     
-            return facilities;   
+            return data;   
         }
 
         public async Task<CreatorUpdateFacilityDTO> GetByIdAsync(int id)

@@ -17,7 +17,7 @@ namespace Ecommerce.Application.Services
          Task<List<GetAllproductEnDTO>> GetAllEnAsync();
          Task<List<GetAllProductArDTO>> GetAllArAsync();
          Task<EntityPaginated<GetAllproductEnDTO>> GetAllPaginationEnAsync(int PageNumber, int Count);
-         Task<EntityPaginated<GetAllProductArDTO>> GetAllPaginationArAsync(int PageNumber, int Count);
+         Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int PageNumber, int Count);
          Task<List<GetAllproductDTO>> SearchByNameAsync(string ProductName);
          Task<CreateAndUpdateProductDTO> GetById(int id);
          Task DeleteAsync(int id);

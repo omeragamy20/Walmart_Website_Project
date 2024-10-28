@@ -1,20 +1,26 @@
 ﻿@model List<GetAllproductDTO>
 
-
-@* <div class="search-bar">
-    <form class="search-form d-flex align-items-center" method="POST" asp-controller="Product" asp-action="SearchProduct">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword" required>
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-    </form>
-</div> *@
-@foreach(var p in Model){
-    <div class="card" style="width: 18rem;">
-        <img src="@foreach (var img in @p.ImageUrls) @img" width="80px" height="80px"class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5>@p.Title_en</h5>
-        <h5>@p.Price</h5>
-        <h5>InStok @p.Stock</h5>
-        <p class="card-text">@p.Description_en</p>
-      </div>
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-warning" role="alert">
+        No products found.
     </div>
+}
+else
+{
+    @foreach (var p in Model)
+    {
+
+        <div class="card" style="width: 18rem;">
+            <img src="@foreach (var img in @p.ImageUrls) @img" width="80px" height="80px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5>@p.Title_en</h5>
+                <p>@p.Description_en</p>
+                <h5>Prise: @p.Price</h5>
+                <h5>InStok @p.Stock</h5>
+                <p class="card-text">@p.Description_en</p>
+            </div>
+        </div>
+
+    }
 }
