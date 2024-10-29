@@ -330,7 +330,8 @@ namespace Ecommerce.Application.Services
         
         public async Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid,int PageNumber, int Count)
         {
-            var result=(await prdctsubCatRepository.GetAllAsync()).Where(sc=>sc.SubcategoryId==Subcatid).Skip(Count * (PageNumber - 1)).Take(Count)
+            //.Skip(Count * (PageNumber - 1)).Take(Count)
+            var result=(await prdctsubCatRepository.GetAllAsync()).Where(sc=>sc.SubcategoryId==Subcatid)
                 .Select(p=> new GetAllproductEnDTO
             {
                 Id=p.Product.Id,

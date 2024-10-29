@@ -11,6 +11,7 @@ namespace Ecommerce.Presentation.API.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly IProductService productService;
         private readonly ISubCategoryServices subCategoryService;
         private readonly ISubCatFacilityService subcatfacilityService;
         private readonly IFacillityService facilityService;
@@ -34,6 +35,8 @@ namespace Ecommerce.Presentation.API.Controllers
         {
             return Ok(await productService.GetAllProductPaginationEnBySubCatIdAsync(CatId,1,6));
         }
+
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {

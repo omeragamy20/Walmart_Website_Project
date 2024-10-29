@@ -99,6 +99,7 @@ namespace Ecommerce.Presentation.API.Controllers
 
                         return Ok(new
                         {
+                            id = user.Id,
                             token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
                             expiration = DateTime.Now.AddHours(1)//mytoken.ValidTo
                                                                  //

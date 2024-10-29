@@ -36,6 +36,9 @@ namespace Ecommerce.Context.Migrations
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -246,17 +249,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "3ce31574-7e38-4a82-93b7-0b03adf539db",
+                            ConcurrencyStamp = "2434f864-f162-406a-9a92-6e8e0ed5c9a1",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEE2Q+pqc/3b41VBr8aqLagIqBoWrr/+3IgPn5FnqSGnb+5p9da//cMWZoIJSodo55w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMFedNJ31bmOJ/7Ba9JMW+jPtDL5kFPVxR6GGXfu0jTafjjp9EIMUbZwvXXCMnWVSQ==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6be36ad5-9ea7-42e0-bb33-945b2c0dbeaf",
+                            SecurityStamp = "08af1301-fe7f-4137-8ebf-c84a9afdf871",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -773,6 +776,9 @@ namespace Ecommerce.Context.Migrations
 
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");

@@ -115,27 +115,11 @@ namespace Ecommerce.Presentation.API
             builder.Services.AddIdentity<Customer, IdentityRole>
                (options => {
                    options.SignIn.RequireConfirmedAccount = false;
-               }).AddEntityFrameworkStores<EcommerceContext>();
+               }).AddEntityFrameworkStores<EcommerceContext>()
+               .AddDefaultTokenProviders();
 
-            // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            builder.Services.AddDbContext<EcommerceContext>(options =>
-                options.UseSqlServer(connectionString));
-            builder.Services.AddIdentity<Customer, IdentityRole>
-                (options => {
-                    options.SignIn.RequireConfirmedAccount = false;
-                }
-                )
-                .AddEntityFrameworkStores<EcommerceContext>();
-
-            // Add services to the container.
-           builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
-
-            builder.Services.AddIdentity<Customer, IdentityRole>()
-              .AddEntityFrameworkStores<EcommerceContext>()
-              .AddRoles<IdentityRole>();
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            
             builder.Services.AddDbContext<EcommerceContext>(options =>
                 options.UseSqlServer(connectionString));
 
@@ -150,22 +134,13 @@ namespace Ecommerce.Presentation.API
                            .AllowAnyMethod();
                 });
             });
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddCors(op =>
-            {
-                op.AddPolicy("Default", policy =>
-                {
-
-                    policy.AllowAnyHeader()
-                           .AllowAnyOrigin()
-                           .AllowAnyMethod();
-                });
-            });
             var app = builder.Build();
            
             // Configure the HTTP request pipeline.
@@ -178,6 +153,7 @@ namespace Ecommerce.Presentation.API
             app.UseCors("Default");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

@@ -14,6 +14,7 @@
             <th scope="col">#</th>
             <th scope="col">Name_En</th>
             <th scope="col">Name_Ar</th>
+            <th scope="col">Image</th>
             <th scope="col"></th>
         </tr>
     </thead>
@@ -27,6 +28,9 @@
                 <th scope="row">@(++i)</th>
                 <td>@(cat.Name_en)</td>
                 <td>@(cat.Name_ar)</td>
+                <td>
+                    <img src="@(cat.Image)" width="50px" height="50px" />
+                </td>
                 <td>
                     <div style="display:flex">
                         <a class="btn btn-primary btn-s" asp-action="Updatedcategory" asp-route-id="@(cat.Id)"> Updated</a>
