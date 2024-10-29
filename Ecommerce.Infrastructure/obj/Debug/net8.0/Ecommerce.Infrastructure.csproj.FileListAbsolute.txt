@@ -70,3 +70,27 @@ D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\refint\Ec
 D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.pdb
 D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.genruntimeconfig.cache
 D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\ref\Ecommerce.Infrastructure.dll
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.deps.json
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.runtimeconfig.json
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.dll
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.dll
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.dll
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.dll
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.pdb
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.pdb
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.pdb
+F:\final project graduate\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.AssemblyReference.cache
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfoInputs.cache
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfo.cs
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.CoreCompileInputs.cache
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.sourcelink.json
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerc.43E367F3.Up2Date
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.dll
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\refint\Ecommerce.Infrastructure.dll
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.pdb
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.genruntimeconfig.cache
+F:\final project graduate\Ecommerce.Infrastructure\obj\Debug\net8.0\ref\Ecommerce.Infrastructure.dll

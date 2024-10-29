@@ -46,3 +46,19 @@ D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
 D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
 D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
 D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll
+F:\final project graduate\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.deps.json
+F:\final project graduate\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.dll
+F:\final project graduate\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+F:\final project graduate\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.dll
+F:\final project graduate\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.pdb
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.AssemblyReference.cache
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfoInputs.cache
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfo.cs
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.CoreCompileInputs.cache
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.sourcelink.json
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerc.D3152FB8.Up2Date
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
+F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll

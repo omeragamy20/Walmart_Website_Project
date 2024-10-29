@@ -37,3 +37,16 @@ D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.
 D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
 D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
 D:\iti\DashB--FinalProject--\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
+F:\final project graduate\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.deps.json
+F:\final project graduate\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.dll
+F:\final project graduate\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.pdb
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.AssemblyReference.cache
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
