@@ -1,19 +1,11 @@
 is_global = true
 build_property.TargetFramework = net8.0
-build_property.TargetFramework = net8.0
-build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
-build_property.UsingMicrosoftNETSdkWeb = true
-build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
-build_property.InvariantGlobalization = 
-build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property.EnforceExtendedAnalyzerRules = 
-build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Ecommerce.Presentaion
 build_property.RootNamespace = Ecommerce.Presentaion
@@ -25,6 +17,10 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\iti\DashB--FinalProject--\Ecommerce.Presentaion
 build_property._RazorSourceGeneratorDebug = 
+
+[D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Shipment/Component.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcG1lbnRcQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
 
 [D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Account/AddAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGRBZG1pbi5jc2h0bWw=
@@ -78,6 +74,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/OrderItems/CreateItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xDcmVhdGVJdGVtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/OrderItems/GetAllItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xHZXRBbGxJdGVtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Order/GetAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcR2V0QWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,12 +106,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Product/CreatePrdFacility.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGVQcmRGYWNpbGl0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Product/GetALlProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxHZXRBTGxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Product/SearchProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTZWFyY2hQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Product/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Product/UpdateProductFacilty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxVcGRhdGVQcm9kdWN0RmFjaWx0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/iti/DashB--FinalProject--/Ecommerce.Presentaion/Views/Role/Add.cshtml]
