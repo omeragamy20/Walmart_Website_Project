@@ -1,0 +1,63 @@
+﻿@model CreateAndUpdateProductDTO
+@{
+    var items = ViewBag.subcategories != null
+         ? new SelectList(ViewBag.subcategories, "Id", "Name_en")
+         : new SelectList(Enumerable.Empty<object>(), "Id", "Name_en");
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All">
+    </div>
+    <div class="form-group" hidden>
+        <label asp-for="Id"></label>
+        <input class="form-control" asp-for="Id">
+    </div>
+    <div asp-validation-summary="All">
+    </div>
+    <div>
+        <label asp-for="Title_en"></label>
+        <input asp-for="Title_en" class="form-control" />
+        <span asp-validation-for="Title_en" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Title_ar"></label>
+        <input asp-for="Title_ar" class="form-control" />
+        <span asp-validation-for="Title_ar" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Description_en"></label>
+        <input asp-for="Description_en" class="form-control" />
+        <span asp-validation-for="Description_en" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Description_ar"></label>
+        <input asp-for="Description_ar" class="form-control" />
+        <span asp-validation-for="Description_ar" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" style="color:red"></span>
+    </div>
+    <div>
+        <label asp-for="Stock"></label>
+        <input asp-for="Stock" class="form-control" />
+        <span asp-validation-for="Stock" style="color:red"></span>
+    </div>
+   
+     <div class="form-group">
+        <label>Upload Images</label>
+        <input asp-for="ImagesFromFile" type="file"  multiple accept="image/*" class="form-control" />
+        <span asp-validation-for="ImagesFromFile" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="SubCategoryIds"></label>
+        <select asp-for="SubCategoryIds" selected class="form-control" asp-items="items"></select>
+    </div>
+    <button class="btn btn-outline-success" type="submit"> Update </button>
+</form>
+@section Scripts
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}

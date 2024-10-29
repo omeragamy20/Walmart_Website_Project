@@ -1,0 +1,39 @@
+﻿@model Ecommerce.DTOs.Payment.UpdateDTOs
+<h1>Edit Shipment</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="PaymentDate"></label>
+        <input asp-for="PaymentDate" class="form-control" />
+        <span asp-validation-for="PaymentDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for=" Amount"></label>
+        <input asp-for=" Amount" class="form-control" />
+        <span asp-validation-for=" Amount" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="PaymentMethod_en"></label>
+        <input asp-for="PaymentMethod_en" class="form-control" />
+        <span asp-validation-for="PaymentMethod_en" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PaymentMethod_ar"></label>
+        <input asp-for="PaymentMethod_ar" class="form-control" />
+        <span asp-validation-for="PaymentMethod_ar" class="text-danger"></span>
+    </div>
+   @*  <div class="form-group">
+        <label asp-for="PaymentMethod_en"></label>
+        <input asp-for="PaymentMethod_en" class="form-control" />
+        <span asp-validation-for="PaymentMethod_en" class="text-danger"></span>
+    </div> *@
+   
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

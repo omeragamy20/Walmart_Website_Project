@@ -1,0 +1,52 @@
+﻿@model Ecommerce.DTOs.Payment.CreateDtos
+<h1>Create payment</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="PaymentDate"></label>
+        <input asp-for="PaymentDate" class="form-control" type="date" />
+        <span asp-validation-for="PaymentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for=" Amount"></label>
+        <input asp-for=" Amount" class="form-control" />
+        <span asp-validation-for=" Amount" class="text-danger"></span>
+    </div>
+
+
+  
+    <div class="form-group">
+        <label asp-for="PaymentMethod_en"></label>
+        <select asp-for="PaymentMethod_en" class="form-control">
+            <option value="">enter the way to payment</option>
+            <option value="Visa">Visa</option>
+            <option value="Cash">Cash</option>
+        </select>
+        <span asp-validation-for="PaymentMethod_en" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PaymentMethod_ar"></label>
+        <select asp-for="PaymentMethod_ar" class="form-control">
+            <option value=""> من فضلك اختر طريقة الدفع </option>
+            <option value="فيزا">فيزا</option>
+            <option value="كاش">كاش</option>
+        </select>
+        <span asp-validation-for="PaymentMethod_ar" class="text-danger"></span>
+    </div>
+
+
+   @*   <div class="form-group">
+         <label asp-for="PaymentMethod_ar"></label>
+         <input asp-for="PaymentMethod_ar" class="form-control" />
+         <span asp-validation-for="PaymentMethod_ar" class="text-danger"></span>
+     </div> *@
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,13 @@
+/.vs
+**/Migrations/
+*.dll
+*.pdb
+*.cache
+*.json
+!launchSettings.json
+!serviceDependencies.json
+!serviceDependencies.local.json
+!appsettings.Development.json
+bin/
+obj/.vs/
+.vs/

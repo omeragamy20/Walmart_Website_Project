@@ -1,0 +1,71 @@
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.deps.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.runtimeconfig.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfo.cs
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerc.43E367F3.Up2Date
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\refint\Ecommerce.Infrastructure.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.pdb
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.genruntimeconfig.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Infrastructure\obj\Debug\net8.0\ref\Ecommerce.Infrastructure.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.deps.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.runtimeconfig.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.AssemblyReference.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfoInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfo.cs
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.sourcelink.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.CopyComplete
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\refint\Ecommerce.Infrastructure.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.genruntimeconfig.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Infrastructure\obj\Debug\net8.0\ref\Ecommerce.Infrastructure.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.deps.json
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.runtimeconfig.json
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Application.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Context.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.AssemblyReference.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfoInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.AssemblyInfo.cs
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.csproj.CoreCompileInputs.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.sourcelink.json
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerc.43E367F3.Up2Date
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\refint\Ecommerce.Infrastructure.dll
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.pdb
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\Ecommerce.Infrastructure.genruntimeconfig.cache
+D:\iti\DashB--FinalProject--\Ecommerce.Infrastructure\obj\Debug\net8.0\ref\Ecommerce.Infrastructure.dll
