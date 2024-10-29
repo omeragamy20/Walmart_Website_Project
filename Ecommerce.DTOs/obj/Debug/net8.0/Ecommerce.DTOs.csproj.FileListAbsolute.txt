@@ -46,3 +46,19 @@ D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
 D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
 D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
 D:\iti\DashB--FinalProject--\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.deps.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.AssemblyReference.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfoInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfo.cs
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.CoreCompileInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.sourcelink.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerc.D3152FB8.Up2Date
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll

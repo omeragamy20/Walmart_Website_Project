@@ -48,6 +48,8 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         // POST: UserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
+
         public ActionResult Create(IFormCollection collection)
         {
             try
@@ -69,6 +71,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         // POST: UserController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Edit(int id, IFormCollection collection)
         {
             try

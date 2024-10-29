@@ -37,6 +37,16 @@ namespace Ecommerce.Application.Services.ServicesCategories
                     };
                     return result;
                 }
+
+                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Entity.ImageData.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/Subcategory", uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await (Entity.ImageData).CopyToAsync(stream);
+                }
+                Entity.Image = $"/images/Subcategory/{uniqueFileName}";
+
                 var subcategory = mapper.Map<SubCategory>(Entity);
                 var AddedEntity = await subCategoryRepository.CreateAsync(subcategory);
                 await subCategoryRepository.SaveChanges();
@@ -127,6 +137,17 @@ namespace Ecommerce.Application.Services.ServicesCategories
             ResultView<CreateorUpdatedSubCategoryDTOs> result = new ResultView<CreateorUpdatedSubCategoryDTOs>();
             try
             {
+                //if (Entity.ImageData != null)
+                //{
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Entity.ImageData.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/Subcategory", uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await (Entity.ImageData).CopyToAsync(stream);
+                    }
+                    Entity.Image = $"/images/Subcategory/{uniqueFileName}";
+                //}
                 var subcategory = mapper.Map<SubCategory>(Entity);
                 var updatedEntity = await subCategoryRepository.UpdateAsync(subcategory);
                 await subCategoryRepository.SaveChanges();
