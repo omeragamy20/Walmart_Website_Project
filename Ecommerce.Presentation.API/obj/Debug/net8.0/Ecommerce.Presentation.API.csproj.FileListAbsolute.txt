@@ -164,6 +164,7 @@ C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\n
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.csproj.CoreCompileInputs.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.sourcelink.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.Ecommerce.Presentation.API.Microsoft.AspNetCore.StaticWebAssets.props

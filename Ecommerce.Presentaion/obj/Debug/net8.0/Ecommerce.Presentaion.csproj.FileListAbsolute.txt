@@ -275,6 +275,7 @@ C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.RazorAssemblyInfo.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.RazorAssemblyInfo.cs
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.sourcelink.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\obj\Debug\net8.0\staticwebassets\msbuild.Ecommerce.Presentaion.Microsoft.AspNetCore.StaticWebAssets.props

@@ -74,6 +74,12 @@ namespace Ecommerce.Presentation.API
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<EcommerceContext>(options =>
                 options.UseSqlServer(connectionString));
+            builder.Services.AddIdentity<Customer, IdentityRole>
+                (options => {
+                    options.SignIn.RequireConfirmedAccount = false;
+                }
+                )
+                .AddEntityFrameworkStores<EcommerceContext>();
             //builder.Services.AddIdentity<Customer, IdentityRole>
             //    (options => {
             //        options.SignIn.RequireConfirmedAccount = false;

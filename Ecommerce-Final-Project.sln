@@ -19,6 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Presentation.API"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{896C6EC8-F321-4F7E-A678-455E7BE0F77B}"
 	ProjectSection(SolutionItems) = preProject
+		..\presentationApi\Controllers\BookController.cs = ..\presentationApi\Controllers\BookController.cs
 		..\..\..\Downloads\WebApi\Program.cs = ..\..\..\Downloads\WebApi\Program.cs
 	EndProjectSection
 EndProject

@@ -6,6 +6,7 @@ C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecom
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb

@@ -9,6 +9,7 @@ C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Eco
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfoInputs.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfo.cs
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.CoreCompileInputs.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.sourcelink.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerc.5C623463.Up2Date
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Context\obj\Debug\net8.0\refint\Ecommerce.Context.dll

@@ -136,10 +136,10 @@ namespace Ecommerce.Application.Services
         }
 
         public async Task<List<GetAllproductDTO>> GetById(int id)
-        {
+        { 
             var data = (await productRebository.GetAllAsync())
                 .Select(p => new GetAllproductDTO
-                {
+            {
                     Id = p.Id,
                     Description_ar = p.Description_ar,
                     Description_en = p.Description_en,
@@ -151,7 +151,7 @@ namespace Ecommerce.Application.Services
                     Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
                     Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList()
                 }).Where(p =>p.Id==id).ToList();
-     
+
             return data;   
         }
 
