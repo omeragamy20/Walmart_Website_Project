@@ -23,7 +23,7 @@ namespace Ecommerce.Application.Services.FavortandRateService
             favoriterepository = _favoriterepository;
             mapper = _mapper;
         }
-        public async Task<ResultView<CreateorUpdateFavoritDTO>> AddToFavoritAsync(CreateorUpdateFavoritDTO Entity)
+        public async Task<ResultView<CreateorUpdateFavoritDTO>> AddToFavoritAsync(CreateFavoriteDTOs Entity)
         {
             ResultView<CreateorUpdateFavoritDTO> result = new ResultView<CreateorUpdateFavoritDTO>();
             try
@@ -52,14 +52,15 @@ namespace Ecommerce.Application.Services.FavortandRateService
             }
         }
     
-        public async Task<ResultView<CreateorUpdateFavoritDTO>> DeleteFavoritAsync(CreateorUpdateFavoritDTO Entity)
+        public async Task<ResultView<CreateorUpdateFavoritDTO>> DeleteFavoritAsync(string customerId, int productId)
         {
             
             ResultView<CreateorUpdateFavoritDTO> result;
             try
             {
-                var deltedfavorit = mapper.Map<Favorite>(Entity);
-                await favoriterepository.DeleteAsync(deltedfavorit);
+                var Entity=(await favoriterepository.GetAllAsync()).FirstOrDefault(f => f.CustomerId == customerId && f.ProductId == productId);
+                //var deltedfavorit = mapper.Map<Favorite>(Entity);
+                await favoriterepository.DeleteAsync(Entity);
                 await favoriterepository.SaveChanges();
                 result = new ResultView<CreateorUpdateFavoritDTO>()
                 {
@@ -80,7 +81,14 @@ namespace Ecommerce.Application.Services.FavortandRateService
                 return result;
             }
         }
-        
+
+        public async Task<CreateorUpdateFavoritDTO> GetOneFavoritCustomerProduct(string customerId, int productId)
+        {
+            var favoritdto = (await favoriterepository.GetAllAsync())
+                        .FirstOrDefault(fcp => fcp.ProductId == productId && fcp.CustomerId == customerId);
+            var returndonefavorit = mapper.Map<CreateorUpdateFavoritDTO>(favoritdto);
+            return returndonefavorit;
+        }
         // list of favorit for user
         public async Task<List<GetAllFavoritDTO>> AllFavoritbycustomer(string userid)
         {

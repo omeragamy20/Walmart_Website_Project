@@ -3,6 +3,7 @@ using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.DTOs.DTOsCategories;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
+//using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Ecommerce.Application.Services.ServicesCategories
 {
     public class CategoryServices : ICategoryService
     {
+        //private readonly IWebHostEnvironment webHostEnvironment;
+
         private readonly ICategoryReposatiry categoryReposatiry;
         private readonly IMapper mapper;
         public CategoryServices(ICategoryReposatiry _categoryReposatiry, IMapper _mapper)
@@ -31,6 +34,7 @@ namespace Ecommerce.Application.Services.ServicesCategories
                 bool exist=  (await categoryReposatiry.GetAllAsync()).Any(c=>c.Name_en==Entity.Name_en && c.Name_ar == Entity.Name_ar);
                 if (exist)
                 {
+
                     result = new()
                     {
                         Entity = null,
@@ -39,6 +43,21 @@ namespace Ecommerce.Application.Services.ServicesCategories
                     };
                     return result;
                 }
+
+                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Entity.ImageData.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/category", uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await (Entity.ImageData).CopyToAsync(stream);
+                }
+                Entity.Image = $"/images/category/{uniqueFileName}";
+                //var imageEntity = new Images
+                //{
+                //    Image = $"/images/product/{uniqueFileName}",
+                //    ProductId = productId
+                //};
+
                 var category = mapper.Map<Category>(Entity);
                 var AddedEntity=await categoryReposatiry.CreateAsync(category);
                 await categoryReposatiry.SaveChanges();
@@ -132,6 +151,20 @@ namespace Ecommerce.Application.Services.ServicesCategories
             ResultView<CreateorUpdatedCategoryDTOs> result = new ResultView<CreateorUpdatedCategoryDTOs>();
             try
             {
+
+                //if(Entity.ImageData != null) 
+                //{
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Entity.ImageData.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/category", uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await (Entity.ImageData).CopyToAsync(stream);
+                    }
+                    Entity.Image = $"/images/category/{uniqueFileName}";
+                //}
+                //var oldentity=await categoryReposatiry.GetOneAsync((Entity.Id)??0);
+                //Entity.Image = oldentity.Image;
                 var category = mapper.Map<Category>(Entity);
                 var AddedEntity = await categoryReposatiry.UpdateAsync(category);
                 await categoryReposatiry.SaveChanges();
