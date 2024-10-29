@@ -70,7 +70,7 @@ namespace Ecommerce.Application.Services.FavortandRateService
             }
         }
 
-        public async Task<ResultView<GetAllRateDTO>> DeleteCategoryAsync(CreateorUpdateRateDTO Entity)
+        public async Task<ResultView<GetAllRateDTO>> DeleteRateAsync(CreateorUpdateRateDTO Entity)
         {
             ResultView<GetAllRateDTO> result;
             try
