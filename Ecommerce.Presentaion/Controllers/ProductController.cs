@@ -6,6 +6,7 @@ using Ecommerce.DTOs.Facility;
 using Ecommerce.DTOs.Product;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Ecommerce.Presentaion.Controllers
 {
@@ -60,7 +61,12 @@ namespace Ecommerce.Presentaion.Controllers
                     var imgs = await imageService.UploadImagesAsync(productDTO.ImagesFromFile, res.Entity.Id);
 
                     PrdFacilitySubCategory PFS = new PrdFacilitySubCategory();
-                    PFS.ProductId = res.Entity.Id; 
+                    PFS.ProductId = res.Entity.Id;
+
+                    
+
+
+
                     for (int i = 0;i < productDTO.SubCategoryIds.Count;i++)
                         PFS.SubcatsIDS.Add(productDTO.SubCategoryIds[i]);
 
@@ -119,22 +125,31 @@ namespace Ecommerce.Presentaion.Controllers
         {
             if (ModelState.IsValid)
             {
+               
+
                 var res = await productService.UpdateAsync(productDTO);
                 if (res.IsSuccess)
                 {
+
                     var imgs = await imageService.UploadImagesAsync(productDTO.ImagesFromFile, res.Entity.Id);
                     PrdFacilitySubCategory PFS = new PrdFacilitySubCategory();
                     PFS.ProductId = res.Entity.Id;
                     for (int i = 0; i < productDTO.SubCategoryIds.Count; i++)
                         PFS.SubcatsIDS.Add(productDTO.SubCategoryIds[i]);
 
+                  
+                        var prdFacilities = await productfacilityServices.GetFacilitesByPrdIdAsync(res.Entity.Id);
+                        PFS.Values_En.AddRange(prdFacilities.Values_En);
+                        PFS.Values_Ar.AddRange(prdFacilities.Values_Ar);
+                
+                    
                     if (PFS.SubcatsIDS.Count > 0)
                     {
                         var FaciltyDto = await subcatfacilityService.Getallfacilitybyubcatid(PFS.SubcatsIDS);
                         PFS.FacilityDTO = FaciltyDto;
                     }
                     return View("UpdateProductFacilty", PFS);
-                    return RedirectToAction("GetALlProduct");
+               
                 }
                 return RedirectToAction("GetALlProduct");
             }

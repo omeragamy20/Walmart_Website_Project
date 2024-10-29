@@ -36,6 +36,9 @@ namespace Ecommerce.Context.Migrations
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -58,6 +61,104 @@ namespace Ecommerce.Context.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name_ar = "الإلكترونيات وألعاب الفيديو",
+                            Name_en = "Electronics &Video Games"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name_ar = "الملابس والإكسسوارات",
+                            Name_en = "Clothing & Accessories"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name_ar = "المنزل",
+                            Name_en = "Home"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name_ar = "الرياضة والهواء الطلق",
+                            Name_en = "Sports & Outdoors"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name_ar = "حمامات السباحة وأحواض المياه الساخنة",
+                            Name_en = "Pools & Hot Tubs"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name_ar = "ألعاب",
+                            Name_en = "Toys"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name_ar = "طعام",
+                            Name_en = "Food"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name_ar = "أساسيات منزلية",
+                            Name_en = "Household Essentials"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name_ar = "المطبخ وتناول الطعام",
+                            Name_en = "Kitchen & Dining"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name_ar = "اللوازم المدرسية والمكتبية",
+                            Name_en = "School & Office Supplies"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name_ar = "الجمال",
+                            Name_en = "Beauty"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name_ar = "العافية والعناية الشخصية",
+                            Name_en = "Wellness & Personal Care"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name_ar = "أطفال",
+                            Name_en = "Kids"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name_ar = "طفل",
+                            Name_en = "Baby"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name_ar = "حيوانات أليفة",
+                            Name_en = "Pets"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name_ar = "الكتب والأفلام والموسيقى",
+                            Name_en = "Books, Movies & Music"
+                        });
                 });
 
             modelBuilder.Entity("Ecommerce.Models.Customer", b =>
@@ -148,17 +249,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "613633fb-93f0-4c51-a654-67ac5da6ecfd",
+                            ConcurrencyStamp = "2434f864-f162-406a-9a92-6e8e0ed5c9a1",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMK3QbSmLOoQGT827ugc86asbzJ3GHXRN0+yWlLrHIgYnB+oNc0dtPhzxifCYwGLBw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMFedNJ31bmOJ/7Ba9JMW+jPtDL5kFPVxR6GGXfu0jTafjjp9EIMUbZwvXXCMnWVSQ==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "427d8ea8-bf46-4a7e-8d6c-651fc20f0f2e",
+                            SecurityStamp = "08af1301-fe7f-4137-8ebf-c84a9afdf871",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -676,6 +777,9 @@ namespace Ecommerce.Context.Migrations
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -700,6 +804,106 @@ namespace Ecommerce.Context.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("SubCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Name_ar = "أجهزة التلفاز",
+                            Name_en = "TVs"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            Name_ar = "أجهزة الكمبيوتر والأجهزة اللوحية",
+                            Name_en = "Computers & tablets"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            Name_ar = "سماعات الرأس ومكبرات الصوت",
+                            Name_en = "Headphones & speakers"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 1,
+                            Name_ar = "مسرح منزلي",
+                            Name_en = "Home theater"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 1,
+                            Name_ar = "المنزل الذكي والشبكات",
+                            Name_en = "Smart home & networking"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 1,
+                            Name_ar = "ألعاب الكمبيوتر",
+                            Name_en = "PC gaming"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryId = 1,
+                            Name_ar = "الهواتف المحمولة والأجهزة القابلة للارتداء",
+                            Name_en = "Cell phones & wearables"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 1,
+                            Name_ar = "الكاميرات والطائرات بدون طيار",
+                            Name_en = "Cameras & drones"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryId = 1,
+                            Name_ar = "ملحقات الالكترونيات",
+                            Name_en = "Electronics accessories"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryId = 1,
+                            Name_ar = "ألعاب الفيديو والأفلام والموسيقى والكتب",
+                            Name_en = "Video games, movies, music, & books"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryId = 1,
+                            Name_ar = "اكس بوكس",
+                            Name_en = "Xbox"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryId = 1,
+                            Name_ar = "بلاي ستيشن",
+                            Name_en = "PlayStation"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryId = 1,
+                            Name_ar = "نينتندو",
+                            Name_en = "Nintendo"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CategoryId = 1,
+                            Name_ar = "غرفة الألعاب",
+                            Name_en = "Gaming room"
+                        });
                 });
 
             modelBuilder.Entity("Ecommerce.Models.subCatFacility", b =>

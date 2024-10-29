@@ -9,8 +9,8 @@
         <tr>
             <th scope="col">Name_en</th>
             <th scope="col">Name_ar</th>  
-          @*   <th scope="col">SubCategory</th> 
-            <th scope="col">SubCategory_Ar</th> *@
+            <th scope="col">SubCategory</th> 
+            <th scope="col">SubCategory_Ar</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -19,10 +19,9 @@
         {
             <tr>
                 <th scope="row">@p.Name_en</th>
-                <td>@p.Name_ar</td>  
-                 @* <td>@foreach (var s in @p.SubCategoryNames)@s</td> 
-                 <td>@foreach (var s in @p.SubCategoryNamesAr)@s</td> *@           
-                <td>
+                <td>@p.Name_ar</td>
+                <td>@foreach (var s in @p.SubCategoryNames){@s <br/>}</td> 
+                <td>@foreach (var s in @p.SubCategoryNamesAr){@s <br/>}</td>                  <td>
                     <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
                     <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
                 </td>

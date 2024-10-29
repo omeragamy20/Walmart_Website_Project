@@ -17,10 +17,15 @@ namespace Ecommerce.Application.Services
          Task<List<GetAllproductEnDTO>> GetAllEnAsync();
          Task<List<GetAllProductArDTO>> GetAllArAsync();
          Task<EntityPaginated<GetAllproductEnDTO>> GetAllPaginationEnAsync(int PageNumber, int Count);
-         Task<EntityPaginated<GetAllProductArDTO>> GetAllPaginationArAsync(int PageNumber, int Count);
+         Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int PageNumber, int Count);
          Task<List<GetAllproductDTO>> SearchByNameAsync(string ProductName);
          Task<CreateAndUpdateProductDTO> GetById(int id);
          Task DeleteAsync(int id);
          Task<ResultView<List<GetAllproductDTO>>> GetPrdBySubCat(int id);
+        public Task<List<int?>?> GetSubcatbyPrdId(int id);
+
+        public Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid, int PageNumber, int Count);
+
+
     }
 }

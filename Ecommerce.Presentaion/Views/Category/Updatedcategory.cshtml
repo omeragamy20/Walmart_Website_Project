@@ -5,7 +5,7 @@
 }
 
 <h1>UpdatedCategory</h1>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label asp-for="Name_ar" class="form-label" asp-value="Name_ar">الاسم</label>
         <input type="text" asp-for="Name_ar" class="form-control">
@@ -13,6 +13,11 @@
     <div class="mb-3">
         <label asp-for="Name_en" class="form-label" asp-value="Name_en">Name</label>
         <input type="text" asp-for="Name_en" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Upload Images</label>
+        <input asp-for="ImageData" type="file" multiple accept="image/*" class="form-control" />
+        <span asp-validation-for="ImageData" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Updated</button>
 </form>

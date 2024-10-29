@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Ecommerce.DTOs.CustomerDto;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Http;
