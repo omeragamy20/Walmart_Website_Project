@@ -45,9 +45,7 @@ C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

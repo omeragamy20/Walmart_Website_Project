@@ -79,12 +79,14 @@ namespace Ecommerce.Application.Mapper
 
             // favorit & Rate
             CreateMap<CreateorUpdateFavoritDTO,Favorite>().ReverseMap();
+            CreateMap<CreateFavoriteDTOs, Favorite>().ReverseMap();
             CreateMap<GetAllFavoritDTO,Favorite>().ReverseMap();
             CreateMap<CreateorUpdateRateDTO, Rate>().ReverseMap();
             CreateMap<GetAllRateDTO,Rate>().ReverseMap();
 
             // Customer
             CreateMap< CreateAdminDto , Customer>().ReverseMap();
+            CreateMap< CreateCustomerDto , Customer>().ReverseMap();
             CreateMap< GetAllUsersDto , Customer>().ReverseMap();
             CreateMap<GetAdminDto , Customer>().ReverseMap();
             CreateMap<UpdataAdminDto , Customer>().ReverseMap();

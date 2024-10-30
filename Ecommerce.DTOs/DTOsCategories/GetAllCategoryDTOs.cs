@@ -14,5 +14,6 @@ namespace Ecommerce.DTOs.DTOsCategories
         public string? Name_en { get; set; }
         [Required, MaxLength(100)]
         public string? Name_ar { get; set; }
+        public string? Image { get; set; }
     }
 }
