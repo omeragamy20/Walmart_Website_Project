@@ -121,9 +121,11 @@ namespace Ecommerce.Application.Services
                     SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
                     ImageUrls = p.Images.Select(i => i.Image).ToList(),
                     Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
-                    Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList()
-
+                    Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList(),  
+                    Values=p.ProductFacilities.Select(f=>f.facility.Name_en).ToList(),
+                    Values_Ar = p.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
                 }).ToList();
+           
             var c = (await productRebository.GetAllAsync()).Count();
 
             EntityPaginated<GetAllproductDTO> GetAllResult = new()
@@ -149,7 +151,9 @@ namespace Ecommerce.Application.Services
                     Title_en = p.Title_en,
                     ImageUrls = p.Images.Select(i => i.Image).ToList(),
                     Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
-                    Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList()
+                    Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList(),
+                    Values = p.ProductFacilities.Select(f => f.facility.Name_en).ToList(),
+                    Values_Ar = p.ProductFacilities.Select(f => f.facility.Name_ar).ToList()
                 }).Where(p =>p.Id==id).ToList();
 
             return data;   

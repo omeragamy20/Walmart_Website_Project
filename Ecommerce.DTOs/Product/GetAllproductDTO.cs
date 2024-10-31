@@ -20,6 +20,9 @@ namespace Ecommerce.DTOs.Product
         public List<string>? SubCategoryNames { get; set; } = new List<string>();
         public List<string>? Facilities { get; set; } = new List<string>();
         public List<string>? Facilities_Ar { get; set; } = new List<string>();
+        public List<string>? Values { get; set; } = new List<string>();
+        public List<string>? Values_Ar { get; set; } = new List<string>();
+
         public List<string>? SubCategoryNamesAr { get; set; } = new List<string>();
         public List<string> ImageUrls { get; set; } = new List<string>();
     }
