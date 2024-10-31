@@ -16,6 +16,8 @@ namespace Ecommerce.Models
 
         [Required, MaxLength(100)]
         public string Value_ar { get; set; }
+        public string Details { get; set; }
+        public string Details_ar { get; set; }
 
         [ForeignKey("product")]
         public int ProductID { get; set; }
