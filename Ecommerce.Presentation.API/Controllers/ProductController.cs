@@ -29,6 +29,14 @@ namespace Ecommerce.Presentation.API.Controllers
             facilityService = _facilityService;
             productfacilityServices = _productfacilityServices;
         }
+        
+        [HttpGet("ProductPagination/{CatId:int}")]
+        public async Task<IActionResult> GetAllProductbyCategory(int CatId)
+        {
+            return Ok(await productService.GetAllProductPaginationEnBySubCatIdAsync(CatId,1,6));
+        }
+
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -38,16 +46,16 @@ namespace Ecommerce.Presentation.API.Controllers
         }
 
         [HttpGet("pagination")]
-        public async Task<IActionResult> GetPagination(int PageNumber, int Count)
+        public async Task<IActionResult> GetPagination(int Subcatid,int PageNumber, int Count)
         {
-            var products = await productService.GetAllPaginationAsync(PageNumber, Count);
+            var products = await productService.GetAllPaginationAsync(Subcatid,PageNumber, Count);
             return Ok(products);
         }
 
         [HttpGet("GetOne")]
         public async Task<IActionResult> GetOne(int id)
         {
-            var product = await productService.GetById(id);
+            var product = await productService.GetByIdApi(id);
             return Ok(product);
         }
         [HttpGet("search")]

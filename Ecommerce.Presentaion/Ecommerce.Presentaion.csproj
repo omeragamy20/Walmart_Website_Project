@@ -37,6 +37,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\category\" />
+    <Folder Include="wwwroot\images\Subcategory\" />
     <Folder Include="wwwroot\images\product\" />
     <Folder Include="wwwroot\images\profile\" />
   </ItemGroup>

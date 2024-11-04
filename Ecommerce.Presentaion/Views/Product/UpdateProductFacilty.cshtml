@@ -4,9 +4,8 @@
     ViewData["Title"] = "UpdateProductFacilty";
 }
 
-<h1>UpdateProductFacilty</h1>
+<h1>Update Product Facilty</h1>
 
-<h4>PrdFacilitySubCategory</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,7 +18,7 @@
                 <span asp-validation-for="ProductId" class="text-danger"></span>
             </div>
 
-            @foreach (var m in Model.FacilityDTO)
+            @for(int i = 0 ; i<Model.FacilityDTO.Count; i++)
             {
                 @*  <div class="form-group">
             <label asp-for="@(m.Name_en)" class="control-label"></label>
@@ -33,23 +32,23 @@
 
                 <div style="display:flex">
                     <div>
-                        <label>@m.Name_en</label>
+                        <label>@Model.FacilityDTO[i].Name_en</label>
                         <div class="form-group">
-                            <input asp-for="@Model.Values_En" class="form-control" />
+                            <input asp-for="@Model.Values_En[i]" class="form-control" />
                         </div>
                     </div>
                     &nbsp;&nbsp;
                     <div>
-                        <label>@m.Name_ar</label>
+                        <label>@Model.FacilityDTO[i].Name_ar</label>
                         <div class="form-group">
-                            <input asp-for="@Model.Values_Ar" class="form-control" />
+                            <input asp-for="@Model.Values_Ar[i]" class="form-control" />
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group" style="display:none">
                     <label asp-for="@Model.FacilityIds" class="control-label"></label>
-                    <input asp-for="@Model.FacilityIds" value="@m.Id" class="form-control" style="display:none" />
+                    <input asp-for="@Model.FacilityIds" value="@Model.FacilityDTO[i].Id" class="form-control" style="display:none" />
                 </div>
             }
             <div class="form-group">
@@ -65,4 +64,5 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
 }

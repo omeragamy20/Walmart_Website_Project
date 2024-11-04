@@ -155,7 +155,7 @@
             <a class="nav-link collapsed" asp-controller="Facility" asp-action="GetALl">
 
                 <i><img src="~/images/walmart-logo-png-27972-windows.ico" width="20px" height="20px" /></i>
-                    <span>Facilities</span>
+                    <span>Specification</span>
             </a>
         </li>
              <!-- End Facilities Page Nav -->
@@ -224,9 +224,10 @@
   </aside>
   <!-- End Sidebar-->
 
-  <main id="main" class="main container">
-
-    @RenderBody()
+  <main id="main" >
+      <div class="container">
+        @RenderBody()
+      </div>
 
   </main>
   <!-- End #main -->

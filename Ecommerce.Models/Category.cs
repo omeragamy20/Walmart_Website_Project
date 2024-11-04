@@ -16,6 +16,7 @@ namespace Ecommerce.Models
         public string Name_en { get; set; }
         [Required, MaxLength(100)]
         public string Name_ar { get; set; }
+        public string? Image { get; set; }
 
         public ICollection<SubCategory>? SubCategories { get; set; }
     }

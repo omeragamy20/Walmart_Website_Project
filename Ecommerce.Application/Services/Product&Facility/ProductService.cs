@@ -105,39 +105,61 @@ namespace Ecommerce.Application.Services
             return products;
         }
 
-        public async Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int PageNumber, int Count)
+        public async Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int Subcatid,int PageNumber, int Count)
         {
-            var data = (await productRebository.GetAllAsync()).Skip(Count * (PageNumber - 1)).Take(Count)
+            var data = (await prdctsubCatRepository.GetAllAsync()).Where(sc => sc.SubcategoryId == Subcatid).Skip(Count * (PageNumber - 1)).Take(Count)
                 .Select(p => new GetAllproductDTO
                 {
-                    Id = p.Id,
-                    Description_ar = p.Description_ar,
-                    Description_en = p.Description_en,
-                    Price = p.Price,
-                    Stock = p.Stock,
-                    Title_ar = p.Title_ar,
-                    Title_en = p.Title_en,
-                    SubCategoryNames = p.productSubCategory.Select(p => p.SubCategory.Name_en).ToList(),
-                    SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
-                    ImageUrls = p.Images.Select(i => i.Image).ToList(),
-                    Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
-                    Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList(),  
-                    Values=p.ProductFacilities.Select(f=>f.facility.Name_en).ToList(),
-                    Values_Ar = p.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
-                }).ToList();
-           
-            var c = (await productRebository.GetAllAsync()).Count();
+                    Id = p.Product.Id,
+                    Description_ar = p.Product.Description_ar,
+                    Description_en = p.Product.Description_en,
+                    Price = p.Product.Price,
+                    Stock = p.Product.Stock,
+                    Title_ar = p.Product.Title_ar,
+                    Title_en = p.Product.Title_en,
+                    Rate = p.Product.Rates.Average(r => r.Rating),
+                    TotalRate = p.Product.Rates.Count(),
+                    SubCategoryNames = p.Product.productSubCategory.Select(p => p.SubCategory.Name_en).ToList(),
+                    SubCategoryNamesAr = p.Product.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
+                    ImageUrls = p.Product.Images.Select(i => i.Image).ToList(),
+                    Facilities = p.Product.ProductFacilities.Select(f => f.Value_en).ToList(),
+                    Facilities_Ar = p.Product.ProductFacilities.Select(f => f.Value_ar).ToList(),
+                    Values = p.Product.ProductFacilities.Select(f => f.facility.Name_en).ToList(),
+                    Values_Ar = p.Product.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
+                }).ToList();          
+            var c = (await prdctsubCatRepository.GetAllAsync()).Where(sc => sc.SubcategoryId == Subcatid).Count();
 
             EntityPaginated<GetAllproductDTO> GetAllResult = new()
             {
                 Data = data,
                 Count = c
+
+
             };
             return GetAllResult;
 
         }
+        public async Task<CreateAndUpdateProductDTO> GetById(int id)
+        {
 
-        public async Task<List<GetAllproductDTO>> GetById(int id)
+            var data = (await productRebository.GetOneAsync(id));
+            var pro = new CreateAndUpdateProductDTO
+            {
+                Id = data.Id,
+                Description_ar = data.Description_ar,
+                Description_en = data.Description_en,
+                Price = data.Price,
+                Stock = data.Stock,
+                Title_ar = data.Title_ar,
+                Title_en = data.Title_en,
+                ImagesUrl = data.Images?.Select(i => i.Image).ToList(),
+                Facilities = data.ProductFacilities?.Select(f => f.Value_en).ToList(),
+                Facilities_Ar = data.ProductFacilities?.Select(f => f.Value_ar).ToList(),
+                  };
+
+            return pro;
+        }
+        public async Task<List<GetAllproductDTO>> GetByIdApi(int id)
         { 
             var data = (await productRebository.GetAllAsync())
                 .Select(p => new GetAllproductDTO
@@ -149,16 +171,24 @@ namespace Ecommerce.Application.Services
                     Stock = p.Stock,
                     Title_ar = p.Title_ar,
                     Title_en = p.Title_en,
+                    Rate = p.Rates.Average(r => r.Rating),
+                    TotalRate = p.Rates.Count(),
+                    Rates=p.Rates.Select(r=>r.Rating).ToList(),
                     ImageUrls = p.Images.Select(i => i.Image).ToList(),
                     Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
                     Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList(),
                     Values = p.ProductFacilities.Select(f => f.facility.Name_en).ToList(),
-                    Values_Ar = p.ProductFacilities.Select(f => f.facility.Name_ar).ToList()
-                }).Where(p =>p.Id==id).ToList();
+                    Values_Ar = p.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
+                    }).Where(p =>p.Id==id).ToList();
 
             return data;   
         }
-
+        public async Task<List<int?>?> GetSubcatbyPrdId(int id)
+        {
+            var res= (await prdctsubCatRepository.GetAllAsync())
+                .Where(p=>p.ProductId==id).Select(psc => psc.SubcategoryId).ToList();
+            return res;
+        }
         public async Task<List<GetAllproductDTO>> SearchByNameAsync(string ProductName)
         {
             var data = (await productRebository.GetAllAsync())
@@ -324,6 +354,23 @@ namespace Ecommerce.Application.Services
            // var products = mapper.Map<List<GetAllproductDTO>>(data);
            
             return data;
+        }
+        
+        public async Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid,int PageNumber, int Count)
+        {
+            //.Skip(Count * (PageNumber - 1)).Take(Count)
+            var result=(await prdctsubCatRepository.GetAllAsync()).Where(sc=>sc.SubcategoryId==Subcatid)
+                .Select(p=> new GetAllproductEnDTO
+            {
+                Id=p.Product.Id,
+                Title_en=p.Product.Title_en,
+                Description_en=p.Product.Description_en,
+                Price = p.Product.Price,
+                Stock=p.Product.Stock,
+                ImageUrls=p.Product.Images.FirstOrDefault().Image
+                
+            }).ToList();
+            return result;
         }
     }
 }

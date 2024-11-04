@@ -1,0 +1,41 @@
+ALTER TABLE [dbo].[SubCategories]
+ADD CONSTRAINT FK_SubCategory_Category
+FOREIGN KEY (CategoryId) REFERENCES [dbo].[Categories](Id)
+ON DELETE CASCADE;
+
+ALTER TABLE ProductSubCategories
+DROP CONSTRAINT FK_ProductSubCategories_Products_ProductId;
+
+ALTER TABLE ProductSubCategories
+ADD CONSTRAINT FK_ProductSubCategories_Products_ProductId
+FOREIGN KEY (ProductId)
+REFERENCES Products (Id) 
+ON DELETE CASCADE;
+
+
+ALTER TABLE ProductFacilities
+DROP CONSTRAINT FK_ProductFacilities_Products_ProductId;
+
+ALTER TABLE ProductFacilities
+ADD CONSTRAINT FK_ProductFacilities_Products_ProductId
+FOREIGN KEY (ProductID)
+REFERENCES Products (Id)
+ON DELETE CASCADE;
+
+
+ALTER TABLE Images
+DROP CONSTRAINT FK_Images_Products_ProductId;
+
+ALTER TABLE Images
+ADD CONSTRAINT FK_Images_Products_ProductId
+FOREIGN KEY (ProductId)
+REFERENCES Products (Id)
+ON DELETE CASCADE;
+
+ALTER TABLE OrderItems
+DROP CONSTRAINT FK_OrderItems_Products_ProductId;
+
+ALTER TABLE OrderItems
+ADD CONSTRAINT FK_OrderItems_Products_ProductId
+FOREIGN KEY (ProductId) REFERENCES Products(Id)
+ON DELETE CASCADE;

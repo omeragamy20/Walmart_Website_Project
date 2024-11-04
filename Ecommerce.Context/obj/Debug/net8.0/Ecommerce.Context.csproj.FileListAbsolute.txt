@@ -52,3 +52,21 @@ D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\refint\Ecommerce
 D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.pdb
 D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.genruntimeconfig.cache
 D:\iti\DashB--FinalProject--\Ecommerce.Context\obj\Debug\net8.0\ref\Ecommerce.Context.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.deps.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.runtimeconfig.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Context.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.AssemblyReference.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.GeneratedMSBuildEditorConfig.editorconfig
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfoInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.AssemblyInfo.cs
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.csproj.CoreCompileInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.sourcelink.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerc.5C623463.Up2Date
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\refint\Ecommerce.Context.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\Ecommerce.Context.genruntimeconfig.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Context\obj\Debug\net8.0\ref\Ecommerce.Context.dll
