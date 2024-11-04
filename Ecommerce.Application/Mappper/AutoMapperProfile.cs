@@ -66,7 +66,7 @@ namespace Ecommerce.Application.Mapper
 
             // Facilitiy
             CreateMap<CreatorUpdateFacilityDTO, Facility>().ReverseMap();
-            CreateMap<FacilityDTO, Facility>().ReverseMap();
+            CreateMap< FacilityDTO, Facility >().ReverseMap();
             CreateMap<Images, ImageDTO>().ReverseMap();
             //     //CreateMap<GetAllproductDTO, Product>().ReverseMap();
             //MapFrom(src => src.productSubCategory.Select(ps => ps.SubCategory.Name_en).ToList()))

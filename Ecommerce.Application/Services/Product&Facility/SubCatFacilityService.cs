@@ -32,16 +32,11 @@ namespace Ecommerce.Application.Services.Product_Facility
                     Id = fs.facility.Id,
                               
                 }).ToList();
-
-                
-
-
                 Returnfaciltyids.AddRange(lstids);
             }
             //HashSet<CreatorUpdateFacilityDTO> uniqueids = new HashSet<CreatorUpdateFacilityDTO>(Returnfaciltyids);
             List<CreatorUpdateFacilityDTO> result = Returnfaciltyids.DistinctBy(fs => fs.Name_en).ToList();
             return result;
-
 
         }
     }

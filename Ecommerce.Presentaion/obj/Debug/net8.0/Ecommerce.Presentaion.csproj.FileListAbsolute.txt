@@ -1176,3 +1176,4 @@ D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.genruntimeconfig.cache
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\ref\Ecommerce.Presentaion.dll
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentaion\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
