@@ -44,5 +44,11 @@ namespace Ecommerce.Presentation.API.Controllers.Categories
                 .ToList());
         }
 
+        [HttpGet("GetSubCategoryByCatId/{Catid:int}")]
+        public async Task<IActionResult> GetSubCategoryByCatId(int Catid)
+        {
+            return Ok((await subcategoryServices.GetAllSubCategoriesAsync()).Where(cat=>cat.CategoryId==Catid).ToList());
+        }
+
     }
 }
