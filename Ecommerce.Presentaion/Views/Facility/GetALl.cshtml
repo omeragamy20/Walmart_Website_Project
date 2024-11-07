@@ -19,13 +19,25 @@
         {
             <tr>
                 <th scope="row">@p.Name_en</th>
-                <td>@p.Name_ar</td>
-                <td>@foreach (var s in @p.SubCategoryNames){@s <br/>}</td> 
-                <td>@foreach (var s in @p.SubCategoryNamesAr){@s <br/>}</td>                  <td>
-                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
-                    <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
+                <td scope="row">@p.Name_ar</td>
+                <td scope="row">@foreach (var s in @p.SubCategoryNames){@s <br/>}</td> 
+                <td scope="row">@foreach (var s in @p.SubCategoryNamesAr){@s <br/>}</td>
+                <td scope="row">
+                    <div style="display:flex">
+                        <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
+                        &nbsp;&nbsp;
+                        <form asp-action="Delete" asp-controller="Facility" asp-route-id="@p.Id" method="post" onsubmit="return confirmDelete();">
+                            <button type="submit" class="btn btn-danger">X</button>
+                        </form>
+                  </div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<script type="text/javascript">
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this item?');
+    }
+</script>

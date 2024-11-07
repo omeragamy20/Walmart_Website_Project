@@ -5,9 +5,8 @@
 
 }
 
-<h1>UpdatedSubcategory</h1>
+<h1>Updated SubCategory</h1>
 
-<h4>CreateorUpdatedSubCategoryDTOs</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -38,15 +37,16 @@
                 <select asp-for="CategoryId" asp-items="catogories"></select>
                 <span asp-validation-for="CategoryId" style="color:red"></span>
             </div>
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+<br />
 <div>
-    <a asp-action="AllSubCategories">Back to List</a>
+    <a asp-action="AllSubCategories" class="btn btn-warning">Back to List</a>
 </div>
 
 @section Scripts {

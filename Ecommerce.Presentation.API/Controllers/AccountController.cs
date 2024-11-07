@@ -125,7 +125,7 @@ namespace Ecommerce.Presentation.API.Controllers
                 if (res.Succeeded)
                 {
 
-                    return Ok("Created");
+                    return Ok();
                 }
                 else
                 {
