@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Ecommerce.DTOs.CustomerDto;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Http;
@@ -99,10 +99,9 @@ namespace Ecommerce.Presentation.API.Controllers
 
                         return Ok(new
                         {
-                            id = user.Id,
+                            id=user.Id  ,
                             token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
-                            expiration = DateTime.Now.AddHours(1)//mytoken.ValidTo
-                                                                 //
+                            expiration = DateTime.Now.AddHours(1)
                         });
                     }
                     return BadRequest();
@@ -134,6 +133,18 @@ namespace Ecommerce.Presentation.API.Controllers
                 }
             }
             return BadRequest(ModelState);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserByID(string id) 
+        {
+            var user = await userManger.FindByIdAsync(id);
+            if (user != null)
+            {
+                var userDto = mapper.Map<GetUserDto>(user); 
+                return Ok(userDto);
+            }
+            return BadRequest();
         }
     }
 }

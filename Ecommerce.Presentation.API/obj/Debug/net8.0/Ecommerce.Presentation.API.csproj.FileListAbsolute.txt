@@ -114,118 +114,118 @@ D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Context.pdb
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.DTOs.pdb
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Models.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.exe
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.deps.json
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.runtimeconfig.json
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Core.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Identity.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Security.KeyVault.Certificates.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Security.KeyVault.Secrets.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\EntityFramework.SqlServer.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\EntityFramework.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Abstractions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.Certificate.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.Certificateless.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.Diagnostics.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.DownstreamApi.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.TokenAcquisition.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.TokenCache.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.LoggingExtensions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Validators.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.CodeDom.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Data.SqlClient.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Memory.Data.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Runtime.Caching.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Security.Permissions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Windows.Extensions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Application.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Context.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.DTOs.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Models.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Application.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Context.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.DTOs.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Models.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.csproj.AssemblyReference.cache
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.AssemblyInfoInputs.cache
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.AssemblyInfo.cs
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.csproj.CoreCompileInputs.cache
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.sourcelink.json
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.Ecommerce.Presentation.API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.build.Ecommerce.Presentation.API.props
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Ecommerce.Presentation.API.props
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Ecommerce.Presentation.API.props
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\scopedcss\bundle\Ecommerce.Presentation.API.styles.css
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerc.1F0BD510.Up2Date
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\refint\Ecommerce.Presentation.API.dll
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.pdb
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.genruntimeconfig.cache
-C:\Users\monaa\source\repos\Final_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\ref\Ecommerce.Presentation.API.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\appsettings.Development.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.exe
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.deps.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.runtimeconfig.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Presentation.API.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\AutoMapper.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Core.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Identity.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Security.KeyVault.Certificates.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Azure.Security.KeyVault.Secrets.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\EntityFramework.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Abstractions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.Certificate.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.Certificateless.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.Diagnostics.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.DownstreamApi.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.TokenAcquisition.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Identity.Web.TokenCache.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.LoggingExtensions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.IdentityModel.Validators.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.CodeDom.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Data.SqlClient.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Memory.Data.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Application.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Context.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.DTOs.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Models.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Application.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Context.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\bin\Debug\net8.0\Ecommerce.Models.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.csproj.AssemblyReference.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.AssemblyInfoInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.AssemblyInfo.cs
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.csproj.CoreCompileInputs.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cs
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.sourcelink.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.build.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.development.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.Ecommerce.Presentation.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.build.Ecommerce.Presentation.API.props
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Ecommerce.Presentation.API.props
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Ecommerce.Presentation.API.props
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.pack.json
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\scopedcss\bundle\Ecommerce.Presentation.API.styles.css
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerc.1F0BD510.Up2Date
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\refint\Ecommerce.Presentation.API.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.genruntimeconfig.cache
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\ref\Ecommerce.Presentation.API.dll
