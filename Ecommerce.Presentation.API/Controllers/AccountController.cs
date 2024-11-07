@@ -134,5 +134,17 @@ namespace Ecommerce.Presentation.API.Controllers
             }
             return BadRequest(ModelState);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserByID(string id) 
+        {
+            var user = await userManger.FindByIdAsync(id);
+            if (user != null)
+            {
+                var userDto = mapper.Map<GetUserDto>(user); 
+                return Ok(userDto);
+            }
+            return BadRequest();
+        }
     }
 }
