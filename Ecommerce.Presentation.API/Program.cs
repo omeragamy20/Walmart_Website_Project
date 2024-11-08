@@ -1,4 +1,13 @@
 using Ecommerce.Application.Contracts;
+using Ecommerce.Application.Mapper;
+using Ecommerce.Application.Service;
+using Ecommerce.Application.Services;
+using Ecommerce.Application.Services.ServicesCategories;
+using Ecommerce.Context;
+using Ecommerce.Infrastructure;
+using Ecommerce.Infrastructure.Categories;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Application.Contracts.FavortandRateRepo;
 using Ecommerce.Application.Contracts.product_Facillity;
