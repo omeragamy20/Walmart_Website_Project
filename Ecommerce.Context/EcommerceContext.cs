@@ -73,23 +73,23 @@ namespace Ecommerce.Context
                 }
                 );
             builder.Entity<Category>().HasData(
-                    new Category() { Id = 1, Name_en = "Electronics &Video Games", Name_ar = "الإلكترونيات وألعاب الفيديو" },
-                    new Category() { Id = 2, Name_en = "Clothing & Accessories", Name_ar = "الملابس والإكسسوارات" },
-                    new Category() { Id = 3, Name_en = "Home", Name_ar = "المنزل" },
-                    new Category() { Id = 4, Name_en = "Sports & Outdoors", Name_ar = "الرياضة والهواء الطلق" },
-                    new Category() { Id = 5, Name_en = "Pools & Hot Tubs", Name_ar = "حمامات السباحة وأحواض المياه الساخنة" },
-                    new Category() { Id = 6, Name_en = "Toys", Name_ar = "ألعاب" },
-                    new Category() { Id = 7, Name_en = "Food", Name_ar = "طعام" },
-                    new Category() { Id = 8, Name_en = "Household Essentials", Name_ar = "أساسيات منزلية" },
-                    new Category() { Id = 9, Name_en = "Kitchen & Dining", Name_ar = "المطبخ وتناول الطعام" },
-                    new Category() { Id = 10, Name_en = "School & Office Supplies", Name_ar = "اللوازم المدرسية والمكتبية" },
-                    new Category() { Id = 11, Name_en = "Beauty", Name_ar = "الجمال" },
-                    new Category() { Id = 12, Name_en = "Wellness & Personal Care", Name_ar = "العافية والعناية الشخصية" },
-                    new Category() { Id = 13, Name_en = "Kids", Name_ar = "أطفال" },
-                    new Category() { Id = 14, Name_en = "Baby", Name_ar = "طفل" },
-                    new Category() { Id = 15, Name_en = "Pets", Name_ar = "حيوانات أليفة" },
-                    new Category() { Id = 16, Name_en = "Books, Movies & Music", Name_ar = "الكتب والأفلام والموسيقى" }
-                );
+                     new Category() { Id = 1, Name_en = "Electronics &Video Games", Name_ar = "الإلكترونيات وألعاب الفيديو", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-9674/k2-_cd6b8be4-8bfb-47bc-9843-49e8ed571106.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 2, Name_en = "Clothing & Accessories", Name_ar = "الملابس والإكسسوارات", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-48f6/k2-_7aed4b13-f076-4785-8b0c-2a8343c2b70c.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 3, Name_en = "Home", Name_ar = "المنزل", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-8370/k2-_15a0a4d2-1619-4914-94cd-774567d41404.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     //new Category() { Id = 4, Name_en = "Sports & Outdoors", Name_ar = "الرياضة والهواء الطلق" },
+                     new Category() { Id = 4, Name_en = "Patio & Garden", Name_ar = "الفناء والحديقة", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-16a3/k2-_f9b2f53c-a2c0-40bf-8e25-692c544b3baf.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 5, Name_en = "Toys", Name_ar = "ألعاب", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-6897/k2-_9d771225-ddc0-4ae4-8302-1921a8ace961.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 6, Name_en = "Grocery", Name_ar = "خضروات", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-6406/k2-_987b6e28-ac24-4c30-a150-afe57033daf2.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     //new Category() { Id = 8, Name_en = "Household Essentials", Name_ar = "أساسيات منزلية" },
+                     //new Category() { Id = 9, Name_en = "Kitchen & Dining", Name_ar = "المطبخ وتناول الطعام" },
+                     new Category() { Id = 7, Name_en = "Personal Care", Name_ar = "العناية الشخصية", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-2281/k2-_240ae09f-fd48-4b80-aa8d-7bbed28ae7ea.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 8, Name_en = "Beauty", Name_ar = "الجمال", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-5ae9/k2-_d40ab856-ee32-437c-9a44-c9b93df4aff0.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 9, Name_en = "Health & wellness", Name_ar = "الصحة والعافية", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-db33/k2-_76752a43-1765-455e-85d2-16a450d8ff5a.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     //new Category() { Id = 13, Name_en = "Kids", Name_ar = "أطفال" },
+                     new Category() { Id = 10, Name_en = "Baby", Name_ar = "طفل", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-648f/k2-_c76e7139-cecb-4d48-893d-686d9bbbbfbe.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 11, Name_en = "Auto & tires", Name_ar = "السيارات والإطارات", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-e091/k2-_5abd632e-14d1-44b2-8361-fd23d6198365.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" },
+                     new Category() { Id = 12, Name_en = "Home Improvement", Name_ar = "تحسين المنزل", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-a077/k2-_02b361d9-ab7b-45e9-95fb-3060dd6be190.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF" }
+                 );
             builder.Entity<SubCategory>().HasData(
                 new SubCategory() { Id=1,CategoryId=1,Name_en= "TVs", Name_ar= "أجهزة التلفاز" },
                 new SubCategory() { Id=2,CategoryId=1,Name_en= "Computers & tablets", Name_ar= "أجهزة الكمبيوتر والأجهزة اللوحية" },
