@@ -17,56 +17,70 @@
     <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
     <style>
+        .hero-image {
+            background-image: url("https://cdn.iconscout.com/icon/free/png-256/free-walmart-logo-icon-download-in-svg-png-gif-file-formats--brand-world-logos-vol-2-pack-icons-282199.png?f=webp"); /* The image used */
+            /* opacity: 0.5; */
+            background-opacity:0.5;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color:black;
+        }
         .main {
             padding: 5px;  
             max-width:700px ; 
             min-height:600px ; 
             margin-top:100px;
+            opacity: 1;
+            color:black;
         }
 
         .mainRow {
             margin: auto;
-            border: 3px solid gray;
+            border: 3px solid black;
             padding:10px; 
             box-shadow: 0px 4px 8px rgba(0, 0, 0, .6);
+            opacity: 1;
         }
 
         .mainRow .inp {
-            width:400px
+            width:400px;
+            opacity: 1;
+            color:black;
         }
     </style>
     <title>Login</title>
 </head>
-<body >
+<body class="hero-image">
 
-<div class="container main ">
-        <h1 class="text-center" style="font-family:cursive">Walmart Dashboard</h1>
+<div class="container main " style="opacity:1;color:black;">
+        <h1 class="text-center" style="font-family:cursive;color:black;" >Walmart Dashboard</h1>
         <div class="row mainRow">
-    <div class="col-md-4">
-        <form asp-action="Login">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                        <input asp-for="Username" class="form-control inp" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Paswword" class="control-label"></label>
-                        <input asp-for="Paswword" type="password" class="form-control inp" />
-                <span asp-validation-for="Paswword" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
-            </div>
-        </form>
+        <div class="col-md-4">
+            <form asp-action="Login" >
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Username" class="control-label"></label>
+                            <input asp-for="Username" class="form-control inp" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Paswword" class="control-label"></label>
+                            <input asp-for="Paswword" type="password" class="form-control inp" />
+                    <span asp-validation-for="Paswword" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                    </label>
+                </div>
+                <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn-success" style="width:100%;text-align:center" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-    </div>
+
 
 
     <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>

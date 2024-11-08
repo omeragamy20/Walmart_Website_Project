@@ -1,5 +1,5 @@
-﻿@model IEnumerable<Ecommerce.DTOs.DTOsCategories.GetAllSubCategoryDTOs>
-
+﻿@* @model IEnumerable<Ecommerce.DTOs.DTOsCategories.GetAllSubCategoryDTOs> *@
+@model PaginatedList<Ecommerce.DTOs.DTOsCategories.GetAllSubCategoryDTOs>
 @{
     ViewData["Title"] = "SubCategories";
 }
@@ -16,16 +16,19 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.Name_en)
+                #
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name_ar)
+                Name_en
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CategryName_en)
+                Name_ar
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CategryName_ar)
+                CategryName_en
+            </th>
+            <th>
+                CategryName_ar
             </th>
             <th>
                 Image
@@ -34,13 +37,20 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            int i = 0;
+        }
 @foreach (var item in Model) {
-        <tr>
-           @*  <td>
+            <tr>
+                @*  <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td> *@
+                <td scope ="row">
+                    @(++i)
+            </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name_en)
+                @* @Html.DisplayFor(modelItem => item.Name_en) *@
+                @(item.Name_en)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name_ar)
@@ -71,6 +81,16 @@
 }
     </tbody>
 </table>
+<div class="text-center">
+    @if (Model.HasPreviousPage)
+    {
+        <a class="btn btn-primary" asp-action="AllSubCategories" asp-route-pageIndex="@(Model.PageIndex - 1)" >Previous</a>
+    }
+    @if (Model.HasNextPage)
+    {
+        <a class="btn btn-primary" asp-action="AllSubCategories" asp-route-pageIndex="@(Model.PageIndex + 1)">Next</a>
+    }
+</div>
 
 <script type="text/javascript">
     function confirmDelete() {

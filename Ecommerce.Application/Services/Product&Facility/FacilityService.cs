@@ -26,6 +26,19 @@ namespace Ecommerce.Application.Services
             mapper = _mapper;
             subcatfacilityRepository = _subcatfacilityRepository;
         }
+        public async Task<List<FacilityDTO>> GetAllBySubIdAsync(int subId)
+        {
+            var data=(await subcatfacilityRepository.GetAllAsync()).Where(s=>s.SubCategoryID==subId)
+                .Select(f=>new FacilityDTO
+                {
+                    Id=f.facility.Id,
+                    Name_en=f.facility.Name_en,
+                    Name_ar=f.facility.Name_ar,
+                    Values_En=f.facility.ProductFacilities.Select(v=>v.Value_en).ToList(),
+                    Values_Ar=f.facility.ProductFacilities.Select(v=>v.Value_ar).ToList()
+                }).ToList();
+            return data;
+        }
         public async Task<ResultView<CreatorUpdateFacilityDTO>> CreateAsync(CreatorUpdateFacilityDTO entity)
         {
             ResultView<CreatorUpdateFacilityDTO> result = new ResultView<CreatorUpdateFacilityDTO>();
@@ -96,6 +109,7 @@ namespace Ecommerce.Application.Services
             var data = (await facilityRepository.GetAllAsync())
                 .Select(f=>new FacilityDTO
                 {
+                    Id=f.Id,
                     Name_en=f.Name_en,
                     Name_ar=f.Name_ar,
                     SubCategoryNames=f.subCatFacility.Select(s=>s.subCategory.Name_en).ToList(),

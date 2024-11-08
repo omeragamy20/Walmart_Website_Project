@@ -9,7 +9,7 @@ namespace Ecommerce.DTOs.Facility
 {
     public class CreatorUpdateFacilityDTO 
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         [Required, MaxLength(100)]
         public string Name_en { get; set; }

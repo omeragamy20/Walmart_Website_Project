@@ -1,4 +1,7 @@
 ALTER TABLE [dbo].[SubCategories]
+DROP CONSTRAINT FK_SubCategory_Category
+
+ALTER TABLE [dbo].[SubCategories]
 ADD CONSTRAINT FK_SubCategory_Category
 FOREIGN KEY (CategoryId) REFERENCES [dbo].[Categories](Id)
 ON DELETE CASCADE;
