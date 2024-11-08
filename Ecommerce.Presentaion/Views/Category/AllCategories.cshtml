@@ -7,7 +7,12 @@
 <h1>Categories</h1>
 @* <button class="btn btn-primary"> <a href="Category/CreateCategory"> New Category</a> </button> *@
 <a class="btn btn-primary" href="CreateCategory">New Category</a>
-
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
 <table class="table table-striped">
     <thead>
         <tr>
