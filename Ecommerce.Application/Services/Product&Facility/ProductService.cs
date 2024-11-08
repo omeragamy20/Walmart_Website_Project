@@ -126,7 +126,7 @@ namespace Ecommerce.Application.Services
                     Facilities_Ar = p.Product.ProductFacilities.Select(f => f.Value_ar).ToList(),
                     Values = p.Product.ProductFacilities.Select(f => f.facility.Name_en).ToList(),
                     Values_Ar = p.Product.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
-                }).ToList();          
+                }).Where(p=>p.Id!=null).ToList();          
             var c = (await prdctsubCatRepository.GetAllAsync()).Where(sc => sc.SubcategoryId == Subcatid).Count();
 
             EntityPaginated<GetAllproductDTO> GetAllResult = new()
