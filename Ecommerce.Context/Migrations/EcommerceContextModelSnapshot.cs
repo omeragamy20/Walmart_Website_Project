@@ -17,7 +17,7 @@ namespace Ecommerce.Context.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "9.0.0-rc.2.24474.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -66,98 +66,86 @@ namespace Ecommerce.Context.Migrations
                         new
                         {
                             Id = 1,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-9674/k2-_cd6b8be4-8bfb-47bc-9843-49e8ed571106.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
                             Name_ar = "الإلكترونيات وألعاب الفيديو",
                             Name_en = "Electronics &Video Games"
                         },
                         new
                         {
                             Id = 2,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-48f6/k2-_7aed4b13-f076-4785-8b0c-2a8343c2b70c.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
                             Name_ar = "الملابس والإكسسوارات",
                             Name_en = "Clothing & Accessories"
                         },
                         new
                         {
                             Id = 3,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-8370/k2-_15a0a4d2-1619-4914-94cd-774567d41404.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
                             Name_ar = "المنزل",
                             Name_en = "Home"
                         },
                         new
                         {
                             Id = 4,
-                            Name_ar = "الرياضة والهواء الطلق",
-                            Name_en = "Sports & Outdoors"
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-16a3/k2-_f9b2f53c-a2c0-40bf-8e25-692c544b3baf.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
+                            Name_ar = "الفناء والحديقة",
+                            Name_en = "Patio & Garden"
                         },
                         new
                         {
                             Id = 5,
-                            Name_ar = "حمامات السباحة وأحواض المياه الساخنة",
-                            Name_en = "Pools & Hot Tubs"
-                        },
-                        new
-                        {
-                            Id = 6,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-6897/k2-_9d771225-ddc0-4ae4-8302-1921a8ace961.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
                             Name_ar = "ألعاب",
                             Name_en = "Toys"
                         },
                         new
                         {
+                            Id = 6,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-6406/k2-_987b6e28-ac24-4c30-a150-afe57033daf2.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
+                            Name_ar = "خضروات",
+                            Name_en = "Grocery"
+                        },
+                        new
+                        {
                             Id = 7,
-                            Name_ar = "طعام",
-                            Name_en = "Food"
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-2281/k2-_240ae09f-fd48-4b80-aa8d-7bbed28ae7ea.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
+                            Name_ar = "العناية الشخصية",
+                            Name_en = "Personal Care"
                         },
                         new
                         {
                             Id = 8,
-                            Name_ar = "أساسيات منزلية",
-                            Name_en = "Household Essentials"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name_ar = "المطبخ وتناول الطعام",
-                            Name_en = "Kitchen & Dining"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name_ar = "اللوازم المدرسية والمكتبية",
-                            Name_en = "School & Office Supplies"
-                        },
-                        new
-                        {
-                            Id = 11,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-5ae9/k2-_d40ab856-ee32-437c-9a44-c9b93df4aff0.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
                             Name_ar = "الجمال",
                             Name_en = "Beauty"
                         },
                         new
                         {
-                            Id = 12,
-                            Name_ar = "العافية والعناية الشخصية",
-                            Name_en = "Wellness & Personal Care"
+                            Id = 9,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-db33/k2-_76752a43-1765-455e-85d2-16a450d8ff5a.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
+                            Name_ar = "الصحة والعافية",
+                            Name_en = "Health & wellness"
                         },
                         new
                         {
-                            Id = 13,
-                            Name_ar = "أطفال",
-                            Name_en = "Kids"
-                        },
-                        new
-                        {
-                            Id = 14,
+                            Id = 10,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-648f/k2-_c76e7139-cecb-4d48-893d-686d9bbbbfbe.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
                             Name_ar = "طفل",
                             Name_en = "Baby"
                         },
                         new
                         {
-                            Id = 15,
-                            Name_ar = "حيوانات أليفة",
-                            Name_en = "Pets"
+                            Id = 11,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-e091/k2-_5abd632e-14d1-44b2-8361-fd23d6198365.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
+                            Name_ar = "السيارات والإطارات",
+                            Name_en = "Auto & tires"
                         },
                         new
                         {
-                            Id = 16,
-                            Name_ar = "الكتب والأفلام والموسيقى",
-                            Name_en = "Books, Movies & Music"
+                            Id = 12,
+                            Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-a077/k2-_02b361d9-ab7b-45e9-95fb-3060dd6be190.v1.jpg?odnHeight=120&odnWidth=120&odnBg=FFFFFF",
+                            Name_ar = "تحسين المنزل",
+                            Name_en = "Home Improvement"
                         });
                 });
 
@@ -249,17 +237,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "2434f864-f162-406a-9a92-6e8e0ed5c9a1",
+                            ConcurrencyStamp = "6d61f3d1-ae0a-442c-89cc-70320262a857",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMFedNJ31bmOJ/7Ba9JMW+jPtDL5kFPVxR6GGXfu0jTafjjp9EIMUbZwvXXCMnWVSQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAWnEdpNTBJ8IPCnNM65l2gEvj7xTufXs0hVpFzhTj3lT8vVY2rnFtJWcV2QY1ScLw==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "08af1301-fe7f-4137-8ebf-c84a9afdf871",
+                            SecurityStamp = "ffff1553-2e82-4a62-ac1d-f4d8fd543353",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

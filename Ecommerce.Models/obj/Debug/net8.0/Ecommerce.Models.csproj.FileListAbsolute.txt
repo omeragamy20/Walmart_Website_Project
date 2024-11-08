@@ -50,3 +50,5 @@ F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
 F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
 F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
 F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
+F:\final project graduate\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.runtimeconfig.json
+F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.genruntimeconfig.cache
