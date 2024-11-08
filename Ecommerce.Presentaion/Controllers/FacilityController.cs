@@ -27,7 +27,7 @@ namespace Ecommerce.Presentaion.Controllers
         {
             var subcategories = await subCategoryService.GetAllSubCategoriesAsync();
             ViewBag.subcategories = subcategories;
-            //FacilityDTO facilityDTO = new FacilityDTO();
+            //CreatorUpdateFacilityDTO  facilityDTO = new CreatorUpdateFacilityDTO();
             return View();
         }
         [HttpPost]

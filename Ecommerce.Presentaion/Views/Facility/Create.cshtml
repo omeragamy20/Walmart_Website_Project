@@ -24,9 +24,15 @@
         <span asp-validation-for="subcategoriesId" style="color:red"></span>
 
     </div>
-  
-    <button class="btn btn-outline-success" type="submit"> Create </button>
+    <br />
+    <div>
+        <button class="btn btn-outline-success" type="submit"> Create </button>
+    </div>
 </form>
+<br />
+<div>
+    <a asp-action="GetALl" class="btn btn-warning">Back to List</a>
+</div>
 @section Scripts
 {
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

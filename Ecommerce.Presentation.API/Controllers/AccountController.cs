@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Ecommerce.DTOs.CustomerDto;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Http;
@@ -99,10 +99,9 @@ namespace Ecommerce.Presentation.API.Controllers
 
                         return Ok(new
                         {
-                            id = user.Id,
+                            id=user.Id  ,
                             token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
-                            expiration = DateTime.Now.AddHours(1)//mytoken.ValidTo
-                                                                 //
+                            expiration = DateTime.Now.AddHours(1)
                         });
                     }
                     return BadRequest();
@@ -125,7 +124,7 @@ namespace Ecommerce.Presentation.API.Controllers
                 if (res.Succeeded)
                 {
 
-                    return Ok("Created");
+                    return Ok();
                 }
                 else
                 {
@@ -134,6 +133,68 @@ namespace Ecommerce.Presentation.API.Controllers
                 }
             }
             return BadRequest(ModelState);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserByID(string id) 
+        {
+            var user = await userManger.FindByIdAsync(id);
+            if (user != null)
+            {
+                var userDto = mapper.Map<GetUserDto>(user); 
+                return Ok(userDto);
+            }
+            return BadRequest();
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateUser(GetUserDto userDto)
+        {
+            var user = await userManger.FindByIdAsync(userDto.Id);
+            if(user != null) 
+            { 
+                user.PhoneNumber = userDto.PhoneNumber;
+                user.LastName = userDto.LastName;
+                user.FirstName = userDto.FirstName;
+                user.Email = userDto.Email; 
+                var res =  await userManger.UpdateAsync(user);
+                if (res.Succeeded)
+                        {
+
+                            return Ok();
+                        }
+            }
+            return BadRequest();
+           
+        }
+
+        [HttpPost("Reset/{id}")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDto passwordDto , string id)
+        {
+          
+                var user = await userManger.FindByIdAsync(id);
+                if (user != null)
+                {
+                    bool Checked = await userManger.CheckPasswordAsync(user, passwordDto.OldPassword);
+                    if (Checked)
+                    {
+                        var hasher = new PasswordHasher<Customer>();
+                        user.PasswordHash = hasher.HashPassword(user, passwordDto.NewPassword);
+                        var res = await userManger.UpdateAsync(user);
+                        if (res.Succeeded)
+                        {
+                            return Ok();
+                        }
+                    }
+                    else
+                    {
+                    return BadRequest();    
+                }
+
+                }
+
+         
+            return BadRequest();
         }
     }
 }

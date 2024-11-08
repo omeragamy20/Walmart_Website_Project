@@ -16,6 +16,8 @@ namespace Ecommerce.Application.Services
         Task<ResultView<CreatorUpdateFacilityDTO>> UpdateAsync(CreatorUpdateFacilityDTO entity);
         Task DeleteAsync(int id);
         Task<List<FacilityDTO>> GetAllAsync();
+
+        Task<List<FacilityDTO>> GetAllBySubIdAsync(int subId);
         Task<CreatorUpdateFacilityDTO> GetByIdAsync(int id);
     }
 }

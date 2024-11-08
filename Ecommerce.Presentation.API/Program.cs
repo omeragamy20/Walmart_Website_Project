@@ -157,10 +157,10 @@ namespace Ecommerce.Presentation.API
 
             app.UseCors("Default");
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseAuthentication();
-            app.UseAuthorization();
 
+            app.UseAuthorization();
+            app.UseCors("Default");
 
             app.MapControllers();
 

@@ -66,7 +66,7 @@ namespace Ecommerce.Application.Mapper
 
             // Facilitiy
             CreateMap<CreatorUpdateFacilityDTO, Facility>().ReverseMap();
-            CreateMap<FacilityDTO, Facility>().ReverseMap();
+            CreateMap< FacilityDTO, Facility >().ReverseMap();
             CreateMap<Images, ImageDTO>().ReverseMap();
             //     //CreateMap<GetAllproductDTO, Product>().ReverseMap();
             //MapFrom(src => src.productSubCategory.Select(ps => ps.SubCategory.Name_en).ToList()))
@@ -89,6 +89,7 @@ namespace Ecommerce.Application.Mapper
             CreateMap< CreateCustomerDto , Customer>().ReverseMap();
             CreateMap< GetAllUsersDto , Customer>().ReverseMap();
             CreateMap<GetAdminDto , Customer>().ReverseMap();
+            CreateMap<GetUserDto , Customer>().ReverseMap();
             CreateMap<UpdataAdminDto , Customer>().ReverseMap();
             
             // mady work

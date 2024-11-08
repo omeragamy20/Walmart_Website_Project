@@ -141,8 +141,8 @@ namespace Ecommerce.Presentaion.Controllers
                         var prdFacilities = await productfacilityServices.GetFacilitesByPrdIdAsync(res.Entity.Id);
                         PFS.Values_En.AddRange(prdFacilities.Values_En);
                         PFS.Values_Ar.AddRange(prdFacilities.Values_Ar);
-                
-                    
+                      
+
                     if (PFS.SubcatsIDS.Count > 0)
                     {
                         var FaciltyDto = await subcatfacilityService.Getallfacilitybyubcatid(PFS.SubcatsIDS);
