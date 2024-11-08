@@ -26,7 +26,7 @@ namespace Ecommerce.Application.Services
          Task<ResultView<List<GetAllproductDTO>>> GetPrdBySubCat(int id);
         public Task<List<int?>?> GetSubcatbyPrdId(int id);
 
-        public Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid, int PageNumber, int Count);
+        public Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid);
 
 
     }

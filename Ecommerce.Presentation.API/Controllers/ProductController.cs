@@ -33,7 +33,14 @@ namespace Ecommerce.Presentation.API.Controllers
         [HttpGet("ProductPagination/{CatId:int}")]
         public async Task<IActionResult> GetAllProductbyCategory(int CatId)
         {
-            return Ok(await productService.GetAllProductPaginationEnBySubCatIdAsync(CatId,1,6));
+            var res = (await productService.GetAllProductPaginationEnBySubCatIdAsync(CatId));
+            if (res != null)
+                return Ok(res);
+            else
+            {
+                return BadRequest(ModelState);
+            }
+
         }
 
 
