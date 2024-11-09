@@ -22,9 +22,9 @@ namespace Ecommerce.DTOs.Product
         public List<string>? Facilities_Ar { get; set; } = new List<string>();
         public List<string>? Values { get; set; } = new List<string>();
         public List<string>? Values_Ar { get; set; } = new List<string>();
-        public  double Rate { get; set; }
-        public int TotalRate { get; set; }
-        public List<int> Rates { get; set; }
+        public  double? Rate { get; set; }
+        public int? TotalRate { get; set; }
+        public List<int>? Rates { get; set; }
         public List<string>? SubCategoryNamesAr { get; set; } = new List<string>();
         public List<string> ImageUrls { get; set; } = new List<string>();
     }

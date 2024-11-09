@@ -15,6 +15,7 @@ namespace Ecommerce.DTOs.Product
         public string Value_en { get; set; }
 
         [Required, MaxLength(100)]
+
         public string Value_ar { get; set; }
         [ForeignKey("product")]
         public int ProductID { get; set; }

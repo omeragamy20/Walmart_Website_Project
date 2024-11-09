@@ -178,10 +178,10 @@ namespace Ecommerce.Presentaion.Controllers
             }
             else { return View(); }
         }
-        public async Task<IActionResult> SearchProduct(string ProductName)
+        public async Task<IActionResult> SearchProduct(string? ProductName,decimal? price)
         {
-            var product = await productService.SearchByNameAsync(ProductName);
-            return View(product);
+            var product = await productService.SearchByNameAsync(ProductName,price);
+            return View("GetALlProduct",product);
         }
         public async Task<IActionResult> Delete(int id)
         {
