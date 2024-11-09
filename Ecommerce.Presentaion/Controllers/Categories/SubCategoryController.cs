@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.DTOs.DTOsCategories;
+using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing.Printing;
 
 namespace Ecommerce.Presentaion.Controllers.Categories
 {
@@ -10,19 +13,26 @@ namespace Ecommerce.Presentaion.Controllers.Categories
     {
         private readonly ISubCategoryServices subcategoryService;
         private readonly ICategoryService categoryService;
+        private readonly ISubCategoryRepository subcategoryRepository;
         private readonly IMapper mapper;
-        public SubCategoryController(ISubCategoryServices _subsubcategoryService, ICategoryService _categoryService, IMapper _mapper)
+        public SubCategoryController(ISubCategoryServices _subsubcategoryService, ICategoryService _categoryService,
+            IMapper _mapper, ISubCategoryRepository _subcategoryRepository)
         {
             subcategoryService = _subsubcategoryService;
             categoryService = _categoryService;
+            subcategoryRepository = _subcategoryRepository;
             mapper = _mapper;
 
         }
         [HttpGet]
-        public async Task<IActionResult> AllSubCategories()
+        public async Task<IActionResult> AllSubCategories(int pageIndex = 1,int pageSize = 10)
         {
-            var category = (await subcategoryService.GetAllSubCategoriesAsync());
-            return View(category);
+            //var subcategory = (await subcategoryService.GetAllSubCategoriesAsync());
+            var subcategory = (await subcategoryRepository.GetAllSubcategoryAsync());
+
+            var paginatedList = await PaginatedList<GetAllSubCategoryDTOs>.CreateAsync(subcategory, pageIndex, pageSize);
+            //var category = (await subcategoryService.GetAllSubCategoriesPaginatedAsync(pagenumber,count));
+            return View(paginatedList);
         }
 
         [HttpGet]
@@ -88,7 +98,7 @@ namespace Ecommerce.Presentaion.Controllers.Categories
             }
             else
             {
-                ModelState.AddModelError("deleted has ereror: ", result.Message);
+                TempData["ErrorMessage"] = "Failed to delete the SubCategory. The SubCategory Isn`t Empty ";
                 return RedirectToAction("AllSubCategories");
             }
         }

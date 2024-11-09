@@ -126,7 +126,7 @@ namespace Ecommerce.Application.Services
                     Facilities_Ar = p.Product.ProductFacilities.Select(f => f.Value_ar).ToList(),
                     Values = p.Product.ProductFacilities.Select(f => f.facility.Name_en).ToList(),
                     Values_Ar = p.Product.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
-                }).ToList();          
+                }).Where(p=>p.Id!=null).ToList();          
             var c = (await prdctsubCatRepository.GetAllAsync()).Where(sc => sc.SubcategoryId == Subcatid).Count();
 
             EntityPaginated<GetAllproductDTO> GetAllResult = new()
@@ -356,7 +356,7 @@ namespace Ecommerce.Application.Services
             return data;
         }
         
-        public async Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid,int PageNumber, int Count)
+        public async Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid)
         {
             //.Skip(Count * (PageNumber - 1)).Take(Count)
             var result=(await prdctsubCatRepository.GetAllAsync()).Where(sc=>sc.SubcategoryId==Subcatid)
@@ -369,8 +369,17 @@ namespace Ecommerce.Application.Services
                 Stock=p.Product.Stock,
                 ImageUrls=p.Product.Images.FirstOrDefault().Image
                 
-            }).ToList();
+            }).Where(p=>p.Id!=null).ToList();
             return result;
+            //if (result != null)
+            //{
+            //    return result;
+            //}
+            //else
+            //{
+            //    return new List<GetAllproductEnDTO>();
+            //}
+            //return result;
         }
     }
 }

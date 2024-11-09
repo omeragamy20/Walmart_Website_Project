@@ -17,7 +17,7 @@ namespace Ecommerce.Context.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "9.0.0-rc.2.24474.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -237,17 +237,17 @@ namespace Ecommerce.Context.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Address = "sohag",
-                            ConcurrencyStamp = "c4592d80-c57f-4260-9008-7050a25172ed",
+                            ConcurrencyStamp = "0898b0c3-6203-4e25-a066-76aa92c45351",
                             Email = "ahmedbahgat@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "admin",
                             LastName = "admin",
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKw/ZMU0fSQct4lAMpXwH67rzSzMzytlDwArCMKAvLHz2F4zBOv2j2U1TCgjLlqEdQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPhqG0nGl3Ba6Qd5jTdIEN2zOuvt/l7Bc36U9GnrpCp2rPD6IgIn7cGANrzPNzucgQ==",
                             PhoneNumber = "01111690167",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5909a34-3bbb-421b-8ca9-eb0a8767c9a6",
+                            SecurityStamp = "83f9af1b-dd27-45fc-bb54-e720efab115e",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

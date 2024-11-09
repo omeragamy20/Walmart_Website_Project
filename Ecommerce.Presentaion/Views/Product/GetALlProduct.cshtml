@@ -7,8 +7,8 @@
         <tr>
             <th scope="col">Title_en</th>
             <th scope="col">Title_ar</th>
-            <th scope="col">Description_en</th>
-            <th scope="col">Description_ar</th>
+            @* <th scope="col">Description_en</th>
+            <th scope="col">Description_ar</th> *@
             <th scope="col">Price</th>
             <th scope="col">Stock</th>
             <th scope="col">SubCategory_En</th>
@@ -25,8 +25,8 @@
         <tr>
             <td>@p.Title_en</td>
             <td>@p.Title_ar</td>
-            <td>@p.Description_en</td>
-            <td>@p.Description_ar</td>
+         @*    <td>@p.Description_en</td>
+            <td>@p.Description_ar</td> *@
             <td>@p.Price</td>
             <td>@p.Stock</td>
             <td>
@@ -61,10 +61,9 @@
                     }
             </td>
             <td>
-                @foreach (var img in @p.ImageUrls)
-                {
-                    <img src="@img" width="50px" height="50px" />
-                }
+               
+                    <img src="@p.ImageUrls[0]" width="50px" height="50px" />
+              
             </td>
            <td>
                 <div style="display:flex">
