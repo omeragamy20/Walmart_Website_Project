@@ -135,9 +135,9 @@ namespace Ecommerce.Application.Services
                                                              p.Description_en.Contains(searchTerm) ||
                                                              p.Description_ar.Contains(searchTerm) ||
                                                              p.Facilities.Any(f => f.Contains(searchTerm)) ||
-                                                             p.Facilities_Ar.Any(f => f.Contains(searchTerm)));
+                                                             p.Facilities_Ar.Any(f => f.Contains(searchTerm))).ToList();
                     }          
-            var c = data.Count();
+             c = data.Count();
             var paginatedProducts = data.Skip(Count * (PageNumber - 1)).Take(Count).ToList();
             EntityPaginated<GetAllproductDTO> GetAllResult = new()
             {
