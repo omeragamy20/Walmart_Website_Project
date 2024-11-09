@@ -10,7 +10,7 @@ namespace Ecommerce.DTOs.Shipment
   public  class CreateDto
     {
        
-
+        public int? Id {get; set;}
          public DateTime ShipmentDate { get; set; }
 
         [Required, MaxLength(150)]

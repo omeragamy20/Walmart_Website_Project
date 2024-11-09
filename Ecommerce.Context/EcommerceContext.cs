@@ -267,6 +267,11 @@ namespace Ecommerce.Context
             //ChangeTracker.Entries
             return base.SaveChanges(acceptAllChangesOnSuccess);
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+        }
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
             // set value for base entity data 

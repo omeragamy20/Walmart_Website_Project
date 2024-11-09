@@ -28,7 +28,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         // GET: UserController
         public async Task<ActionResult> Index()
         {
-            var users = await userManger.GetUsersInRoleAsync("admin");
+            var users = await userManger.GetUsersInRoleAsync("user");
             var customers = mapper.Map<List<GetAllUsersDto>>(users);
             return View(customers);
         }

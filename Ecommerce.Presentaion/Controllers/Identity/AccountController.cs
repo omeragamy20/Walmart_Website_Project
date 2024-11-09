@@ -31,7 +31,6 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         }
         public IActionResult Index()
         {
-
             return View();
         }
 
