@@ -47,6 +47,16 @@ namespace Ecommerce.Application.ServicesO
                 }
 
                 var prd = Maper.Map<Order>(entity);
+                prd.OrderItems = new List<OrderItem>(); 
+                if (entity.OrderItemsID != null)
+                {
+                    foreach (var item in entity.OrderItemsID)
+                    {
+                        var mapOrderItem = Maper.Map<OrderItem>(item);
+                        prd.OrderItems.Add(mapOrderItem);
+
+                    }
+                }
                 var SucessEntity = await OrderRepo.CreateAsync(prd);
                 await OrderRepo.SaveChanges();
                 var prdchange = Maper.Map<CreateOrUpdateOrderDTOs>(SucessEntity);
