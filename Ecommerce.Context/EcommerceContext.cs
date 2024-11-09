@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -107,8 +108,12 @@ namespace Ecommerce.Context
                 new SubCategory() { Id=14,CategoryId=1,Name_en= "Gaming room", Name_ar= "غرفة الألعاب" }
                 );
         }
-      
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+        }
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {
             var entities = ChangeTracker.Entries<BaseEntity<int>>();
