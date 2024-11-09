@@ -64,3 +64,5 @@ F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
 F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll
 F:\final project graduate\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.runtimeconfig.json
 F:\final project graduate\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.genruntimeconfig.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.runtimeconfig.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.genruntimeconfig.cache

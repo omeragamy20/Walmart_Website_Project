@@ -72,3 +72,5 @@ F:\final project graduate\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Appli
 F:\final project graduate\Ecommerce.Application\obj\Debug\net8.0\ref\Ecommerce.Application.dll
 F:\final project graduate\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.runtimeconfig.json
 F:\final project graduate\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.genruntimeconfig.cache
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.runtimeconfig.json
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.genruntimeconfig.cache
