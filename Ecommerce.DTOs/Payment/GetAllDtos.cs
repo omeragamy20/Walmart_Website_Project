@@ -10,10 +10,9 @@ namespace Ecommerce.DTOs.Payment
 {
     public class GetAllDtos
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
-        [Key]
-        public int PaymentId { get; set; }
+        public string CustomerId { get; set; }
 
         public DateTime PaymentDate { get; set; }
 

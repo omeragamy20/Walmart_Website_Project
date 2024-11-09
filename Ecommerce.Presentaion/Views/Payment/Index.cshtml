@@ -14,6 +14,8 @@
             <th>Amount</th>
             <th>PaymentMethod_en</th>
             <th>PaymentMethod_ar</th>
+            <th>Action</th>
+            
             
         </tr>
     </thead>
@@ -25,7 +27,7 @@
                 <td>@Payment.Amount</td>
                 <td>@Payment.PaymentMethod_en</td>
                 <td>@Payment.PaymentMethod_ar</td>
-                <td>@Payment.PaymentId</td>
+                @* <td>@Payment.CustomerId</td> *@
                
                 <td>
                     <a asp-action="Edit" asp-route-id="@Payment.Id">Edit</a> |
