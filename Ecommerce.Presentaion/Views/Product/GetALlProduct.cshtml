@@ -1,7 +1,25 @@
 ﻿@model List<GetAllproductDTO>
+
+
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-warning" role="alert">
+        No products found.
+    </div>
+}
+else
+{
+    <div class="search-bar">
+    <form class="search-form d-flex align-items-center" method="POST" asp-controller="Product" asp-action="SearchProduct">
+        <input type="text" name="ProductName" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+    </form>
+</div> <br><br />
+<!-- End Search Bar -->
+
 <a class="btn btn-outline-primary" asp-action="Create">Create One</a>
+
 <br />
-</br>
 <table class="table table-striped table-hover table-bordered align-middle table-xl">
     <thead>
         <tr>
@@ -76,3 +94,4 @@
         }
     </tbody>
 </table>
+}
