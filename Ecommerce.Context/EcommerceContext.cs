@@ -37,6 +37,12 @@ namespace Ecommerce.Context
             
         
         }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder
+        //    .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+
+        //}
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -236,8 +242,12 @@ namespace Ecommerce.Context
                 new SubCategory() { Id=132,CategoryId=12,Name_en= "Water filtration", Name_ar= "ترشيح المياه", Image = "https://i5.walmartimages.com/dfw/4ff9c6c9-897c/k2-_54304291-1c14-435b-aba2-f6c924dec9fe.v1.jpg?odnHeight=290&odnWidth=290&odnBg=FFFFFF" } 
                 );
         }
-      
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+        }
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {
             var entities = ChangeTracker.Entries<BaseEntity<int>>();
@@ -260,11 +270,6 @@ namespace Ecommerce.Context
             // set value for base entity data 
             //ChangeTracker.Entries
             return base.SaveChanges(acceptAllChangesOnSuccess);
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder
-                .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
         }
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {

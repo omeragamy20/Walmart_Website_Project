@@ -53,9 +53,9 @@ namespace Ecommerce.Presentation.API.Controllers
         }
 
         [HttpGet("pagination")]
-        public async Task<IActionResult> GetPagination(int Subcatid,int PageNumber, int Count)
+        public async Task<IActionResult> GetPagination(int Subcatid,int PageNumber, int Count, string? searchTerm, decimal? price)
         {
-            var products = await productService.GetAllPaginationAsync(Subcatid,PageNumber, Count);
+            var products = await productService.GetAllPaginationAsync(Subcatid,PageNumber, Count,searchTerm,price);
             return Ok(products);
         }
 
@@ -66,9 +66,9 @@ namespace Ecommerce.Presentation.API.Controllers
             return Ok(product);
         }
         [HttpGet("search")]
-        public async Task<IActionResult> SearchProduct(string ProductName)
+        public async Task<IActionResult> SearchProduct(string? ProductName,decimal? price)
         {
-            var product = await productService.SearchByNameAsync(ProductName);
+            var product = await productService.SearchByNameAsync(ProductName,price);
             return Ok(product);
         }
         

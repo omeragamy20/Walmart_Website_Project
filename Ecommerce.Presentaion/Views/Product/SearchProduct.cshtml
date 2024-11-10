@@ -8,19 +8,82 @@
 }
 else
 {
-    @foreach (var p in Model)
-    {
+   <a class="btn btn-outline-primary" asp-action="Create">Create One</a>
 
-        <div class="card" style="width: 18rem;">
-            <img src="@foreach (var img in @p.ImageUrls) @img" width="80px" height="80px" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5>@p.Title_en</h5>
-                <p>@p.Description_en</p>
-                <h5>Prise: @p.Price</h5>
-                <h5>InStok @p.Stock</h5>
-                <p class="card-text">@p.Description_en</p>
-            </div>
-        </div>
+<br />
 
-    }
+<table class="table table-striped table-hover table-bordered align-middle table-xl">
+    <thead>
+        <tr>
+            <th scope="col">Title_en</th>
+            <th scope="col">Title_ar</th>
+            <th scope="col">Description_en</th>
+            <th scope="col">Description_ar</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stock</th>
+            <th scope="col">SubCategory_En</th>
+            <th scope="col">SubCategory_Ar</th>
+            <th scope="col">Facilities_En</th>
+            <th scope="col">Facilities_Ar</th>
+          
+            <th scope="col">Image</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model){
+        <tr>
+            <td>@p.Title_en</td>
+            <td>@p.Title_ar</td>
+            <td>@p.Description_en</td>
+            <td>@p.Description_ar</td>
+            <td>@p.Price</td>
+            <td>@p.Stock</td>
+            <td>
+                @foreach(var s in @p.SubCategoryNames)
+                {
+                        <li style="list-style-type:none">
+                            @s
+                        </li>
+                }
+            </td>
+            <td>
+                    @foreach (var s in @p.SubCategoryNamesAr)
+                    {
+                        <li style="list-style-type:none">
+                            @s
+                        </li>
+                    }
+            </td>
+            <td>@foreach (var f in @p.Facilities)
+                    {
+                        <li style="list-style-type:none">
+                            @f
+                        </li>
+                    }
+            </td>
+
+            <td>@foreach (var f in @p.Facilities_Ar)
+                    {
+                        <li style="list-style-type:none">
+                            @f
+                        </li>
+                    }
+            </td>
+            <td>
+               
+                    <img src="@p.ImageUrls.FirstOrDefault()" width="50px" height="50px" />
+            </td>
+           <td>
+                <div style="display:flex">
+                        <a class="btn btn-outline-primary" asp-route-id="@p.Id" asp-action="Update">Update</a>
+                        &nbsp;&nbsp;
+                        <a class="btn btn-outline-danger" asp-route-id="@p.Id" asp-action="Delete">Delete</a>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
 }

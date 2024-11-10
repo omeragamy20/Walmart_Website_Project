@@ -105,9 +105,9 @@ namespace Ecommerce.Application.Services
             return products;
         }
 
-        public async Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int Subcatid,int PageNumber, int Count)
+        public async Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int Subcatid,int PageNumber, int Count, string? searchTerm, decimal? price)
         {
-            var data = (await prdctsubCatRepository.GetAllAsync()).Where(sc => sc.SubcategoryId == Subcatid).Skip(Count * (PageNumber - 1)).Take(Count)
+            var data = (await prdctsubCatRepository.GetAllAsync()).Where(sc => sc.SubcategoryId == Subcatid)
                 .Select(p => new GetAllproductDTO
                 {
                     Id = p.Product.Id,
@@ -128,10 +128,20 @@ namespace Ecommerce.Application.Services
                     Values_Ar = p.Product.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
                 }).Where(p=>p.Id!=null).ToList();          
             var c = (await prdctsubCatRepository.GetAllAsync()).Where(sc => sc.SubcategoryId == Subcatid).Count();
-
+                    if (!string.IsNullOrEmpty(searchTerm))
+                    {
+                        data = data.Where(p => p.Title_en.Contains(searchTerm) ||
+                                                             p.Title_ar.Contains(searchTerm) ||
+                                                             p.Description_en.Contains(searchTerm) ||
+                                                             p.Description_ar.Contains(searchTerm) ||
+                                                             p.Facilities.Any(f => f.Contains(searchTerm)) ||
+                                                             p.Facilities_Ar.Any(f => f.Contains(searchTerm))).ToList();
+                    }          
+             c = data.Count();
+            var paginatedProducts = data.Skip(Count * (PageNumber - 1)).Take(Count).ToList();
             EntityPaginated<GetAllproductDTO> GetAllResult = new()
             {
-                Data = data,
+                Data = paginatedProducts,
                 Count = c
 
 
@@ -189,26 +199,43 @@ namespace Ecommerce.Application.Services
                 .Where(p=>p.ProductId==id).Select(psc => psc.SubcategoryId).ToList();
             return res;
         }
-        public async Task<List<GetAllproductDTO>> SearchByNameAsync(string ProductName)
+        public async Task<List<GetAllproductDTO>> SearchByNameAsync(string? searchTerm,decimal? price)
         {
             var data = (await productRebository.GetAllAsync())
-                 .Select(p => new GetAllproductDTO
-                 {
-                     Id = p.Id,
-                     Description_ar = p.Description_ar,
-                     Description_en = p.Description_en,
-                     Price = p.Price,
-                     Stock = p.Stock,
-                     Title_ar = p.Title_ar,
-                     Title_en = p.Title_en,
-                     ImageUrls = p.Images.Select(i => i.Image).ToList(),
-                     Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
-                     Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList()
-                 }).Where(p => p.Title_en == ProductName || p.Title_ar == ProductName).ToList();
+                .Select(p => new GetAllproductDTO
+                {
+                    Id = p.Id,
+                    Description_ar = p.Description_ar,
+                    Description_en = p.Description_en,
+                    Price = p.Price,
+                    Stock = p.Stock,
+                    Title_ar = p.Title_ar,
+                    Title_en = p.Title_en,
+                    Rate = p.Rates.Average(r => r.Rating),
+                    TotalRate = p.Rates.Count(),
+                    Rates = p.Rates.Select(r => r.Rating).ToList(),
+                    ImageUrls = p.Images.Select(i => i.Image).ToList(),
+                    Facilities = p.ProductFacilities.Select(f => f.Value_en).ToList(),
+                    Facilities_Ar = p.ProductFacilities.Select(f => f.Value_ar).ToList(),
+                    Values = p.ProductFacilities.Select(f => f.facility.Name_en).ToList(),
+                    Values_Ar = p.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
+                    SubCategoryNames = p.productSubCategory.Select(p => p.SubCategory.Name_en).ToList(),
+                    SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
+                   
+                })
+                .Where(p => p.Title_en.Contains(searchTerm) ||
+                            p.Title_ar.Contains(searchTerm) ||
+                            p.Description_en.Contains(searchTerm) ||
+                            p.Description_ar.Contains(searchTerm) ||
+                            p.Facilities.Any(f => f.Contains(searchTerm)) ||
+                            p.Facilities_Ar.Any(f => f.Contains(searchTerm))||
+                            p.Price.Equals(price)
+                           )
+                .ToList();
 
-                  
             return data;
         }
+        
 
         public async Task<ResultView<CreateAndUpdateProductDTO>> UpdateAsync(CreateAndUpdateProductDTO entity)
         {

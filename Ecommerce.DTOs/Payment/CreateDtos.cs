@@ -15,7 +15,9 @@ namespace Ecommerce.DTOs.Payment
         //[Key]
         //public int PaymentId { get; set; }
 
-        public DateTime PaymentDate { get; set; }
+        public string? CustomerId { get; set; }
+
+        public DateTime? PaymentDate { get; set; }
 
         //[Required, MaxLength(100)]
         public string? PaymentMethod_en { get; set; }

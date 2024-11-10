@@ -31,7 +31,7 @@ namespace Ecommerce.Application.ServicesO
             {
 
 
-                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.ProductId == entity.ProductId);
+                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.ProductId == entity.ProductId&&p.OrderId==entity.OrderId);
 
                 if (Exist)
                 {
@@ -46,7 +46,7 @@ namespace Ecommerce.Application.ServicesO
 
                 }
 
-                var prd = Maper.Map<OrderItem>(entity);
+                var prd =  Maper.Map<OrderItem>(entity);
                 var SucessEntity = await OrderitemRepo.CreateAsync(prd);
                 await OrderitemRepo.SaveChanges();
                 var prdchange = Maper.Map<CreateOrUpdateOrderItemDTOs>(SucessEntity);

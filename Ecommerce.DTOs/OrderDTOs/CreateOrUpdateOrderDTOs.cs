@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
+using Ecommerce.DTOs.OrderItemDTOs;
 
 namespace Ecommerce.DTOs.OrderDTOs
 {
     public class CreateOrUpdateOrderDTOs
     {
-        public int Id { get; set; }
-        public DateTime OrderDate { get; set; }
+        public int Id { get; set; } = 0;
+        public DateTime? OrderDate { get; set; } = DateTime.Now;
 
         [Range(50,double.MaxValue)]
         public decimal TotalPrice { get; set; }
@@ -28,6 +29,6 @@ namespace Ecommerce.DTOs.OrderDTOs
 
         public int? ShipmentId { get; set; }
 
-        public ICollection<int>? OrderItemsID { get; set; }
+        public ICollection<CreateOrUpdateOrderItemDTOs>? OrderItemsID { get; set; }
     }
 }

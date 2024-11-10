@@ -14,8 +14,7 @@ namespace Ecommerce.DTOs.Product
        public List<CreatorUpdateFacilityDTO>? FacilityDTO { get; set; }
         public List<int>? FacilityIds { get; set; }
         public List<string>? Values_En { get; set; } = new List<string>();
-        public List<string>? Values_Ar { get; set; } = new List<string>();
-       
+        public List<string>? Values_Ar { get; set; } = new List<string>();    
 
     }
 }

@@ -23,7 +23,8 @@ namespace Ecommerce.Application.ServicesO
 
         }
 
-        public async Task<ResultView<CreateOrUpdateOrderDTOs>> CreateAsync(CreateOrUpdateOrderDTOs entity)
+        //public async Task<ResultView<CreateOrUpdateOrderDTOs>> CreateAsync(CreateOrUpdateOrderDTOs entity)
+        public async Task<CreateOrUpdateOrderDTOs> CreateAsync(CreateOrUpdateOrderDTOs entity)
         {
            
             ResultView<CreateOrUpdateOrderDTOs> result = new();
@@ -35,41 +36,53 @@ namespace Ecommerce.Application.ServicesO
 
                 if (Exist)
                 {
-                    result = new()
-                    {
-                        Entity = null,
-                       IsSuccess = false,
-                       Message = "The Order Already Exist"
-                    };
+                    //result = new()
+                    //{
+                    //    Entity = null,
+                    //   IsSuccess = false,
+                    //   Message = "The Order Already Exist"
+                    //};
 
-                    return result;
+                    //return result;
+                    return null;
 
                 }
 
                 var prd = Maper.Map<Order>(entity);
+                prd.OrderItems = new List<OrderItem>(); 
+                if (entity.OrderItemsID != null)
+                {
+                    foreach (var item in entity.OrderItemsID)
+                    {
+                        var mapOrderItem = Maper.Map<OrderItem>(item);
+                        prd.OrderItems.Add(mapOrderItem);
+
+                    }
+                }
                 var SucessEntity = await OrderRepo.CreateAsync(prd);
                 await OrderRepo.SaveChanges();
                 var prdchange = Maper.Map<CreateOrUpdateOrderDTOs>(SucessEntity);
 
-                result = new()
-                {
-                    Entity = prdchange,
-                    IsSuccess = true,
-                    Message = "Created Sucess"
-                };
+                //result = new()
+                //{
+                //    Entity = prdchange,
+                //    IsSuccess = true,
+                //    Message = "Created Sucess"
+                //};
 
-                return result;
+                return prdchange;
 
             }
             catch (Exception ex)
             {
-                result = new()
-                {
-                    Entity = null,
-                    IsSuccess = false,
-                    Message = "Create is Feild" + ex.Message
-                };
-                return result;
+                //result = new()
+                //{
+                //    Entity = null,
+                //    IsSuccess = false,
+                //    Message = "Create is Feild" + ex.Message
+                //};
+                //return result;
+                return null;
 
             }
         }
@@ -84,7 +97,14 @@ namespace Ecommerce.Application.ServicesO
 
         public async Task<List<GetAllOrderDTOs>> GetAllAsync()
         {
-            var all = (await OrderRepo.GetAllAsync()).ToList();
+            var all = (await OrderRepo.GetAllAsync()).Select(o => new GetAllOrderDTOs
+            {
+                Id = o.Id,
+                OrderDate=o.OrderDate,
+                Status=o.Status,
+                TotalPrice=o.TotalPrice,
+                CustomerName=o.Customer.FirstName
+            }).ToList();
 
             return Maper.Map<List<GetAllOrderDTOs>>(all);
         }

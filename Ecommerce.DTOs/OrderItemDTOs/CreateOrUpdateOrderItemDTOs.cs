@@ -10,7 +10,7 @@ namespace Ecommerce.DTOs.OrderItemDTOs
 {
     public class CreateOrUpdateOrderItemDTOs
     {
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
 
         [Range(1, double.MaxValue)]
         public int Quantity { get; set; }

@@ -10,7 +10,6 @@ namespace Ecommerce.Models
     public class ProductSubCategory : BaseEntity<int>
     {
         
-
         [ForeignKey("SubCategory")]
         public int? SubcategoryId { get; set; }
         public SubCategory? SubCategory { get; set; }
