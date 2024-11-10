@@ -185,7 +185,11 @@ namespace Ecommerce.Presentaion.Controllers
         }
         public async Task<IActionResult> Delete(int id)
         {
-             await productService.DeleteAsync(id);
+             var result=await productService.DeleteAsync(id);
+            if (!result.IsSuccess)
+            {
+                TempData["ErrorMessage"] = result.Message;
+            }
             return RedirectToAction("GetALlProduct");
         }
     }

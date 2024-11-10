@@ -74,3 +74,5 @@ F:\final project graduate\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Appli
 F:\final project graduate\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.genruntimeconfig.cache
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.runtimeconfig.json
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.genruntimeconfig.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Application.runtimeconfig.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Application\obj\Debug\net8.0\Ecommerce.Application.genruntimeconfig.cache

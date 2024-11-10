@@ -19,10 +19,12 @@ namespace Ecommerce.Application.Services.ServicesCategories
 
         private readonly ICategoryReposatiry categoryReposatiry;
         private readonly IMapper mapper;
-        public CategoryServices(ICategoryReposatiry _categoryReposatiry, IMapper _mapper)
+        private readonly ISubCategoryRepository subCategoryRepository;
+        public CategoryServices(ICategoryReposatiry _categoryReposatiry, IMapper _mapper, ISubCategoryRepository _subCategoryRepository)
         {
             categoryReposatiry = _categoryReposatiry;
             mapper = _mapper;
+            subCategoryRepository = _subCategoryRepository;
         }
 
         //create new category
@@ -89,6 +91,30 @@ namespace Ecommerce.Application.Services.ServicesCategories
             try
             {
                 var category = (await categoryReposatiry.GetAllAsync()).FirstOrDefault(cat => cat.Id == catid);
+                if (category == null)
+                {
+                    result = new ResultView<GetAllCategoryDTOs>()
+                    {
+                        Entity = null,
+                        IsSuccess = false,
+                        Message = "there is no category"
+                    };
+                }
+                var allsubcat = await subCategoryRepository.GetAllAsync();
+                var subcat=await allsubcat.AnyAsync(s=>s.CategoryId==catid);
+                
+                if (subcat)
+                {
+                    result = new ResultView<GetAllCategoryDTOs>()
+                    {
+                        Entity = null,
+                        IsSuccess = false,
+                        Message = "Can't delete, it there is related subcategory"
+                    };
+                    return result;
+                }
+                else 
+                { 
                 await categoryReposatiry.DeleteAsync(category);
                 await categoryReposatiry.SaveChanges();
                 result = new ResultView<GetAllCategoryDTOs>()
@@ -98,6 +124,7 @@ namespace Ecommerce.Application.Services.ServicesCategories
                     Message = "Category Deleted Successfuly"
                 };
                 return result;
+                }
             }catch(Exception ex)
             {
                 result = new ResultView<GetAllCategoryDTOs>()

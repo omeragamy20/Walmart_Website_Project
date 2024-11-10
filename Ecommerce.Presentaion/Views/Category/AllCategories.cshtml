@@ -10,7 +10,7 @@
 @if (TempData["ErrorMessage"] != null)
 {
     <div class="alert alert-danger">
-        @TempData["ErrorMessage"]
+        @TempData["ErrorMessage"];
     </div>
 }
 <table class="table table-striped">
@@ -38,7 +38,7 @@
                 </td>
                 <td>
                     <div style="display:flex">
-                        <a class="btn btn-primary btn-s" asp-action="Updatedcategory" asp-route-id="@(cat.Id)"> Updated</a>
+                        <a class="btn btn-primary btn-s" asp-action="Updatedcategory" asp-route-id="@(cat.Id)"> Update</a>
                         &nbsp;&nbsp;
                         @* <a asp-action="DeleteCategory" asp-route-id="@(cat.Id)" class="btn btn-danger btn-s">
                             <span class="glyphicon glyphicon-remove-circle"></span> X

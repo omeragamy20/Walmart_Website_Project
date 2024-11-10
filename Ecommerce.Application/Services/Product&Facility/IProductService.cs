@@ -22,7 +22,7 @@ namespace Ecommerce.Application.Services
          Task<List<GetAllproductDTO>> SearchByNameAsync(string? ProductName, decimal? price);
          Task<CreateAndUpdateProductDTO> GetById(int id);
         Task<List<GetAllproductDTO>> GetByIdApi(int id);
-        Task DeleteAsync(int id);
+        Task<ResultView<GetAllproductDTO>> DeleteAsync(int id);
          Task<ResultView<List<GetAllproductDTO>>> GetPrdBySubCat(int id);
         public Task<List<int?>?> GetSubcatbyPrdId(int id);
 

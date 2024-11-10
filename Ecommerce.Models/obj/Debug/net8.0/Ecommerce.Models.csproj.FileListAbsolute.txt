@@ -54,3 +54,5 @@ F:\final project graduate\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.run
 F:\final project graduate\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.genruntimeconfig.cache
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.runtimeconfig.json
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.genruntimeconfig.cache
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.runtimeconfig.json
+C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.genruntimeconfig.cache

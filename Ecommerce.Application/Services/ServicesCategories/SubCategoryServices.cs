@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Ecommerce.Application.Contracts.Categories;
+using Ecommerce.Application.Contracts.product_Facillity;
 using Ecommerce.DTOs.DTOsCategories;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +17,12 @@ namespace Ecommerce.Application.Services.ServicesCategories
     {
         public readonly ISubCategoryRepository subCategoryRepository;
         private readonly IMapper mapper;
-        public SubCategoryServices(ISubCategoryRepository _subCategoryRepository, IMapper _mapper)
+        private readonly IProductSubCategoryRepository  prdsubRepository;
+        public SubCategoryServices(ISubCategoryRepository _subCategoryRepository, IMapper _mapper, IProductSubCategoryRepository _prdsubRepository)
         {
             subCategoryRepository= _subCategoryRepository;
             mapper= _mapper;
+            prdsubRepository = _prdsubRepository;
         }
         //Add new subcategory
         public async Task<ResultView<CreateorUpdatedSubCategoryDTOs>> CreateSubCategpryAsync(CreateorUpdatedSubCategoryDTOs Entity)
@@ -78,6 +82,18 @@ namespace Ecommerce.Application.Services.ServicesCategories
             try
             {
                 var subcategory = (await subCategoryRepository.GetAllAsync()).FirstOrDefault(cat => cat.Id == subcatid);
+                var allprd = (await prdsubRepository.GetAllAsync());
+                var prd = await allprd.AnyAsync(s => s.SubcategoryId==subcatid);
+                if (prd)
+                {
+                    result = new ResultView<GetAllSubCategoryDTOs>()
+                    {
+                        Entity = null,
+                        IsSuccess = false,
+                        Message = "Can't delete it, there is related products"
+                    };
+                    return result;
+                }
                 await subCategoryRepository.DeleteAsync(subcategory);
                 await subCategoryRepository.SaveChanges();
                 result = new ResultView<GetAllSubCategoryDTOs>()
