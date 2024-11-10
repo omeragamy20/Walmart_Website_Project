@@ -45,7 +45,7 @@ namespace Ecommerce.Application.ServicesO
                     return result;
 
                 }
-
+                OrderitemRepo.UpdatePrd(entity);
                 var prd =  Maper.Map<OrderItem>(entity);
                 var SucessEntity = await OrderitemRepo.CreateAsync(prd);
                 await OrderitemRepo.SaveChanges();
