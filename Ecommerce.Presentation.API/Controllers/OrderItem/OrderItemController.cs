@@ -35,7 +35,7 @@ namespace Ecommerce.Presentation.API.Controllers.OrderItem
 
 
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<IActionResult> Create(CreateOrUpdateOrderItemDTOs dto)
         {
 

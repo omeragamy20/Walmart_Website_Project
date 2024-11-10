@@ -12,7 +12,8 @@ namespace Ecommerce.Application.ServicesO
 {
     public interface IOrderService
     {
-        public Task<ResultView<CreateOrUpdateOrderDTOs>> CreateAsync(CreateOrUpdateOrderDTOs entity);
+        //public Task<ResultView<CreateOrUpdateOrderDTOs>> CreateAsync(CreateOrUpdateOrderDTOs entity);
+        public Task<CreateOrUpdateOrderDTOs> CreateAsync(CreateOrUpdateOrderDTOs entity);
 
         public Task<ResultView<CreateOrUpdateOrderDTOs>> UpdateAsync(CreateOrUpdateOrderDTOs entity);
         public Task<ResultView<GetAllOrderDTOs>> GetOneAsync(int Id);

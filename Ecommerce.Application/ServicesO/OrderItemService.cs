@@ -31,7 +31,7 @@ namespace Ecommerce.Application.ServicesO
             {
 
 
-                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.ProductId == entity.ProductId);
+                bool Exist = (await OrderitemRepo.GetAllAsync()).Any(p => p.ProductId == entity.ProductId&&p.OrderId==entity.OrderId);
 
                 if (Exist)
                 {
