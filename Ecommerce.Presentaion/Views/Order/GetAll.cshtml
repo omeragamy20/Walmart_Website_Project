@@ -4,7 +4,7 @@
     ViewData["Title"] = "GetAll";
 }
 
-<h1>GetAll</h1>
+<h1>All Orders </h1>
 
 <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="~/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet" />
@@ -15,9 +15,10 @@
 <table class="table table-light table-hover">
     <thead>
         <tr class="table-info">
-            <th scope="col">Order</th>
+            <th scope="col">Order number</th>
             <th scope="col">Order-Date</th>
-            <th scope="col">Customer</th>
+            <th scope="col">User Name</th>
+            <th scope="col">User Email</th>
             <th scope="col">Status</th>
             <th scope="col">Accept</th>
             <th scope="col">Cancel</th>
@@ -34,6 +35,7 @@
             <td>@item.Id</td>
             <td>@item.OrderDate</td>
                 <td>@item.CustomerName</td>
+                <td>@item.CustomerEmail</td>
             @if(item.Status == 0){
 
             <td>Pendding..</td>

@@ -103,7 +103,9 @@ namespace Ecommerce.Application.ServicesO
                 OrderDate=o.OrderDate,
                 Status=o.Status,
                 TotalPrice=o.TotalPrice,
-                CustomerName=o.Customer.FirstName
+                CustomerName=o.Customer.FirstName,
+                CustomerEmail=o.Customer.Email,
+                CustomerId=o.CustomerId
             }).ToList();
 
             return Maper.Map<List<GetAllOrderDTOs>>(all);
