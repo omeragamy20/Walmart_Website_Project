@@ -98,7 +98,7 @@ namespace Ecommerce.Presentaion.Controllers.Categories
             }
             else
             {
-                TempData["ErrorMessage"] = "Failed to delete the SubCategory. The SubCategory Isn`t Empty ";
+                TempData["ErrorMessage"] = result.Message;
                 return RedirectToAction("AllSubCategories");
             }
         }

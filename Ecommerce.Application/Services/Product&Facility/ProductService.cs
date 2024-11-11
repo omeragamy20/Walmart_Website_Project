@@ -9,6 +9,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,12 +21,15 @@ namespace Ecommerce.Application.Services
         private readonly IProductRepository productRebository;
         private readonly IProductSubCategoryRepository prdctsubCatRepository;
         private readonly IMapper mapper;
-        public ProductService(IProductRepository _productRepository, IMapper _mapper, IProductSubCategoryRepository _prdctsubCatRepository)
+        private readonly IOrderItemsReposatiry orderItemsReposatiry;
+        public ProductService(IProductRepository _productRepository, IMapper _mapper,
+            IProductSubCategoryRepository _prdctsubCatRepository, IOrderItemsReposatiry _orderItemsReposatiry)
         {
             
             productRebository = _productRepository;
             mapper = _mapper;
-            prdctsubCatRepository= _prdctsubCatRepository;
+            prdctsubCatRepository = _prdctsubCatRepository;
+            orderItemsReposatiry = _orderItemsReposatiry;
         }
         public async Task<ResultView<CreateAndUpdateProductDTO>> CreateAsync(CreateAndUpdateProductDTO entity)
         {
@@ -89,11 +93,47 @@ namespace Ecommerce.Application.Services
                 return result;
             }
         }
-        public async Task DeleteAsync(int id)
+        public async Task<ResultView<GetAllproductDTO>> DeleteAsync(int id)
         {
-            var oldone = (await productRebository.GetOneAsync(id));
-            await productRebository.DeleteAsync(oldone);
-            await productRebository.SaveChanges();
+            ResultView<GetAllproductDTO> result;
+            try
+            {
+                var oldone = (await productRebository.GetOneAsync(id));
+                var allorder = await orderItemsReposatiry.GetAllAsync();
+                var order=await allorder.AnyAsync(o => o.ProductId == id);
+                if (order)
+                {
+                    result = new ResultView<GetAllproductDTO>()
+                    {
+                        Entity = null,
+                        IsSuccess = false,
+                        Message = "Can't delete, it there is related Order"
+                    };
+                    return result;
+
+                }
+                await productRebository.DeleteAsync(oldone);
+                await productRebository.SaveChanges();
+
+                result = new ResultView<GetAllproductDTO>()
+                {
+                    Entity = null,
+                    IsSuccess = true,
+                    Message = "Deleted Successfully"
+                };
+                return result;
+            }
+          
+            catch (Exception ex)
+            {
+                result = new ResultView<GetAllproductDTO>()
+                {
+                    Entity = null,
+                    IsSuccess = false,
+                    Message = "Error " + ex
+                };
+                return result;
+            }          
         }
         public async Task<List<GetAllproductEnDTO>> GetAllEnAsync()
         {
