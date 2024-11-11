@@ -12,7 +12,7 @@ namespace Ecommerce.Application.Services
     {
          Task<ResultView<CreateAndUpdateProductDTO>> CreateAsync(CreateAndUpdateProductDTO entity);
          Task<ResultView<CreateAndUpdateProductDTO>> UpdateAsync(CreateAndUpdateProductDTO entity);
-         Task<List<GetAllproductDTO>> GetAllAsync();
+        Task<EntityPaginated<GetAllproductDTO>> GetAllAsync(int PageNumber, int Count);
 
          Task<List<GetAllproductEnDTO>> GetAllEnAsync();
 

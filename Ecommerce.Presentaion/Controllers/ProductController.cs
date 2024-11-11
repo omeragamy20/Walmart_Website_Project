@@ -35,9 +35,9 @@ namespace Ecommerce.Presentaion.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> GetALlProduct()
+        public async Task<IActionResult> GetALlProduct(int PageNumber=1, int Count=10)
         {
-            var products = await productService.GetAllAsync();
+            var products = await productService.GetAllAsync(PageNumber,Count);
            
             return View(products);
         }

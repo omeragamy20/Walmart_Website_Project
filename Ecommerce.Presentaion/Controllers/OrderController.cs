@@ -27,18 +27,14 @@ namespace Ecommerce.Presentaion.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(int PageNumber = 1, int Count = 1)
         {
 
 
-         var All =( await _orderservice.GetAllAsync()).ToList();
+         var All =( await _orderservice.GetAllAsync(PageNumber,Count));
 
-
-
-            return View(All);
+         return View(All);
         }
-
-
         [HttpGet("/Approve/{Id}")]
         public async Task<IActionResult> Approve(int Id)
         {
