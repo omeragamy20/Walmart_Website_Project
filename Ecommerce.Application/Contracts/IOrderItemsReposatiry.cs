@@ -1,4 +1,5 @@
-﻿using Ecommerce.Models;
+﻿using Ecommerce.DTOs.OrderItemDTOs;
+using Ecommerce.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Ecommerce.Application.Contracts
 {
     public interface IOrderItemsReposatiry : IGenericReposatiry<OrderItem, int>
     {
+        public void UpdatePrd(CreateOrUpdateOrderItemDTOs Dto);
     }
 }

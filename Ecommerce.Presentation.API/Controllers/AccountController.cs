@@ -78,7 +78,7 @@ namespace Ecommerce.Presentation.API.Controllers
 
                         var SignInKey =
                             new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-                                configuration["JWT:SecritKey"]));
+                                configuration["JWT:SecretKey"]));
 
                         SigningCredentials signingCred =
                             new SigningCredentials

@@ -1,6 +1,8 @@
 ﻿@model List<GetAllproductDTO>
 
 
+<a class="btn btn-outline-primary" asp-action="Create">Create One</a>
+<br>
 @if (Model == null || !Model.Any())
 {
     <div class="alert alert-warning" role="alert">
@@ -17,7 +19,6 @@ else
 </div> <br><br />
 <!-- End Search Bar -->
 
-<a class="btn btn-outline-primary" asp-action="Create">Create One</a>
 
 <br />
 <table class="table table-striped table-hover table-bordered align-middle table-xl">
