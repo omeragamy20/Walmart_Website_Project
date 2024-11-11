@@ -78,7 +78,7 @@
         </a>
     }
 
-     @if (Model.CurrentPage < Model.TotalPages)
+     @if (Model.CurrentPage <= Model.TotalPages)
     {
         <a href="@Url.Action("GetAll", new { pageNumber = Model.CurrentPage + 1, pageSize = Model.PageSize })" class="btn btn-outline-secondary">Next</a>
     }

@@ -113,14 +113,23 @@ namespace Ecommerce.Application.ServicesO
 
 
 
-        public async Task<EntityPaginated<GetAllOrderDTOs>> GetAllAsync(int PageNumber, int Count)
+        public async Task<EntityPaginated<GetAllOrderDTOs>> GetAllAsyncPagination(int PageNumber, int Count)
          {
-            var all = (await OrderRepo.GetAllAsync()).Skip(Count*(PageNumber-1)).Take(Count).ToList();
-            var orders = Maper.Map<List<GetAllOrderDTOs>>(all);
+            var all = (await OrderRepo.GetAllAsync()).Select(o => new GetAllOrderDTOs
+            {
+                Id = o.Id,
+                OrderDate = o.OrderDate,
+                Status = o.Status,
+                TotalPrice = o.TotalPrice,
+                CustomerName = o.Customer.FirstName,
+                CustomerEmail = o.Customer.Email,
+                CustomerId = o.CustomerId
+            }).Skip(Count*(PageNumber-1)).Take(Count).ToList();
+            //var orders = Maper.Map<List<GetAllOrderDTOs>>(all);
             var c = all.Count();
             EntityPaginated<GetAllOrderDTOs> GetAllResult = new()
             {
-                Data = orders,
+                Data = all,
                 Count = c,
                 CurrentPage = PageNumber,
                 PageSize = Count

@@ -27,11 +27,11 @@ namespace Ecommerce.Presentaion.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll(int PageNumber = 1, int Count = 1)
+        public async Task<IActionResult> GetAll(int PageNumber = 1, int Count = 10)
         {
 
 
-         var All =( await _orderservice.GetAllAsync(PageNumber,Count));
+         var All =( await _orderservice.GetAllAsyncPagination(PageNumber,Count));
 
          return View(All);
         }

@@ -44,7 +44,7 @@ namespace Ecommerce.Presentaion.Controllers
 
              var  products = (await _Product.GetAllArAsync());
             ViewBag.prod = products;
-            var order = await _Order.GetAllAsync(1,10);
+            var order = await _Order.GetAllAsyncPagination(1,10);
             ViewBag.or = order;
 
             
