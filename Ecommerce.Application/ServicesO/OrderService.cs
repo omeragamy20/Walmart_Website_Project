@@ -82,15 +82,20 @@ namespace Ecommerce.Application.ServicesO
             return Maper.Map<GetAllOrderDTOs>(delete);
         }
 
-        public async Task<List<GetAllOrderDTOs>> GetAllAsync()
-        {
-            var all = (await OrderRepo.GetAllAsync()).ToList();
-
-            return Maper.Map<List<GetAllOrderDTOs>>(all);
-        }
-
-
-
+        public async Task<EntityPaginated<GetAllOrderDTOs>> GetAllAsync(int PageNumber, int Count)
+         {
+            var all = (await OrderRepo.GetAllAsync()).Skip(Count*(PageNumber-1)).Take(Count).ToList();
+            var orders = Maper.Map<List<GetAllOrderDTOs>>(all);
+            var c = all.Count();
+            EntityPaginated<GetAllOrderDTOs> GetAllResult = new()
+            {
+                Data = orders,
+                Count = c,
+                CurrentPage = PageNumber,
+                PageSize = Count
+            };
+            return GetAllResult;
+          }
         public async Task<ResultView<GetAllOrderDTOs>> GetOneAsync(int Id)
         {
             var one = await OrderRepo.GetOneAsync(Id);

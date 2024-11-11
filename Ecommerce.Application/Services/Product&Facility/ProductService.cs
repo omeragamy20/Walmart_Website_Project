@@ -389,7 +389,7 @@ namespace Ecommerce.Application.Services
 
         }
 
-        public async Task<List<GetAllproductDTO>> GetAllAsync()
+        public async Task<EntityPaginated<GetAllproductDTO>> GetAllAsync(int PageNumber, int Count)
        {
             //var data = (await productRebository.GetAllAsync()).Include(i => i.Images)
             //    .Include(ps => ps.productSubCategory).ThenInclude(s => s.SubCategory)
@@ -416,11 +416,19 @@ namespace Ecommerce.Application.Services
 
                     Facilities = p.ProductFacilities.Select(f=>f.Value_en).ToList(),
                     Facilities_Ar = p.ProductFacilities.Select(f=>f.Value_ar).ToList()
-                }).ToList();
+                });
 
-           // var products = mapper.Map<List<GetAllproductDTO>>(data);
-           
-            return data;
+            // var products = mapper.Map<List<GetAllproductDTO>>(data);
+            var products = data.Skip(Count * (PageNumber - 1)).Take(Count).ToList();
+            var c = data.Count();
+            EntityPaginated<GetAllproductDTO> GetAllResult = new()
+            {
+                Data = products,
+                Count = c,
+                CurrentPage = PageNumber,
+                PageSize=Count
+            };
+            return GetAllResult;
         }
         
         public async Task<List<GetAllproductEnDTO>> GetAllProductPaginationEnBySubCatIdAsync(int Subcatid)

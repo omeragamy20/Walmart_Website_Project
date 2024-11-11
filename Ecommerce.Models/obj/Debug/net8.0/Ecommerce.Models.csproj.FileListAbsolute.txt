@@ -56,3 +56,18 @@ D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\bin\Debug\net8.0\Ecommerc
 D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.genruntimeconfig.cache
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.runtimeconfig.json
 C:\Users\monaa\source\repos\Final_Project\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.genruntimeconfig.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.deps.json
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.runtimeconfig.json
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\bin\Debug\net8.0\Ecommerce.Models.pdb
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.AssemblyReference.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfoInputs.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.AssemblyInfo.cs
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.csproj.CoreCompileInputs.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.sourcelink.json
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\refint\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.pdb
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\Ecommerce.Models.genruntimeconfig.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\obj\Debug\net8.0\ref\Ecommerce.Models.dll
