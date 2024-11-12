@@ -104,6 +104,7 @@ namespace Ecommerce.Application.Services.FavortandRateService
                                 ProductDescription_en = u.Product.Description_en,
                                 ProductDescription_ar = u.Product.Description_ar,
                                 Productprice = u.Product.Price
+
                             }).ToList();
             //.Include(p=>p.Product).ToList();
 

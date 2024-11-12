@@ -227,5 +227,21 @@ namespace Ecommerce.Application.ServicesO
 
 
         }
+
+
+
+
+        public List<GetCustomerOrders> GetOrdersByCusId(string id) 
+        {
+            var oreders = OrderRepo.GetAllByCusIdAsync(id).ToList();
+            if(oreders != null)
+            {
+                return oreders;
+               
+            }
+
+            return new();
+
+        }
     }
 }

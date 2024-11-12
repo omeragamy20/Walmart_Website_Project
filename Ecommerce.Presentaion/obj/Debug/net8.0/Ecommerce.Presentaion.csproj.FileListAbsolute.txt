@@ -886,7 +886,6 @@ D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.AssemblyInfoInputs.cache
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.AssemblyInfo.cs
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.csproj.CoreCompileInputs.cache
-D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.MvcApplicationPartsAssemblyInfo.cs
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.MvcApplicationPartsAssemblyInfo.cache
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.RazorAssemblyInfo.cache
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.RazorAssemblyInfo.cs

@@ -23,7 +23,9 @@ namespace Ecommerce.Application.ServicesO
         public Task<List<GetAllOrderDTOs>> GetAllAsync();
 
         public Task<GetAllOrderDTOs> DeleteAsync(int Id);
-      
+
+        public List<GetCustomerOrders> GetOrdersByCusId(string id);
+
         //public Task<List<GetAllBookDTOs>> GetAllWithDeleteAsync();
         //public Task<EntityPagienated<GetAllBookDTOs>> GetAllPaginatedAsync(int Count, int PageNumber);
 

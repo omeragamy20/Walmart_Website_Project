@@ -43,6 +43,17 @@ namespace Ecommerce.Presentation.API.Controllers.Order
 
         }
 
+        [HttpGet("Customer/{CustomerId}")]
+        public  IActionResult GetOrdersByCustomer(string CustomerId)
+        {
+            var one =  orderserv.GetOrdersByCusId(CustomerId);
+            if (one == null)
+            {
+                return NotFound();
+            }
+            return Ok(one);
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> Create(CreateOrUpdateOrderDTOs dto)
