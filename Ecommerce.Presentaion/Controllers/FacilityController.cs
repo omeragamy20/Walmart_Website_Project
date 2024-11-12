@@ -1,10 +1,12 @@
 ﻿using Ecommerce.Application.Services;
 using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.DTOs.Facility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Presentaion.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class FacilityController : Controller
     {
         private readonly IFacillityService facilityService;

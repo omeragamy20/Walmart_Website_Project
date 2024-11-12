@@ -4,11 +4,13 @@ using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.DTOs.DTOsCategories;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing.Printing;
 
 namespace Ecommerce.Presentaion.Controllers.Categories
 {
+    [Authorize(Roles = "admin")]
     public class SubCategoryController : Controller
     {
         private readonly ISubCategoryServices subcategoryService;

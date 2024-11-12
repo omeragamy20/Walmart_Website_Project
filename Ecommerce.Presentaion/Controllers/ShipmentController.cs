@@ -3,9 +3,11 @@ using Ecommerce.Application.Contracts;
 using Ecommerce.DTOs.Shipment;
 using System.Threading.Tasks;
 using Ecommerce.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ecommerce.Web.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ShipmentController : Controller
     {
         private readonly IShipmentService _shipmentService;
