@@ -1,10 +1,12 @@
 ﻿using Ecommerce.Application.Services;
 using Ecommerce.Application.ServicesO;
 using Ecommerce.DTOs.OrderItemDTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Presentaion.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class OrderItemsController : Controller
     {
         private readonly IOrderItemService _OrderServ;

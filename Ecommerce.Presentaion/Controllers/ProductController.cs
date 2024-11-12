@@ -5,11 +5,13 @@ using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.DTOs.Facility;
 using Ecommerce.DTOs.Product;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace Ecommerce.Presentaion.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ProductController : Controller
     {
         private readonly IProductService productService;

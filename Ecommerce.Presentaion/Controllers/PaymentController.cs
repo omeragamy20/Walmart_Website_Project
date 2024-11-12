@@ -3,9 +3,11 @@ using Ecommerce.Application.Contracts;
 using Ecommerce.DTOs.Payment;
 using System.Threading.Tasks;
 using Ecommerce.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ecommerce.Web.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class PaymentController : Controller
     {
         private readonly Application.Services.IPaymentService _paymentService;

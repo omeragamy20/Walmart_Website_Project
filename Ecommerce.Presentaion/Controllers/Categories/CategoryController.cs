@@ -1,9 +1,11 @@
 ﻿using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.DTOs.DTOsCategories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Presentaion.Controllers.Categories
 {
+    [Authorize(Roles = "admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService categoryService;

@@ -4,10 +4,12 @@ using Ecommerce.Context;
 using Ecommerce.DTOs.OrderDTOs;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Presentaion.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class OrderController : Controller
     {
         private readonly IOrderService _orderservice;
