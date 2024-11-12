@@ -103,7 +103,9 @@ namespace Ecommerce.Application.ServicesO
                 OrderDate=o.OrderDate,
                 Status=o.Status,
                 TotalPrice=o.TotalPrice,
-                CustomerName=o.Customer.FirstName
+                CustomerName=o.Customer.FirstName,
+                CustomerEmail=o.Customer.Email,
+                CustomerId=o.CustomerId
             }).ToList();
 
             return Maper.Map<List<GetAllOrderDTOs>>(all);
@@ -198,6 +200,22 @@ namespace Ecommerce.Application.ServicesO
 
             }
 
+
+        }
+
+
+
+
+        public List<GetCustomerOrders> GetOrdersByCusId(string id) 
+        {
+            var oreders = OrderRepo.GetAllByCusIdAsync(id).ToList();
+            if(oreders != null)
+            {
+                return oreders;
+               
+            }
+
+            return new();
 
         }
     }

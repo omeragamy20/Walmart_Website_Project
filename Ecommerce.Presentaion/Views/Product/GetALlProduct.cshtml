@@ -1,5 +1,13 @@
 ﻿@model List<GetAllproductDTO>
+<style>
+    th,td{
+        font-size:14px;
+    }
 
+    tr {
+        font-size: 16px;
+    }
+</style>
 
 <a class="btn btn-outline-primary" asp-action="Create">Create One</a>
 <br>
@@ -11,6 +19,12 @@
 }
 else
 {
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"];
+        </div>
+    }
     <div class="search-bar">
     <form class="search-form d-flex align-items-center" method="POST" asp-controller="Product" asp-action="SearchProduct">
         <input type="text" name="ProductName" placeholder="Search" title="Enter search keyword">

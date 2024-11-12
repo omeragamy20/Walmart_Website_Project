@@ -75,7 +75,7 @@ namespace Ecommerce.Presentaion.Controllers.Categories
             }
             else
             {
-                TempData["ErrorMessage"] = "Failed to delete the category. The Category Isn`t Empty ";
+                TempData["ErrorMessage"] = result.Message;
                 return RedirectToAction("AllCategories" );
             }
         }

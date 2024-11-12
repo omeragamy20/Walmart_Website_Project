@@ -6,16 +6,15 @@
 
 <h1>SubCategories</h1>
 
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
 @if (TempData["ErrorMessage"] != null)
 {
     <div class="alert alert-danger">
         @TempData["ErrorMessage"]
     </div>
 }
-
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -73,7 +72,7 @@
             </td>
             <td>
                 <div style="display:flex">
-                    <a class="btn btn-primary btn-s" asp-action="UpdatedSubcategory" asp-route-id="@(item.Id)"> Updated</a>
+                    <a class="btn btn-primary btn-s" asp-action="UpdatedSubcategory" asp-route-id="@(item.Id)"> Update</a>
                     &nbsp;&nbsp;
                     @* <a id="deletebtn" asp-route-id="@(item.Id)" class="btn btn-danger btn-s" onclick="alertdelet(@(item.Id))">
                         <span class="glyphicon glyphicon-remove-circle"></span> X

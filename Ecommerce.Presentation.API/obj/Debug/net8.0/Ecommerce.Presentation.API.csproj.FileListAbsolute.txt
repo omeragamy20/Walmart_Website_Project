@@ -212,7 +212,6 @@ D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.AssemblyInfoInputs.cache
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.AssemblyInfo.cs
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.csproj.CoreCompileInputs.cache
-D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cs
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cache
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.sourcelink.json
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\staticwebassets.build.json
