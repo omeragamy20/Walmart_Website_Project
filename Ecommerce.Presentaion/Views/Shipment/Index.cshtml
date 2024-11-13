@@ -1,6 +1,6 @@
 ﻿  @*   @model IEnumerable<Ecommerce.DTOs.Shipment.GetAllDto> *@
       @using Ecommerce.DTOs.Shipment
-      @model  List<GetAllDto>
+      @model UpdateDTO
 <h1>Shipments</h1>
 
 <p>
@@ -19,20 +19,19 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var shipment in Model)
-        {
+       
             <tr>
-                <td>@shipment.ShipmentDate</td>
-                <td>@shipment.Address</td>
-                <td>@shipment.City</td>
-              <td>@shipment.Country</td>
-              <td>@shipment.ZipCode</td>
+                <td>@Model.ShipmentDate</td>
+                <td>@Model.Address</td>
+                <td>@Model.City</td>
+              <td>@Model.Country</td>
+              <td>@Model.ZipCode</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@shipment.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@shipment.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
                 </td>
             </tr>
-        }
+      
     </tbody>
 </table>
 
