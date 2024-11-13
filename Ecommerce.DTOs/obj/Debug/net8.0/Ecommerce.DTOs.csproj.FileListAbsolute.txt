@@ -84,3 +84,21 @@ D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Deb
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.genruntimeconfig.cache
 D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.deps.json
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.runtimeconfig.json
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.DTOs.pdb
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\bin\Debug\net8.0\Ecommerce.Models.pdb
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.AssemblyReference.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfoInputs.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.AssemblyInfo.cs
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.csproj.CoreCompileInputs.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.sourcelink.json
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerc.D3152FB8.Up2Date
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\refint\Ecommerce.DTOs.dll
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.pdb
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\Ecommerce.DTOs.genruntimeconfig.cache
+C:\Users\monaa\source\repos\Final_Pro\Ecommerce.DTOs\obj\Debug\net8.0\ref\Ecommerce.DTOs.dll
