@@ -1,12 +1,14 @@
 ﻿@*   @model IEnumerable<Ecommerce.DTOs.Shipment.GetAllDto> *@
       @using Ecommerce.DTOs.Payment
-      @model List<GetAllDtos>
+      @model UpdateDTOs
 <h1>payment</h1>
 
-<p>
+<a class="btn btn-outline-info mb-2" href="/Order/GetAll" role="button">&#9664; Back</a>
+
+@* <p>
     <a asp-controller="Payment" asp-action="Create">Create New</a>
 </p>
-
+ *@
 <table class="table">
     <thead>
         <tr>
@@ -20,21 +22,20 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var Payment in Model)
-        {
+       
             <tr>
-                <td>@Payment.PaymentDate</td>
-                <td>@Payment.Amount</td>
-                <td>@Payment.PaymentMethod_en</td>
+                <td>@Model.PaymentDate</td>
+                <td>@Model.Amount</td>
+                <td>@Model.PaymentMethod_en</td>
                 @* <td>@Payment.PaymentMethod_ar</td> *@
                 @* <td>@Payment.CustomerId</td> *@
                
                 <td>
-                    <a asp-action="Edit" asp-route-id="@Payment.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@Payment.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
                 </td>
             </tr>
-        }
+        
     </tbody>
 </table>
 

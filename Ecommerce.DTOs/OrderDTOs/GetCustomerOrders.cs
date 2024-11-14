@@ -12,7 +12,7 @@ namespace Ecommerce.DTOs.OrderDTOs
    public  class GetCustomerOrders
     {
         public int Id { get; set; }
-        public DateTime OrderDate { get; set; }
+        public string? OrderDate { get; set; }
 
         [Range(50, double.MaxValue)]
         public decimal TotalPrice { get; set; }

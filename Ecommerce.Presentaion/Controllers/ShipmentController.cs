@@ -18,14 +18,14 @@ namespace Ecommerce.Web.Controllers
         }
 
         // GET: Shipment
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
-            var shipments = (await _shipmentService.GetAllShipmentsAsync());
-            if (shipments == null)
+            var shipment = (await _shipmentService.GetShipmentByIdAsync(id));
+            if (shipment == null)
             {
                 return Ok("ahmed");
             }
-            return View(shipments);
+            return View(shipment);
         }
 
         // GET: Shipment/Create

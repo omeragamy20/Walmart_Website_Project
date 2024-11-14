@@ -18,16 +18,13 @@ namespace Ecommerce.Web.Controllers
         }
 
         // GET: Payment
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
-            var payments = (await _paymentService.GetAllPaymentsAsync());
-            if (payments == null)
-            {
-                return Ok("No payments available");
-            }
-            return View(payments);
+            var pay = await _paymentService.GetPaymentByIdAsync(id);
+            return View(pay);
         }
 
+       
         // GET: Payment/Create
         public IActionResult Create()
         {
@@ -82,5 +79,6 @@ namespace Ecommerce.Web.Controllers
             }
             return NotFound();
         }
+       
     }
 }

@@ -26,7 +26,7 @@ namespace Ecommerce.Infrastructure
             {
 
                 Id = o.Id,
-                OrderDate = o.OrderDate,
+                OrderDate = o.OrderDate.ToShortDateString(),
                 TotalPrice = o.TotalPrice,
                 PaymentId = o.PaymentId,
                 Payment_ar = o.Payment.PaymentMethod_ar ,

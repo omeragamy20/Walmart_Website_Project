@@ -23,7 +23,9 @@ namespace Ecommerce.DTOs.OrderDTOs
         public string? CustomerId { get; set; }
         public string? CustomerName { get; set;}
         public string? CustomerEmail { get; set;}
+        public int? PaymentId { get; set; }
+        public int? ShipmentId { get; set; }
 
-      
+
     }
 }

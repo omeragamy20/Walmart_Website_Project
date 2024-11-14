@@ -123,7 +123,9 @@ namespace Ecommerce.Application.ServicesO
                 TotalPrice = o.TotalPrice,
                 CustomerName = o.Customer.FirstName,
                 CustomerEmail = o.Customer.Email,
-                CustomerId = o.CustomerId
+                CustomerId = o.CustomerId,
+                PaymentId=o.PaymentId,
+                ShipmentId=o.ShipmentId
             }).Skip(Count*(PageNumber-1)).Take(Count).ToList();
             //var orders = Maper.Map<List<GetAllOrderDTOs>>(all);
             var c = all.Count();
