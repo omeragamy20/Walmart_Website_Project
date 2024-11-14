@@ -113,9 +113,9 @@ namespace Ecommerce.Application.ServicesO
 
 
 
-        public async Task<EntityPaginated<GetAllOrderDTOs>> GetAllAsyncPagination(int PageNumber, int Count)
-         {
-            var all = (await OrderRepo.GetAllAsync()).Select(o => new GetAllOrderDTOs
+        public async Task<EntityPaginated<GetAllOrderDTOs>> GetAllAsyncPagination(int pageNumber, int pageSize)
+        {
+            var allOrders = (await OrderRepo.GetAllAsync()).Select(o => new GetAllOrderDTOs
             {
                 Id = o.Id,
                 OrderDate = o.OrderDate,
@@ -124,22 +124,21 @@ namespace Ecommerce.Application.ServicesO
                 CustomerName = o.Customer.FirstName,
                 CustomerEmail = o.Customer.Email,
                 CustomerId = o.CustomerId,
-                PaymentId=o.PaymentId,
-                ShipmentId=o.ShipmentId
-            }).Skip(Count*(PageNumber-1)).Take(Count).ToList();
-            //var orders = Maper.Map<List<GetAllOrderDTOs>>(all);
-            var c = all.Count();
-            EntityPaginated<GetAllOrderDTOs> GetAllResult = new()
-            {
-                Data = all,
-                Count = c,
-                CurrentPage = PageNumber,
-                PageSize = Count
-            };
-            return GetAllResult;
-          }
+                PaymentId = o.PaymentId,
+                ShipmentId = o.ShipmentId
+            });
 
-        
+            var paginatedOrders = allOrders.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            var totalCount = allOrders.Count();
+
+            return new EntityPaginated<GetAllOrderDTOs>
+            {
+                Data = paginatedOrders,
+                Count = totalCount,
+                CurrentPage = pageNumber,
+                PageSize = pageSize
+            };
+        }
         public async Task<ResultView<GetAllOrderDTOs>> GetOneAsync(int Id)
         {
             var one = await OrderRepo.GetOneAsync(Id);

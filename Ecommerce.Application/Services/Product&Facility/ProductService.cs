@@ -107,7 +107,7 @@ namespace Ecommerce.Application.Services
                     {
                         Entity = null,
                         IsSuccess = false,
-                        Message = "Can't delete, it there is related Order"
+                        Message = "Can't delete it, there is related Order"
                     };
                     return result;
 
@@ -239,7 +239,7 @@ namespace Ecommerce.Application.Services
                 .Where(p=>p.ProductId==id).Select(psc => psc.SubcategoryId).ToList();
             return res;
         }
-        public async Task<List<GetAllproductDTO>> SearchByNameAsync(string? searchTerm,decimal? price)
+        public async Task<EntityPaginated<GetAllproductDTO>> SearchByNameAsync(int PageNumber, int Count, string? ProductName, decimal? price)
         {
             var data = (await productRebository.GetAllAsync())
                 .Select(p => new GetAllproductDTO
@@ -263,17 +263,26 @@ namespace Ecommerce.Application.Services
                     SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
                    
                 })
-                .Where(p => p.Title_en.Contains(searchTerm) ||
-                            p.Title_ar.Contains(searchTerm) ||
-                            p.Description_en.Contains(searchTerm) ||
-                            p.Description_ar.Contains(searchTerm) ||
-                            p.Facilities.Any(f => f.Contains(searchTerm)) ||
-                            p.Facilities_Ar.Any(f => f.Contains(searchTerm))||
+                .Where(p => p.Title_en.Contains(ProductName) ||
+                            p.Title_ar.Contains(ProductName) ||
+                            p.Description_en.Contains(ProductName) ||
+                            p.Description_ar.Contains(ProductName) ||
+                            p.Facilities.Any(f => f.Contains(ProductName)) ||
+                            p.Facilities_Ar.Any(f => f.Contains(ProductName))||
                             p.Price.Equals(price)
                            )
                 .ToList();
+            var c = data.Count();
+            var paginatedProducts = data.Skip(Count * (PageNumber - 1)).Take(Count).ToList();
+            EntityPaginated<GetAllproductDTO> GetAllResult = new()
+            {
+                Data = paginatedProducts,
+                Count = c
 
-            return data;
+
+            };
+            return GetAllResult;
+
         }
         
 
