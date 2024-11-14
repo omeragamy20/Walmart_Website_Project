@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Ecommerce.Models
-build_property.ProjectDir = C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Models\
+build_property.ProjectDir = D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Models\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
