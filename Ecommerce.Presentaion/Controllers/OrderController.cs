@@ -35,7 +35,7 @@ namespace Ecommerce.Presentaion.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll(int PageNumber = 1, int Count = 10)
+        public async Task<IActionResult> GetAll(int PageNumber = 1, int Count = 15)
         {
 
 
