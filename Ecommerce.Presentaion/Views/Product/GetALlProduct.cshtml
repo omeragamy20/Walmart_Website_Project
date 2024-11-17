@@ -1,4 +1,5 @@
-﻿@model List<GetAllproductDTO>
+@model EntityPaginated<GetAllproductDTO>
+@* @model List<GetAllproductDTO> *@
 <style>
     th,td{
         font-size:14px;
@@ -11,7 +12,8 @@
 
 <a class="btn btn-outline-primary" asp-action="Create">Create One</a>
 <br>
-@if (Model == null || !Model.Any())
+@* @if (Model == null || !Model.Any()) *@
+@if (Model.Data == null || !Model.Data.Any())
 {
     <div class="alert alert-warning" role="alert">
         No products found.
@@ -25,8 +27,8 @@ else
             @TempData["ErrorMessage"];
         </div>
     }
-    <div class="search-bar">
-    <form class="search-form d-flex align-items-center" method="POST" asp-controller="Product" asp-action="SearchProduct">
+    <div class="search-bar d-flex justify-content-end">
+    <form class="search-form d-flex align-items-right" method="POST" asp-controller="Product" asp-action="SearchProduct">
         <input type="text" name="ProductName" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
     </form>
@@ -34,7 +36,8 @@ else
 <!-- End Search Bar -->
 
 
-<br />
+    <br>
+    <br />
 <table class="table table-striped table-hover table-bordered align-middle table-xl">
     <thead>
         <tr>
@@ -54,7 +57,7 @@ else
         </tr>
     </thead>
     <tbody>
-        @foreach(var p in Model){
+        @foreach(var p in Model.Data){
         <tr>
             <td>@p.Title_en</td>
             <td>@p.Title_ar</td>
@@ -109,4 +112,26 @@ else
         }
     </tbody>
 </table>
+    <div class="pagination d-flex justify-content-center">
+        <!-- Previous button "GetAll" -->
+        @if (Model.CurrentPage > 1)
+        {
+            <a href="@Url.Action("GetALlProduct", new { pageNumber = Model.CurrentPage - 1, pageSize = Model.PageSize })" class="btn btn-outline-secondary">Previous</a>
+        }
+
+        <!-- Page number buttons -->
+        @for (var pageNumber = 1; pageNumber <= Model.TotalPages; pageNumber++)
+        {
+            <a href="@Url.Action("GetALlProduct", new { pageNumber = pageNumber, pageSize = Model.PageSize })"
+               class="btn @(Model.CurrentPage == pageNumber ? "btn-primary" : "btn-outline-secondary")">
+                @pageNumber
+            </a>
+        }
+
+        <!-- Next button -->
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <a href="@Url.Action("GetALlProduct", new { pageNumber = Model.CurrentPage + 1, pageSize = Model.PageSize })" class="btn btn-outline-secondary">Next</a>
+        }
+    </div>
 }

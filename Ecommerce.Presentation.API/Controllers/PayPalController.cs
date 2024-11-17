@@ -243,7 +243,7 @@ using PaypalServerSdk.Standard.Http.Response;
 using PaypalServerSdk.Standard.Models;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 using Order = PaypalServerSdk.Standard.Models.Order;
-using Ecommerce.DTOs.Payment;
+using Ecommerce.DTOs.shared;
 
 namespace PayPalAdvancedIntegration;
 
@@ -256,7 +256,8 @@ public class Program
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
       Host.CreateDefaultBuilder(args)
-      .ConfigureWebHostDefaults(webBuilder => {
+      .ConfigureWebHostDefaults(webBuilder =>
+      {
           webBuilder.UseUrls("http://localhost:8080");
           webBuilder.UseStartup<Startup>();
       });
@@ -266,7 +267,7 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        //services.AddMvc().AddNewtonsoftJson();
+        services.AddMvc().AddNewtonsoftJson();
         services.AddHttpClient();
     }
 
@@ -331,8 +332,8 @@ public class CheckoutController : Controller
           .Environment(PaypalServerSdk.Standard.Environment.Sandbox)
           .ClientCredentialsAuth(
             new ClientCredentialsAuthModel.Builder(
-                     "AXBNKLI0_hLXjQmeEzc8i7AUWY0OyPipJlYay5CUpGV5dtUOurM8dhee9-iXf2nJoBy4Z4NPWFDOETCT",
-                      "EI6JrQ84E82KLlxv7YuV9FqQRkj13TfnWh2Axp9aDpyASbtpw4xpqx2WppI8P4wBc-vumN-fkp-VUsSq").Build()
+                     "AVhyMOIeULOMnlO8t9LLikrCZ5BxmDIjFsI1LkzBbHyak0r4iyWm-9Z05VCYxdxXlIS9hJ9uUFst2X_d",
+                      "EN_YQrsWbLGMexwaMZrgRa9W-EViux2Sr_Ka6Plrz6ev_5iOwvbPW6kKoCrdqIqzNAZ6HQgedyKRSfP3").Build()
           )
           .LoggingConfig(config =>
             config
@@ -347,53 +348,54 @@ public class CheckoutController : Controller
     }
 
 
-    //[HttpPost("api/orders")]
-    //public async Task<IActionResult> CreateOrder([FromBody] CartPayPalDTO cart)
-    //{
-    //    try
-    //    {
-    //        var result = await _CreateOrder(cart);
-    //        return StatusCode((int)result.StatusCode, result.Data);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        Console.Error.WriteLine("Failed to create order:", ex);
-    //        return StatusCode(500, new
-    //        {
-    //            error = "Failed to create order."
-    //        });
-    //    }
-    //}
+    [HttpPost("api/orders")]
+    public async Task<IActionResult> CreateOrder([FromBody] CartPayPalDTO cart)
+    {
+        try
+        {
+            var result = await _CreateOrder(cart);
+            return StatusCode((int)result.StatusCode, result.Data);
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine("Failed to create order:", ex);
+            return StatusCode(500, new
+            {
+                error = "Failed to create order."
+            });
+        }
+    }
 
-    //private async Task<dynamic> _CreateOrder(CartPayPalDTO cart)
-    //{
-
-
-    //    OrdersCreateInput ordersCreateInput = new OrdersCreateInput
-    //    {
-    //        Body = new OrderRequest
-    //        {
-    //            Intent = _paymentIntentMap["CAPTURE"],
-    //            PurchaseUnits = new List<PurchaseUnitRequest> {
-    //        new PurchaseUnitRequest {
-    //          Amount = new AmountWithBreakdown {
-    //            CurrencyCode = "USD", MValue = cart.amount.ToString(),
-    //          },
-    //        },
-
-    //      },
-
-    //        },
-    //    };
+    private async Task<dynamic> _CreateOrder(CartPayPalDTO cart)
+    {
 
 
-    //    ApiResponse<Order> result = await _ordersController.OrdersCreateAsync(ordersCreateInput);
-    //    return result;
-    //}
+        OrdersCreateInput ordersCreateInput = new OrdersCreateInput
+        {
+            Body = new OrderRequest
+            {
+                Intent = _paymentIntentMap["CAPTURE"],
+                PurchaseUnits = new List<PurchaseUnitRequest> {
+            new PurchaseUnitRequest {
+              Amount = new AmountWithBreakdown {
+                CurrencyCode = "USD",
+                MValue = cart.amount.ToString(),
+              },
+            },
+
+          },
+
+            },
+        };
+
+
+        ApiResponse<Order> result = await _ordersController.OrdersCreateAsync(ordersCreateInput);
+        return result;
+    }
 
 
 
-    [HttpPost("api/orders/{orderID}/capture")]
+    [HttpPost("api/orders/capture/{orderID}")]
     public async Task<IActionResult> CaptureOrder(string orderID)
     {
         try

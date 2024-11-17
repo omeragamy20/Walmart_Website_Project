@@ -119,7 +119,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
             }
         }
 
-
+        [Authorize]
         public async Task<IActionResult> Profile()
         {
             var admin = await userManger.FindByNameAsync(User.Identity.Name); 
@@ -132,6 +132,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Update(string id)
         {
             var admin  = await userManger.FindByIdAsync(id);
@@ -190,6 +191,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
 
 
         [HttpGet]
+        [Authorize]
         public IActionResult ResetPassword()
         {
             return View();
@@ -227,6 +229,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
 
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> SignOut()
         {
             await signInManager.SignOutAsync();

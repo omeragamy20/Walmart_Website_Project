@@ -12,14 +12,14 @@ namespace Ecommerce.Application.Services
     {
          Task<ResultView<CreateAndUpdateProductDTO>> CreateAsync(CreateAndUpdateProductDTO entity);
          Task<ResultView<CreateAndUpdateProductDTO>> UpdateAsync(CreateAndUpdateProductDTO entity);
-         Task<List<GetAllproductDTO>> GetAllAsync();
+        Task<EntityPaginated<GetAllproductDTO>> GetAllAsync(int PageNumber, int Count);
 
          Task<List<GetAllproductEnDTO>> GetAllEnAsync();
 
          Task<List<GetAllProductArDTO>> GetAllArAsync();
          Task<EntityPaginated<GetAllproductEnDTO>> GetAllPaginationEnAsync(int PageNumber, int Count);
          Task<EntityPaginated<GetAllproductDTO>> GetAllPaginationAsync(int Subcatid,int PageNumber, int Count, string? searchTerm, decimal? price);
-         Task<List<GetAllproductDTO>> SearchByNameAsync(string? ProductName, decimal? price);
+         Task<EntityPaginated<GetAllproductDTO>> SearchByNameAsync(int PageNumber, int Count,string? ProductName, decimal? price);
          Task<CreateAndUpdateProductDTO> GetById(int id);
         Task<List<GetAllproductDTO>> GetByIdApi(int id);
         Task<ResultView<GetAllproductDTO>> DeleteAsync(int id);

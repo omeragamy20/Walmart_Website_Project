@@ -5,11 +5,13 @@ using Ecommerce.Application.Services.ServicesCategories;
 using Ecommerce.DTOs.Facility;
 using Ecommerce.DTOs.Product;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace Ecommerce.Presentaion.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ProductController : Controller
     {
         private readonly IProductService productService;
@@ -35,9 +37,9 @@ namespace Ecommerce.Presentaion.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> GetALlProduct()
+        public async Task<IActionResult> GetALlProduct(int PageNumber=1, int Count=10)
         {
-            var products = await productService.GetAllAsync();
+            var products = await productService.GetAllAsync(PageNumber,Count);
            
             return View(products);
         }
@@ -178,9 +180,9 @@ namespace Ecommerce.Presentaion.Controllers
             }
             else { return View(); }
         }
-        public async Task<IActionResult> SearchProduct(string? ProductName,decimal? price)
+        public async Task<IActionResult> SearchProduct(string? ProductName, decimal? price,int PageNumber = 1, int Count = 10)
         {
-            var product = await productService.SearchByNameAsync(ProductName,price);
+            var product = await productService.SearchByNameAsync(PageNumber,Count,ProductName,price);
             return View("GetALlProduct",product);
         }
         public async Task<IActionResult> Delete(int id)

@@ -1,10 +1,12 @@
 ﻿using Ecommerce.Application.Services;
 using Ecommerce.Application.ServicesO;
 using Ecommerce.DTOs.OrderItemDTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Presentaion.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class OrderItemsController : Controller
     {
         private readonly IOrderItemService _OrderServ;
@@ -44,7 +46,7 @@ namespace Ecommerce.Presentaion.Controllers
 
              var  products = (await _Product.GetAllArAsync());
             ViewBag.prod = products;
-            var order = await _Order.GetAllAsync();
+            var order = await _Order.GetAllAsyncPagination(1,10);
             ViewBag.or = order;
 
             

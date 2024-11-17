@@ -132,6 +132,8 @@ namespace Ecommerce.Presentation.API
             builder.Services.AddDbContext<EcommerceContext>(options =>
                 options.UseSqlServer(connectionString));
 
+            builder.Services.AddMvc().AddNewtonsoftJson();
+            builder.Services.AddHttpClient();
 
             builder.Services.AddCors(op =>
             {

@@ -113,6 +113,32 @@ namespace Ecommerce.Application.ServicesO
 
 
 
+        public async Task<EntityPaginated<GetAllOrderDTOs>> GetAllAsyncPagination(int pageNumber, int pageSize)
+        {
+            var allOrders = (await OrderRepo.GetAllAsync()).Select(o => new GetAllOrderDTOs
+            {
+                Id = o.Id,
+                OrderDate = o.OrderDate,
+                Status = o.Status,
+                TotalPrice = o.TotalPrice,
+                CustomerName = o.Customer.FirstName,
+                CustomerEmail = o.Customer.Email,
+                CustomerId = o.CustomerId,
+                PaymentId = o.PaymentId,
+                ShipmentId = o.ShipmentId
+            });
+
+            var paginatedOrders = allOrders.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            var totalCount = allOrders.Count();
+
+            return new EntityPaginated<GetAllOrderDTOs>
+            {
+                Data = paginatedOrders,
+                Count = totalCount,
+                CurrentPage = pageNumber,
+                PageSize = pageSize
+            };
+        }
         public async Task<ResultView<GetAllOrderDTOs>> GetOneAsync(int Id)
         {
             var one = await OrderRepo.GetOneAsync(Id);

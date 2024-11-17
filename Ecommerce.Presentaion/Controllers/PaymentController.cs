@@ -3,9 +3,11 @@ using Ecommerce.Application.Contracts;
 using Ecommerce.DTOs.Payment;
 using System.Threading.Tasks;
 using Ecommerce.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ecommerce.Web.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class PaymentController : Controller
     {
         private readonly Application.Services.IPaymentService _paymentService;
@@ -16,16 +18,13 @@ namespace Ecommerce.Web.Controllers
         }
 
         // GET: Payment
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
-            var payments = (await _paymentService.GetAllPaymentsAsync());
-            if (payments == null)
-            {
-                return Ok("No payments available");
-            }
-            return View(payments);
+            var pay = await _paymentService.GetPaymentByIdAsync(id);
+            return View(pay);
         }
 
+       
         // GET: Payment/Create
         public IActionResult Create()
         {
@@ -80,5 +79,6 @@ namespace Ecommerce.Web.Controllers
             }
             return NotFound();
         }
+       
     }
 }
