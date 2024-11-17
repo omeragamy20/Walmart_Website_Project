@@ -68,7 +68,7 @@ namespace Ecommerce.Presentation.API.Controllers
         [HttpGet("search")]
         public async Task<IActionResult> SearchProduct(string? ProductName,decimal? price)
         {
-            var product = await productService.SearchByNameAsync(ProductName,price);
+            var product = await productService.SearchByNameAsync(1,4,ProductName,price);
             return Ok(product);
         }
         

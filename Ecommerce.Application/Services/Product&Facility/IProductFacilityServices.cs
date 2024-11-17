@@ -11,7 +11,8 @@ namespace Ecommerce.Application.Services.Product_Facility
     {
         public Task<List<CreateorUpdatePrdctFaciltyDTOs>> CreatePrdFaciltyAsync(PrdFacilitySubCategory Entity);
         public Task<List<CreateorUpdatePrdctFaciltyDTOs>> UpdatePrdFaciltyAsync(PrdFacilitySubCategory Entity);
-        public  Task<PrdFacilitySubCategory> GetFacilitesByPrdIdAsync(int prdID); 
+        public Task<PrdFacilitySubCategory> GetFacilitesByPrdIdAsync(int prdID);
+        public Task DeleteFAcilityByPrdId(int prdid);
 
     }
 }

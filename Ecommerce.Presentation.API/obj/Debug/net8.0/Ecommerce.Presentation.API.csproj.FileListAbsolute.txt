@@ -434,3 +434,10 @@ C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.dll
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.0\refint\Ecommerce.Presentation.API.dll
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.pdb
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\OpenSSL.PrivateKeyDecoder.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\OpenSSL.X509Certificate2.Provider.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\PayPal.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\CloudrailSI.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\System.Net.Http.Json.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\PayPalCheckoutSdk.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentation.API\bin\Debug\net8.0\PayPalHttp-Dotnet.dll
