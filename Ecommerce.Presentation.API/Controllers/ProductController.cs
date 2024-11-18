@@ -65,12 +65,6 @@ namespace Ecommerce.Presentation.API.Controllers
             var product = await productService.GetByIdApi(id);
             return Ok(product);
         }
-        [HttpGet("search")]
-        public async Task<IActionResult> SearchProduct(string? ProductName,decimal? price)
-        {
-            var product = await productService.SearchByNameAsync(ProductName,price);
-            return Ok(product);
-        }
-        
+       
     }
 }
