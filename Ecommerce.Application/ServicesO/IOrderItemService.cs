@@ -20,6 +20,8 @@ namespace Ecommerce.Application.ServicesO
 
         public Task<GetAllOrderItemDTOs> DeleteAsync(int Id);
         public Task<List<GetAllOrderItemDTOs>> GetAllItemsAsync(int Id);
+        public  Task<List<GetAllOrderItemDTOs>> GetAllWithPrdAsync();
+        public List<GetAllOitemWithHistory> GetAllOrderItemHistory();
         //public Task<List<GetAllOrderItemDTOs>> SearchByName(string Search);
     }
 }

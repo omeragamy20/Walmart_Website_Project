@@ -103,7 +103,7 @@ namespace Ecommerce.Presentaion.Controllers.Identity
                         if (check == true && role.Contains("admin"))
                         {
                             await signInManager.SignInAsync(user, customer.RememberMe);
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "Dashboard");
                         }
                     }
 
