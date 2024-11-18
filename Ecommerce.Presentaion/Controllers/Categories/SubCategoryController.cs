@@ -27,16 +27,19 @@ namespace Ecommerce.Presentaion.Controllers.Categories
 
         }
         [HttpGet]
-        public async Task<IActionResult> AllSubCategories(int pageIndex = 1,int pageSize = 10)
+        public async Task<IActionResult> AllSubCategories(int PageNumber = 1,int Count = 10)
         {
-            //var subcategory = (await subcategoryService.GetAllSubCategoriesAsync());
-            var subcategory = (await subcategoryRepository.GetAllSubcategoryAsync());
-
-            var paginatedList = await PaginatedList<GetAllSubCategoryDTOs>.CreateAsync(subcategory, pageIndex, pageSize);
+            var subcategory = (await subcategoryService.GetAllSubCategoriesPaginatedAsync(PageNumber,Count));
+            
             //var category = (await subcategoryService.GetAllSubCategoriesPaginatedAsync(pagenumber,count));
-            return View(paginatedList);
+            return View(subcategory);
         }
+        public async Task<IActionResult> Search(string search,int PageNumber=1,int Count = 10)
+        {
+            var sub = await subcategoryService.Search(search, PageNumber, Count);
+            return View("AllSubCategories", sub);
 
+        }
         [HttpGet]
         public async Task<IActionResult> Create()
         {

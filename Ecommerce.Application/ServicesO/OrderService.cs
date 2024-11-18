@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Ecommerce.Application.Contracts;
 using Ecommerce.DTOs.OrderDTOs;
+using Ecommerce.DTOs.Product;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
 using System;
@@ -138,6 +139,31 @@ namespace Ecommerce.Application.ServicesO
                 CurrentPage = pageNumber,
                 PageSize = pageSize
             };
+        }
+        public async Task<EntityPaginated<GetAllOrderDTOs>> Search(string search, int PageNumber, int Count)
+        {
+            var data = (await OrderRepo.GetAllAsync()).Select(o => new GetAllOrderDTOs
+            {
+                Id = o.Id,
+                OrderDate = o.OrderDate,
+                Status = o.Status,
+                TotalPrice = o.TotalPrice,
+                CustomerName = o.Customer.FirstName,
+                CustomerEmail = o.Customer.Email,
+                CustomerId = o.CustomerId,
+                PaymentId = o.PaymentId,
+                ShipmentId = o.ShipmentId
+            }).Where(o => o.CustomerName.Contains(search) ||
+                o.CustomerEmail.Contains(search)).ToList();
+            var c = data.Count();
+            var allOrders = data.Skip(Count * (PageNumber - 1)).Take(Count).ToList();
+            EntityPaginated<GetAllOrderDTOs> GetAllResult = new()
+            {
+                Data = allOrders,
+                Count = c
+
+            };
+            return GetAllResult;
         }
         public async Task<ResultView<GetAllOrderDTOs>> GetOneAsync(int Id)
         {

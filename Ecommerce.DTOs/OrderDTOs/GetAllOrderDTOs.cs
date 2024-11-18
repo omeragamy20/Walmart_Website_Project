@@ -18,8 +18,6 @@ namespace Ecommerce.DTOs.OrderDTOs
 
         [Range(0, 6)]
         public int Status { get; set; } = 0;
-
-
         public string? CustomerId { get; set; }
         public string? CustomerName { get; set;}
         public string? CustomerEmail { get; set;}

@@ -2,6 +2,7 @@
 using Ecommerce.Application.Contracts.Categories;
 using Ecommerce.Application.Contracts.product_Facillity;
 using Ecommerce.DTOs.DTOsCategories;
+using Ecommerce.DTOs.OrderDTOs;
 using Ecommerce.DTOs.shared;
 using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
@@ -135,11 +136,29 @@ namespace Ecommerce.Application.Services.ServicesCategories
             return new EntityPaginated<GetAllSubCategoryDTOs>()
             {
                 Data = paginatedsubcategory,
-                Count = countofsubcategory
+                Count = countofsubcategory,
+                CurrentPage = pagenumber,
+                PageSize = count
             };
         }
 
         // Search about Subcategory by name 
+
+        public async Task<EntityPaginated<GetAllSubCategoryDTOs>> Search(string search, int PageNumber, int Count)
+        {
+            var data = (await subCategoryRepository.GetAllAsync())
+                .Where(cat => cat.Name_en.Contains(search) || cat.Name_ar.Contains(search)).ToList();
+            var searchresult = mapper.Map<List<GetAllSubCategoryDTOs>>(data);
+            var c = (await subCategoryRepository.GetAllAsync()).Count();
+            var allSub = searchresult.Skip(Count * (PageNumber - 1)).Take(Count).ToList();
+            EntityPaginated<GetAllSubCategoryDTOs> GetAllResult = new()
+            {
+                Data = allSub,
+                Count = c
+
+            };
+            return GetAllResult;
+        }
         public async Task<List<GetAllSubCategoryDTOs>> SearchByNameAsync(string Subcategoryname)
         {
             var subcategories = (await subCategoryRepository.GetAllAsync())

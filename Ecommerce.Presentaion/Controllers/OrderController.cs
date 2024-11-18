@@ -43,6 +43,12 @@ namespace Ecommerce.Presentaion.Controllers
 
          return View(All);
         }
+
+        public async Task<IActionResult> search(string order,int PageNumber=1,int Count = 10)
+        {
+            var orders = await _orderservice.Search(order, PageNumber, Count);
+            return View("GetAll", orders);
+        }
         [HttpGet("/Approve/{Id}")]
         public async Task<IActionResult> Approve(int Id)
         {
