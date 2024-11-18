@@ -32,6 +32,8 @@ using Microsoft.Identity.Abstractions;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.Resource;
 using System.Globalization;
+using Microsoft.AspNetCore.Mvc;
+using Ecommerce.DTOs.PayPalDTOs;
 namespace Ecommerce.Presentation.API
 {
     public class Program
@@ -121,14 +123,17 @@ namespace Ecommerce.Presentation.API
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
+            //builder.Logging.AddConsole(); // Ensure logging is enabled.
+
+
             builder.Services.AddIdentity<Customer, IdentityRole>
-               (options => {
-                   options.SignIn.RequireConfirmedAccount = false;
-               }).AddEntityFrameworkStores<EcommerceContext>()
-               .AddDefaultTokenProviders();
+              (options => {
+                  options.SignIn.RequireConfirmedAccount = false;
+              }).AddEntityFrameworkStores<EcommerceContext>()
+              .AddDefaultTokenProviders();
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            
+
             builder.Services.AddDbContext<EcommerceContext>(options =>
                 options.UseSqlServer(connectionString));
 
@@ -158,13 +163,33 @@ namespace Ecommerce.Presentation.API
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
            
+
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
+                //app.UseSwaggerUI(c =>
+                //{
+                //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                //});
                 app.UseSwaggerUI();
             }
+
+            //kahled
+            //app.MapPost("/CreatePayment", ([FromBody] IEnumerable<ItemDto> items, IConfiguration configuration, HttpContext context) =>
+            //{
+            //    var baseUrl = context.Request.Host.Value;
+
+            //    return new PayPalService(configuration).CreatePayment(items, baseUrl);
+            //});
+
+            //app.MapPost("/ExecutePayment", ([FromBody] ExecutePaymentDto dto, IConfiguration configuration) =>
+            //{
+            //    return new PayPalService(configuration).ExecutePayment(dto);
+            //});
 
             app.UseCors("Default");
             app.UseHttpsRedirection();

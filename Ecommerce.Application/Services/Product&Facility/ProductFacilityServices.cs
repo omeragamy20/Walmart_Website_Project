@@ -87,5 +87,13 @@ namespace Ecommerce.Application.Services.Product_Facility
 
             return res ?? new();
         }
+        public async Task DeleteFAcilityByPrdId(int prdid)
+        {
+            var oldprdfacl= (await productfacilityRepository.GetAllAsync()).Where(f=>f.ProductID==prdid).ToList();
+            foreach (var item in oldprdfacl)
+            {
+                await productfacilityRepository.DeleteAsync(item);    
+            }
+        }
     }
 }

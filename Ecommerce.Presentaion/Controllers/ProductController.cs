@@ -127,30 +127,63 @@ namespace Ecommerce.Presentaion.Controllers
         {
             if (ModelState.IsValid)
             {
-               
 
+                var oldprd = await productService.GetSubcatbyPrdId(productDTO.Id);
+                List<int> oldsubcat=new();
+                if (oldprd != null)
+                {
+                    foreach (var item in oldprd)
+                    {
+                        oldsubcat.Add( item??0);
+                        
+                    } 
+                }
                 var res = await productService.UpdateAsync(productDTO);
                 if (res.IsSuccess)
                 {
 
+                    bool areEqual = oldsubcat.OrderBy(x => x).SequenceEqual(productDTO.SubCategoryIds.OrderBy(x => x));
                     var imgs = await imageService.UploadImagesAsync(productDTO.ImagesFromFile, res.Entity.Id);
-                    PrdFacilitySubCategory PFS = new PrdFacilitySubCategory();
-                    PFS.ProductId = res.Entity.Id;
-                    for (int i = 0; i < productDTO.SubCategoryIds.Count; i++)
-                        PFS.SubcatsIDS.Add(productDTO.SubCategoryIds[i]);
+                    if (areEqual)
+                    {
+                        PrdFacilitySubCategory PFS = new PrdFacilitySubCategory();
+                        PFS.ProductId = res.Entity.Id;
+                        for (int i = 0; i < productDTO.SubCategoryIds.Count; i++)
+                            PFS.SubcatsIDS.Add(productDTO.SubCategoryIds[i]);
 
-                  
                         var prdFacilities = await productfacilityServices.GetFacilitesByPrdIdAsync(res.Entity.Id);
                         PFS.Values_En.AddRange(prdFacilities.Values_En);
                         PFS.Values_Ar.AddRange(prdFacilities.Values_Ar);
-                      
 
-                    if (PFS.SubcatsIDS.Count > 0)
-                    {
-                        var FaciltyDto = await subcatfacilityService.Getallfacilitybyubcatid(PFS.SubcatsIDS);
-                        PFS.FacilityDTO = FaciltyDto;
+
+                        if (PFS.SubcatsIDS.Count > 0)
+                        {
+                            var FaciltyDto = await subcatfacilityService.Getallfacilitybyubcatid(PFS.SubcatsIDS);
+                            PFS.FacilityDTO = FaciltyDto;
+                        }
+                        return View("UpdateProductFacilty", PFS);
                     }
-                    return View("UpdateProductFacilty", PFS);
+                    else
+                    {
+                        PrdFacilitySubCategory PFS = new PrdFacilitySubCategory();
+                        PFS.ProductId = res.Entity.Id;
+
+
+
+
+
+                        for (int i = 0; i < productDTO.SubCategoryIds.Count; i++)
+                            PFS.SubcatsIDS.Add(productDTO.SubCategoryIds[i]);
+
+                        if (PFS.SubcatsIDS.Count > 0)
+                        {
+                            var FaciltyDto = await subcatfacilityService.Getallfacilitybyubcatid(PFS.SubcatsIDS);
+                            PFS.FacilityDTO = FaciltyDto;
+
+                        }
+
+                        return View("UpdateProductFacilty", PFS);
+                    }
                
                 }
                 return RedirectToAction("GetALlProduct");
@@ -171,12 +204,25 @@ namespace Ecommerce.Presentaion.Controllers
 
             if (ModelState.IsValid)
             {
-                var result = (await productfacilityServices.UpdatePrdFaciltyAsync(PFS));
+                //var oldpfs=await productfacilityServices.GetFacilitesByPrdIdAsync(PFS.ProductId);
+                //bool areexist = true;
+                //for(int i = 0; i < oldpfs.FacilityDTO.Count; i++)
+                //{
+
+                //}
+                await productfacilityServices.DeleteFAcilityByPrdId(PFS.ProductId);
+                var result = (await productfacilityServices.CreatePrdFaciltyAsync(PFS));
                 if (result != null)
                 {
                     return RedirectToAction("GetALlProduct");
                 }
                 else { return View(); }
+                //var result = (await productfacilityServices.UpdatePrdFaciltyAsync(PFS));
+                //if (result != null)
+                //{
+                //    return RedirectToAction("GetALlProduct");
+                //}
+                //else { return View(); }
             }
             else { return View(); }
         }

@@ -17,18 +17,11 @@
                 <input asp-for="ProductId" class="form-control" />
                 <span asp-validation-for="ProductId" class="text-danger"></span>
             </div>
-
-            @for(int i = 0 ; i < Model.Values_En.Count; i++)
+            @if (Model.Values_En.Count > 0)
             {
-                @*  <div class="form-group">
-            <label asp-for="@(m.Name_en)" class="control-label"></label>
-            <input asp-for="@(m.Name_en)" class="form-control" style="display:none" />
-            </div>
+            @for(int i = 0 ; i < Model.FacilityDTO.Count; i++)
+            {
 
-            <div class="form-group">
-            <label asp-for="@m.Name_ar" class="control-label"></label>
-            <input asp-for="@m.Name_ar" class="form-control" style="display:none" />
-            </div> *@
 
                 <div style="display:flex">
                     <div>
@@ -50,6 +43,33 @@
                     <label asp-for="@Model.FacilityIds" class="control-label"></label>
                     <input asp-for="@Model.FacilityIds" value="@Model.FacilityDTO[i].Id" class="form-control" style="display:none" />
                 </div>
+            }                
+            }
+            else
+            {
+                @foreach (var m in Model.FacilityDTO)
+                {
+
+                    <div style="display:flex">
+                        <div>
+                            <label>@m.Name_en</label>
+                            <div class="form-group">
+                                <input asp-for="@Model.Values_En" class="form-control" value="" />
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;
+                        <div>
+                            <label>@m.Name_ar</label>
+                            <div class="form-group">
+                                <input asp-for="@Model.Values_Ar" class="form-control" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="display:none">
+                        <label asp-for="@Model.FacilityIds" class="control-label">Specifications</label>
+                        <input asp-for="@Model.FacilityIds" value="@m.Id" class="form-control" style="display:none" />
+                    </div>
+                }
             }
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -58,9 +78,9 @@
     </div>
 </div>
 
-<div>
+@* <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

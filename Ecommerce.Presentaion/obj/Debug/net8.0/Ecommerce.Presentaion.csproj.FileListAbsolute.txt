@@ -1548,3 +1548,7 @@ C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\ref
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.pdb
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.genruntimeconfig.cache
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\ref\Ecommerce.Presentaion.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\OpenSSL.PrivateKeyDecoder.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\OpenSSL.X509Certificate2.Provider.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\PayPal.dll
+D:\Iti rond 2024\Final Project\myrepo\Ecommerce.Presentaion\bin\Debug\net8.0\CloudrailSI.dll
