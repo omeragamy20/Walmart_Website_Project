@@ -434,3 +434,4 @@ C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.dll
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.0\refint\Ecommerce.Presentation.API.dll
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.pdb
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentation.API\obj\Debug\net8.0\Ecommerce.Presentation.API.MvcApplicationPartsAssemblyInfo.cs

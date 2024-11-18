@@ -1548,3 +1548,4 @@ C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\ref
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.pdb
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.genruntimeconfig.cache
 C:\Users\monaa\source\repos\Final_Pro\Ecommerce.Presentaion\obj\Debug\net8.0\ref\Ecommerce.Presentaion.dll
+D:\full-stack net Core\Graduation\Walmart_Website_Project\Ecommerce.Presentaion\obj\Debug\net8.0\Ecommerce.Presentaion.MvcApplicationPartsAssemblyInfo.cs

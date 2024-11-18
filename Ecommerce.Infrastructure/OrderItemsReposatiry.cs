@@ -37,6 +37,27 @@ namespace Ecommerce.Infrastructure
 
 
 
+        public List<GetAllOitemWithHistory> GetAllOrderItemHistory()
+        {
+            var prds = Context.OrderItems.Select(o => new GetAllOitemWithHistory
+            {
+                CreatedAt = o.Created ?? DateTime.Now,
+                Id = o.Id,
+                PrdName = o.Product.Title_en,
+                PrdDesc = o.Product.Description_en,
+                PrdPrice = o.Product.Price,
+                Quantity = o.Quantity,
+                Price = o.Price,
+                TotalPrice = o.Price * o.Quantity
+
+            }).ToList();
+
+            return prds;
+
+        }
+
+
+
 
     }
 }

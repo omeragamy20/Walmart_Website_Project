@@ -210,8 +210,27 @@ namespace Ecommerce.Application.ServicesO
 
 
 
+        //in Dashborad 
+        public async Task<List<GetAllOrderItemDTOs>> GetAllWithPrdAsync()
+        {
+            var all = (await OrderitemRepo.GetAllAsync()).Select(o=>new GetAllOrderItemDTOs
+            {
+                PrdName = o.Product.Title_en , 
+                PrdImages = o.Product.Images.Select(i=>i.Image).ToList() , 
+                PrdPrice= o.Product.Price,
+                Quantity = o.Quantity,
+                TotalPrice = o.Price
+               
+                
+            }).ToList();
 
+            return all;
+        }
 
+        public  List<GetAllOitemWithHistory> GetAllOrderItemHistory()
+        {
+            return OrderitemRepo.GetAllOrderItemHistory();
+        }
 
 
 

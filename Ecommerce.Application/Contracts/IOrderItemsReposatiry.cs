@@ -11,5 +11,6 @@ namespace Ecommerce.Application.Contracts
     public interface IOrderItemsReposatiry : IGenericReposatiry<OrderItem, int>
     {
         public void UpdatePrd(CreateOrUpdateOrderItemDTOs Dto);
+        public List<GetAllOitemWithHistory> GetAllOrderItemHistory();
     }
 }
