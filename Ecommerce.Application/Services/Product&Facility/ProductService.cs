@@ -448,6 +448,8 @@ namespace Ecommerce.Application.Services
             {
                 Id=p.Product.Id,
                 Title_en=p.Product.Title_en,
+                Title_ar=p.Product.Title_ar,
+                Description_ar=p.Product.Description_ar,
                 Description_en=p.Product.Description_en,
                 Price = p.Product.Price,
                 Stock=p.Product.Stock,
