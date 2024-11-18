@@ -34,8 +34,8 @@ namespace Ecommerce.Application.Services
                     Id=f.facility.Id,
                     Name_en=f.facility.Name_en,
                     Name_ar=f.facility.Name_ar,
-                    Values_En=f.facility.ProductFacilities.Select(v=>v.Value_en).ToList(),
-                    Values_Ar=f.facility.ProductFacilities.Select(v=>v.Value_ar).ToList()
+                    Values_En=f.facility.ProductFacilities.Select(v=>v.Value_en).Distinct().ToList(),
+                    Values_Ar=f.facility.ProductFacilities.Select(v=>v.Value_ar).Distinct().ToList()
                 }).ToList();
             return data;
         }
