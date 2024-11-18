@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Ecommerce.Presentaion.Controllers
 {
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class ProductController : Controller
     {
         private readonly IProductService productService;

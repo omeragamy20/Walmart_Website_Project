@@ -261,6 +261,7 @@ namespace Ecommerce.Application.Services
                     Values_Ar = p.ProductFacilities.Select(f => f.facility.Name_ar).ToList(),
                     SubCategoryNames = p.productSubCategory.Select(p => p.SubCategory.Name_en).ToList(),
                     SubCategoryNamesAr = p.productSubCategory.Select(p => p.SubCategory.Name_ar).ToList(),
+                    SubCategoryIds=p.productSubCategory.Select(p=>p.Id).ToList(),
                    
                 })
                 .Where(p => p.Title_en.Contains(ProductName) ||
@@ -269,6 +270,7 @@ namespace Ecommerce.Application.Services
                             p.Description_ar.Contains(ProductName) ||
                             p.Facilities.Any(f => f.Contains(ProductName)) ||
                             p.Facilities_Ar.Any(f => f.Contains(ProductName))||
+                            p.SubCategoryNames.Any(s => s.Contains(ProductName)) ||
                             p.Price.Equals(price)
                            )
                 .ToList();

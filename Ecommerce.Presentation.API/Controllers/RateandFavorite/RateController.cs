@@ -14,7 +14,7 @@ namespace Ecommerce.Presentation.API.Controllers.RateandFavorite
         {
             rateservices= _rateservices;
         }
-        [HttpPost]
+        [HttpPost("CreateRate")]
         public async Task<IActionResult> AddRate(CreateorUpdateRateDTO Entity)
         {
             if (ModelState.IsValid)
